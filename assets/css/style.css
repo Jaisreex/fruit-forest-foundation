@@ -501,12 +501,12 @@ img { max-width: 100%; height: auto; display: block; }
 /* ---------- FOOTER ---------- */
 .footer { background: var(--bg-soft); color: var(--text); border-top: 1px solid rgba(0,0,0,0.05); }
 .footer-top { padding: 7rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
-.footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3rem; }
-.footer-logo { display: flex; align-items: center; gap: .75rem; margin-bottom: .5rem; }
+.footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5.5rem; }
+.footer-logo { display: flex; align-items: center; gap: .75rem; margin-bottom: 2.5rem; }
 .footer-logo img { height: 120px; width: auto; max-width: 400px; }
 .footer-logo-tag  { font-size: .75rem; color: var(--green); }
 .footer-brand p { color: var(--text-light); font-size: .9rem; line-height: 1.7; }
-.social-icons { display: flex; gap: .75rem; flex-wrap: wrap; }
+.social-icons { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 2.5rem; }
 .social-icon {
   width: 42px; height: 42px; border-radius: 50%; background: var(--white);
   display: grid; place-items: center; font-size: .9rem; color: var(--green);

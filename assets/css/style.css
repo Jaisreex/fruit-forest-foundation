@@ -493,31 +493,31 @@ img { max-width: 100%; height: auto; display: block; }
 .newsletter-note { margin-top: 1.5rem; font-size: .8rem; opacity: 0.6; }
 
 /* ---------- FOOTER ---------- */
-.footer { background: var(--bg-soft); color: var(--text); border-top: 1px solid rgba(0,0,0,0.05); }
-.footer-top { padding: 7rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+.footer { background: var(--green-dark); color: var(--white); border-top: 1px solid rgba(255,255,255,0.1); }
+.footer-top { padding: 7rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 4rem; }
 .footer-logo { display: flex; align-items: center; gap: .75rem; margin-bottom: .5rem; }
 .footer-logo img { height: 50px; width: auto; max-width: 200px; }
-.footer-logo-tag  { font-size: .75rem; color: var(--green); }
-.footer-brand p { color: var(--text-light); font-size: .9rem; line-height: 1.7; }
+.footer-logo-tag  { font-size: .75rem; color: var(--gold); }
+.footer-brand p { color: rgba(255,255,255,0.7); font-size: .9rem; line-height: 1.7; }
 .social-icons { display: flex; gap: .75rem; flex-wrap: wrap; }
 .social-icon {
-  width: 42px; height: 42px; border-radius: 50%; background: var(--white);
-  display: grid; place-items: center; font-size: .9rem; color: var(--green);
-  transition: var(--transition); border: 1px solid rgba(0,0,0,0.08);
+  width: 42px; height: 42px; border-radius: 50%; background: rgba(255,255,255,0.1);
+  display: grid; place-items: center; font-size: .9rem; color: var(--white);
+  transition: var(--transition); border: 1px solid rgba(255,255,255,0.2);
 }
-.social-icon:hover { background: var(--green); color: var(--white); border-color: var(--green); transform: translateY(-3px); }
+.social-icon:hover { background: var(--gold); color: var(--green-dark); border-color: var(--gold); transform: translateY(-3px); }
 
-.footer-links-group h4, .footer-contact h4 { font-family: var(--font-head); font-size: 1.1rem; margin-bottom: 2rem; color: var(--dark); }
+.footer-links-group h4, .footer-contact h4 { font-family: var(--font-head); font-size: 1.1rem; margin-bottom: 2rem; color: var(--white); }
 .footer-links-group li { margin-bottom: .9rem; }
-.footer-links-group a { color: var(--text-light); font-size: .95rem; }
-.footer-links-group a:hover { color: var(--green); padding-left: 5px; }
+.footer-links-group a { color: rgba(255,255,255,0.7); font-size: .95rem; }
+.footer-links-group a:hover { color: var(--gold); padding-left: 5px; }
 
-.footer-contact p { display: flex; gap: .75rem; color: var(--text-light); margin-bottom: 1.2rem; font-size: .95rem; }
-.footer-contact i { color: var(--green); margin-top: .2rem; }
-.footer-hashtag { margin-top: 2rem; padding: .6rem 1.2rem; background: var(--green-pale); border-radius: 50px; display: inline-flex; align-items: center; gap: .75rem; font-weight: 700; font-size: .8rem; color: var(--green); }
+.footer-contact p { display: flex; gap: .75rem; color: rgba(255,255,255,0.7); margin-bottom: 1.2rem; font-size: .95rem; }
+.footer-contact i { color: var(--gold); margin-top: .2rem; }
+.footer-hashtag { margin-top: 2rem; padding: .6rem 1.2rem; background: rgba(255,255,255,0.1); border-radius: 50px; display: inline-flex; align-items: center; gap: .75rem; font-weight: 700; font-size: .8rem; color: var(--gold); }
 
-.footer-bottom { padding: 2.5rem 0; text-align: center; color: var(--text-light); font-size: .85rem; }
+.footer-bottom { padding: 2.5rem 0; text-align: center; color: rgba(255,255,255,0.6); font-size: .85rem; }
 .footer-bottom p { margin-bottom: .5rem; }
 
 /* ---------- FLOATING ACTION BUTTON ---------- */

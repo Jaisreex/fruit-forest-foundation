@@ -528,7 +528,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* ---------- FORM PAGES ---------- */
 .page-header {
-  padding: 12rem 0 6rem; background: var(--green-pale); text-align: center;
+  padding: 15rem 0 8rem; background: var(--green-pale); text-align: center;
 }
 .page-header h1 { 
   font-size: clamp(2rem, 5vw, 3.5rem); color: var(--green); margin-bottom: 1rem; 

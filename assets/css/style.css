@@ -587,7 +587,20 @@ img { max-width: 100%; height: auto; display: block; }
   .hero-title { font-size: 2.8rem; }
   .hero-subtitle { font-size: 1rem; }
   
-  .story-grid, .why-grid { grid-template-columns: 1fr; gap: 4rem; }
+  .story-grid, .why-grid { grid-template-columns: 1fr; gap: 4rem; text-align: left; }
+  .story-badge-float {
+    position: absolute;
+    bottom: -1.5rem;
+    right: 1rem;
+    padding: 1.5rem;
+    gap: .75rem;
+    max-width: 220px;
+  }
+  .story-badge-float i { font-size: 2rem; }
+  .story-badge-float span { font-size: .9rem; }
+  .story-stats { gap: 1.5rem; flex-wrap: wrap; justify-content: space-between; }
+  .stat-number { font-size: 1.8rem; }
+
   .pillars-grid, .involve-grid, .gallery-masonry { grid-template-columns: 1fr; }
   .g-wide { grid-column: span 1; }
   .map-counter-row { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }

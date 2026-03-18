@@ -124,12 +124,12 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .logo-img-main {
-  height: 120px;
+  height: 180px;
   width: auto;
   object-fit: contain;
   transition: var(--transition);
 }
-.navbar.scrolled .logo-img-main { height: 85px; }
+.navbar.scrolled .logo-img-main { height: 120px; }
 
 .nav-tagline {
   font-family: var(--font-body);
@@ -497,7 +497,7 @@ img { max-width: 100%; height: auto; display: block; }
 .footer-top { padding: 7rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 4rem; }
 .footer-logo { display: flex; align-items: center; gap: .75rem; margin-bottom: .5rem; }
-.footer-logo img { height: 50px; width: auto; max-width: 200px; }
+.footer-logo img { height: 100px; width: auto; max-width: 300px; }
 .footer-logo-tag  { font-size: .75rem; color: var(--gold); }
 .footer-brand p { color: rgba(255,255,255,0.7); font-size: .9rem; line-height: 1.7; }
 .social-icons { display: flex; gap: .75rem; flex-wrap: wrap; }

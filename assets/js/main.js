@@ -102,19 +102,38 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(impactSection);
   }
 
-  // ---- Smooth Scrolling for Anchors ----
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        window.scrollTo({
-          top: target.offsetTop - 80,
-          behavior: 'smooth'
-        });
+  // ---- Smooth Scrolling & Active State ----
+  const links = document.querySelectorAll('.nav-link');
+  
+  links.forEach(link => {
+    link.addEventListener('click', function (e) {
+      // Remove active from all
+      links.forEach(l => l.classList.remove('active'));
+      // Add active to current
+      this.classList.add('active');
+
+      const href = this.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
       }
     });
   });
+
+  // Set Home as active by default if on home
+  if (window.location.hash === '' || window.location.hash === '#home') {
+    const homeLink = document.querySelector('a[href="#home"]');
+    if (homeLink) homeLink.classList.add('active');
+  } else {
+    const activeLink = document.querySelector(`a[href="${window.location.hash}"]`);
+    if (activeLink) activeLink.classList.add('active');
+  }
 });
 
 // ---- Newsletter Form Handler ----

@@ -109,12 +109,13 @@ img { max-width: 100%; height: auto; display: block; }
 .navbar.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,.08); }
 
 .nav-container {
-  max-width: 1700px; margin: 0 auto;
+  max-width: 1700px; 
+  margin: 0 auto;
   padding: 0 4rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 5rem;
+  gap: 6rem; /* Proper white space between logo and menu */
 }
 
 .nav-brand {
@@ -125,12 +126,12 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .logo-img-main {
-  height: 180px;
+  height: 120px;
   width: auto;
   object-fit: contain;
   transition: var(--transition);
 }
-.navbar.scrolled .logo-img-main { height: 120px; }
+.navbar.scrolled .logo-img-main { height: 80px; }
 
 .nav-tagline {
   font-family: var(--font-body);
@@ -155,16 +156,17 @@ img { max-width: 100%; height: auto; display: block; }
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: 2rem;
+  gap: 2.5rem; /* Equal spacing between items */
   margin: 0;
   padding: 0;
   list-style: none;
+  flex-wrap: nowrap; /* No wrapping */
 }
 
 .nav-link {
   font-family: var(--font-head);
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--dark);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -173,11 +175,28 @@ img { max-width: 100%; height: auto; display: block; }
   display: flex;
   align-items: center;
   white-space: nowrap;
-  padding: 0.5rem 0;
+  padding: 0.8rem 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--green);
+  transition: var(--transition);
+  border-radius: 2px;
 }
 
 .nav-link:hover { 
   color: var(--green); 
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
 }
 
 /* --- Dropdown Menu --- */
@@ -341,6 +360,30 @@ img { max-width: 100%; height: auto; display: block; }
   gap: 2rem; 
   justify-content: center; 
   flex-wrap: wrap; 
+  margin-top: 1rem;
+}
+
+.btn-donate-hero {
+  display: inline-flex;
+  align-items: center;
+  background: var(--gold);
+  color: var(--green-dark);
+  padding: 1.2rem 3.5rem;
+  border-radius: 50px;
+  font-weight: 900;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  box-shadow: 0 10px 25px rgba(255, 208, 0, 0.3);
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-donate-hero:hover {
+  background: var(--gold-dark);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(255, 208, 0, 0.4);
 }
 
 .btn-secondary {

@@ -107,16 +107,13 @@ document.addEventListener('DOMContentLoaded', () => {
   
   links.forEach(link => {
     link.addEventListener('click', function (e) {
-      // Remove active from all
-      links.forEach(l => l.classList.remove('active'));
-      // Add active to current
-      this.classList.add('active');
-
       const href = this.getAttribute('href');
       if (href && href.startsWith('#')) {
         e.preventDefault();
         const target = document.querySelector(href);
         if (target) {
+          links.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
           window.scrollTo({
             top: target.offsetTop - 80,
             behavior: 'smooth'
@@ -126,20 +123,53 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Set Stories (Gallery) as active by default if on home
-  if (window.location.hash === '' || window.location.hash === '#home') {
-    const storiesLink = document.querySelector('a[href="#gallery"]');
-    if (storiesLink) {
-        links.forEach(l => l.classList.remove('active'));
-        storiesLink.classList.add('active');
-    }
-  } else {
-    const activeLink = document.querySelector(`a[href="${window.location.hash}"]`);
-    if (activeLink) {
-        links.forEach(l => l.classList.remove('active'));
+  // Set initial active state based on current page/hash
+  const updateInitialActive = () => {
+    links.forEach(l => l.classList.remove('active'));
+    
+    // Check for hash first
+    if (window.location.hash) {
+      const activeLink = document.querySelector(`a[href="${window.location.hash}"]`);
+      if (activeLink) {
         activeLink.classList.add('active');
+        return;
+      }
     }
-  }
+
+    // Pathname check (for multi-page and home default)
+    const currentPath = window.location.pathname;
+    const isHome = currentPath === '/' || currentPath.endsWith('index.html') || currentPath === '';
+    
+    links.forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href) return;
+
+      if (isHome && href === '#home') {
+        link.classList.add('active');
+      } else if (href !== '#' && href !== '#home' && currentPath.includes(href.replace('../', ''))) {
+        link.classList.add('active');
+      }
+    });
+  };
+
+  updateInitialActive();
+
+
+  // ---- FAQ Accordion Logic ----
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+      // Close other open items
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item && otherItem.classList.contains('active')) {
+          otherItem.classList.remove('active');
+        }
+      });
+      // Toggle current
+      item.classList.toggle('active');
+    });
+  });
 });
 
 // ---- Newsletter Form Handler ----

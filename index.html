@@ -32,7 +32,7 @@
       <div class="nav-wrapper-right">
         <div class="nav-links" id="navLinks">
           <a href="#home" class="nav-link">HOME</a>
-          <a href="#vision-mission" class="nav-link">ABOUT US</a>
+          <a href="pages/about.html" class="nav-link">ABOUT US</a>
           <a href="pages/services.html" class="nav-link">PROGRAMS</a>
           <a href="#impact-map" class="nav-link">OUR IMPACT</a>
           <div class="nav-item-dropdown">
@@ -48,7 +48,7 @@
           <a href="#gallery" class="nav-link active">STORIES</a>
           <a href="#events" class="nav-link">EVENTS</a>
           <a href="#faq" class="nav-link">FAQ</a>
-          <a href="#transparency" class="nav-link">TRANSPARENCY / REPORTS</a>
+          <a href="pages/reports.html" class="nav-link">REPORTS</a>
           <a href="pages/contact.html" class="nav-link">CONTACT US</a>
           <a href="pages/donate.html" class="nav-link">DONATE</a>
         </div>
@@ -62,69 +62,31 @@
   </nav>
 
   <!-- ===== HERO SECTION ===== -->
-  <style>
-    /* HERO STYLES (REINSTATED CENTERED ANIMATION) */
-    .hero { 
-      padding: 120px 0 80px;
-      min-height: 85vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-bg {
-      display: block !important;
-      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      background-size: cover; background-position: center;
-      z-index: 1;
-    }
-    .hero-overlay {
-      display: block !important;
-      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      background: linear-gradient(to bottom, rgba(15, 18, 15, 0.7) 0%, rgba(15, 18, 15, 0.4) 100%);
-      z-index: 2;
-    }
-    .hero-content { z-index: 10; position: relative; text-align: center; }
-    .hero-title { 
-      color: var(--white) !important; 
-      text-shadow: 0 4px 15px rgba(0,0,0,0.3) !important; 
-      letter-spacing: -0.01em;
-      margin-top: 1rem;
-      margin-bottom: 1.5rem;
-      font-weight: 900 !important;
-    }
-    .hero-title-accent { color: var(--gold) !important; text-shadow: none !important; }
-    .hero-subtitle { 
-      color: rgba(255,255,255,0.95) !important; 
-      text-shadow: 0 2px 10px rgba(0,0,0,0.3) !important; 
-      font-size: 1.25rem !important;
-      line-height: 1.6 !important;
-      max-width: 800px !important;
-      margin: 0 auto 3.5rem !important;
-    }
-  </style>
-  <section class="hero" id="home">
-    <div class="hero-bg" style="background-image:url('assets/images/hero_story.png')"></div>
-    <div class="hero-overlay"></div>
+  <section class="hero hero-v2" id="home">
+    <div class="hero-bg" style="background-image:url('assets/images/community_planting.png')"></div>
+    <div class="hero-overlay-v2"></div>
 
-    <div class="hero-content reveal">
-      <h1 class="hero-title">Growing Fruit. Reaping Futures.</h1>
-      <p class="hero-subtitle">Planting fruit trees worldwide to reduce hunger, restore ecosystems, and build resilient communities.</p>
-      <div class="hero-buttons">
-        <a href="pages/donate.html" class="btn-donate-hero">Donate Now</a>
+    <div class="hero-content-v2 reveal">
+      <div class="hero-glass-card">
+        <div class="section-tag" style="background: rgba(45,90,39,0.15); color: var(--gold);">Our Global Mission</div>
+        <h1 class="hero-title">Growing Fruit. <br><span class="hero-title-accent">Reaping Futures.</span></h1>
+        <p class="hero-subtitle">We plant fruit-bearing trees globally to eliminate hunger, restore ecosystems, and empower communities with sustainable health and wealth.</p>
+        <div class="hero-buttons">
+          <a href="pages/donate.html" class="btn-donate-hero">Get Involved Today</a>
+          <a href="#what-we-do" class="btn-secondary">Explore Our Work</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ===== WHAT WE DO ===== -->
-  <section class="vision-mission" id="what-we-do" style="padding: 4rem 0; background: #f9f9f9;">
+  <section class="vision-mission" id="what-we-do" style="padding: 6rem 0; background: var(--white);">
     <div class="container">
-      <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+      <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
         <div class="section-tag">Summary</div>
         <h2 class="section-title">What We <span class="text-green">Do</span></h2>
       </div>
-      <div class="vision-mission-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+      <div class="vision-mission-grid" style="grid-template-columns: repeat(2, 1fr); gap: 4rem;">
         <div class="vision-card reveal">
           <div class="card-icon"><i class="fas fa-tree"></i></div>
           <h3>Tree Plantation</h3>
@@ -239,11 +201,6 @@
     </div>
   </section>
 
-    <style>
-      @media(min-width: 1024px) {
-        .pillars-grid.four-col-grid { grid-template-columns: repeat(4, 1fr) !important; }
-      }
-    </style>
     <section class="pillars-section" id="pillars">
     <div class="container">
       <div class="section-header">
@@ -251,7 +208,7 @@
         <h2 class="section-title">Growth · Health · Wealth</h2>
         <p class="section-subtitle">Four interconnected initiatives that together build abundant, self-sustaining communities.</p>
       </div>
-      <div class="pillars-grid four-col-grid">
+      <div class="pillars-grid">
         
         <!-- Pillar 1 -->
         <div class="pillar-card reveal" id="tree-mission">

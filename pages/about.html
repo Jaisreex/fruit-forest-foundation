@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Grow Green Foundation</title>
+  <link rel="icon" href="../assets/favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .about-hero {
+      padding: 15rem 0 10rem;
+      text-align: center;
+      background: var(--white);
+    }
+    .about-hero h1 {
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      color: var(--dark);
+      margin-bottom: 2rem;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.1;
+    }
+
+    .about-section {
+      padding: 8rem 0;
+    }
+
+    .pillars-intro {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    .pillars-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4rem;
+    }
+
+    .pillar-item h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .pillar-item p {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+
+    .why-fruit-trees {
+      background: var(--bg-soft);
+      padding: 10rem 0;
+      text-align: center;
+    }
+    .why-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .why-content h2 {
+      font-size: 2.8rem;
+      margin-bottom: 2rem;
+      color: var(--dark);
+    }
+    .why-content p {
+      font-size: 1.4rem;
+      color: var(--text);
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    .vision-final {
+      padding: 12rem 0;
+      text-align: center;
+      background: var(--white);
+    }
+    .vision-card-wide {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 4rem;
+      border-radius: var(--radius);
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.05);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+    }
+    .vision-card-wide i {
+      font-size: 3rem;
+      color: var(--green);
+      margin-bottom: 2rem;
+    }
+    .vision-card-wide h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    .vision-card-wide p {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      line-height: 1.9;
+    }
+
+    @media (max-width: 992px) {
+      .pillars-container { grid-template-columns: 1fr; gap: 3rem; }
+      .about-hero { padding: 12rem 0 8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-brand">
+      <img src="../assets/images/logo.png" alt="Grow Green Foundation Logo" class="logo-img-main" />
+    </a>
+
+    <div class="nav-wrapper-right">
+      <div class="nav-links" id="navLinks">
+        <a href="../index.html#home" class="nav-link">HOME</a>
+        <a href="about.html" class="nav-link active">ABOUT US</a>
+        <a href="services.html" class="nav-link">PROGRAMS</a>
+        <a href="../index.html#impact-map" class="nav-link">OUR IMPACT</a>
+        <div class="nav-item-dropdown">
+          <a href="javascript:void(0)" class="nav-link dropdown-toggle" id="getInvolvedToggle">
+            GET INVOLVED <i class="fas fa-chevron-down dropdown-arrow"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="join.html" class="dropdown-item">Volunteer</a>
+            <a href="contact.html" class="dropdown-item">Partner With Us</a>
+            <a href="donate.html" class="dropdown-item">Plant a Tree</a>
+          </div>
+        </div>
+        <a href="../index.html#gallery" class="nav-link">STORIES</a>
+        <a href="reports.html" class="nav-link">REPORTS</a>
+        <a href="contact.html" class="nav-link">CONTACT US</a>
+        <a href="donate.html" class="nav-link">DONATE</a>
+      </div>
+      
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="about-hero">
+  <div class="container reveal">
+    <div class="section-tag">Our Mission</div>
+    <h1>We Restore Ecosystems, Nourish Communities, and Secure Future Generations.</h1>
+  </div>
+</header>
+
+<section class="about-section">
+  <div class="container">
+    <div class="pillars-intro reveal">
+      <div class="section-tag">Our Pillars</div>
+      <h2 class="section-title">A Holistic Path to Abundance</h2>
+    </div>
+    
+    <div class="pillars-container">
+      <div class="pillar-item reveal">
+        <h3><i class="fas fa-tree"></i> Earth</h3>
+        <p>We cultivate resilient fruit forests in public spaces to restore biodiversity and provide free, nutritious food for all. By planting trees, we capture carbon, cool our cities, and create thriving habitats for local wildlife.</p>
+      </div>
+      
+      <div class="pillar-item reveal delay-1">
+        <h3><i class="fas fa-heartbeat"></i> Health</h3>
+        <p>We empower individuals through holistic wellness coaching and nutrition education. Our programs promote physical vitality and mental clarity, ensuring that community members have the strength and resilience to lead healthy, active lives for years to come.</p>
+      </div>
+      
+      <div class="pillar-item reveal delay-2">
+        <h3><i class="fas fa-coins"></i> Wealth</h3>
+        <p>We build financial literacy through practical workshops on wealth creation and responsible management. By teaching people how to navigate their finances, we break cycles of dependency and foster long-term stability for families and local economies.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why-fruit-trees">
+  <div class="container reveal">
+    <div class="why-content">
+      <div class="section-tag" style="background: var(--white);">Sustainability</div>
+      <h2 class="section-title">Why Fruit Trees?</h2>
+      <p>Every tree we plant serves a dual purpose: restoring the environment while feeding the hungry. Unlike ornamental trees, fruit-bearing forests generate immediate value for communities, turning public spaces into self-sustaining sources of health and nutrition.</p>
+    </div>
+  </div>
+</section>
+
+<section class="vision-final">
+  <div class="container reveal">
+    <div class="vision-card-wide">
+      <i class="fas fa-seedling"></i>
+      <div class="section-tag">Our Vision</div>
+      <h2 class="section-title">The Foundation for Tomorrow</h2>
+      <p>We envision a world where every neighborhood is a garden of abundance and every individual is equipped with the tools to flourish. By integrating environmental restoration with health and financial education, we are building a foundation for a self-sustaining future. Together, we are planting the seeds of change today to ensure that the generations of tomorrow inherit a planet that is not only green but truly abundant.</p>
+      <div style="margin-top: 3rem;">
+        <a href="donate.html" class="btn-primary">Join the Movement</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2026 Grow Green Foundation. All rights reserved. Registered Non-Profit Trust.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script>
+  const revealElements = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.1 });
+  revealElements.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

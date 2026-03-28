@@ -52,9 +52,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropdownContainer = dropdownToggle.closest('.nav-item-dropdown');
     
     dropdownToggle.addEventListener('click', (e) => {
-      if (window.innerWidth <= 900) {
-        e.preventDefault();
-        dropdownContainer.classList.toggle('open');
+      e.preventDefault();
+      e.stopPropagation();
+      dropdownContainer.classList.toggle('open');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!dropdownContainer.contains(e.target)) {
+        dropdownContainer.classList.remove('open');
       }
     });
 

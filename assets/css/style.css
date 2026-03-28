@@ -176,11 +176,11 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-link {
   font-family: var(--font-head);
   font-weight: 800;
-  font-size: 0.85rem; /* Reduced font size for better fit */
-  color: var(--dark);
+  font-size: 0.85rem;
+  color: #1A1A1A; /* Solid Dark Neutral for readability */
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  transition: var(--transition);
+  transition: all 0.3s ease;
   position: relative;
   display: flex;
   align-items: center;
@@ -191,7 +191,7 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: 0px;
+  bottom: -2px;
   left: 0;
   width: 0;
   height: 3px;
@@ -200,29 +200,25 @@ img { max-width: 100%; height: auto; display: block; }
   border-radius: 2px;
 }
 
+/* Hover State - Clear Highlight & Underline */
 .nav-link:hover { 
-  color: var(--green);
-  opacity: 0.8;
+  color: var(--green) !important;
 }
 
-/* Active State - Prominent Underline */
+.nav-link:hover::after {
+  width: 100%;
+  height: 2px;
+}
+
+/* Active State - Bold Highlight & Thicker Underline */
 .nav-link.active {
-  color: var(--green);
+  color: var(--green) !important;
 }
 
 .nav-link.active::after {
   width: 100%;
-  height: 4px; /* Thicker for active */
+  height: 4px;
   background-color: var(--green);
-  opacity: 1;
-}
-
-/* Hover State - Subtle Underline */
-.nav-link:hover::after {
-  width: 100%;
-  height: 2px; /* Thinner for hover */
-  background-color: var(--green);
-  opacity: 0.6;
 }
 
 /* --- Dropdown Menu --- */
@@ -249,22 +245,28 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .dropdown-menu {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
   position: absolute;
   top: 100%;
   left: 0;
   background: var(--white);
   min-width: 200px;
   border-radius: var(--radius-sm);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow);
   padding: 1rem 0;
   z-index: 1000;
   border: 1px solid rgba(0,0,0,0.05);
   margin-top: 10px;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
 }
 
-.nav-item-dropdown:hover .dropdown-menu {
-  display: block;
+.nav-item-dropdown:hover .dropdown-menu,
+.nav-item-dropdown.open .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .dropdown-item {
@@ -819,6 +821,63 @@ img { max-width: 100%; height: auto; display: block; }
 .form-input:focus { border-color: var(--green); background: white; box-shadow: 0 0 0 4px rgba(45,90,39,0.1); }
 .form-full { grid-column: span 2; }
 .form-submit { width: 100%; padding: 1.2rem; font-size: 1.1rem; margin-top: 1rem; justify-content: center; }
+
+/* ---------- GET INVOLVED CARDS ---------- */
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+}
+.action-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.action-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 5px;
+  background: var(--green);
+  opacity: 0.1;
+  transition: var(--transition);
+}
+.action-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(45,90,39,0.2);
+}
+.action-card:hover::before {
+  opacity: 1;
+}
+.action-icon {
+  font-size: 2.5rem;
+  color: var(--green);
+}
+.action-title {
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--dark);
+}
+.action-desc {
+  color: var(--text-light);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .action-grid { grid-template-columns: 1fr; }
+}
 
 /* ---------- RESPONSIVE ADJUSTMENTS ---------- */
 @media (max-width: 1300px) {

@@ -102,57 +102,73 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(impactSection);
   }
 
-  // ---- Smooth Scrolling & Active State ----
-  const links = document.querySelectorAll('.nav-link');
-  
-  links.forEach(link => {
+  // ---- ScrollSpy & Active State Logic ----
+  const navLinksList = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('section[id]');
+
+  const updateActiveState = () => {
+    const scrollPos = window.scrollY + 100;
+    const currentPath = window.location.pathname;
+    const isHome = currentPath === '/' || currentPath.endsWith('index.html') || currentPath === '';
+
+    // Handle Subpages (non-homepage)
+    if (!isHome) {
+      navLinksList.forEach(link => {
+        link.classList.remove('active');
+        const href = link.getAttribute('href');
+        if (href && currentPath.includes(href.replace('../', ''))) {
+          link.classList.add('active');
+        }
+      });
+      return;
+    }
+
+    // Handle Homepage ScrollSpy
+    let currentSectionId = 'home';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+        currentSectionId = section.getAttribute('id');
+      }
+    });
+
+    // Exception for FAQ/Footer area to keep FAQ active if at bottom
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+      currentSectionId = 'faq';
+    }
+
+    navLinksList.forEach(link => {
+      link.classList.remove('active');
+      const href = link.getAttribute('href');
+      if (href === `#${currentSectionId}`) {
+        link.classList.add('active');
+      }
+    });
+  };
+
+  // Click handler for smooth scroll and immediate active update
+  navLinksList.forEach(link => {
     link.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
       if (href && href.startsWith('#')) {
         e.preventDefault();
         const target = document.querySelector(href);
         if (target) {
-          links.forEach(l => l.classList.remove('active'));
-          this.classList.add('active');
           window.scrollTo({
             top: target.offsetTop - 80,
             behavior: 'smooth'
           });
+          // Update immediately on click
+          navLinksList.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
         }
       }
     });
   });
 
-  // Set initial active state based on current page/hash
-  const updateInitialActive = () => {
-    links.forEach(l => l.classList.remove('active'));
-    
-    // Check for hash first
-    if (window.location.hash) {
-      const activeLink = document.querySelector(`a[href="${window.location.hash}"]`);
-      if (activeLink) {
-        activeLink.classList.add('active');
-        return;
-      }
-    }
-
-    // Pathname check (for multi-page and home default)
-    const currentPath = window.location.pathname;
-    const isHome = currentPath === '/' || currentPath.endsWith('index.html') || currentPath === '';
-    
-    links.forEach(link => {
-      const href = link.getAttribute('href');
-      if (!href) return;
-
-      if (isHome && href === '#home') {
-        link.classList.add('active');
-      } else if (href !== '#' && href !== '#home' && currentPath.includes(href.replace('../', ''))) {
-        link.classList.add('active');
-      }
-    });
-  };
-
-  updateInitialActive();
+  window.addEventListener('scroll', updateActiveState);
+  updateActiveState(); // Run once on load
 
 
   // ---- FAQ Accordion Logic ----
@@ -170,6 +186,18 @@ document.addEventListener('DOMContentLoaded', () => {
       item.classList.toggle('active');
     });
   });
+
+  // ---- Floating Button Visibility Logic ----
+  const floatBtn = document.getElementById('floatBtn');
+  if (floatBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        floatBtn.classList.add('visible');
+      } else {
+        floatBtn.classList.remove('visible');
+      }
+    });
+  }
 });
 
 // ---- Newsletter Form Handler ----

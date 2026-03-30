@@ -45,84 +45,97 @@
       padding: 8rem 0;
     }
 
-    .pillars-intro {
-      text-align: center;
-      margin-bottom: 5rem;
-    }
-
-    .pillars-container {
+    .service-cards-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 4rem;
+      gap: 3rem;
+      margin-top: 2rem;
     }
 
-    .pillar-item h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1.5rem;
+    .service-card {
+      background: var(--white);
+      padding: 3.5rem 3rem;
+      border-radius: 24px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(0,0,0,0.03);
+      position: relative;
+    }
+
+    .service-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+      border-color: var(--green-pale);
+    }
+
+    .service-card .card-icon {
+      width: 70px;
+      height: 70px;
+      background: var(--green-pale);
       color: var(--green);
       display: flex;
       align-items: center;
-      gap: 1rem;
+      justify-content: center;
+      border-radius: 18px;
+      font-size: 2rem;
+      margin-bottom: 2.5rem;
+      transition: all 0.3s ease;
     }
-    .pillar-item p {
-      font-size: 1.05rem;
+
+    .service-card:hover .card-icon {
+      background: var(--green);
+      color: var(--white);
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .service-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: var(--dark);
+      font-family: var(--font-head);
+      font-weight: 800;
+    }
+
+    .service-card p {
+      font-size: 1.1rem;
       color: var(--text-light);
       line-height: 1.8;
+      margin-bottom: 2.5rem;
+      flex-grow: 1;
     }
 
-    .why-fruit-trees {
-      background: var(--bg-soft);
-      padding: 10rem 0;
-      text-align: center;
-    }
-    .why-content {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .why-content h2 {
-      font-size: 2.8rem;
-      margin-bottom: 2rem;
-      color: var(--dark);
-    }
-    .why-content p {
-      font-size: 1.4rem;
-      color: var(--text);
-      line-height: 1.6;
-      font-weight: 500;
-    }
-
-    .vision-final {
-      padding: 12rem 0;
-      text-align: center;
-      background: var(--white);
-    }
-    .vision-card-wide {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 4rem;
-      border-radius: var(--radius);
-      background: var(--white);
-      border: 1px solid rgba(0,0,0,0.05);
-      box-shadow: 0 10px 40px rgba(0,0,0,0.04);
-    }
-    .vision-card-wide i {
-      font-size: 3rem;
+    .learn-more {
+      font-weight: 800;
       color: var(--green);
-      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: all 0.3s ease;
     }
-    .vision-card-wide h2 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
+
+    .service-card:hover .learn-more {
+      gap: 1rem;
+      color: var(--gold);
     }
-    .vision-card-wide p {
-      font-size: 1.2rem;
-      color: var(--text-light);
-      line-height: 1.9;
+
+    @media (max-width: 1200px) {
+      .service-cards-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
     }
 
     @media (max-width: 992px) {
-      .pillars-container { grid-template-columns: 1fr; gap: 3rem; }
       .about-hero { padding: 12rem 0 8rem; }
+    }
+
+    @media (max-width: 768px) {
+      .service-cards-grid { grid-template-columns: 1fr; }
+      .service-card { padding: 3rem 2rem; }
     }
   </style>
 </head>
@@ -165,32 +178,35 @@
 <section class="about-section">
   <div class="container">
     <div class="pillars-intro reveal">
-      <div class="section-tag">Core Services</div>
+      <div class="section-tag">Core Initiatives</div>
       <h2 class="section-title">Bridging Nature, Health, and Wealth</h2>
-      <p style="max-width: 800px; margin: 2rem auto; font-size: 1.1rem; color: var(--text-light);">We believe that a truly sustainable world starts with healthy individuals who have the food they need and the knowledge to secure their future.</p>
+      <p style="max-width: 800px; margin: 2rem auto; font-size: 1.2rem; color: var(--text-light);">We believe that a truly sustainable world starts with healthy individuals who have the food they need and the knowledge to secure their future.</p>
     </div>
     
-    <div class="pillars-container">
-      <div class="pillar-item reveal">
-        <h3><i class="fas fa-leaf"></i> Tree Planting</h3>
-        <p><strong>Description:</strong> We plant fruit-bearing trees globally to create community orchards in public spaces.<br>
-        <strong>Impact:</strong> Provides free nutrition to people and wildlife while restoring local ecosystems.<br>
-        <strong>Why it matters:</strong> Combats climate change and hunger simultaneously, creating a greener, more edible world.</p>
-      </div>
+    <div class="service-cards-grid">
+      <!-- Tree Planting Card -->
+      <a href="tree-planting.html" class="service-card reveal">
+        <div class="card-icon"><i class="fas fa-leaf"></i></div>
+        <h3>Tree Planting</h3>
+        <p>We plant fruit-bearing trees in communities to restore ecosystems and create sustainable food sources for generations to come.</p>
+        <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+      </a>
       
-      <div class="pillar-item reveal delay-1">
-        <h3><i class="fas fa-heartpulse"></i> Wellness Coaching</h3>
-        <p><strong>Description:</strong> Holistic guidance focused on physical, mental, and emotional health.<br>
-        <strong>Impact:</strong> Empowers individuals to achieve lasting well-being through sustainable lifestyle changes.<br>
-        <strong>Why it matters:</strong> Builds resilient, healthy communities that are better equipped to face future challenges.</p>
-      </div>
+      <!-- Wellness Coaching Card -->
+      <a href="wellness-coaching.html" class="service-card reveal delay-1">
+        <div class="card-icon"><i class="fas fa-heartpulse"></i></div>
+        <h3>Wellness Coaching</h3>
+        <p>Programs focused on improving physical, mental, and emotional well-being through practical and healthy lifestyle practices.</p>
+        <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+      </a>
       
-      <div class="pillar-item reveal delay-2">
-        <h3><i class="fas fa-coins"></i> Wealth Coaching</h3>
-        <p><strong>Description:</strong> Financial literacy programs designed for long-term stability and empowerment.<br>
-        <strong>Impact:</strong> Provides the tools and awareness needed for financial independence.<br>
-        <strong>Why it matters:</strong> Fosters self-reliant societies and reduces economic inequality through education.</p>
-      </div>
+      <!-- Wealth Coaching Card -->
+      <a href="wealth-coaching.html" class="service-card reveal delay-2">
+        <div class="card-icon"><i class="fas fa-coins"></i></div>
+        <h3>Wealth Coaching</h3>
+        <p>Financial education that empowers individuals with practical knowledge about saving, investing, and entrepreneurship skills.</p>
+        <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+      </a>
     </div>
   </div>
 </section>

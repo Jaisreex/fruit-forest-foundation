@@ -49,12 +49,11 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 3rem;
-      margin-top: 2rem;
+      margin-top: 4rem;
     }
 
     .service-card {
       background: var(--white);
-      padding: 3.5rem 3rem;
       border-radius: 24px;
       box-shadow: 0 10px 40px rgba(0,0,0,0.04);
       transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -63,7 +62,7 @@
       display: flex;
       flex-direction: column;
       border: 1px solid rgba(0,0,0,0.03);
-      position: relative;
+      overflow: hidden;
     }
 
     .service-card:hover {
@@ -72,39 +71,61 @@
       border-color: var(--green-pale);
     }
 
-    .service-card .card-icon {
-      width: 70px;
-      height: 70px;
-      background: var(--green-pale);
-      color: var(--green);
+    .card-img-wrap {
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+
+    .service-card:hover .card-img-wrap img {
+      transform: scale(1.1);
+    }
+
+    .card-icon-badge {
+      position: absolute;
+      bottom: -30px;
+      right: 25px;
+      width: 60px;
+      height: 60px;
+      background: var(--green);
+      color: var(--white);
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 18px;
-      font-size: 2rem;
-      margin-bottom: 2.5rem;
-      transition: all 0.3s ease;
+      border-radius: 15px;
+      font-size: 1.5rem;
+      box-shadow: 0 8px 20px rgba(46, 125, 50, 0.3);
+      z-index: 2;
     }
 
-    .service-card:hover .card-icon {
-      background: var(--green);
-      color: var(--white);
-      transform: scale(1.1) rotate(5deg);
+    .card-body {
+      padding: 3rem 2.5rem 2.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
     }
 
     .service-card h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+      margin-bottom: 1.2rem;
       color: var(--dark);
       font-family: var(--font-head);
       font-weight: 800;
     }
 
     .service-card p {
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: var(--text-light);
-      line-height: 1.8;
-      margin-bottom: 2.5rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
       flex-grow: 1;
     }
 
@@ -114,7 +135,7 @@
       display: flex;
       align-items: center;
       gap: 0.6rem;
-      font-size: 1rem;
+      font-size: 0.9rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       transition: all 0.3s ease;
@@ -186,26 +207,41 @@
     <div class="service-cards-grid">
       <!-- Tree Planting Card -->
       <a href="tree-planting.html" class="service-card reveal">
-        <div class="card-icon"><i class="fas fa-leaf"></i></div>
-        <h3>Tree Planting</h3>
-        <p>We plant fruit-bearing trees in communities to restore ecosystems and create sustainable food sources for generations to come.</p>
-        <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+        <div class="card-img-wrap">
+          <img src="../assets/images/tree_planting_card.png" alt="Tree Planting Initiative" />
+          <div class="card-icon-badge"><i class="fas fa-leaf"></i></div>
+        </div>
+        <div class="card-body">
+          <h3>Tree Planting</h3>
+          <p>We plant fruit-bearing trees in communities to restore ecosystems and create sustainable food sources for generations to come.</p>
+          <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+        </div>
       </a>
       
-      <!-- Wellness Coaching Card -->
-      <a href="wellness-coaching.html" class="service-card reveal delay-1">
-        <div class="card-icon"><i class="fas fa-heartpulse"></i></div>
-        <h3>Wellness Coaching</h3>
-        <p>Programs focused on improving physical, mental, and emotional well-being through practical and healthy lifestyle practices.</p>
-        <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+      <!-- Health Coaching Card -->
+      <a href="health-coaching.html" class="service-card reveal delay-1">
+        <div class="card-img-wrap">
+          <img src="../assets/images/health_coaching_card.png" alt="Health Coaching Initiative" />
+          <div class="card-icon-badge"><i class="fas fa-heartpulse"></i></div>
+        </div>
+        <div class="card-body">
+          <h3>Health Coaching</h3>
+          <p>Programs focused on improving physical, mental, and emotional well-being through practical and healthy lifestyle practices.</p>
+          <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+        </div>
       </a>
       
       <!-- Wealth Coaching Card -->
       <a href="wealth-coaching.html" class="service-card reveal delay-2">
-        <div class="card-icon"><i class="fas fa-coins"></i></div>
-        <h3>Wealth Coaching</h3>
-        <p>Financial education that empowers individuals with practical knowledge about saving, investing, and entrepreneurship skills.</p>
-        <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+        <div class="card-img-wrap">
+          <img src="../assets/images/wealth_coaching_card.png" alt="Wealth Coaching Initiative" />
+          <div class="card-icon-badge"><i class="fas fa-coins"></i></div>
+        </div>
+        <div class="card-body">
+          <h3>Wealth Coaching</h3>
+          <p>Financial education that empowers individuals with practical knowledge about saving, investing, and entrepreneurship skills.</p>
+          <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+        </div>
       </a>
     </div>
   </div>

@@ -113,8 +113,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('section[id]');
 
   const updateActiveState = () => {
-    const scrollPos = window.scrollY + 100;
+    let scrollPos = window.scrollY + 100;
     const currentPath = window.location.pathname;
+    const currentHash = window.location.hash;
     const isHome = currentPath === '/' || currentPath.endsWith('index.html') || currentPath === '';
 
     // Handle Subpages (non-homepage)
@@ -138,6 +139,14 @@ document.addEventListener('DOMContentLoaded', () => {
         currentSectionId = section.getAttribute('id');
       }
     });
+
+    // If page just loaded and has a hash but hasn't fully scrolled, force the active state based on hash
+    if (window.scrollY < 50 && currentHash) {
+       const hashSection = currentHash.substring(1);
+       if (document.getElementById(hashSection)) {
+         currentSectionId = hashSection;
+       }
+    }
 
     // Exception for FAQ/Footer area to keep FAQ active if at bottom
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {

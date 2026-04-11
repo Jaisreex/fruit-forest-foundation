@@ -840,25 +840,20 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .join-hero {
   position: relative;
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 18rem 0 14rem;
+  padding: 18rem 0 12rem;
   text-align: center;
   background-image: url('../assets/images/volunteers_planting.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: var(--white);
-  overflow: hidden;
 }
 
 .join-hero::before {
   content: '';
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(45, 90, 39, 0.4) 100%);
+  background: rgba(0, 0, 0, 0.45); 
   z-index: 1;
 }
 

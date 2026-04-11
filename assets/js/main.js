@@ -190,19 +190,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---- FAQ Accordion Logic ----
   const faqItems = document.querySelectorAll('.faq-item');
-  faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    question.addEventListener('click', () => {
-      // Close other open items
-      faqItems.forEach(otherItem => {
-        if (otherItem !== item && otherItem.classList.contains('active')) {
-          otherItem.classList.remove('active');
-        }
-      });
-      // Toggle current
-      item.classList.toggle('active');
+  if (faqItems.length > 0) {
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      if (question) {
+        question.addEventListener('click', (e) => {
+          e.preventDefault();
+          const alreadyActive = item.classList.contains('active');
+          
+          // Close all FAQ items
+          faqItems.forEach(faq => faq.classList.remove('active'));
+          
+          // If the clicked item wasn't active, open it
+          if (!alreadyActive) {
+            item.classList.add('active');
+          }
+        });
+      }
     });
-  });
+  }
 
 
 });

@@ -840,7 +840,10 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .join-hero {
   position: relative;
-  padding: 18rem 0 12rem;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   background-image: url('../images/hopeful_nature.png');
   background-size: cover;

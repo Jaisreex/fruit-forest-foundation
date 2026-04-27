@@ -948,52 +948,6 @@ img { max-width: 100%; height: auto; display: block; }
   border: 1px solid rgba(255,255,255,0.3);
   margin-bottom: 2rem;
 }
-.join-hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-image: url('../images/hopeful_nature.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: var(--white);
-}
-
-.join-hero::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.45); 
-  z-index: 1;
-}
-
-.join-hero .container {
-  position: relative;
-  z-index: 2;
-}
-
-.join-hero h1 {
-  font-size: clamp(2.5rem, 8vw, 4.2rem);
-  color: var(--white);
-  margin-bottom: 2rem;
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.2;
-  font-weight: 800;
-  text-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-.join-hero p {
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 1.25rem;
-  line-height: 1.6;
-}
 
 
 
@@ -1224,6 +1178,61 @@ img { max-width: 100%; height: auto; display: block; }
   .hero-title { font-size: 2.2rem; }
   .logo-img-main { height: 100px; }
   .navbar.scrolled .logo-img-main { height: 60px; }
+}
+
+/* ---------- STANDARD HERO (USED ACROSS ALL PAGES) ---------- */
+.standard-hero {
+  position: relative;
+  padding: 10rem 0 7rem;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.standard-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.7) 100%);
+  z-index: 1;
+}
+
+.standard-hero .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.standard-hero h1, 
+.standard-hero .hero-title {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.1;
+  font-weight: 800;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.standard-hero p,
+.standard-hero .hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .standard-hero { padding: 8rem 0 5rem; min-height: 60vh; }
 }
 
 /* ---------- THE GROWING CRISIS SECTION ---------- */

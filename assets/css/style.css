@@ -16,6 +16,10 @@
   /* Typography */
   --font-head: 'Montserrat', sans-serif;
   --font-body: 'Open Sans', sans-serif;
+  --base-font-size: 1.05rem; /* Increased from default */
+  --h1-size: clamp(3rem, 10vw, 5.5rem);
+  --h2-size: clamp(2.2rem, 6vw, 3rem);
+  --h3-size: clamp(1.5rem, 4vw, 2rem);
   
   /* UI Elements */
   --shadow: 0 10px 30px rgba(0,0,0,0.08);
@@ -23,6 +27,7 @@
   --radius: 20px;
   --radius-sm: 12px;
   --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  --section-padding: 3.5rem 0; /* Reduced from 4rem/6rem */
 }
 
 .reveal { 
@@ -44,13 +49,17 @@
 html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
+  font-size: var(--base-font-size);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.7; /* Slightly increased for readability */
   background-color: var(--white);
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 800; line-height: 1.2; }
+h1 { font-size: var(--h1-size); }
+h2 { font-size: var(--h2-size); }
+h3 { font-size: var(--h3-size); }
+h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 800; line-height: 1.15; }
 a { text-decoration: none; color: inherit; transition: var(--transition); }
 button { font-family: inherit; }
 ul { list-style: none; }
@@ -94,9 +103,9 @@ img { max-width: 100%; height: auto; display: block; }
 .text-green { color: var(--green); }
 .text-gold { color: var(--gold-dark); }
 .section-tag { display: inline-block; padding: .4rem 1.2rem; background: var(--green-pale); color: var(--green); border-radius: 50px; font-weight: 800; font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 1rem; }
-.section-title { font-size: clamp(2rem, 5vw, 2.5rem); margin-bottom: 1.2rem; color: var(--dark); }
-.section-subtitle { font-size: 1.05rem; color: var(--text-light); max-width: 600px; margin: 0 auto; }
-.section-header { text-align: center; margin-bottom: 3.5rem; }
+.section-title { margin-bottom: 1rem; color: var(--dark); }
+.section-subtitle { font-size: 1.15rem; color: var(--text-light); max-width: 700px; margin: 0 auto; line-height: 1.6; }
+.section-header { text-align: center; margin-bottom: 2.5rem; }
 
 /* ---------- NAVBAR (LOGO LEFT & MENU RIGHT) ---------- */
 .navbar {
@@ -601,19 +610,19 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* ---------- VISION & MISSION ---------- */
 .vision-mission {
-  padding: 4rem 0;
+  padding: var(--section-padding);
   background: var(--white);
 }
 
 .vision-mission-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 3rem;
 }
 
 .vision-card, .mission-card {
   background: var(--white);
-  padding: 5rem 4rem; 
+  padding: 3.5rem 3rem; 
   border-radius: var(--radius);
   text-align: center;
   transition: var(--transition);
@@ -663,8 +672,8 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* ---------- STORY SECTION ---------- */
-.story-section { padding: 4rem 0; overflow: hidden; }
-.story-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 6rem; align-items: center; }
+.story-section { padding: var(--section-padding); overflow: hidden; }
+.story-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 4rem; align-items: center; }
 .story-image-wrap { position: relative; }
 .story-img { border-radius: var(--radius); box-shadow: var(--shadow-lg); transition: var(--transition); }
 .story-badge-float {
@@ -682,13 +691,13 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* ---------- PILLARS SECTION ---------- */
 .pillars-section { 
-  padding: 4rem 0; 
+  padding: var(--section-padding); 
   background: linear-gradient(180deg, var(--white) 0%, var(--bg-soft) 100%);
 }
 .pillars-grid { 
   display: grid; 
-  grid-template-columns: repeat(2, 1fr); /* 2-column layout for wider cards */
-  gap: 4rem; /* More spacious gap to match request */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
 }
 .pillar-card {
   background: var(--white);
@@ -728,7 +737,7 @@ img { max-width: 100%; height: auto; display: block; }
 .pillar-card-featured::before { content: 'Most Impactful'; position: absolute; top: 1.5rem; right: 1.5rem; background: var(--green); color: var(--white); padding: .3rem .9rem; border-radius: 50px; font-size: .7rem; font-weight: 800; text-transform: uppercase; z-index: 5; }
 
 /* ---------- IMPACT MAP ---------- */
-.map-section { padding: 4rem 0; }
+.map-section { padding: var(--section-padding); }
 .map-counter-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-bottom: 4rem; text-align: center; }
 .map-counter { display: flex; flex-direction: column; gap: .5rem; border-right: 1px solid rgba(0,0,0,0.05); }
 .map-counter:last-child { border-right: none; }
@@ -741,8 +750,8 @@ img { max-width: 100%; height: auto; display: block; }
 .map-pin-info i { color: var(--green); }
 
 /* ---------- WHY SECTION ---------- */
-.why-section { padding: 4rem 0; background: var(--bg-soft); }
-.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: stretch; }
+.why-section { padding: var(--section-padding); background: var(--bg-soft); }
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: stretch; }
 .why-stats { display: flex; flex-direction: column; gap: 2rem; }
 .stat-card {
   background: var(--white); padding: 2.5rem; border-radius: var(--radius);
@@ -767,7 +776,7 @@ img { max-width: 100%; height: auto; display: block; }
 .solution-item p { color: var(--text-light); }
 
 /* ---------- GALLERY SECTION ---------- */
-.gallery-section { padding: 4rem 0; }
+.gallery-section { padding: var(--section-padding); }
 .gallery-masonry { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .gallery-item { position: relative; border-radius: var(--radius); overflow: hidden; cursor: pointer; }
 .gallery-item img { height: 100%; width: 100%; object-fit: cover; transition: var(--transition); }
@@ -782,17 +791,17 @@ img { max-width: 100%; height: auto; display: block; }
 .gallery-overlay span { color: var(--white); font-family: var(--font-head); font-weight: 700; font-size: 1.1rem; }
 
 /* ---------- GET INVOLVED ---------- */
-.involve-section { padding: 4rem 0; background: #ffffff; color: var(--text); }
+.involve-section { padding: var(--section-padding); background: #ffffff; color: var(--text); }
 .involve-section .section-title { color: var(--dark); }
 .involve-grid { 
   display: grid; 
-  grid-template-columns: repeat(2, 1fr); /* 2x2 layout is more spacious */
-  gap: 4rem; 
-  margin-top: 4rem; 
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem; 
+  margin-top: 3rem; 
 }
 .involve-card {
   background: var(--white); 
-  padding: 5rem 4rem; 
+  padding: 3.5rem 3rem; 
   border-radius: var(--radius);
   text-align: center; 
   border: 1px solid rgba(0, 0, 0, 0.05); 
@@ -817,7 +826,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* ---------- NEWSLETTER ---------- */
 .newsletter-section { padding: 4rem 0; background: #ffffff; }
 .newsletter-box {
-  background: var(--green); border-radius: 32px; padding: 5rem 2rem;
+  background: var(--green); border-radius: 32px; padding: 4rem 2rem;
   text-align: center; color: var(--white); position: relative; overflow: hidden;
 }
 .newsletter-box::before { content: ''; position: absolute; top: -100px; left: -100px; width: 300px; height: 300px; background: rgba(255,255,255,0.05); border-radius: 50%; }
@@ -839,7 +848,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* ---------- FOOTER ---------- */
 .footer { background: var(--bg-soft); color: var(--text); border-top: 1px solid rgba(0,0,0,0.05); }
-.footer-top { padding: 7rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+.footer-top { padding: 5rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
 .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5.5rem; }
 .footer-logo { display: flex; align-items: center; gap: .75rem; margin-bottom: 2.5rem; }
 .footer-logo img { height: 120px; width: auto; max-width: 400px; }
@@ -903,7 +912,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* ---------- FORM PAGES ---------- */
 .page-header {
-  padding: 15rem 0 8rem; 
+  padding: 10rem 0 6rem; 
   background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
   text-align: center;
   color: var(--white);

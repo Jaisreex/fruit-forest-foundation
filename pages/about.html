@@ -11,7 +11,7 @@
   <style>
     .about-hero {
       position: relative;
-      padding: 18rem 0 12rem;
+      padding: 12rem 0 8rem;
       text-align: center;
       background-image: url('../assets/images/about_hero_nature.png'); /* Fallback name, I will use the actual path if I can, but I'll use a placeholder for now and I'll copy the file in a separate step if needed */
       background-size: cover;
@@ -42,14 +42,14 @@
     }
 
     .about-section {
-      padding: 8rem 0;
+      padding: var(--section-padding);
     }
 
     .service-cards-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 3rem;
-      margin-top: 4rem;
+      gap: 2rem;
+      margin-top: 3rem;
     }
 
     .service-card {
@@ -149,7 +149,7 @@
 
     .content-wide {
       max-width: 900px;
-      margin: 8rem auto;
+      margin: 5rem auto;
       text-align: center;
     }
 
@@ -158,9 +158,9 @@
     
     .vision-accent-box {
       background: var(--bg-soft);
-      padding: 6rem 4rem;
+      padding: 4rem 3rem;
       border-radius: 30px;
-      margin-top: 6rem;
+      margin-top: 4rem;
     }
 
     .vision-quote {

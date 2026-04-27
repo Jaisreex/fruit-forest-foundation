@@ -1243,43 +1243,131 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* ---------- OUR MISSION SECTION ---------- */
 .mission-intro-section {
-  padding: 8rem 0;
-  background: var(--white);
-  text-align: center;
+  padding: 6rem 0;
+  background: linear-gradient(180deg, var(--white) 0%, var(--bg-soft) 100%);
+  position: relative;
+}
+
+.mission-icon {
+  font-size: 2.2rem;
+  color: var(--green);
+  margin-bottom: 1.2rem;
+  opacity: 0.9;
+  animation: leaf-float 3s ease-in-out infinite;
+}
+
+@keyframes leaf-float {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-5px) rotate(5deg); }
 }
 
 .mission-container {
-  max-width: 900px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
+.mission-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.mission-text-side {
+  text-align: left;
+}
+
+.mission-content {
+  max-width: 100%;
+}
+
+.mission-image-side {
+  position: relative;
+  z-index: 1;
+}
+
+.mission-img-modern {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  transition: var(--transition);
+  display: block;
+}
+
+.mission-img-modern:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 60px rgba(45, 90, 39, 0.15);
+}
+
 .mission-intro-section h2 {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 800;
+  font-size: clamp(2.8rem, 6vw, 4rem); /* Slightly larger */
+  font-weight: 900;
   color: var(--dark);
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
   font-family: var(--font-head);
+  letter-spacing: -0.01em; /* Subtle letter spacing */
+  text-transform: capitalize;
+  line-height: 1.1;
 }
 
 .mission-intro-section p {
-  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
-  color: var(--text-light);
-  line-height: 1.8;
-  margin-bottom: 2rem;
+  font-size: clamp(1.15rem, 1.3vw, 1.25rem); /* Increased paragraph font size */
+  color: var(--text);
+  line-height: 1.75; /* Proper line height (1.6-1.8) */
+  margin-bottom: 1rem; /* Reduced spacing between paragraphs */
+}
+
+.mission-intro-line {
+  font-weight: 700;
+  color: var(--green-dark);
+  font-size: 1.35rem !important;
+  margin-bottom: 1.8rem !important;
+  display: block;
 }
 
 .mission-highlight {
-  font-size: clamp(1.4rem, 2vw, 1.8rem);
-  font-weight: 700;
-  color: var(--green);
-  margin-top: 3.5rem;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem); /* Bigger than body text */
+  font-weight: 900; /* Bold */
+  color: var(--green); /* Accent color */
+  margin-top: 4rem; /* Spacing above */
   font-family: var(--font-head);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
 }
 
-@media (max-width: 768px) {
-  .mission-intro-section { padding: 6rem 0; }
-  .mission-highlight { margin-top: 2.5rem; }
+@media (max-width: 1024px) {
+  .mission-grid {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .mission-intro-section {
+    text-align: center;
+  }
+  
+  .mission-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  
+  .mission-text-side {
+    text-align: center;
+  }
+  
+  .mission-icon {
+    margin: 0 auto 1.2rem;
+  }
+  
+  .mission-image-side {
+    order: 2; /* Image below text on mobile */
+  }
+  
+  .mission-highlight {
+    margin-top: 2.5rem;
+  }
 }
 
 /* ---------- THE GROWING CRISIS SECTION ---------- */

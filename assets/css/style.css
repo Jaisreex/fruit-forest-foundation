@@ -146,6 +146,23 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .navbar.scrolled .logo-img-main { height: 80px; }
 
+/* Hidden until logo-bar scrolls out of view (home page only) */
+.logo-hidden {
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.logo-visible {
+  opacity: 1;
+  pointer-events: auto;
+  width: auto;
+  height: 120px;
+  overflow: visible;
+}
+.navbar.scrolled .logo-visible { height: 80px; }
+
 .nav-tagline {
   font-family: var(--font-body);
   font-size: 0.85rem;
@@ -1270,7 +1287,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .logo-bar-img {
-  height: 110px;
+  height: 130px;
   width: auto;
   display: block;
   background: transparent;

@@ -10,6 +10,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // ---- Show/Hide Navbar Logo Based on Logo Bar Visibility ----
+  const logoBar = document.getElementById('logo-bar');
+  const navbarLogo = document.getElementById('navbar-logo');
+
+  if (logoBar && navbarLogo) {
+    const logoBarObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Logo bar is visible — hide the navbar logo
+          navbarLogo.classList.add('logo-hidden');
+          navbarLogo.classList.remove('logo-visible');
+        } else {
+          // Logo bar scrolled away — show the navbar logo
+          navbarLogo.classList.remove('logo-hidden');
+          navbarLogo.classList.add('logo-visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    logoBarObserver.observe(logoBar);
+  }
+
   // ---- Reveal Animation ----
   const reveals = document.querySelectorAll('.reveal');
   const revealObserver = new IntersectionObserver((entries) => {

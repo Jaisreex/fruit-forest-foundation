@@ -136,7 +136,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .logo-img-main {
-  height: 160px;
+  height: 250px;
   width: auto;
   object-fit: contain;
   background: transparent;
@@ -144,7 +144,7 @@ img { max-width: 100%; height: auto; display: block; }
   image-rendering: -webkit-optimize-contrast;
   transition: var(--transition);
 }
-.navbar.scrolled .logo-img-main { height: 100px; }
+.navbar.scrolled .logo-img-main { height: 120px; }
 
 
 

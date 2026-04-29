@@ -2386,7 +2386,9 @@ img {
 
 /* ---------- STANDARD HERO (USED ACROSS ALL PAGES) ---------- */
 
-.standard-hero {
+.standard-hero,
+.detail-hero,
+.page-header {
   position: relative;
   padding: 9rem 0 7rem;
   text-align: center;
@@ -2400,11 +2402,15 @@ img {
   overflow: hidden;
 }
 
-.standard-hero.full-screen {
+.standard-hero.full-screen,
+.detail-hero.full-screen,
+.page-header.full-screen {
   min-height: 100vh;
 }
 
-.standard-hero::before {
+.standard-hero::before,
+.detail-hero::before,
+.page-header::before {
   content: "";
   position: absolute;
   top: 0;

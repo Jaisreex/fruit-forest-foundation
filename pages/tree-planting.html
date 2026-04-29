@@ -9,15 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    .detail-hero {
-      padding: 18rem 0 10rem;
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../assets/images/tree_planting_card.png');
-      background-size: cover;
-      background-position: center;
-      text-align: center;
-      color: white;
-    }
-    .detail-hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; margin-bottom: 2rem; }
     .content-section { padding: 8rem 0; line-height: 1.8; color: var(--text-light); }
     .content-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 6rem; align-items: start; }
     .content-text h2 { color: var(--dark); font-size: 2.5rem; margin-bottom: 2.5rem; }
@@ -51,13 +42,16 @@
       </div>
     </div>
 </nav>
-  
 
-
-<header class="detail-hero">
-  <div class="container">
+<header class="detail-hero full-screen" style="background-image: url('../assets/images/tree_planting_card.png');">
+  <div class="container reveal">
     <div class="section-tag" style="background: var(--gold); color: var(--dark); border:none;">Primary Program</div>
     <h1>Tree Planting Initiative</h1>
+  </div>
+  <div class="scroll-indicator">
+    <p>Scroll Down</p>
+    <div class="mouse"></div>
+    <i class="fas fa-chevron-down"></i>
   </div>
 </header>
 

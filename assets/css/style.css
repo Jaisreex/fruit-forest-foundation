@@ -1033,18 +1033,6 @@ img {
   gap: 1.5rem;
 }
 
-.solution-card::before {
-  content: "";
-  position: absolute;
-  top: 2.5rem; /* Aligned with new padding */
-  left: 0;
-  width: 5px;
-  height: 64px; /* Matches new icon box height */
-  background: var(--green);
-  border-radius: 0 4px 4px 0;
-  transition: var(--transition);
-}
-
 .solution-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 25px 60px rgba(45, 90, 39, 0.1);
@@ -1129,10 +1117,6 @@ img {
   .solution-card {
     flex-direction: column; /* Stack on mobile */
     gap: 1rem;
-  }
-  
-  .solution-card::before {
-    height: 40px; /* Smaller line for stacked view */
   }
 }
 

@@ -336,7 +336,7 @@ img {
 
 .nav-link {
   font-family: var(--font-body);
-  font-weight: 700;
+  font-weight: 800;
   font-size: 0.95rem;
   color: var(--text);
   transition: color 0.3s ease;

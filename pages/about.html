@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | Fruit Forest Foundation</title>
   <link rel="icon" href="../assets/favicon.svg" />
   <link rel="stylesheet" href="../assets/css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     .about-section {
@@ -23,19 +26,19 @@
     .service-card {
       background: var(--white);
       border-radius: 24px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
       transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
       text-decoration: none;
       color: inherit;
       display: flex;
       flex-direction: column;
-      border: 1px solid rgba(0,0,0,0.03);
+      border: 1px solid rgba(0, 0, 0, 0.03);
       position: relative;
     }
 
     .service-card:hover {
       transform: translateY(-12px);
-      box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
       border-color: var(--green-pale);
     }
 
@@ -121,9 +124,19 @@
       text-align: center;
     }
 
-    .diff-heading { font-size: 2.8rem; color: var(--dark); margin-bottom: 2rem; }
-    .diff-text { font-size: 1.15rem; color: var(--text-light); line-height: 1.8; margin-bottom: 2rem; }
-    
+    .diff-heading {
+      font-size: 2.8rem;
+      color: var(--dark);
+      margin-bottom: 2rem;
+    }
+
+    .diff-text {
+      font-size: 1.15rem;
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
     .vision-accent-box {
       background: var(--bg-soft);
       padding: 4rem 3rem;
@@ -141,22 +154,33 @@
     }
 
     @media (max-width: 1200px) {
-      .service-cards-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+      .service-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
     }
 
     @media (max-width: 992px) {
-      .about-hero { padding: 12rem 0 8rem; }
+      .about-hero {
+        padding: 12rem 0 8rem;
+      }
     }
 
     @media (max-width: 768px) {
-      .service-cards-grid { grid-template-columns: 1fr; }
-      .service-card { padding: 3rem 2rem; }
+      .service-cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        padding: 3rem 2rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<nav class="navbar" id="navbar">
+  <nav class="navbar" id="navbar">
     <div class="nav-container">
       <!-- Logo Left -->
       <a href="../index.html" class="nav-brand">
@@ -181,96 +205,114 @@
         </button>
       </div>
     </div>
-</nav>
-  
+  </nav>
+
 
 
   <section class="standard-hero full-screen" style="background-image: url('../assets/images/about_hero_nature.png');">
     <div class="container reveal">
-      <div class="section-tag" style="background: var(--gold); color: var(--green-dark); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; display: inline-block; margin-bottom: 1.5rem;">Our Purpose</div>
-      <h1 class="hero-title">We are working towards building a better world through environmental sustainability, personal well-being, and financial awareness.</h1>
+      <div class="section-tag"
+        style="background: var(--gold); color: var(--green-dark); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; display: inline-block; margin-bottom: 1.5rem;">
+        Our Purpose</div>
+      <h1 class="hero-title">We are working towards building a better world through environmental sustainability,
+        personal well-being, and financial awareness.</h1>
     </div>
   </section>
 
-<section class="about-section">
-  <div class="container">
-    <div class="pillars-intro reveal">
-      <div class="section-tag">Core Initiatives</div>
-      <h2 class="section-title">Bridging Nature, Health, and Wealth</h2>
-      <p style="max-width: 800px; margin: 2rem auto; font-size: 1.2rem; color: var(--text-light);">We believe that a truly sustainable world starts with healthy individuals who have the food they need and the knowledge to secure their future.</p>
-    </div>
-    
-    <div class="service-cards-grid">
-      <!-- Tree Planting Card -->
-      <a href="tree-planting.html" class="service-card reveal">
-        <div class="card-img-wrap">
-          <img src="../assets/images/tree_planting_card.png" alt="Tree Planting Initiative" />
-          <div class="card-icon-badge"><i class="fas fa-leaf"></i></div>
-        </div>
-        <div class="card-body">
-          <h3>Tree Planting</h3>
-          <p>We plant fruit-bearing trees in communities to restore ecosystems and create sustainable food sources for generations to come.</p>
-          <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
-        </div>
-      </a>
-      
-      <!-- Wellness Coaching Card -->
-      <a href="wellness-coaching.html" class="service-card reveal delay-1">
-        <div class="card-img-wrap">
-          <img src="../assets/images/health_coaching_card.png" alt="Wellness Coaching Initiative" />
-          <div class="card-icon-badge"><i class="fas fa-hand-holding-heart"></i></div>
-        </div>
-        <div class="card-body">
-          <h3>Wellness Coaching</h3>
-          <p>Programs focused on improving physical, mental, and emotional well-being through practical and healthy lifestyle practices.</p>
-          <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
-        </div>
-      </a>
-      
-      <!-- Wealth Coaching Card -->
-      <a href="wealth-coaching.html" class="service-card reveal delay-2">
-        <div class="card-img-wrap">
-          <img src="../assets/images/wealth_coaching_card.png" alt="Wealth Coaching Initiative" />
-          <div class="card-icon-badge"><i class="fas fa-coins"></i></div>
-        </div>
-        <div class="card-body">
-          <h3>Wealth Coaching</h3>
-          <p>Financial education that empowers individuals with practical knowledge about saving, investing, and entrepreneurship skills.</p>
-          <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
-        </div>
-      </a>
-    </div>
-    <div class="content-wide reveal">
-      <div class="section-tag" style="background: var(--green-pale); color: var(--green); border:none;">OUR CORE DIFFERENCE</div>
-      <h2 class="diff-heading">What Makes Us Different</h2>
-      <div class="diff-text">
-        <p>At Fruit Forest Foundation, we go beyond traditional environmental and social initiatives. Our work is built on the belief that true sustainability happens when nature, health, and human potential grow together.</p>
-        <p>We don’t simply plant trees — we plant fruit-bearing trees that nourish communities, support biodiversity, and create long-term ecological balance. At the same time, we empower people through health and wellness coaching, helping individuals build healthier lifestyles and stronger communities.</p>
-        <p>By combining environmental action with human well-being, we aim to create a future where people and nature thrive together.</p>
-      </div>
-    </div>
-
-    <!-- Final Vision Block -->
-    <div class="vision-accent-box reveal">
-      <div class="section-tag">FINAL VISION</div>
-      <h2 class="diff-heading">Our Commitment to the Future</h2>
-      
-      <p class="vision-quote">
-        "Building a better future for people and the planet — one tree, one healthy life, and one empowered community at a time."
-      </p>
-
-      <div class="diff-text" style="margin-bottom: 3rem;">
-        <p>Our vision is a world where every community has access to sustainable food sources, improved well-being, and the knowledge needed to live healthy and meaningful lives.</p>
-        <p>Through tree plantation, wellness programs, and health education, we strive to create lasting change that benefits both present and future generations.</p>
-        <p>We invite individuals, communities, and organizations to join us in building a future where nature is protected, people are healthy, and communities are empowered.</p>
+  <section class="about-section">
+    <div class="container">
+      <div class="pillars-intro reveal">
+        <div class="section-tag">Core Initiatives</div>
+        <h2 class="section-title">Bridging Nature, Health, and Wealth</h2>
+        <p style="max-width: 800px; margin: 2rem auto; font-size: 1.2rem; color: var(--text-light);">We believe that a
+          truly sustainable world starts with healthy individuals who have the food they need and the knowledge to
+          secure their future.</p>
       </div>
 
-      <a href="join.html" class="btn-primary">Join the Movement</a>
-    </div>
-  </div>
-</section>
+      <div class="service-cards-grid">
+        <!-- Fruit plantation card -->
+        <a href="fruit tree plantation.html" class="service-card reveal">
+          <div class="card-img-wrap">
+            <img src="../assets/images/tree_planting_card.png" alt="Fruit Tree Drive" />
+            <div class="card-icon-badge"><i class="fas fa-leaf"></i></div>
+          </div>
+          <div class="card-body">
+            <h3>Fruit Tree Plantation </h3>
+            <p>We plant fruit-bearing trees in communities to restore ecosystems and create sustainable food sources for
+              generations to come.</p>
+            <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
 
-<footer class="footer" id="footer">
+        <!-- Wellness Coaching Card -->
+        <a href="wellness-coaching.html" class="service-card reveal delay-1">
+          <div class="card-img-wrap">
+            <img src="../assets/images/health_coaching_card.png" alt="Wellness Coaching Initiative" />
+            <div class="card-icon-badge"><i class="fas fa-hand-holding-heart"></i></div>
+          </div>
+          <div class="card-body">
+            <h3>Wellness Coaching</h3>
+            <p>Programs focused on improving physical, mental, and emotional well-being through practical and healthy
+              lifestyle practices.</p>
+            <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+        <!-- Wealth Coaching Card -->
+        <a href="wealth-coaching.html" class="service-card reveal delay-2">
+          <div class="card-img-wrap">
+            <img src="../assets/images/wealth_coaching_card.png" alt="Wealth Coaching Initiative" />
+            <div class="card-icon-badge"><i class="fas fa-coins"></i></div>
+          </div>
+          <div class="card-body">
+            <h3>Wealth Coaching</h3>
+            <p>Financial education that empowers individuals with practical knowledge about saving, investing, and
+              entrepreneurship skills.</p>
+            <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+      </div>
+      <div class="content-wide reveal">
+        <div class="section-tag" style="background: var(--green-pale); color: var(--green); border:none;">OUR CORE
+          DIFFERENCE</div>
+        <h2 class="diff-heading">What Makes Us Different</h2>
+        <div class="diff-text">
+          <p>At Fruit Forest Foundation, we go beyond traditional environmental and social initiatives. Our work is
+            built on the belief that true sustainability happens when nature, health, and human potential grow together.
+          </p>
+          <p>We don’t simply plant trees — we plant fruit-bearing trees that nourish communities, support biodiversity,
+            and create long-term ecological balance. At the same time, we empower people through health and wellness
+            coaching, helping individuals build healthier lifestyles and stronger communities.</p>
+          <p>By combining environmental action with human well-being, we aim to create a future where people and nature
+            thrive together.</p>
+        </div>
+      </div>
+
+      <!-- Final Vision Block -->
+      <div class="vision-accent-box reveal">
+        <div class="section-tag">FINAL VISION</div>
+        <h2 class="diff-heading">Our Commitment to the Future</h2>
+
+        <p class="vision-quote">
+          "Building a better future for people and the planet — one tree, one healthy life, and one empowered community
+          at a time."
+        </p>
+
+        <div class="diff-text" style="margin-bottom: 3rem;">
+          <p>Our vision is a world where every community has access to sustainable food sources, improved well-being,
+            and the knowledge needed to live healthy and meaningful lives.</p>
+          <p>Through tree plantation, wellness programs, and health education, we strive to create lasting change that
+            benefits both present and future generations.</p>
+          <p>We invite individuals, communities, and organizations to join us in building a future where nature is
+            protected, people are healthy, and communities are empowered.</p>
+        </div>
+
+        <a href="join.html" class="btn-primary">Join the Movement</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="footer">
     <div class="footer-top">
       <div class="container footer-grid">
         <div class="footer-brand">
@@ -328,22 +370,23 @@
     </div>
   </footer>
 
-<script src="../assets/js/main.js"></script>
-<script>
-  const revealElements = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-      }
-    });
-  }, { threshold: 0.1 });
-  revealElements.forEach(el => observer.observe(el));
-</script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => observer.observe(el));
+  </script>
   <!-- ===== FLOATING PLANT A TREE BUTTON ===== -->
   <button class="float-btn" onclick="window.location.href='donate.html'">
     <span>🌱 Plant a Tree</span>
   </button>
 
 </body>
+
 </html>

@@ -298,12 +298,12 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 200px;
+  height: 180px; /* Reduced from 200px to eliminate extra vertical whitespace */
   transition: height 0.35s ease, padding 0.35s ease;
 }
 
 .navbar.scrolled .nav-container {
-  height: 130px;
+  height: 110px; /* Match scrolled logo height */
 }
 
 .nav-brand {

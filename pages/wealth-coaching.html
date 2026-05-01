@@ -9,26 +9,60 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    /* Old Layout Structure */
-    .content-section { padding: 8rem 0; line-height: 1.8; color: var(--text-light); }
-    .content-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 6rem; align-items: start; }
-    .content-text h2 { color: var(--dark); font-size: 2.8rem; margin-bottom: 2.5rem; font-weight: 800; }
-    .content-text p { margin-bottom: 2rem; font-size: 1.15rem; }
+    /* Full Width Centered Layout */
+    .content-section { padding: 10rem 0; line-height: 1.8; color: var(--text-light); }
+    .content-wrapper { max-width: 900px; margin: 0 auto; text-align: center; }
     
-    .sidebar-card { background: var(--bg-soft); padding: 3rem; border-radius: 30px; position: sticky; top: 120px; box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.02); }
-    .sidebar-card h3 { font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--green-dark); font-weight: 800; }
+    .content-wrapper h2 { color: var(--dark); font-size: 3rem; margin-bottom: 2.5rem; font-weight: 900; }
+    .content-wrapper p { margin-bottom: 2rem; font-size: 1.25rem; line-height: 1.9; }
     
-    /* Legacy Content Reference Styling */
-    .legacy-reference { margin-top: 10rem; padding: 6rem 0; background: var(--bg-soft); border-top: 1px solid rgba(0,0,0,0.05); }
-    .reference-box { background: var(--white); padding: 4rem; border-radius: 30px; border-left: 8px solid var(--gold); }
-    .reference-box h4 { margin-bottom: 2rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; }
+    /* Wealth Grid */
+    .wealth-grid { 
+        display: grid; 
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 2.5rem; 
+        margin: 5rem 0;
+        text-align: left;
+    }
+    .wealth-card { 
+        background: var(--white); 
+        padding: 3rem; 
+        border-radius: 35px; 
+        box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+        border: 1px solid rgba(0,0,0,0.01);
+        transition: transform 0.3s ease;
+    }
+    .wealth-card:hover { transform: translateY(-10px); }
+    .wealth-card i { font-size: 2.5rem; color: var(--green); margin-bottom: 1.5rem; display: block; }
+    .wealth-card h3 { font-size: 1.4rem; margin-bottom: 1rem; color: var(--green-dark); font-weight: 800; }
+    .wealth-card p { font-size: 1rem; line-height: 1.7; margin-bottom: 0; }
 
-    .impact-list { list-style: none; margin-top: 3rem; }
-    .impact-list li { margin-bottom: 1.5rem; display: flex; gap: 1rem; align-items: flex-start; }
-    .impact-list i { color: var(--green); margin-top: 0.3rem; }
+    /* Highlight Sections */
+    .quote-box { 
+        background: var(--green-pale); 
+        padding: 6rem; 
+        border-radius: 40px; 
+        margin: 6rem 0;
+        border-left: 10px solid var(--green);
+    }
+    .cta-accent { 
+        background: var(--dark);
+        color: var(--white); 
+        padding: 8rem 4rem; 
+        border-radius: 40px;
+        margin-top: 8rem;
+    }
+    .cta-accent h2, .cta-accent p { color: var(--white); }
+
+    /* Legacy Reference */
+    .legacy-reference { margin-top: 10rem; padding: 6rem 0; background: var(--bg-soft); border-top: 1px solid rgba(0,0,0,0.05); text-align: left; }
+    .reference-box { background: var(--white); padding: 4rem; border-radius: 30px; border-left: 8px solid var(--gold); }
+    .reference-box h4 { margin-bottom: 2rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; }
 
     @media (max-width: 992px) { 
-        .content-grid { grid-template-columns: 1fr; gap: 4rem; } 
+        .wealth-grid { grid-template-columns: 1fr; }
+        .content-section { padding: 6rem 0; }
+        .quote-box { padding: 3rem; }
     }
   </style>
 </head>
@@ -56,33 +90,49 @@
   </div>
 </nav>
 
-<header class="consistent-hero" style="background-image: url('../assets/images/wealth_coaching_card.png'); min-height: 80vh; display: flex; align-items: center; width: 100%;">
+<header class="consistent-hero" style="background-image: url('../assets/images/wealth_coaching_card.png');">
   <div class="container reveal">
     <div class="section-tag" style="background: var(--gold); color: var(--dark); border:none;">Financial Literacy</div>
-    <h1 style="font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; max-width: 1000px;">Wealth Coaching</h1>
+    <h1>Wealth Coaching</h1>
   </div>
 </header>
 
 <main class="content-section">
-  <div class="container content-grid">
-    <div class="content-text reveal">
+  <div class="container">
+    <div class="content-wrapper reveal">
       <h2>Building Financially Resilient Societies</h2>
-      <p>True empowerment begins with knowledge. Our wealth coaching program provides the essential tools for financial independence and long-term security. We focus on teaching the fundamentals of sustainable wealth creation, helping individuals grow alongside the trees we plant.</p>
+      <p>True empowerment begins with knowledge. Our wealth coaching program provides the essential tools for financial independence and long-term security. We focus on teaching the fundamentals of sustainable wealth creation.</p>
       
-      <p>We provide workshops and personal mentorship on budgeting, saving, ethical investing, and entrepreneurship. This program aims to reduce economic inequality and foster a society where prosperity is accessible to everyone.</p>
-      
-      <ul class="impact-list">
-        <li><i class="fas fa-check-circle"></i> <div><strong>Financial Literacy:</strong> Teaching budgeting, saving, and ethical investing.</div></li>
-        <li><i class="fas fa-check-circle"></i> <div><strong>Entrepreneurship:</strong> Empowering individuals to build sustainable businesses.</div></li>
-        <li><i class="fas fa-check-circle"></i> <div><strong>Economic Resilience:</strong> Reducing inequality and fostering accessible prosperity for all.</div></li>
-      </ul>
+      <div class="wealth-grid">
+        <div class="wealth-card reveal">
+          <i class="fas fa-chart-line"></i>
+          <h3>Financial Literacy</h3>
+          <p>Teaching budgeting, saving, and ethical investing to build a solid financial foundation.</p>
+        </div>
+        <div class="wealth-card reveal delay-1">
+          <i class="fas fa-rocket"></i>
+          <h3>Entrepreneurship</h3>
+          <p>Empowering individuals to build sustainable businesses that grow alongside our forests.</p>
+        </div>
+        <div class="wealth-card reveal delay-2">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Economic Resilience</h3>
+          <p>Reducing inequality and fostering accessible prosperity for all members of the community.</p>
+        </div>
+      </div>
+
+      <div class="quote-box reveal">
+        <p style="font-size: 1.5rem; color: var(--green-dark); font-weight: 700; line-height: 1.5;">"We provide workshops and personal mentorship to break cycles of dependency and foster long-term stability for families and local economies."</p>
+      </div>
+
+      <div class="cta-accent reveal">
+        <h2 style="font-size: 3rem;">Ready to Secure Your Future?</h2>
+        <p style="max-width: 700px; margin: 2rem auto 0; font-size: 1.3rem;">Attend our financial awareness and entrepreneurship workshops and gain the skills to achieve true independence.</p>
+        <div style="margin-top: 4rem;">
+          <a href="join.html" class="btn-gold-solid" style="padding: 1.2rem 3.5rem; font-size: 1.1rem; border-radius: 50px;">Join Our Program</a>
+        </div>
+      </div>
     </div>
-    
-    <aside class="sidebar-card reveal delay-1">
-      <h3>Ready to Secure Your Future?</h3>
-      <p>Attend our financial awareness and entrepreneurship workshops and gain the skills to achieve true independence.</p>
-      <a href="join.html" class="btn-primary" style="display:block; text-align:center; margin-top:2rem;">Join Our Program</a>
-    </aside>
   </div>
 </main>
 
@@ -99,7 +149,7 @@
   </div>
 </section>
 
-<footer class="footer" id="footer">
+<footer class="footer">
     <div class="footer-top">
       <div class="container footer-grid">
         <div class="footer-brand">
@@ -122,7 +172,7 @@
     <div class="footer-bottom">
       <div class="container">
         <p style="margin-bottom: 1rem; opacity: 0.8; font-size: 0.9rem;">Fruit Forest Foundation is a non-profit trust committed to building sustainable communities through fruit tree initiatives.</p>
-        <p>&copy; 2026 Fruit Forest Foundation. All rights reserved. Registered Non-Profit Trust.</p>
+        <p>&copy; 2026 Fruit Forest Foundation. All rights reserved.</p>
       </div>
     </div>
   </footer>

@@ -2672,7 +2672,7 @@ img {
 .consistent-hero {
   position: relative;
   width: 100%;
-  padding: 12rem 0 8rem;
+  padding: 12rem 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2681,7 +2681,7 @@ img {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  min-height: 60vh; /* Reduced from 100vh to maintain better proportion */
+  min-height: 80vh; 
 }
 
 .consistent-hero::before {

@@ -9,31 +9,59 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    /* Old Layout Structure */
-    .content-section { padding: 8rem 0; line-height: 1.8; color: var(--text-light); }
-    .content-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 6rem; align-items: start; }
-    .content-text h2 { color: var(--dark); font-size: 2.8rem; margin-bottom: 2.5rem; font-weight: 800; }
-    .content-text p { margin-bottom: 2rem; font-size: 1.15rem; }
+    /* Full Width Centered Layout */
+    .content-section { padding: 10rem 0; line-height: 1.8; color: var(--text-light); }
+    .content-wrapper { max-width: 900px; margin: 0 auto; text-align: center; }
     
-    .sidebar-card { background: var(--bg-soft); padding: 3rem; border-radius: 30px; position: sticky; top: 120px; box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.02); }
-    .sidebar-card h3 { font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--green-dark); font-weight: 800; }
+    .content-wrapper h2 { color: var(--dark); font-size: 3rem; margin-bottom: 2.5rem; font-weight: 900; }
+    .content-wrapper p { margin-bottom: 2rem; font-size: 1.25rem; line-height: 1.9; }
     
-    /* Legacy Content Reference Styling */
-    .legacy-reference { margin-top: 10rem; padding: 6rem 0; background: var(--bg-soft); border-top: 1px solid rgba(0,0,0,0.05); }
-    .reference-box { background: var(--white); padding: 4rem; border-radius: 30px; border-left: 8px solid var(--gold); }
-    .reference-box h4 { margin-bottom: 2rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; }
+    /* Pillars Grid */
+    .pillars-grid { 
+        display: grid; 
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 2.5rem; 
+        margin: 5rem 0;
+        text-align: left;
+    }
+    .pillar-card { 
+        background: var(--white); 
+        padding: 3rem; 
+        border-radius: 30px; 
+        box-shadow: 0 15px 40px rgba(0,0,0,0.04);
+        border: 1px solid rgba(0,0,0,0.02);
+        transition: transform 0.3s ease;
+    }
+    .pillar-card:hover { transform: translateY(-10px); }
+    .pillar-card i { font-size: 2.5rem; color: var(--green); margin-bottom: 1.5rem; display: block; }
+    .pillar-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--green-dark); }
+    .pillar-card p { font-size: 1rem; line-height: 1.7; margin-bottom: 0; }
 
-    /* Restoration of Current Content Styles */
-    .pillars-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 3rem; }
-    .pillar-item { background: var(--white); padding: 2.5rem; border-radius: 20px; box-shadow: var(--shadow); }
-    .pillar-item h3 { font-size: 1.3rem; margin-bottom: 1rem; color: var(--green); display: flex; align-items: center; gap: 1rem; }
-    .why-fruit-trees { background: var(--green-pale); padding: 5rem; border-radius: 30px; margin: 5rem 0; text-align: center; }
-    .vision-final { background: var(--green-dark); color: var(--white); padding: 5rem; border-radius: 30px; text-align: center; margin-top: 5rem; }
-    .vision-final h2, .vision-final p { color: var(--white); }
+    /* Highlight Sections */
+    .highlight-box { 
+        background: var(--green-pale); 
+        padding: 6rem; 
+        border-radius: 40px; 
+        margin: 6rem 0;
+    }
+    .vision-accent { 
+        background: var(--green-dark); 
+        color: var(--white); 
+        padding: 8rem 4rem; 
+        border-radius: 40px;
+        margin-top: 8rem;
+    }
+    .vision-accent h2, .vision-accent p { color: var(--white); }
+
+    /* Legacy Reference */
+    .legacy-reference { margin-top: 10rem; padding: 6rem 0; background: var(--bg-soft); border-top: 1px solid rgba(0,0,0,0.05); text-align: left; }
+    .reference-box { background: var(--white); padding: 4rem; border-radius: 30px; border-left: 8px solid var(--gold); }
+    .reference-box h4 { margin-bottom: 2rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; }
 
     @media (max-width: 992px) { 
-        .content-grid { grid-template-columns: 1fr; gap: 4rem; } 
-        .pillars-container { grid-template-columns: 1fr; }
+        .pillars-grid { grid-template-columns: 1fr; }
+        .content-section { padding: 6rem 0; }
+        .highlight-box { padding: 3rem; }
     }
   </style>
 </head>
@@ -61,52 +89,52 @@
   </div>
 </nav>
 
-<header class="consistent-hero" style="background-image: url('../assets/images/fruit-forest.png'); min-height: 80vh; display: flex; align-items: center; width: 100%;">
+<header class="consistent-hero" style="background-image: url('../assets/images/fruit-forest.png');">
   <div class="container reveal">
     <div class="section-tag" style="background: var(--gold); color: var(--dark); border:none;">Our Mission</div>
-    <h1 style="font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; max-width: 1000px;">We Restore Ecosystems, Nourish Communities, and Secure Future Generations.</h1>
+    <h1>We Restore Ecosystems, Nourish Communities, and Secure Future Generations.</h1>
   </div>
 </header>
 
 <main class="content-section">
-  <div class="container content-grid">
-    <div class="content-text reveal">
+  <div class="container">
+    <div class="content-wrapper reveal">
       <h2>A Holistic Path to Abundance</h2>
       <p>We believe in a future where every neighborhood is a garden of abundance. Our mission integrates environmental restoration with health and financial education to build a self-sustaining foundation for tomorrow.</p>
       
-      <div class="pillars-container">
-        <div class="pillar-item">
-          <h3><i class="fas fa-tree"></i> Earth</h3>
+      <div class="pillars-grid">
+        <div class="pillar-card reveal">
+          <i class="fas fa-tree"></i>
+          <h3>Earth Restoration</h3>
           <p>Restoring biodiversity through fruit forests in public spaces, providing free nutrition and capturing carbon.</p>
         </div>
-        <div class="pillar-item">
-          <h3><i class="fas fa-heartbeat"></i> Health</h3>
-          <p>Empowering individuals through holistic wellness coaching and nutritional resilience.</p>
+        <div class="pillar-card reveal delay-1">
+          <i class="fas fa-heartbeat"></i>
+          <h3>Health Vitality</h3>
+          <p>Empowering individuals through holistic wellness coaching and building nutritional resilience in communities.</p>
         </div>
-        <div class="pillar-item">
-          <h3><i class="fas fa-coins"></i> Wealth</h3>
-          <p>Building financial literacy to break cycles of dependency and foster long-term stability.</p>
+        <div class="pillar-card reveal delay-2">
+          <i class="fas fa-coins"></i>
+          <h3>Wealth Stability</h3>
+          <p>Building financial literacy to break cycles of dependency and foster long-term stability for families.</p>
         </div>
       </div>
 
-      <div class="why-fruit-trees">
-        <div class="section-tag">Sustainability</div>
-        <h2>Why Fruit Trees?</h2>
-        <p style="font-size: 1.2rem; margin-top: 1.5rem;">Unlike ornamental trees, fruit-bearing forests generate immediate value for communities, turning public spaces into self-sustaining sources of health and nutrition.</p>
+      <div class="highlight-box reveal">
+        <div class="section-tag" style="background: var(--white);">Sustainability</div>
+        <h2 style="font-size: 2.5rem;">Why Fruit Trees?</h2>
+        <p style="margin-top: 1.5rem;">Unlike ornamental trees, fruit-bearing forests generate immediate value for communities, turning public spaces into self-sustaining sources of health and nutrition for everyone.</p>
       </div>
 
-      <div class="vision-final">
-        <i class="fas fa-seedling" style="font-size: 3rem; margin-bottom: 2rem; color: var(--gold);"></i>
-        <h2>The Foundation for Tomorrow</h2>
-        <p style="font-size: 1.1rem; margin-top: 1.5rem;">We envision a world where every neighborhood is a garden of abundance and every individual is equipped with the tools to flourish.</p>
+      <div class="vision-accent reveal">
+        <i class="fas fa-seedling" style="font-size: 3.5rem; margin-bottom: 2rem; color: var(--gold);"></i>
+        <h2 style="font-size: 3rem;">The Foundation for Tomorrow</h2>
+        <p style="max-width: 800px; margin: 2rem auto 0; font-size: 1.3rem;">We envision a world where every neighborhood is a garden of abundance and every individual is equipped with the tools to flourish.</p>
+        <div style="margin-top: 4rem;">
+          <a href="donate.html" class="btn-gold-solid" style="padding: 1.2rem 3rem; font-size: 1.1rem; border-radius: 50px;">Join the Movement</a>
+        </div>
       </div>
     </div>
-    
-    <aside class="sidebar-card reveal delay-1">
-      <h3>Support the Mission</h3>
-      <p>Every contribution helps us plant the seeds of change today for a more abundant tomorrow.</p>
-      <a href="donate.html" class="btn-primary" style="display:block; text-align:center; margin-top:2rem;">Join the Movement</a>
-    </aside>
   </div>
 </main>
 
@@ -118,7 +146,7 @@
         <h3 style="margin-bottom: 1.5rem; color: var(--dark);">Tree Planting Initiative</h3>
         <p>Our Tree Planting Initiative is the cornerstone of Fruit Forest Foundation. We don't just plant saplings; we design community orchards that serve as vibrant, self-sustaining food systems for urban and rural neighborhoods alike.</p>
         <p style="margin-top: 1rem;">We focus exclusively on fruit-bearing and nutrient-rich indigenous trees that are compatible with the local climate, ensuring high survival rates and maximum community benefit.</p>
-        <ul style="margin-top: 1.5rem; list-style: none;">
+        <ul style="margin-top: 1.5rem; list-style: none; padding-left: 0;">
           <li><strong>Ecosystem Restoration:</strong> Improving soil health, supporting pollinators, and increasing local biodiversity.</li>
           <li><strong>Food Security:</strong> Creating free, accessible food sources for people who need them most.</li>
           <li><strong>Climate Mitigation:</strong> Naturally sequestering carbon and reducing the 'heat island' effect.</li>
@@ -128,7 +156,7 @@
   </div>
 </section>
 
-<footer class="footer" id="footer">
+<footer class="footer">
     <div class="footer-top">
       <div class="container footer-grid">
         <div class="footer-brand">
@@ -151,7 +179,7 @@
     <div class="footer-bottom">
       <div class="container">
         <p style="margin-bottom: 1rem; opacity: 0.8; font-size: 0.9rem;">Fruit Forest Foundation is a non-profit trust committed to building sustainable communities through fruit tree initiatives.</p>
-        <p>&copy; 2026 Fruit Forest Foundation. All rights reserved. Registered Non-Profit Trust.</p>
+        <p>&copy; 2026 Fruit Forest Foundation. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -160,10 +188,11 @@
 
 <script src="../assets/js/main.js"></script>
 <script>
+  const revealElements = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
   }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  revealElements.forEach(el => observer.observe(el));
 </script>
 </body>
 </html>

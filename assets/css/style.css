@@ -1342,7 +1342,7 @@ img {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 5rem;
-  align-items: center;
+  align-items: stretch; /* Ensures both columns are the same height */
 }
 
 .why-stats {
@@ -1410,10 +1410,9 @@ img {
 
 .impact-img-full {
   width: 100%;
-  height: auto;
-  max-height: 600px;
+  height: 100%; /* Fills the entire height of the column to match the text side */
   object-fit: cover;
-  border-radius: 40px; /* Symmetric rounding */
+  border-radius: 40px;
   box-shadow: var(--shadow-lg);
   border: none;
   margin-right: 0;

@@ -1,95 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Donate | Fruit Forest Foundation</title>
-  <meta name="description" content="Support Fruit Forest Foundation by sponsoring fruit trees, wellness coaching and financial education for communities worldwide." />
+  <meta name="description"
+    content="Support Fruit Forest Foundation by sponsoring fruit trees, wellness coaching and financial education for communities worldwide." />
   <link rel="icon" href="../assets/favicon.svg" />
   <link rel="stylesheet" href="../assets/css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    .stat-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
-      padding: 0.8rem 1.5rem; border-radius: 50px; color: var(--white); font-weight: 600; font-size: 0.95rem; margin-top: 2.5rem; backdrop-filter: blur(10px);
+    :root {
+      --card-bg: rgba(255, 255, 255, 0.98);
     }
-    
-    .impact-cards-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
-    .impact-card {
-      background: white; border-radius: 24px; padding: 1.5rem 2.5rem; text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); border: 1px solid rgba(0,0,0,0.03); position: relative; overflow: hidden; cursor: pointer; 
-      display: flex; flex-direction: row; align-items: center; gap: 2.5rem;
-    }
-    .impact-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(45, 90, 39, 0.1); border-color: var(--green-pale); }
-    .impact-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--green), var(--gold));
-      opacity: 0; transition: opacity 0.4s ease;
-    }
-    .impact-card:hover::before { opacity: 1; }
-    .ic-icon-box { 
-      width: 70px; height: 70px; background: var(--green-pale); border-radius: 16px; display: grid; place-items: center; 
-      color: var(--green); font-size: 2.2rem; flex-shrink: 0; transition: transform 0.4s ease;
-    }
-    .impact-card:hover .ic-icon-box { transform: scale(1.05); }
-    .ic-content { flex: 1; }
-    .ic-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
-    .ic-title { font-family: var(--font-head); font-size: 1.4rem; font-weight: 800; color: var(--dark); margin: 0; line-height: 1.2; }
-    .ic-amount { font-size: 1.25rem; font-weight: 700; color: var(--gold-dark); margin: 0; }
-    .ic-desc { font-size: 1rem; color: var(--text-light); line-height: 1.6; margin: 0; }
-    .ic-arrow { color: var(--green); font-size: 1.1rem; opacity: 0; transform: translateX(-10px); transition: all 0.4s ease; margin-left: 1rem; }
-    .impact-card:hover .ic-arrow { opacity: 1; transform: translateX(0); }
 
-    .donation-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 4rem; align-items: start; }
-    .donation-info h2 { font-size: 2.5rem; color: var(--dark); margin-bottom: 1rem; font-weight: 800; }
-    .donation-info p { font-size: 1.1rem; color: var(--text-light); margin-bottom: 3rem; line-height: 1.6; }
-    .donation-goes { background: var(--white); padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-    .donation-goes h3 { font-size: 1.3rem; margin-bottom: 1.5rem; color: var(--green-dark); border-bottom: 2px solid var(--green-pale); padding-bottom: 1rem; }
-    .donation-goes ul { list-style: none; padding: 0; margin: 0; }
-    .donation-goes li { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; font-weight: 600; color: var(--dark); font-size: 1.05rem; }
-    .donation-goes li:last-child { margin-bottom: 0; }
-    .donation-goes li i { color: var(--gold); font-size: 1.2rem; width: 24px; text-align: center; }
-    
-    .donation-form-card { background: white; border-radius: 24px; padding: 3.5rem; box-shadow: 0 15px 40px rgba(0,0,0,0.08); border: 1px solid rgba(0,0,0,0.04); }
-    .df-amt-selector { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
-    .df-amt-btn { padding: 1.2rem 1rem; border: 2px solid #e2e8f0; border-radius: 12px; text-align: center; font-weight: 700; font-size: 1.1rem; color: var(--dark); cursor: pointer; transition: all 0.3s ease; background: #fafafa; }
-    .df-amt-btn:hover, .df-amt-btn.active { border-color: var(--green); background: var(--green-pale); color: var(--green-dark); box-shadow: 0 5px 15px rgba(45, 90, 39, 0.1); transform: translateY(-2px); }
-    
-    .form-group { margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
-    .form-group label { font-weight: 700; font-size: 0.95rem; color: var(--dark); }
-    .form-group input, .form-group select, .form-group textarea { padding: 1.1rem 1.4rem; border: 2px solid #e2e8f0; border-radius: 12px; font-family: inherit; font-size: 1rem; background: #fafafa; transition: border-color 0.3s ease; width: 100%; box-sizing: border-box; }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--green); outline: none; background: #fff; }
-    
-    .trust-indicators { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.8rem; background: var(--bg-soft); padding: 1.5rem; border-radius: 12px; }
-    .trust-item { display: flex; align-items: center; justify-content: flex-start; gap: 1rem; font-size: 0.95rem; color: var(--text-light); font-weight: 600; }
-    .trust-item i { color: var(--green); font-size: 1.1rem; width: 20px; text-align: center; }
-    
-    .btn-ripple { position: relative; overflow: hidden; }
-    .btn-ripple::after { content: ''; position: absolute; top: 50%; left: 50%; width: 5px; height: 5px; background: rgba(255,255,255,0.5); opacity: 0; border-radius: 100%; transform: scale(1,1) translate(-50%); transform-origin: 50% 50%; }
-    .btn-ripple:focus:not(:active)::after { animation: ripple 1s ease-out; }
-    @keyframes ripple { 0% { transform: scale(0,0); opacity: 0.5; } 100% { transform: scale(40,40); opacity: 0; } }
-
-    @media(max-width:992px){ 
-      .impact-cards-grid { grid-template-columns: 1fr; gap: 1.25rem; }
-      .donation-grid { grid-template-columns: 1fr; }
+    body {
+      background-image: url('../assets/images/donate_bg.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      min-height: 100vh;
     }
-    @media(max-width:768px){ 
-      .impact-card { flex-direction: column; align-items: flex-start; gap: 1.25rem; padding: 2rem; }
-      .ic-header-row { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
-      .donation-form-card { padding: 2.5rem 1.5rem; }
-      .df-amt-selector { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr !important; gap: 0 !important; }
+
+    /* Fixed background overlay for readability if needed */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.2);
+      z-index: -1;
+    }
+
+    .donate-hero {
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--white);
+      padding: 0 1.5rem;
+    }
+
+    .donate-hero h1 {
+      font-size: clamp(3rem, 10vw, 5rem);
+      text-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+      margin-bottom: 1.5rem;
+    }
+
+    .donate-hero p {
+      font-size: 1.3rem;
+      max-width: 800px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    .donate-container {
+      max-width: 1200px;
+      margin: -10vh auto 100px;
+      position: relative;
+      z-index: 10;
+      padding: 0 1.5rem;
+    }
+
+    .donate-card {
+      background: var(--card-bg);
+      border-radius: 40px;
+      padding: 5rem;
+      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      margin-bottom: 4rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.8rem;
+      color: var(--dark);
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    .section-header p {
+      font-size: 1.15rem;
+      color: var(--text-light);
+    }
+
+    /* Impact Selection */
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 5rem;
+    }
+
+    .impact-item {
+      background: var(--bg-soft);
+      padding: 3rem 2rem;
+      border-radius: 30px;
+      text-align: center;
+      transition: var(--transition);
+      cursor: pointer;
+      border: 2px solid transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .impact-item:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow);
+      background: var(--white);
+      border-color: var(--green-pale);
+    }
+
+    .impact-item.active {
+      border-color: var(--green);
+      background: var(--green-pale);
+    }
+
+    .impact-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--white);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: var(--green);
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .impact-item h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .impact-amount {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--green);
+      margin-bottom: 1rem;
+    }
+
+    .impact-desc {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* Donation Form */
+    .donation-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .form-group {
+      margin-bottom: 2rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 800;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+      margin-bottom: 0.8rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 1.2rem 1.5rem;
+      border: 2px solid #edf2f7;
+      border-radius: 15px;
+      font-family: inherit;
+      font-size: 1rem;
+      background: #f8fafc;
+      transition: var(--transition);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--green);
+      background: var(--white);
+      box-shadow: 0 0 0 4px var(--green-pale);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .btn-donate-main {
+      width: 100%;
+      padding: 1.5rem;
+      background: var(--green);
+      color: var(--white);
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      box-shadow: 0 15px 30px rgba(45, 90, 39, 0.3);
+      margin-top: 1rem;
+    }
+
+    .btn-donate-main:hover {
+      background: var(--green-dark);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(45, 90, 39, 0.4);
+    }
+
+    /* Trust Info */
+    .trust-sidebar {
+      background: var(--bg-soft);
+      padding: 3rem;
+      border-radius: 30px;
+    }
+
+    .trust-sidebar h4 {
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      color: var(--dark);
+      border-bottom: 2px solid var(--green-pale);
+      padding-bottom: 1rem;
+    }
+
+    .trust-list {
+      list-style: none;
+    }
+
+    .trust-list li {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .trust-list li i {
+      font-size: 1.2rem;
+      color: var(--gold-dark);
+      width: 24px;
+      text-align: center;
+    }
+
+    .tax-badge {
+      background: var(--gold);
+      color: var(--green-dark);
+      padding: 1.5rem;
+      border-radius: 20px;
+      margin-top: 3rem;
+      text-align: center;
+      font-weight: 800;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 20px rgba(255, 208, 0, 0.2);
+    }
+
+    @media (max-width: 1024px) {
+      .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .donation-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .donate-card {
+        padding: 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .impact-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .donate-hero h1 {
+        font-size: 2.5rem;
+      }
+      .donate-card {
+        padding: 2.5rem 1.5rem;
+        border-radius: 30px;
+      }
     }
   </style>
 </head>
-<body>
-<nav class="navbar" id="navbar">
+
+<body class="donate-page">
+  <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <!-- Logo Left -->
       <a href="../index.html" class="nav-brand">
         <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation Logo" class="logo-img-main" />
       </a>
-
-      <!-- Menu Center -->
       <div class="nav-links" id="navLinks">
         <a href="../index.html#home" class="nav-link">Home</a>
         <a href="about.html" class="nav-link">About Us</a>
@@ -98,8 +332,6 @@
         <a href="join.html" class="nav-link">Get Involved</a>
         <a href="../index.html#faq" class="nav-link">FAQ</a>
       </div>
-
-      <!-- Actions Right -->
       <div class="nav-actions">
         <a href="donate.html" class="btn-donate-nav active">Donate</a>
         <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -107,257 +339,192 @@
         </button>
       </div>
     </div>
-</nav>
-  
+  </nav>
 
-
-  <section class="standard-hero full-screen" style="background-image: url('../assets/images/join_hero_bg.png');">
+  <header class="donate-hero">
     <div class="container reveal">
-      <h1 class="hero-title" style="margin-bottom: 1rem;">Support Our Mission</h1>
-      <p class="hero-subtitle" style="max-width: 800px; margin: 0 auto; line-height: 1.6;">Every contribution helps us plant trees, empower families, and build sustainable communities.<br>Together, we can create a greener future.</p>
-      <div class="stat-badge"><i class="fas fa-tree"></i> Over 10,000 trees planted with community support</div>
-    </div>
-  </section>
-
-  <section class="impact-cards-section" style="padding: 6rem 0; background: var(--bg-soft);">
-    <div class="container">
-      <div style="text-align:center;margin-bottom:4rem;" class="reveal">
-        <h2 style="font-family:var(--font-head);font-size:2.5rem;color:var(--dark);margin-bottom:1rem;font-weight:800;">Choose Your Impact</h2>
-        <p style="color:var(--text-light);font-size:1.15rem;max-width: 700px;margin: 0 auto;">Your donation directly supports tree planting, community training, and rural livelihoods.</p>
+      <div class="section-tag" style="background: var(--gold); color: var(--green-dark); border:none;">Support Our Work
       </div>
-      
-      <div class="impact-cards-grid">
-        <!-- Card 1 -->
-        <div class="impact-card reveal" onclick="selectAmount(500)">
-          <div class="ic-icon-box"><i class="fas fa-seedling"></i></div>
-          <div class="ic-content">
-            <div class="ic-header-row">
-              <h3 class="ic-title">Plant a Tree</h3>
-              <div class="ic-amount">₹500</div>
-            </div>
-            <p class="ic-desc">Help plant and nurture a fruit tree that supports families and restores nature.</p>
-          </div>
-          <div class="ic-arrow"><i class="fas fa-arrow-right"></i></div>
+      <h1>Planting Seeds of Hope</h1>
+      <p>Your contribution directly transforms landscapes and lives. By sponsoring fruit trees, you provide food
+        security, restore nature, and empower communities for generations.</p>
+    </div>
+  </header>
+
+  <main class="donate-container">
+    <div class="donate-card reveal">
+      <div class="section-header">
+        <h2>Choose Your Impact</h2>
+        <p>Select a sponsorship level or enter a custom amount to support our mission.</p>
+      </div>
+
+      <div class="impact-grid">
+        <!-- Impact 1 -->
+        <div class="impact-item reveal" onclick="selectImpact(this, 500)">
+          <div class="impact-icon"><i class="fas fa-seedling"></i></div>
+          <div class="impact-amount">₹500</div>
+          <h3>Plant a Tree</h3>
+          <p class="impact-desc">Sponsor the planting and 3-year care of one fruit-bearing tree in a community orchard.
+          </p>
         </div>
 
-        <!-- Card 2 -->
-        <div class="impact-card reveal delay-1" onclick="selectAmount(2000)">
-          <div class="ic-icon-box"><i class="fas fa-tree"></i></div>
-          <div class="ic-content">
-            <div class="ic-header-row">
-              <h3 class="ic-title">Support a Family</h3>
-              <div class="ic-amount">₹2,000</div>
-            </div>
-            <p class="ic-desc">Enable a rural family to start their own small fruit garden and grow sustainable income.</p>
-          </div>
-          <div class="ic-arrow"><i class="fas fa-arrow-right"></i></div>
+        <!-- Impact 2 -->
+        <div class="impact-item reveal delay-1" onclick="selectImpact(this, 2500)">
+          <div class="impact-icon"><i class="fas fa-tree"></i></div>
+          <div class="impact-amount">₹2,500</div>
+          <h3>Small Grove</h3>
+          <p class="impact-desc">Help us plant a small cluster of 5 fruit trees, creating a mini-ecosystem for local
+            wildlife and residents.</p>
         </div>
 
-        <!-- Card 3 -->
-        <div class="impact-card reveal delay-2" onclick="selectAmount(5000)">
-          <div class="ic-icon-box"><i class="fas fa-users"></i></div>
-          <div class="ic-content">
-            <div class="ic-header-row">
-              <h3 class="ic-title">Community Growth</h3>
-              <div class="ic-amount">₹5,000</div>
-            </div>
-            <p class="ic-desc">Support training workshops and plant multiple fruit trees that benefit entire communities.</p>
-          </div>
-          <div class="ic-arrow"><i class="fas fa-arrow-right"></i></div>
+        <!-- Impact 3 -->
+        <div class="impact-item reveal delay-2" onclick="selectImpact(this, 10000)">
+          <div class="impact-icon"><i class="fas fa-users"></i></div>
+          <div class="impact-amount">₹10,000</div>
+          <h3>Community Orchard</h3>
+          <p class="impact-desc">Sponsor a significant portion of a community orchard project, providing food security
+            for dozens of families.</p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="donation-form-wrapper" style="padding: 6rem 0;" id="donate-form-section">
-    <div class="container">
-      <div class="donation-grid">
-        <!-- Left Side: Where Your Donation Goes -->
-        <div class="donation-info reveal">
-          <h2>Donate Now</h2>
-          <p>Enter your details and make a secure contribution.</p>
-          
-          <div class="donation-goes">
-            <h3>Your Contribution Supports</h3>
-            <ul>
-               <li><i class="fas fa-seedling"></i> Tree Plantation</li>
-               <li><i class="fas fa-tractor"></i> Farmer Training</li>
-               <li><i class="fas fa-leaf"></i> Sustainable Agriculture</li>
-               <li><i class="fas fa-hands-helping"></i> Community Development</li>
-            </ul>
-          </div>
-
-          <div style="margin-top: 3rem; background: var(--green-pale); padding: 2.5rem; border-radius: 20px;">
-            <p style="font-size: 1.15rem; color: var(--green-dark); font-weight: 600; font-style: italic; line-height: 1.7; margin: 0;">
-              "Your generosity helps us plant the seeds of abundance for generations to come."
-            </p>
-          </div>
-        </div>
-
-        <!-- Right Side: Form -->
-        <div class="donation-form-card reveal delay-1">
-          <div class="df-amt-selector">
-            <div class="df-amt-btn active" data-amt="500" onclick="selectAmtBtn(this, 500)">₹500</div>
-            <div class="df-amt-btn" data-amt="2000" onclick="selectAmtBtn(this, 2000)">₹2,000</div>
-            <div class="df-amt-btn" data-amt="5000" onclick="selectAmtBtn(this, 5000)">₹5,000</div>
-          </div>
-          
+      <div class="donation-layout">
+        <div class="donation-form reveal">
           <form id="donateForm" onsubmit="handleDonate(event)">
             <div class="form-group">
-              <label for="custom-amt">Custom Amount (₹)</label>
-              <input type="number" id="custom-amt" placeholder="e.g. 1000" min="100" oninput="clearAmtBtns()" />
+              <label for="custom-amount">Donation Amount (₹)</label>
+              <input type="number" id="custom-amount" placeholder="Enter amount" min="100" required />
             </div>
 
-            <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem;">
-              <div class="form-group" style="margin-bottom: 0;">
-                <label for="d-name">Full Name *</label>
-                <input type="text" id="d-name" placeholder="Your full name" required />
+            <div class="form-row">
+              <div class="form-group">
+                <label for="full-name">Full Name *</label>
+                <input type="text" id="full-name" placeholder="John Doe" required />
               </div>
-              <div class="form-group" style="margin-bottom: 0;">
-                <label for="d-email">Email Address *</label>
-                <input type="email" id="d-email" placeholder="your@email.com" required />
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" placeholder="john@example.com" required />
               </div>
             </div>
 
-            <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem;">
-              <div class="form-group" style="margin-bottom: 0;">
-                <label for="d-phone">Phone Number</label>
-                <input type="tel" id="d-phone" placeholder="+91 99999 99999" />
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="+91 99999 99999" />
               </div>
-              <div class="form-group" style="margin-bottom: 0;">
-                <label for="d-purpose">Purpose of Donation</label>
-                <select id="d-purpose">
-                  <option>Tree Planting Mission</option>
-                  <option>Health Coaching Programs</option>
-                  <option>Wealth Education Programs</option>
-                  <option>General Fund</option>
+              <div class="form-group">
+                <label for="purpose">Donation Purpose</label>
+                <select id="purpose">
+                  <option>Fruit Tree Planting Mission</option>
+                  <option>Community Wellness Coaching</option>
+                  <option>Wealth & Financial Education</option>
+                  <option>General Support Fund</option>
                 </select>
               </div>
             </div>
 
-            <div class="form-group" style="margin-top: 1.5rem;">
-              <label for="d-msg">Optional Message</label>
-              <textarea id="d-msg" style="min-height:120px; resize:vertical;" placeholder="Share your reason for donating..."></textarea>
+            <div class="form-group">
+              <label for="message">Message (Optional)</label>
+              <textarea id="message" rows="4" placeholder="Why are you supporting us?"></textarea>
             </div>
 
-            <button type="submit" class="btn-primary btn-ripple" style="width: 100%; padding: 1.2rem; font-size: 1.15rem; justify-content: center; margin-top: 1.5rem; border: none; cursor: pointer; border-radius: 50px;">
-              <i class="fas fa-lock" style="margin-right: 0.5rem;"></i> Donate Securely Now
+            <button type="submit" class="btn-donate-main">
+              <i class="fas fa-heart"></i> Complete Donation
             </button>
-
-            <div class="trust-indicators">
-              <div class="trust-item"><i class="fas fa-shield-alt"></i> SSL Secure Payments</div>
-              <div class="trust-item"><i class="fas fa-file-invoice-dollar"></i> Tax Deductible under Section 80G</div>
-              <div class="trust-item"><i class="fas fa-chart-line"></i> Transparent impact reporting</div>
-            </div>
           </form>
 
-          <div class="form-success" id="donateSuccess" style="text-align:center;padding:3rem 0;display:none;">
-            <i class="fas fa-heart" style="font-size:4rem;color:var(--green);margin-bottom:1.5rem;display:block;"></i>
-            <h3 style="font-size:1.8rem;margin-bottom:1rem;color:var(--dark);">Thank You!</h3>
-            <p style="color:var(--text-light);line-height:1.6;font-size:1.1rem;">
-              A confirmation email has been sent to you. Your support directly helps us grow a greener, healthier world. 🌿
+          <div id="successMessage" style="display: none; text-align: center; padding: 4rem 0;">
+            <div class="impact-icon" style="margin: 0 auto 2rem; background: var(--green-pale);">
+              <i class="fas fa-check-circle" style="color: var(--green);"></i>
+            </div>
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Thank You!</h2>
+            <p style="font-size: 1.2rem; color: var(--text-light); max-width: 500px; margin: 0 auto;">Your generous gift
+              has been received. Together, we are planting the seeds of a better future.</p>
+            <a href="../index.html" class="btn-primary" style="margin-top: 3rem;">Return Home</a>
+          </div>
+        </div>
+
+        <div class="trust-sidebar reveal delay-1">
+          <h4>Why Trust Us?</h4>
+          <ul class="trust-list">
+            <li><i class="fas fa-shield-alt"></i> 100% Secure Payments</li>
+            <li><i class="fas fa-chart-line"></i> Full Transparency</li>
+            <li><i class="fas fa-file-alt"></i> Detailed Impact Reports</li>
+            <li><i class="fas fa-user-check"></i> Registered Non-Profit</li>
+          </ul>
+
+          <div class="tax-badge">
+            <i class="fas fa-star" style="margin-bottom: 1rem; font-size: 1.5rem; display: block;"></i>
+            Donations are Tax Exempt under Section 80G of the Income Tax Act.
+          </div>
+
+          <div style="margin-top: 3rem; text-align: center;">
+            <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.6;">
+              "The best time to plant a tree was 20 years ago. The second best time is now."
             </p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </main>
 
-<footer class="footer" id="footer">
-    <div class="footer-top">
-      <div class="container footer-grid">
-        <div class="footer-brand">
-          <div class="footer-logo">
-            <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation" />
-          </div>
-          <p>Planting the seeds of abundance, wellness, and financial freedom — one community at a time.</p>
-          <div class="social-icons">
-            <a href="#" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" aria-label="YouTube" class="social-icon"><i class="fab fa-youtube"></i></a>
-          </div>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation" />
+        <p>Restoring nature and nourishing communities through sustainable fruit tree initiatives.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
         </div>
-        <div class="footer-links-group">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="../index.html#home">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Our Initiative</a></li>
-            <li><a href="../index.html#impact-map">Impact Map</a></li>
-            <li><a href="join.html">Get Involved</a></li>
-            <li><a href="../index.html#faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div class="footer-links-group">
-          <h4>Get Involved</h4>
-          <ul>
-            <li><a href="donate.html">Donate</a></li>
-            <li><a href="join.html">Volunteer</a></li>
-            <li><a href="join.html">Partner With Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
-          </ul>
-        </div>
-        <div class="footer-contact">
-          <h4>Contact</h4>
-          <p><i class="fas fa-envelope"></i> hello@fruitforestfoundation.com</p>
-          <p><i class="fas fa-phone"></i> +1 (800) FRUIT-FOREST</p>
-          <p><i class="fas fa-map-marker-alt"></i> Global · Est. 2024</p>
-          <div class="footer-hashtag">
-            <i class="fab fa-instagram"></i>
-            <span>#Fruit ForestGlobal</span>
-          </div>
-        </div>
+      </div>
+      <div class="footer-links-group">
+        <h4>Foundation</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Initiatives</a></li>
+          <li><a href="join.html">Get Involved</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <p>&copy; 2026 Fruit Forest Foundation. All rights reserved. Registered Non-Profit Trust.</p>
-        <p>Made with <i class="fas fa-heart" style="color:#e74c3c"></i> for the Earth.</p>
+        <p>&copy; 2026 Fruit Forest Foundation. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
-<script src="../assets/js/main.js"></script>
-<script>
-let currentAmount = 500;
-
-function selectAmount(amt) {
-  currentAmount = amt;
-  document.querySelectorAll('.df-amt-btn').forEach(btn => {
-    btn.classList.remove('active');
-    if(parseInt(btn.getAttribute('data-amt')) === amt) {
-      btn.classList.add('active');
+  <script src="../assets/js/main.js"></script>
+  <script>
+    function selectImpact(el, amount) {
+      document.querySelectorAll('.impact-item').forEach(item => item.classList.remove('active'));
+      el.classList.add('active');
+      document.getElementById('custom-amount').value = amount;
     }
-  });
-  document.getElementById('custom-amt').value = '';
-  document.getElementById('donate-form-section').scrollIntoView({ behavior: 'smooth' });
-}
 
-function selectAmtBtn(el, amt) {
-  currentAmount = amt;
-  document.querySelectorAll('.df-amt-btn').forEach(btn => btn.classList.remove('active'));
-  el.classList.add('active');
-  document.getElementById('custom-amt').value = '';
-}
+    function handleDonate(e) {
+      e.preventDefault();
+      document.getElementById('donateForm').style.display = 'none';
+      document.querySelector('.section-header').style.display = 'none';
+      document.querySelector('.impact-grid').style.display = 'none';
+      document.querySelector('.trust-sidebar').style.display = 'none';
+      document.getElementById('successMessage').style.display = 'block';
+      window.scrollTo({ top: 200, behavior: 'smooth' });
+    }
 
-function clearAmtBtns() {
-  document.querySelectorAll('.df-amt-btn').forEach(btn => btn.classList.remove('active'));
-}
-
-function handleDonate(e) {
-  e.preventDefault();
-  document.getElementById('donateForm').style.display = 'none';
-  document.getElementById('donateSuccess').style.display = 'block';
-}
-</script>
-  <!-- ===== FLOATING PLANT A TREE BUTTON ===== -->
-  <button class="float-btn" onclick="window.location.href='donate.html'">
-    <span>🌱 Plant a Tree</span>
-  </button>
-
+    // Scroll reveal
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => observer.observe(el));
+  </script>
 </body>
+
 </html>

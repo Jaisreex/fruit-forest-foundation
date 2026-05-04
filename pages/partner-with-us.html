@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Partner With Us | Fruit Forest Foundation</title>
+  <link rel="icon" href="../assets/favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .partner-reg-section {
+      padding: 6rem 0;
+      background: var(--white);
+    }
+
+    .reg-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .reg-form-container {
+      background: var(--bg-soft);
+      padding: 3.5rem;
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .reg-form-container h2 {
+      margin-bottom: 1rem;
+      color: var(--green);
+    }
+
+    .reg-form-container p {
+      margin-bottom: 2.5rem;
+      color: var(--text-light);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+      font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 1rem 1.2rem;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--green);
+      box-shadow: 0 0 0 4px rgba(45, 90, 39, 0.1);
+    }
+
+    .role-details {
+      padding-top: 1rem;
+    }
+
+    .role-card {
+      background: var(--white);
+      padding: 2.5rem;
+      border-radius: 25px;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+    }
+
+    .role-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1.2rem;
+      color: var(--green-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .role-card h3 i {
+      color: var(--green);
+    }
+
+    .role-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .role-list li {
+      display: flex;
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .role-list li i {
+      color: var(--green);
+      margin-top: 0.3rem;
+    }
+
+    @media (max-width: 992px) {
+      .reg-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .reg-form-container {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation Logo" class="logo-img-main" />
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="../index.html#home" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="services.html" class="nav-link">Our Initiative</a>
+        <a href="../index.html#impact-map" class="nav-link">Impact</a>
+        <a href="join.html" class="nav-link active">Get Involved</a>
+        <a href="../index.html#faq" class="nav-link">FAQ</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="donate.html" class="btn-donate-nav">Donate</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="standard-hero full-screen" style="background-image: url('../assets/images/fruit_plantation_hero.png');">
+    <div class="container reveal">
+      <div class="section-tag" style="background: var(--gold); color: var(--green-dark); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; display: inline-block; margin-bottom: 1.5rem;">Partnership</div>
+      <h1 class="hero-title">Partner With Us</h1>
+      <p class="hero-subtitle">Work together with us to expand fruit tree plantations and create sustainable community impact.</p>
+    </div>
+  </section>
+
+  <section class="partner-reg-section">
+    <div class="container">
+      <div class="reg-grid">
+        <!-- Registration Form -->
+        <div class="reg-form-container reveal-left">
+          <h2>Partnership Inquiry</h2>
+          <p>Tell us about your organization and how you'd like to collaborate to create a greener future.</p>
+          
+          <form id="partnerForm" onsubmit="event.preventDefault(); showToast('🌱 Inquiry sent! Our partnership team will contact you.', 'green'); this.reset();">
+            <div class="form-group">
+              <label for="orgName">Organization Name</label>
+              <input type="text" id="orgName" name="orgName" placeholder="Enter organization name" required />
+            </div>
+            <div class="form-group">
+              <label for="contactPerson">Contact Person</label>
+              <input type="text" id="contactPerson" name="contactPerson" placeholder="Enter your full name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="Enter your work email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="Enter contact number" required />
+            </div>
+            <div class="form-group">
+              <label for="message">How would you like to partner?</label>
+              <textarea id="message" name="message" rows="5" placeholder="Share your vision for collaboration..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 1.2rem;">Submit Inquiry</button>
+          </form>
+        </div>
+
+        <!-- Role Details -->
+        <div class="role-details reveal-right">
+          <div class="role-card">
+            <h3><i class="fas fa-handshake"></i> About the Partnership</h3>
+            <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Join hands with us to build fruit-bearing ecosystems that provide free food, support biodiversity, and improve environmental health. Together, we can create long-term impact in communities.</p>
+          </div>
+
+          <div class="role-card">
+            <h3><i class="fas fa-users"></i> Who Can Partner</h3>
+            <ul class="role-list">
+              <li><i class="fas fa-check"></i> NGOs and social organizations</li>
+              <li><i class="fas fa-check"></i> Schools and colleges</li>
+              <li><i class="fas fa-check"></i> Corporate teams (CSR initiatives)</li>
+              <li><i class="fas fa-check"></i> Nurseries and environmental groups</li>
+            </ul>
+          </div>
+
+          <div class="role-card">
+            <h3><i class="fas fa-seedling"></i> What We Can Do Together</h3>
+            <ul class="role-list">
+              <li><i class="fas fa-check"></i> Develop fruit tree plantations in public spaces</li>
+              <li><i class="fas fa-check"></i> Organize community planting drives</li>
+              <li><i class="fas fa-check"></i> Promote environmental awareness programs</li>
+              <li><i class="fas fa-check"></i> Support sustainable and local food systems</li>
+            </ul>
+          </div>
+
+          <div class="role-card">
+            <h3><i class="fas fa-chart-line"></i> Why Partner With Us</h3>
+            <ul class="role-list">
+              <li><i class="fas fa-check"></i> Create meaningful social and environmental impact</li>
+              <li><i class="fas fa-check"></i> Strengthen community engagement</li>
+              <li><i class="fas fa-check"></i> Contribute to long-term sustainability goals</li>
+              <li><i class="fas fa-check"></i> Be part of a growing green movement</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation" />
+          </div>
+          <p>Planting the seeds of abundance, wellness, and financial freedom — one community at a time.</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-links-group">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html#home">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Initiative</a></li>
+            <li><a href="../index.html#impact-map">Impact Map</a></li>
+            <li><a href="join.html">Get Involved</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p><i class="fas fa-envelope"></i> hello@fruitforestfoundation.com</p>
+          <p><i class="fas fa-phone"></i> +1 (800) FRUIT-FOREST</p>
+          <p><i class="fas fa-map-marker-alt"></i> Global · Est. 2024</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Fruit Forest Foundation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

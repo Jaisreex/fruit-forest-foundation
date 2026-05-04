@@ -238,17 +238,6 @@ function showToast(message, type = 'green') {
   setTimeout(() => { toast.style.opacity = '0'; toast.style.transition = 'opacity .3s ease'; setTimeout(() => toast.remove(), 300); }, 4000);
 }
 
-// ---- Volunteer Card Interactivity ----
-window.toggleCard = function(cardId) {
-  const card = document.getElementById(cardId);
-  const btn = card.querySelector('.btn-expand-card');
-  const isExpanded = card.classList.toggle('expanded');
-  
-  if (isExpanded) {
-    btn.innerHTML = 'Collapse <i class="fas fa-chevron-up"></i>';
-  } else {
-    btn.innerHTML = 'Explore Role <i class="fas fa-chevron-down"></i>';
-  }
 };
 
 window.switchTab = function(event, tabId) {
@@ -273,15 +262,5 @@ window.switchTab = function(event, tabId) {
     pane.classList.add('active');
   }
 };
-window.toggleHomeCard = function(cardId) {
-  const card = document.getElementById(cardId);
-  const btn = card.querySelector('.btn-expand-card');
-  const isExpanded = card.classList.toggle('expanded');
-  
-  if (isExpanded) {
-    btn.innerHTML = 'Show Less <i class="fas fa-chevron-up"></i>';
-  } else {
-    btn.innerHTML = 'Learn More <i class="fas fa-chevron-down"></i>';
-  }
-};
+
 

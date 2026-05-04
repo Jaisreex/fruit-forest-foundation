@@ -3201,3 +3201,115 @@ img {
 }
 
 
+
+/* --- Enhanced Opportunity Cards --- */
+.opp-grid {
+  align-items: center;
+}
+
+.opp-card.highlighted {
+  transform: scale(1.05);
+  z-index: 2;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: var(--green-pale);
+}
+
+.opp-card {
+  height: 450px;
+  justify-content: flex-start;
+}
+
+.opp-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+}
+
+.opp-card.highlighted:hover {
+  transform: translateY(-15px) scale(1.07);
+}
+
+/* Light effect sweep */
+.opp-card::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.opp-card:hover::after {
+  opacity: 1;
+  animation: sweep 3s infinite linear;
+}
+
+@keyframes sweep {
+  0% { transform: translate(-20%, -20%); }
+  50% { transform: translate(20%, 20%); }
+  100% { transform: translate(-20%, -20%); }
+}
+
+/* Content visibility toggle */
+.card-details {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  padding: 0 1.5rem;
+}
+
+.opp-card:hover .card-details {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 1rem;
+}
+
+.opp-card .btn-primary {
+  margin-top: auto;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+/* Image overlay on hover */
+.opp-card-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(45, 90, 39, 0.2);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.opp-card:hover .opp-card-img::before {
+  opacity: 1;
+}
+
+/* Mobile stacking */
+@media (max-width: 992px) {
+  .opp-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .opp-card.highlighted {
+    transform: scale(1);
+  }
+  
+  .opp-card {
+    height: auto;
+    min-height: 400px;
+  }
+  
+  .card-details {
+    max-height: none;
+    opacity: 1;
+    margin-top: 1rem;
+    padding-bottom: 2rem;
+  }
+}

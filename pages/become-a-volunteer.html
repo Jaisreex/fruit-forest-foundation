@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Become a Volunteer | Fruit Forest Foundation</title>
+  <link rel="icon" href="../assets/favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .volunteer-reg-section {
+      padding: 6rem 0;
+      background: var(--white);
+    }
+
+    .reg-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .reg-form-container {
+      background: var(--bg-soft);
+      padding: 3.5rem;
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .reg-form-container h2 {
+      margin-bottom: 1rem;
+      color: var(--green);
+    }
+
+    .reg-form-container p {
+      margin-bottom: 2.5rem;
+      color: var(--text-light);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+      font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 1rem 1.2rem;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--green);
+      box-shadow: 0 0 0 4px rgba(45, 90, 39, 0.1);
+    }
+
+    .role-details {
+      padding-top: 1rem;
+    }
+
+    .role-card {
+      background: var(--white);
+      padding: 2.5rem;
+      border-radius: 25px;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+    }
+
+    .role-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1.2rem;
+      color: var(--green-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .role-card h3 i {
+      color: var(--green);
+    }
+
+    .role-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .role-list li {
+      display: flex;
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .role-list li i {
+      color: var(--green);
+      margin-top: 0.3rem;
+    }
+
+    @media (max-width: 992px) {
+      .reg-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .reg-form-container {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation Logo" class="logo-img-main" />
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="../index.html#home" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="services.html" class="nav-link">Our Initiative</a>
+        <a href="../index.html#impact-map" class="nav-link">Impact</a>
+        <a href="join.html" class="nav-link active">Get Involved</a>
+        <a href="../index.html#faq" class="nav-link">FAQ</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="donate.html" class="btn-donate-nav">Donate</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="standard-hero full-screen" style="background-image: url('../assets/images/join_hero_bg.png');">
+    <div class="container reveal">
+      <div class="section-tag" style="background: var(--gold); color: var(--green-dark); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; display: inline-block; margin-bottom: 1.5rem;">Join Us</div>
+      <h1 class="hero-title">Become a Volunteer</h1>
+      <p class="hero-subtitle">Be part of a meaningful initiative that transforms open spaces into fruit-bearing ecosystems.</p>
+    </div>
+  </section>
+
+  <section class="volunteer-reg-section">
+    <div class="container">
+      <div class="reg-grid">
+        <!-- Registration Form -->
+        <div class="reg-form-container reveal-left">
+          <h2>Register Now</h2>
+          <p>Fill out the form below and our team will get in touch with you shortly to welcome you to the community.</p>
+          
+          <form id="volunteerForm" onsubmit="event.preventDefault(); showToast('🌱 Application sent! We will contact you soon.', 'green'); this.reset();">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
+            </div>
+            <div class="form-group">
+              <label for="location">Location</label>
+              <input type="text" id="location" name="location" placeholder="City, Country" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Why do you want to join?</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell us a bit about yourself..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 1.2rem;">Submit Application</button>
+          </form>
+        </div>
+
+        <!-- Role Details -->
+        <div class="role-details reveal-right">
+          <div class="role-card">
+            <h3><i class="fas fa-info-circle"></i> About the Role</h3>
+            <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Be part of a meaningful initiative that transforms open spaces into fruit-bearing ecosystems. Your efforts help provide free food, support biodiversity, and create a healthier environment for all.</p>
+          </div>
+
+          <div class="role-card">
+            <h3><i class="fas fa-tasks"></i> What You Can Do</h3>
+            <ul class="role-list">
+              <li><i class="fas fa-check"></i> Participate in tree plantation drives</li>
+              <li><i class="fas fa-check"></i> Help maintain and care for fruit forests</li>
+              <li><i class="fas fa-check"></i> Support environmental awareness activities</li>
+              <li><i class="fas fa-check"></i> Contribute to local sustainability efforts</li>
+            </ul>
+          </div>
+
+          <div class="role-card">
+            <h3><i class="fas fa-gift"></i> What You’ll Gain</h3>
+            <ul class="role-list">
+              <li><i class="fas fa-check"></i> Hands-on experience in environmental work</li>
+              <li><i class="fas fa-check"></i> Opportunity to give back to the community</li>
+              <li><i class="fas fa-check"></i> Learn about sustainable living practices</li>
+              <li><i class="fas fa-check"></i> Be part of a growing green movement</li>
+            </ul>
+          </div>
+
+          <div class="role-card">
+            <h3><i class="fas fa-user-friends"></i> Who Can Join</h3>
+            <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Anyone with a passion to make a positive impact — students, professionals, and nature lovers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation" />
+          </div>
+          <p>Planting the seeds of abundance, wellness, and financial freedom — one community at a time.</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-links-group">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html#home">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Initiative</a></li>
+            <li><a href="../index.html#impact-map">Impact Map</a></li>
+            <li><a href="join.html">Get Involved</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p><i class="fas fa-envelope"></i> hello@fruitforestfoundation.com</p>
+          <p><i class="fas fa-phone"></i> +1 (800) FRUIT-FOREST</p>
+          <p><i class="fas fa-map-marker-alt"></i> Global · Est. 2024</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Fruit Forest Foundation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

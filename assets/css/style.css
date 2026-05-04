@@ -3093,5 +3093,60 @@ img {
     padding: 2.5rem 1.5rem;
   }
 }
+/* ---------- GLOBAL INTERACTIVE ENHANCEMENTS ---------- */
+
+/* Buttons: Slight zoom-in + soft shadow glow */
+.btn-primary, 
+.btn-secondary, 
+.btn-gold-solid, 
+.btn-donate-nav, 
+.btn-donate-hero,
+.btn-expand-card {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.btn-primary:hover, 
+.btn-secondary:hover, 
+.btn-gold-solid:hover, 
+.btn-donate-nav:hover, 
+.btn-donate-hero:hover,
+.btn-expand-card:hover {
+  transform: scale(1.05) translateY(-2px) !important;
+  box-shadow: 0 10px 25px rgba(45, 90, 39, 0.25) !important;
+}
+
+/* Specific glow for gold buttons */
+.btn-gold-solid:hover, 
+.btn-donate-nav:hover, 
+.btn-donate-hero:hover {
+  box-shadow: 0 10px 25px rgba(255, 208, 0, 0.4) !important;
+}
+
+/* Cards: Light lift + shadow + subtle color highlight */
+.opp-card, 
+.opp-detail-card, 
+.crisis-card, 
+.solution-card, 
+.impact-card,
+.role-card {
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.opp-card:hover, 
+.opp-detail-card:hover, 
+.crisis-card:hover, 
+.solution-card:hover, 
+.impact-card:hover,
+.role-card:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+  background-color: var(--green-pale) !important;
+  border-color: rgba(45, 90, 39, 0.1) !important;
+}
+
+/* Navbar Links soft glow */
+.nav-link:hover {
+  text-shadow: 0 0 10px rgba(45, 90, 39, 0.2);
+}
 
 

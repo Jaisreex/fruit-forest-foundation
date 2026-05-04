@@ -238,16 +238,39 @@ function showToast(message, type = 'green') {
   setTimeout(() => { toast.style.opacity = '0'; toast.style.transition = 'opacity .3s ease'; setTimeout(() => toast.remove(), 300); }, 4000);
 }
 
-// ---- Opportunities Card Click Handler ----
-function handleOppClick(event, targetUrl) {
+// ---- Volunteer Card Interactivity ----
+window.toggleCard = function(cardId) {
+  const card = document.getElementById(cardId);
+  const btn = card.querySelector('.btn-expand-card');
+  const isExpanded = card.classList.toggle('expanded');
+  
+  if (isExpanded) {
+    btn.innerHTML = 'Collapse <i class="fas fa-chevron-up"></i>';
+  } else {
+    btn.innerHTML = 'Explore Role <i class="fas fa-chevron-down"></i>';
+  }
+};
+
+window.switchTab = function(event, tabId) {
   event.preventDefault();
-  const card = event.currentTarget;
+  event.stopPropagation();
   
-  // Add animating class to trigger CSS animation
-  card.classList.add('animating');
+  const container = event.currentTarget.closest('.volunteer-card');
   
-  // Wait for animation to finish (approx 400-500ms) before navigating
-  setTimeout(() => {
-    window.location.href = targetUrl;
-  }, 450);
-}
+  // Update Buttons
+  container.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  
+  // Update Panes
+  container.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+  
+  // Note: Since IDs must be unique, and we might have multiple cards with same tab names, 
+  // it's better to find the pane within the container. 
+  // However, in our specific HTML, I used IDs. I should fix the HTML to use classes if I want to reuse this.
+  // For now, I'll stick to finding within container.
+  const pane = container.querySelector(`.tab-pane[id="${tabId}"]`);
+  if (pane) {
+    pane.classList.add('active');
+  }
+};
+

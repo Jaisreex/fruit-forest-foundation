@@ -109,6 +109,201 @@
         padding: 2.5rem 1.5rem;
       }
     }
+
+    /* --- Enhanced Volunteer Card Styles --- */
+    .opp-detail-card.volunteer-card {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      min-height: 400px;
+      text-align: left;
+      padding: 0;
+      cursor: default;
+    }
+
+    .card-front {
+      padding: 3rem;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .volunteer-card.expanded .card-front {
+      padding-bottom: 0;
+      transform: translateY(-10px);
+    }
+
+    .btn-expand-card {
+      margin-top: 1.5rem;
+      background: var(--green-pale);
+      color: var(--green);
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-expand-card:hover {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .card-expanded-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+      opacity: 0;
+      padding: 0 3rem;
+    }
+
+    .volunteer-card.expanded .card-expanded-content {
+      max-height: 1000px;
+      opacity: 1;
+      padding-bottom: 3rem;
+    }
+
+    .about-role {
+      margin-top: 1rem;
+      padding: 1.5rem;
+      background: var(--bg-soft);
+      border-radius: var(--radius-sm);
+      margin-bottom: 2rem;
+    }
+
+    .about-role h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+      color: var(--green);
+    }
+
+    .card-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid var(--bg-soft);
+      padding-bottom: 0.5rem;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--text-light);
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .tab-btn.active {
+      color: var(--green);
+    }
+
+    .tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -0.5rem;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--green);
+    }
+
+    .tab-pane {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .tab-pane.active {
+      display: block;
+    }
+
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .icon-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: var(--white);
+      padding: 0.8rem;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: var(--transition);
+    }
+
+    .icon-item i {
+      color: var(--green);
+      font-size: 1.1rem;
+      width: 30px;
+      height: 30px;
+      background: var(--green-pale);
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+    }
+
+    .icon-item span {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .benefit-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+
+    .benefit-item i {
+      color: var(--green);
+      margin-top: 0.3rem;
+    }
+
+    .eligibility-box {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    .card-cta {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      .icon-grid {
+        grid-template-columns: 1fr;
+      }
+      .card-tabs {
+        flex-wrap: wrap;
+      }
+    }
+
   </style>
 </head>
 
@@ -196,11 +391,85 @@
 
       <div class="opportunities-grid">
         <!-- Card 1: Volunteer Opportunities -->
-        <div class="opp-detail-card reveal">
-          <div class="opp-detail-icon"><i class="fas fa-hands-helping"></i></div>
-          <h3>Volunteer Opportunities</h3>
-          <p>Join our programs and help us create positive change in communities through direct action and support.</p>
+        <div class="opp-detail-card reveal volunteer-card" id="volunteer-card">
+          <div class="card-front">
+            <div class="opp-detail-icon"><i class="fas fa-hands-helping"></i></div>
+            <h3>Volunteer Opportunities</h3>
+            <p>Join our community efforts to grow fruit forests and support a greener future.</p>
+            <button class="btn-expand-card" onclick="toggleCard('volunteer-card')">
+              Explore Role <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+          
+          <div class="card-expanded-content">
+            <div class="about-role">
+              <h4>About the Role</h4>
+              <p>Be part of a hands-on movement creating fruit-bearing ecosystems in public spaces. Your contribution helps provide free food, supports biodiversity, and improves local environments.</p>
+            </div>
+            
+            <div class="card-tabs">
+              <button class="tab-btn active" onclick="switchTab(event, 'activities')">Activities</button>
+              <button class="tab-btn" onclick="switchTab(event, 'benefits')">Benefits</button>
+              <button class="tab-btn" onclick="switchTab(event, 'eligibility')">Eligibility</button>
+            </div>
+            
+            <!-- Tab 1: Activities (Icon Grid) -->
+            <div class="tab-pane active" id="activities">
+              <div class="icon-grid">
+                <div class="icon-item">
+                  <i class="fas fa-tree"></i>
+                  <span>Plant Trees</span>
+                </div>
+                <div class="icon-item">
+                  <i class="fas fa-tools"></i>
+                  <span>Maintain Forests</span>
+                </div>
+                <div class="icon-item">
+                  <i class="fas fa-bullhorn"></i>
+                  <span>Awareness Programs</span>
+                </div>
+                <div class="icon-item">
+                  <i class="fas fa-globe"></i>
+                  <span>Sustainability</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Tab 2: Benefits -->
+            <div class="tab-pane" id="benefits">
+              <div class="benefit-list">
+                <div class="benefit-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Real-world environmental experience</span>
+                </div>
+                <div class="benefit-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Community engagement and teamwork</span>
+                </div>
+                <div class="benefit-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Knowledge about sustainable practices</span>
+                </div>
+                <div class="benefit-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Opportunity to create visible impact</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Tab 3: Eligibility -->
+            <div class="tab-pane" id="eligibility">
+              <div class="eligibility-box">
+                <p>Students, professionals, nature lovers — anyone willing to contribute time and effort to our green mission.</p>
+              </div>
+            </div>
+            
+            <div class="card-cta">
+              <a href="opportunities-form.html" class="btn-primary" style="width: 100%; justify-content: center;">👉 Become a Volunteer</a>
+            </div>
+          </div>
         </div>
+
 
         <!-- Card 2: Community Programs -->
         <div class="opp-detail-card reveal delay-1">

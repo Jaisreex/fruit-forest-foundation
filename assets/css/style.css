@@ -319,22 +319,28 @@ img {
 
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  max-width: 100%;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 1400px;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.4s ease;
-  padding: 0;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  padding: 0 1rem;
+  /* Entrance animation */
+  animation: nav-slide-down 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
+  top: 15px;
 }
 
 .nav-container {
@@ -451,25 +457,27 @@ img {
   animation-delay: 0.70s;
 }
 
-/* Hover State — underline expands from left */
-.nav-link:hover {
-  color: var(--green) !important;
-}
-
 .nav-link::after {
   content: "";
   position: absolute;
-  bottom: 5px;
-  left: 1rem;
+  bottom: 0;
+  left: 50%;
   width: 0;
-  height: 2px;
-  background: var(--green);
-  transition: width 0.3s ease;
+  height: 3px;
+  background: linear-gradient(90deg, var(--green), #5aad52);
+  transition: width 0.35s ease, left 0.35s ease;
+  border-radius: 2px;
 }
 
-.nav-link:hover::after,
-.nav-link.active::after {
-  width: calc(100% - 2rem);
+/* Hover State — underline expands from centre, background glow */
+.nav-link:hover {
+  color: var(--green) !important;
+  background: rgba(45, 90, 39, 0.06);
+}
+
+.nav-link:hover::after {
+  width: 80%;
+  left: 10%;
 }
 
 /* Active State */
@@ -2810,26 +2818,33 @@ img {
 }
 
 .standard-hero h1,
-.standard-hero .hero-title {
+.standard-hero .hero-title,
+.detail-hero h1,
+.detail-hero .hero-title,
+.page-header h1,
+.page-header .hero-title {
   font-size: clamp(2.5rem, 8vw, 4.5rem);
   color: var(--white);
-  margin-bottom: 2rem;
-  max-width: 900px;
+  margin-bottom: 1.5rem;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
   line-height: 1.1;
   font-weight: 800;
-  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  text-align: left;
-  margin-left: 0;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .standard-hero p,
-.standard-hero .hero-subtitle {
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  color: rgba(255, 255, 255, 0.95);
-  max-width: 750px;
-  margin: 0 0 3rem 0;
+.standard-hero .hero-subtitle,
+.detail-hero p,
+.detail-hero .hero-subtitle,
+.page-header p,
+.page-header .hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
   line-height: 1.6;
-  text-align: left;
 }
 
 @media (max-width: 768px) {
@@ -3185,193 +3200,4 @@ img {
   text-shadow: 0 0 10px rgba(45, 90, 39, 0.2);
 }
 
-
-
-/* --- What We Do Section --- */
-.what-we-do-section {
-  padding: 8rem 0;
-  background: var(--white);
-}
-
-.what-we-do-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  margin-top: 4rem;
-}
-
-.what-card {
-  padding: 3rem 2rem;
-  background: var(--green-pale);
-  border-radius: var(--radius);
-  text-align: center;
-  transition: var(--transition);
-  border: 1px solid rgba(45, 90, 39, 0.05);
-}
-
-.what-card:hover {
-  transform: translateY(-10px);
-  background: var(--white);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--green-pale);
-}
-
-.what-icon {
-  width: 80px;
-  height: 80px;
-  background: var(--white);
-  color: var(--green);
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  margin: 0 auto 2rem;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-}
-
-.what-card h3 {
-  margin-bottom: 1rem;
-  color: var(--dark);
-}
-
-.what-card p {
-  color: var(--text-light);
-  font-size: 1rem;
-}
-
-/* --- Impact Numbers --- */
-.stats-section {
-  padding: 6rem 0;
-  background: var(--green);
-  color: var(--white);
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4rem;
-  text-align: center;
-}
-
-.stat-item h2 {
-  font-size: 4rem;
-  margin-bottom: 0.5rem;
-  color: var(--gold);
-}
-
-.stat-item p {
-  font-size: 1.1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  opacity: 0.9;
-}
-
-/* --- Gallery Zoom --- */
-.gallery-item {
-  overflow: hidden;
-  border-radius: var(--radius-sm);
-  position: relative;
-}
-
-.gallery-item img {
-  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.gallery-item:hover img {
-  transform: scale(1.1);
-}
-
-/* --- Opportunity Cards Hover Enhance --- */
-.opp-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.opp-card::after {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
-}
-
-.opp-card:hover::after {
-  opacity: 1;
-  animation: lightMove 2s infinite linear;
-}
-
-@keyframes lightMove {
-  0% { transform: translate(-20%, -20%); }
-  100% { transform: translate(20%, 20%); }
-}
-
-/* --- Strong CTA Section --- */
-.final-cta-section {
-  padding: 10rem 0;
-  background: linear-gradient(rgba(45, 90, 39, 0.9), rgba(45, 90, 39, 0.9)), url('../images/fruit_forest_hero.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: var(--white);
-  text-align: center;
-}
-
-.final-cta-content h2 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  margin-bottom: 3rem;
-}
-
-.final-cta-buttons {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-
-/* --- Responsive Adjustments for New Sections --- */
-@media (max-width: 992px) {
-  .what-we-do-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .what-we-do-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .stats-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .stat-item h2 {
-    font-size: 3rem;
-  }
-  
-  .final-cta-buttons {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .hero-buttons {
-    flex-direction: column;
-    width: 100%;
-  }
-  
-  .hero-buttons .btn-primary,
-  .hero-buttons .btn-secondary {
-    width: 100%;
-    justify-content: center;
-  }
-}
 

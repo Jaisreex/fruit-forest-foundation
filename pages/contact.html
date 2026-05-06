@@ -218,6 +218,19 @@ function handleContact(e) {
   document.getElementById('contactForm').style.display = 'none';
   document.getElementById('contactSuccess').style.display = 'block';
 }
+
+// Dynamic Hero Image based on contact type
+document.addEventListener('DOMContentLoaded', function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const type = urlParams.get('type');
+  const heroSection = document.querySelector('.standard-hero');
+  
+  if (type === 'partner') {
+    heroSection.style.backgroundImage = "url('../assets/images/partner_hero_new.png')";
+    document.querySelector('.hero-title').textContent = "Partner With Us";
+    document.querySelector('.hero-subtitle').textContent = "Join hands with Fruit Forest Foundation to scale our impact.";
+  }
+});
 </script>
   <!-- ===== FLOATING PLANT A TREE BUTTON ===== -->
   <button class="float-btn" onclick="window.location.href='donate.html'">

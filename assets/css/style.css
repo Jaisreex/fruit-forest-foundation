@@ -2182,15 +2182,16 @@ img {
 /* ---------- GET INVOLVED CARDS ---------- */
 .action-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
   margin-top: 3.5rem;
+  align-items: stretch;
 }
 
 .action-card {
   background: var(--white);
   border-radius: 20px;
-  padding: 0; /* Changed to allow image to span full width */
+  padding: 0;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(0, 0, 0, 0.05);
   transition: var(--transition);
@@ -2198,6 +2199,7 @@ img {
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  height: 100%;
 }
 
 .action-card-img {
@@ -2212,6 +2214,11 @@ img {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  flex-grow: 1;
+}
+
+.action-card-content .btn-primary {
+  margin-top: auto;
 }
 
 /* Deployment trigger comment */

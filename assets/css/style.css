@@ -2190,15 +2190,28 @@ img {
 .action-card {
   background: var(--white);
   border-radius: 20px;
-  padding: 3rem;
+  padding: 0; /* Changed to allow image to span full width */
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(0, 0, 0, 0.05);
   transition: var(--transition);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
   position: relative;
   overflow: hidden;
+}
+
+.action-card-img {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.action-card-content {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .action-card::before {

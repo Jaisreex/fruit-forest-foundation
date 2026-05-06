@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wealth Coaching | Fruit Forest Foundation</title>
+  <link rel="icon" href="../assets/favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* Full Width Centered Layout */
+    .content-section { padding: 10rem 0; line-height: 1.8; color: var(--text-light); }
+    .content-wrapper { max-width: 1250px; margin: 0 auto; text-align: center; }
+    
+    .content-wrapper h2 { color: var(--dark); font-size: 3rem; margin-bottom: 2.5rem; font-weight: 900; }
+    .content-wrapper p { margin-bottom: 2rem; font-size: 1.25rem; line-height: 1.9; }
+    
+    /* Wealth Grid */
+    .wealth-grid { 
+        display: grid; 
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 2.5rem; 
+        margin: 5rem 0;
+        text-align: left;
+    }
+    /* Inner Cards with Color Flow Animation */
+    .wealth-card, .info-card, .reference-box { 
+        background: linear-gradient(135deg, var(--white) 0%, var(--white) 60%, #f1f8f0 100%);
+        background-size: 200% 200%;
+        padding: 3.5rem; 
+        border-radius: 30px; 
+        box-shadow: 0 15px 40px rgba(0,0,0,0.04);
+        border: 1px solid rgba(0,0,0,0.02);
+        transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        position: relative;
+        overflow: hidden;
+    }
+    .wealth-card:hover, .info-card:hover, .reference-box:hover { 
+        background-position: 100% 100%;
+        transform: translateY(-12px); 
+        box-shadow: 0 25px 60px rgba(45, 90, 39, 0.1);
+        border-color: var(--green-pale);
+    }
+    .wealth-card i { font-size: 2.5rem; color: var(--green); margin-bottom: 1.5rem; display: block; }
+    .wealth-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--green-dark); font-weight: 800; }
+    .wealth-card p { font-size: 1.05rem; line-height: 1.7; margin-bottom: 0; }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+        margin: 4rem 0;
+        text-align: left;
+    }
+    .info-card h3 { color: var(--green-dark); margin-bottom: 1.5rem; font-size: 1.6rem; font-weight: 800; }
+    .info-card p { font-size: 1.1rem; color: var(--text-light); }
+
+    /* Highlight Sections */
+    .quote-box { 
+        background: var(--green-pale); 
+        padding: 6rem; 
+        border-radius: 40px; 
+        margin: 6rem 0;
+        border-left: 10px solid var(--green);
+    }
+    .cta-accent { 
+        background: var(--dark);
+        color: var(--white); 
+        padding: 8rem 4rem; 
+        border-radius: 40px;
+        margin-top: 8rem;
+    }
+    .cta-accent h2, .cta-accent p { color: var(--white); }
+
+    /* Legacy Reference */
+    .legacy-reference { margin-top: 10rem; padding: 6rem 0; background: var(--bg-soft); border-top: 1px solid rgba(0,0,0,0.05); text-align: left; }
+    .reference-box { background: var(--white); padding: 4rem; border-radius: 30px; border-left: 8px solid var(--gold); }
+    .reference-box h4 { margin-bottom: 2rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; }
+
+    @media (max-width: 992px) { 
+        .wealth-grid { grid-template-columns: 1fr; }
+        .content-section { padding: 6rem 0; }
+        .quote-box { padding: 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-brand">
+      <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation Logo" class="logo-img-main" />
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="../index.html#home" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link active">About Us</a>
+      <a href="services.html" class="nav-link">Our Initiative</a>
+      <a href="../index.html#impact-map" class="nav-link">Impact</a>
+      <a href="join.html" class="nav-link">Get Involved</a>
+      <a href="../index.html#faq" class="nav-link">FAQ</a>
+    </div>
+    <div class="nav-actions">
+      <a href="donate.html" class="btn-donate-nav">Donate</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="standard-hero full-screen" style="background-image: url('../assets/images/wealth_coaching_wide_tamil.png');">
+  <div class="container reveal-left">
+    <div class="section-tag" style="background: var(--gold); color: var(--dark); border:none;">Financial Literacy</div>
+    <h1>Wealth Coaching</h1>
+  </div>
+</header>
+
+<main class="content-section">
+  <div class="container">
+    <div class="content-wrapper reveal-left">
+      <h2>Building Financially Resilient Societies</h2>
+      <p>True empowerment begins with knowledge. Our wealth coaching program provides the essential tools for financial independence and long-term security. We focus on teaching the fundamentals of sustainable wealth creation.</p>
+      
+      <div class="wealth-grid">
+        <div class="wealth-card reveal-left">
+          <i class="fas fa-chart-line"></i>
+          <h3>Financial Literacy</h3>
+          <p>Teaching budgeting, saving, and ethical investing to build a solid financial foundation.</p>
+        </div>
+        <div class="wealth-card reveal delay-1">
+          <i class="fas fa-rocket"></i>
+          <h3>Entrepreneurship</h3>
+          <p>Empowering individuals to build sustainable businesses that grow alongside our forests.</p>
+        </div>
+        <div class="wealth-card reveal delay-2">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Economic Resilience</h3>
+          <p>Reducing inequality and fostering accessible prosperity for all members of the community.</p>
+        </div>
+      </div>
+
+      <div class="quote-box reveal">
+        <p style="font-size: 1.5rem; color: var(--green-dark); font-weight: 700; line-height: 1.5;">"We provide workshops and personal mentorship to break cycles of dependency and foster long-term stability for families and local economies."</p>
+      </div>
+
+      <div class="cta-accent reveal">
+        <h2 style="font-size: 3rem;">Ready to Secure Your Future?</h2>
+        <p style="max-width: 1000px; margin: 2rem auto 0; font-size: 1.3rem;">Attend our financial awareness and entrepreneurship workshops and gain the skills to achieve true independence.</p>
+        <div style="margin-top: 4rem;">
+          <a href="join.html" class="btn-gold-solid" style="padding: 1.2rem 3rem; font-size: 1.1rem; border-radius: 50px;">Join Our Program</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<section class="legacy-reference">
+  <div class="container">
+    <div class="info-grid">
+      <div class="info-card reveal">
+        <h3>Sustainable Prosperity</h3>
+        <p>Our Wealth Coaching program empowers communities by providing the knowledge needed for financial self-sufficiency. We teach individuals how to manage resources ethically and sustainably, mirroring the growth of nature.</p>
+      </div>
+      <div class="info-card reveal delay-1">
+        <h3>Ethical Finance</h3>
+        <p>Through workshops on micro-investing and ethical finance, we help participants build lasting value that benefits both their families and the broader ecosystem through community-driven initiatives.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <footer class="footer" id="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation" />
+          </div>
+          <p>Planting the seeds of abundance, wellness, and financial freedom — one community at a time.</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube" class="social-icon"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-links-group">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html#story">Our Story</a></li>
+            <li><a href="../index.html#tree-mission">Tree Mission</a></li>
+            <li><a href="../index.html#health-coaching">Health Coaching</a></li>
+            <li><a href="../index.html#wealth-coaching">Wealth Coaching</a></li>
+            <li><a href="../index.html#impact-map">Impact Map</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4>Get Involved</h4>
+          <ul>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="join.html">Volunteer</a></li>
+            <li><a href="join.html">Partner With Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p><i class="fas fa-envelope"></i> hello@fruitforestfoundation.com</p>
+          <p><i class="fas fa-phone"></i> +1 (800) FRUIT-FOREST</p>
+          <p><i class="fas fa-map-marker-alt"></i> Global · Est. 2024</p>
+          <div class="footer-hashtag">
+            <i class="fab fa-instagram"></i>
+            <span>#Fruit ForestGlobal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p style="margin-bottom: 1rem; opacity: 0.8; font-size: 0.9rem;">Fruit Forest Foundation is a non-profit trust committed to building sustainable communities through fruit tree initiatives.</p>
+        <p>&copy; 2026 Fruit Forest Foundation. All rights reserved. Registered Non-Profit Trust.</p>
+        <p>Made with <i class="fas fa-heart" style="color:#e74c3c"></i> for the Earth.</p>
+      </div>
+    </div>
+  </footer>
+
+<button class="float-btn" onclick="window.location.href='donate.html'"><span>🌱 Plant a Tree</span></button>
+
+<script src="../assets/js/main.js"></script>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

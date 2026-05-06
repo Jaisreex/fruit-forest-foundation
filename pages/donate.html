@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate | Fruit Forest Foundation</title>
+  <meta name="description"
+    content="Support Fruit Forest Foundation by sponsoring fruit trees, wellness coaching and financial education for communities worldwide." />
+  <link rel="icon" href="../assets/favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --card-bg: rgba(255, 255, 255, 0.98);
+    }
+
+    body {
+      background-image: url('../assets/images/donate_hero_new.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+    }
+
+    /* Fixed background overlay for readability if needed */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: -1;
+    }
+
+    .donate-hero {
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--white);
+      padding: 0 1.5rem;
+    }
+
+    .donate-hero h1 {
+      font-size: clamp(3rem, 10vw, 5rem);
+      text-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+      margin-bottom: 1.5rem;
+    }
+
+    .donate-hero p {
+      font-size: 1.3rem;
+      max-width: 800px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    .donate-container {
+      max-width: 1200px;
+      margin: -10vh auto 100px;
+      position: relative;
+      z-index: 10;
+      padding: 0 1.5rem;
+    }
+
+    .donate-card {
+      background: var(--card-bg);
+      border-radius: 40px;
+      padding: 5rem;
+      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      margin-bottom: 4rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.8rem;
+      color: var(--dark);
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    .section-header p {
+      font-size: 1.15rem;
+      color: var(--text-light);
+    }
+
+    /* Impact Selection */
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 5rem;
+    }
+
+    .impact-item {
+      background: var(--bg-soft);
+      padding: 3rem 2rem;
+      border-radius: 30px;
+      text-align: center;
+      transition: var(--transition);
+      cursor: pointer;
+      border: 2px solid transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .impact-item:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow);
+      background: var(--white);
+      border-color: var(--green-pale);
+    }
+
+    .impact-item.active {
+      border-color: var(--green);
+      background: var(--green-pale);
+    }
+
+    .impact-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--white);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: var(--green);
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .impact-item h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .impact-amount {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--green);
+      margin-bottom: 1rem;
+    }
+
+    .impact-desc {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* Donation Form */
+    .donation-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .form-group {
+      margin-bottom: 2rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 800;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+      margin-bottom: 0.8rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 1.2rem 1.5rem;
+      border: 2px solid #edf2f7;
+      border-radius: 15px;
+      font-family: inherit;
+      font-size: 1rem;
+      background: #f8fafc;
+      transition: var(--transition);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--green);
+      background: var(--white);
+      box-shadow: 0 0 0 4px var(--green-pale);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .btn-donate-main {
+      width: 100%;
+      padding: 1.5rem;
+      background: var(--green);
+      color: var(--white);
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      box-shadow: 0 15px 30px rgba(45, 90, 39, 0.3);
+      margin-top: 1rem;
+    }
+
+    .btn-donate-main:hover {
+      background: var(--green-dark);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(45, 90, 39, 0.4);
+    }
+
+    /* Trust Info */
+    .trust-sidebar {
+      background: var(--bg-soft);
+      padding: 3rem;
+      border-radius: 30px;
+    }
+
+    .trust-sidebar h4 {
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      color: var(--dark);
+      border-bottom: 2px solid var(--green-pale);
+      padding-bottom: 1rem;
+    }
+
+    .trust-list {
+      list-style: none;
+    }
+
+    .trust-list li {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .trust-list li i {
+      font-size: 1.2rem;
+      color: var(--gold-dark);
+      width: 24px;
+      text-align: center;
+    }
+
+    .tax-badge {
+      background: var(--gold);
+      color: var(--green-dark);
+      padding: 1.5rem;
+      border-radius: 20px;
+      margin-top: 3rem;
+      text-align: center;
+      font-weight: 800;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 20px rgba(255, 208, 0, 0.2);
+    }
+
+    @media (max-width: 1024px) {
+      .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .donation-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .donate-card {
+        padding: 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .impact-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .donate-hero h1 {
+        font-size: 2.5rem;
+      }
+      .donate-card {
+        padding: 2.5rem 1.5rem;
+        border-radius: 30px;
+      }
+    }
+
+    /* Footer Alignment Fix for Donate Page */
+    .donate-page .footer {
+      background: var(--white);
+      margin-top: 5rem;
+    }
+  </style>
+</head>
+
+<body class="donate-page">
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation Logo" class="logo-img-main" />
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="../index.html#home" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="services.html" class="nav-link">Our Initiative</a>
+        <a href="../index.html#impact-map" class="nav-link">Impact</a>
+        <a href="join.html" class="nav-link">Get Involved</a>
+        <a href="../index.html#faq" class="nav-link">FAQ</a>
+      </div>
+      <div class="nav-actions">
+        <a href="donate.html" class="btn-donate-nav active">Donate</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="donate-hero">
+    <div class="container reveal">
+      <div class="section-tag" style="background: var(--gold); color: var(--green-dark); border:none;">Support Our Work
+      </div>
+      <h1>Planting Seeds of Hope</h1>
+      <p>Your contribution directly transforms landscapes and lives. By sponsoring fruit trees, you provide food
+        security, restore nature, and empower communities for generations.</p>
+    </div>
+  </header>
+
+  <main class="donate-container">
+    <div class="donate-card reveal">
+      <div class="section-header">
+        <h2>Choose Your Impact</h2>
+        <p>Select a sponsorship level or enter a custom amount to support our mission.</p>
+      </div>
+
+      <div class="impact-grid">
+        <!-- Impact 1 -->
+        <div class="impact-item reveal" onclick="selectImpact(this, 500)">
+          <div class="impact-icon"><i class="fas fa-seedling"></i></div>
+          <div class="impact-amount">₹500</div>
+          <h3>Plant a Tree</h3>
+          <p class="impact-desc">Sponsor the planting and 3-year care of one fruit-bearing tree in a community orchard.
+          </p>
+        </div>
+
+        <!-- Impact 2 -->
+        <div class="impact-item reveal delay-1" onclick="selectImpact(this, 2500)">
+          <div class="impact-icon"><i class="fas fa-tree"></i></div>
+          <div class="impact-amount">₹2,500</div>
+          <h3>Small Grove</h3>
+          <p class="impact-desc">Help us plant a small cluster of 5 fruit trees, creating a mini-ecosystem for local
+            wildlife and residents.</p>
+        </div>
+
+        <!-- Impact 3 -->
+        <div class="impact-item reveal delay-2" onclick="selectImpact(this, 10000)">
+          <div class="impact-icon"><i class="fas fa-users"></i></div>
+          <div class="impact-amount">₹10,000</div>
+          <h3>Community Orchard</h3>
+          <p class="impact-desc">Sponsor a significant portion of a community orchard project, providing food security
+            for dozens of families.</p>
+        </div>
+      </div>
+
+      <div class="donation-layout">
+        <div class="donation-form reveal">
+          <form id="donateForm" onsubmit="handleDonate(event)">
+            <div class="form-group">
+              <label for="custom-amount">Donation Amount (₹)</label>
+              <input type="number" id="custom-amount" placeholder="Enter amount" min="100" required />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="full-name">Full Name *</label>
+                <input type="text" id="full-name" placeholder="John Doe" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" placeholder="john@example.com" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="+91 99999 99999" />
+              </div>
+              <div class="form-group">
+                <label for="purpose">Donation Purpose</label>
+                <select id="purpose">
+                  <option>Fruit Tree Planting Mission</option>
+                  <option>Community Wellness Coaching</option>
+                  <option>Wealth & Financial Education</option>
+                  <option>General Support Fund</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message (Optional)</label>
+              <textarea id="message" rows="4" placeholder="Why are you supporting us?"></textarea>
+            </div>
+
+            <button type="submit" class="btn-donate-main">
+              <i class="fas fa-heart"></i> Complete Donation
+            </button>
+          </form>
+
+          <div id="successMessage" style="display: none; text-align: center; padding: 4rem 0;">
+            <div class="impact-icon" style="margin: 0 auto 2rem; background: var(--green-pale);">
+              <i class="fas fa-check-circle" style="color: var(--green);"></i>
+            </div>
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Thank You!</h2>
+            <p style="font-size: 1.2rem; color: var(--text-light); max-width: 500px; margin: 0 auto;">Your generous gift
+              has been received. Together, we are planting the seeds of a better future.</p>
+            <a href="../index.html" class="btn-primary" style="margin-top: 3rem;">Return Home</a>
+          </div>
+        </div>
+
+        <div class="trust-sidebar reveal delay-1">
+          <h4>Why Trust Us?</h4>
+          <ul class="trust-list">
+            <li><i class="fas fa-shield-alt"></i> 100% Secure Payments</li>
+            <li><i class="fas fa-chart-line"></i> Full Transparency</li>
+            <li><i class="fas fa-file-alt"></i> Detailed Impact Reports</li>
+            <li><i class="fas fa-user-check"></i> Registered Non-Profit</li>
+          </ul>
+
+          <div class="tax-badge">
+            <i class="fas fa-star" style="margin-bottom: 1rem; font-size: 1.5rem; display: block;"></i>
+            Donations are Tax Exempt under Section 80G of the Income Tax Act.
+          </div>
+
+          <div style="margin-top: 3rem; text-align: center;">
+            <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.6;">
+              "The best time to plant a tree was 20 years ago. The second best time is now."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation" />
+          </div>
+          <p>Planting the seeds of abundance, wellness, and financial freedom — one community at a time.</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube" class="social-icon"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-links-group">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html#story">Our Story</a></li>
+            <li><a href="../index.html#tree-mission">Tree Mission</a></li>
+            <li><a href="../index.html#health-coaching">Health Coaching</a></li>
+            <li><a href="../index.html#wealth-coaching">Wealth Coaching</a></li>
+            <li><a href="../index.html#impact-map">Impact Map</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4>Get Involved</h4>
+          <ul>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="join.html">Volunteer</a></li>
+            <li><a href="join.html">Partner With Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p><i class="fas fa-envelope"></i> hello@fruitforestfoundation.com</p>
+          <p><i class="fas fa-phone"></i> +1 (800) FRUIT-FOREST</p>
+          <p><i class="fas fa-map-marker-alt"></i> Global · Est. 2024</p>
+          <div class="footer-hashtag">
+            <i class="fab fa-instagram"></i>
+            <span>#Fruit ForestGlobal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p style="margin-bottom: 1rem; opacity: 0.8; font-size: 0.9rem;">Fruit Forest Foundation is a non-profit trust
+          committed to building sustainable communities through fruit tree initiatives.</p>
+        <p>&copy; 2026 Fruit Forest Foundation. All rights reserved. Registered Non-Profit Trust.</p>
+        <p>Made with <i class="fas fa-heart" style="color:#e74c3c"></i> for the Earth.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    function selectImpact(el, amount) {
+      document.querySelectorAll('.impact-item').forEach(item => item.classList.remove('active'));
+      el.classList.add('active');
+      document.getElementById('custom-amount').value = amount;
+    }
+
+    function handleDonate(e) {
+      e.preventDefault();
+      document.getElementById('donateForm').style.display = 'none';
+      document.querySelector('.section-header').style.display = 'none';
+      document.querySelector('.impact-grid').style.display = 'none';
+      document.querySelector('.trust-sidebar').style.display = 'none';
+      document.getElementById('successMessage').style.display = 'block';
+      window.scrollTo({ top: 200, behavior: 'smooth' });
+    }
+
+    // Scroll reveal
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => observer.observe(el));
+  </script>
+</body>
+
+</html>

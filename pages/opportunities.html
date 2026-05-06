@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore Opportunities | Fruit Forest Foundation</title>
+  <link rel="icon" href="../assets/favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .opportunities-intro {
+      padding: 6rem 0;
+      background: var(--white);
+    }
+
+    .opportunities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin-top: 4rem;
+    }
+
+    .opp-detail-card {
+      background: var(--white);
+      padding: 3rem;
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .opp-detail-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .opp-detail-icon {
+      width: 70px;
+      height: 70px;
+      background: var(--green-pale);
+      color: var(--green);
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 2rem;
+      font-size: 1.8rem;
+    }
+
+    .opp-detail-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+      color: var(--dark);
+    }
+
+    .opp-detail-card p {
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    .about-opp-section {
+      padding: 6rem 0;
+      background: var(--bg-soft);
+    }
+
+    .about-opp-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .about-opp-content p {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .about-opp-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+      text-align: left;
+    }
+
+    .about-opp-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      background: var(--white);
+      padding: 1.5rem;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    }
+
+    .about-opp-item i {
+      color: var(--green);
+      font-size: 1.2rem;
+      margin-top: 0.3rem;
+    }
+
+    @media (max-width: 768px) {
+      .opp-detail-card {
+        padding: 2.5rem 1.5rem;
+      }
+    }
+
+    /* --- Enhanced Volunteer Card Styles --- */
+    .opp-detail-card.volunteer-card {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      min-height: 400px;
+      text-align: left;
+      padding: 0;
+      cursor: default;
+    }
+
+    .card-front {
+      padding: 3rem;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .volunteer-card.expanded .card-front {
+      padding-bottom: 0;
+      transform: translateY(-10px);
+    }
+
+    .btn-expand-card {
+      margin-top: 1.5rem;
+      background: var(--green-pale);
+      color: var(--green);
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .opp-detail-card-img {
+      width: 100%;
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .btn-expand-card:hover {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .card-expanded-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+      opacity: 0;
+      padding: 0 3rem;
+    }
+
+    .volunteer-card.expanded .card-expanded-content {
+      max-height: 1000px;
+      opacity: 1;
+      padding-bottom: 3rem;
+    }
+
+    .about-role {
+      margin-top: 1rem;
+      padding: 1.5rem;
+      background: var(--bg-soft);
+      border-radius: var(--radius-sm);
+      margin-bottom: 2rem;
+    }
+
+    .about-role h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+      color: var(--green);
+    }
+
+    .card-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid var(--bg-soft);
+      padding-bottom: 0.5rem;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--text-light);
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .tab-btn.active {
+      color: var(--green);
+    }
+
+    .tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: -0.5rem;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--green);
+    }
+
+    .tab-pane {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .tab-pane.active {
+      display: block;
+    }
+
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .icon-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: var(--white);
+      padding: 0.8rem;
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: var(--transition);
+    }
+
+    .icon-item i {
+      color: var(--green);
+      font-size: 1.1rem;
+      width: 30px;
+      height: 30px;
+      background: var(--green-pale);
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+    }
+
+    .icon-item span {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .benefit-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+
+    .benefit-item i {
+      color: var(--green);
+      margin-top: 0.3rem;
+    }
+
+    .eligibility-box {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    .card-cta {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      .icon-grid {
+        grid-template-columns: 1fr;
+      }
+      .card-tabs {
+        flex-wrap: wrap;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation Logo" class="logo-img-main" />
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="../index.html#home" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="services.html" class="nav-link">Our Initiative</a>
+        <a href="../index.html#impact-map" class="nav-link">Impact</a>
+        <a href="join.html" class="nav-link active">Get Involved</a>
+        <a href="../index.html#faq" class="nav-link">FAQ</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="donate.html" class="btn-donate-nav">Donate</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="standard-hero full-screen" style="background-image: url('../assets/images/join_hero_bg.png');">
+    <div class="container reveal">
+      <div class="section-tag" style="background: var(--gold); color: var(--green-dark); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; display: inline-block; margin-bottom: 1.5rem;">Opportunities</div>
+      <h1 class="hero-title">Explore Opportunities</h1>
+      <p class="hero-subtitle">Discover meaningful ways to contribute to our mission and make a real impact in communities.</p>
+    </div>
+  </section>
+
+  <section class="about-opp-section">
+    <div class="container">
+      <div class="about-opp-content reveal">
+        <div class="section-tag">Contribute</div>
+        <h2 class="section-title"><b>Make a Real Impact</b></h2>
+        <p>At Fruit Forest Foundation, we believe that everyone has something valuable to offer. Whether you're a student, a professional, or a concerned citizen, there are numerous ways you can help us scale our impact.</p>
+        
+        <div class="about-opp-list">
+          <div class="about-opp-item">
+            <i class="fas fa-check-circle"></i>
+            <div>
+              <h4 style="color: var(--dark); margin-bottom: 0.5rem;">Volunteering</h4>
+              <p style="font-size: 0.95rem; margin-bottom: 0;">In community programs and on-field activities.</p>
+            </div>
+          </div>
+          <div class="about-opp-item">
+            <i class="fas fa-check-circle"></i>
+            <div>
+              <h4 style="color: var(--dark); margin-bottom: 0.5rem;">Tree Plantation</h4>
+              <p style="font-size: 0.95rem; margin-bottom: 0;">Supporting initiatives to green our cities.</p>
+            </div>
+          </div>
+          <div class="about-opp-item">
+            <i class="fas fa-check-circle"></i>
+            <div>
+              <h4 style="color: var(--dark); margin-bottom: 0.5rem;">Wellness & Education</h4>
+              <p style="font-size: 0.95rem; margin-bottom: 0;">Participating in community awareness sessions.</p>
+            </div>
+          </div>
+          <div class="about-opp-item">
+            <i class="fas fa-check-circle"></i>
+            <div>
+              <h4 style="color: var(--dark); margin-bottom: 0.5rem;">Social Impact</h4>
+              <p style="font-size: 0.95rem; margin-bottom: 0;">Collaborating on strategic projects with the trust.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="opportunities-intro">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3rem;" class="reveal">
+        <div class="section-tag">Programs</div>
+        <h2 class="section-title"><b>Our Opportunity Areas</b></h2>
+      </div>
+
+      <div class="opportunities-grid">
+        <!-- Card 1: Volunteer Opportunities -->
+        <div class="opp-detail-card reveal volunteer-card" id="volunteer-card">
+          <div class="card-front">
+            <div class="opp-detail-icon"><i class="fas fa-hands-helping"></i></div>
+            <h3>Volunteer Opportunities</h3>
+            <p>Join our community efforts to grow fruit forests and support a greener future.</p>
+            <button class="btn-expand-card" onclick="toggleCard('volunteer-card')">
+              Explore Role <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+          
+          <div class="card-expanded-content">
+            <div class="about-role">
+              <h4>About the Role</h4>
+              <p>Be part of a hands-on movement creating fruit-bearing ecosystems in public spaces. Your contribution helps provide free food, supports biodiversity, and improves local environments.</p>
+            </div>
+            
+            <div class="card-tabs">
+              <button class="tab-btn active" onclick="switchTab(event, 'activities')">Activities</button>
+              <button class="tab-btn" onclick="switchTab(event, 'benefits')">Benefits</button>
+              <button class="tab-btn" onclick="switchTab(event, 'eligibility')">Eligibility</button>
+            </div>
+            
+            <!-- Tab 1: Activities (Icon Grid) -->
+            <div class="tab-pane active" id="activities">
+              <div class="icon-grid">
+                <div class="icon-item">
+                  <i class="fas fa-tree"></i>
+                  <span>Plant Trees</span>
+                </div>
+                <div class="icon-item">
+                  <i class="fas fa-tools"></i>
+                  <span>Maintain Forests</span>
+                </div>
+                <div class="icon-item">
+                  <i class="fas fa-bullhorn"></i>
+                  <span>Awareness Programs</span>
+                </div>
+                <div class="icon-item">
+                  <i class="fas fa-globe"></i>
+                  <span>Sustainability</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Tab 2: Benefits -->
+            <div class="tab-pane" id="benefits">
+              <div class="benefit-list">
+                <div class="benefit-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Real-world environmental experience</span>
+                </div>
+                <div class="benefit-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Community engagement and teamwork</span>
+                </div>
+                <div class="benefit-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Knowledge about sustainable practices</span>
+                </div>
+                <div class="benefit-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Opportunity to create visible impact</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Tab 3: Eligibility -->
+            <div class="tab-pane" id="eligibility">
+              <div class="eligibility-box">
+                <p>Students, professionals, nature lovers — anyone willing to contribute time and effort to our green mission.</p>
+              </div>
+            </div>
+            
+            <div class="card-cta">
+              <a href="become-a-volunteer.html" class="btn-primary" style="width: 100%; justify-content: center;">👉 Become a Volunteer</a>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Card 2: Community Programs -->
+        <div class="opp-detail-card reveal delay-1">
+          <div class="opp-detail-icon"><i class="fas fa-users"></i></div>
+          <h3>Community Programs</h3>
+          <p>Support activities related to education, health, and rural development to empower those in need.</p>
+        </div>
+
+        <!-- Card 3: Environmental Initiatives -->
+        <div class="opp-detail-card reveal delay-2">
+          <div class="opp-detail-icon"><i class="fas fa-leaf"></i></div>
+          <h3>Environmental Initiatives</h3>
+          <p>Take part in tree planting and sustainability programs that support nature and local livelihoods.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 5rem;" class="reveal">
+        <a href="opportunities-form.html" class="btn-primary" style="padding: 1.2rem 4rem; font-size: 1.1rem; border-radius: 50px;">View Available Opportunities</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation" />
+          </div>
+          <p>Planting the seeds of abundance, wellness, and financial freedom — one community at a time.</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube" class="social-icon"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-links-group">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html#story">Our Story</a></li>
+            <li><a href="../index.html#tree-mission">Tree Mission</a></li>
+            <li><a href="../index.html#health-coaching">Health Coaching</a></li>
+            <li><a href="../index.html#wealth-coaching">Wealth Coaching</a></li>
+            <li><a href="../index.html#impact-map">Impact Map</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4>Get Involved</h4>
+          <ul>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="join.html">Volunteer</a></li>
+            <li><a href="join.html">Partner With Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p><i class="fas fa-envelope"></i> hello@fruitforestfoundation.com</p>
+          <p><i class="fas fa-phone"></i> +1 (800) FRUIT-FOREST</p>
+          <p><i class="fas fa-map-marker-alt"></i> Global · Est. 2024</p>
+          <div class="footer-hashtag">
+            <i class="fab fa-instagram"></i>
+            <span>#Fruit ForestGlobal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p style="margin-bottom: 1rem; opacity: 0.8; font-size: 0.9rem;">Fruit Forest Foundation is a non-profit trust committed to building sustainable communities through fruit tree initiatives.</p>
+        <p>&copy; 2026 Fruit Forest Foundation. All rights reserved. Registered Non-Profit Trust.</p>
+        <p>Made with <i class="fas fa-heart" style="color:#e74c3c"></i> for the Earth.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

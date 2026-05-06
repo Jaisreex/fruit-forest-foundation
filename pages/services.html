@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Initiative | Fruit Forest Foundation</title>
+  <link rel="icon" href="../assets/favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --earth-brown: #6C584C;
+      --light-cream: #F8F9F1;
+      --leaf-green: #40916C;
+    }
+
+    body {
+      background-color: var(--light-cream);
+    }
+
+    .initiative-section {
+      padding: 8rem 0;
+    }
+
+    /* How It Works Section */
+    /* Process Flow Section */
+    .process-flow {
+      max-width: 1000px;
+      margin: 5rem auto 0;
+      position: relative;
+      padding-bottom: 2rem;
+    }
+
+    .process-flow::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--green-pale);
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    .process-step {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6rem;
+      position: relative;
+      width: 100%;
+    }
+
+    .process-step:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .process-content {
+      width: 44%;
+      background: var(--white);
+      padding: 3rem;
+      border-radius: 35px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      border: 1px solid rgba(0, 0, 0, 0.02);
+      position: relative;
+    }
+
+    .process-content:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px rgba(45, 90, 39, 0.1);
+      border-color: var(--green-pale);
+    }
+
+    .process-marker {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 64px;
+      height: 64px;
+      background: var(--green);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.4rem;
+      box-shadow: 0 0 0 10px var(--light-cream), 0 0 0 15px var(--green-pale);
+      z-index: 5;
+    }
+
+    .process-content h3 {
+      font-size: 1.5rem;
+      color: var(--green-dark);
+      margin-bottom: 1.2rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .process-content h3 i {
+      font-size: 1.3rem;
+      opacity: 0.9;
+      color: var(--green);
+    }
+
+    .process-content p {
+      color: var(--text-light);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .process-flow::before {
+        left: 40px;
+      }
+      .process-step {
+        flex-direction: row !important;
+        justify-content: flex-start;
+        padding-left: 90px;
+        margin-bottom: 4rem;
+      }
+      .process-content {
+        width: 100%;
+        padding: 2.5rem;
+      }
+      .process-marker {
+        left: 40px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.1rem;
+        box-shadow: 0 0 0 8px var(--light-cream), 0 0 0 12px var(--green-pale);
+      }
+    }
+
+    /* Impact Section */
+    .impact-blocks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+
+    .impact-block {
+      background: var(--white);
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .impact-block-content {
+      padding: 3rem;
+    }
+
+    .impact-block h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .impact-block h3 i {
+      color: var(--green);
+    }
+
+    .impact-block p {
+      line-height: 1.8;
+      color: var(--text-light);
+      font-size: 1.05rem;
+    }
+
+    /* Biodiversity Section */
+    .biodiversity-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .bio-visual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .bio-img-item {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .bio-img-item i {
+      font-size: 2.5rem;
+      color: var(--green);
+      margin-bottom: 1rem;
+    }
+
+    .bio-img-item span {
+      display: block;
+      font-weight: 700;
+      color: var(--dark);
+      font-size: 0.9rem;
+    }
+
+    /* Coaching Section */
+    .coaching-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+
+    .coaching-card {
+      padding: 4rem 3rem;
+      border-radius: 30px;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .coaching-card.financial {
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+    }
+
+    .coaching-card.health {
+      background: linear-gradient(135deg, var(--earth-brown) 0%, #8E7A6E 100%);
+    }
+
+    .coaching-card h3 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      font-weight: 800;
+      color: var(--white);
+    }
+
+    .coaching-card p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      opacity: 0.95;
+    }
+
+    .coaching-icon-bg {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      font-size: 8rem;
+      opacity: 0.1;
+      transform: rotate(-15deg);
+    }
+
+    @media (max-width: 992px) {
+      .biodiversity-layout, .coaching-grid {
+        grid-template-columns: 1fr;
+      }
+      .biodiversity-layout {
+        gap: 3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation Logo" class="logo-img-main" />
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="../index.html#home" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="services.html" class="nav-link active">Our Initiative</a>
+        <a href="../index.html#impact-map" class="nav-link">Impact</a>
+        <a href="join.html" class="nav-link">Get Involved</a>
+        <a href="../index.html#faq" class="nav-link">FAQ</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="donate.html" class="btn-donate-nav">Donate</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="standard-hero full-screen" style="background-image: url('../assets/images/about_hero_nature.png');">
+    <div class="container reveal">
+      <div class="section-tag" style="background: var(--gold); color: var(--green-dark); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; display: inline-block; margin-bottom: 1.5rem;">Our Initiative</div>
+      <h1 class="hero-title">Growing Communities Through Fruit Trees</h1>
+      <p class="hero-subtitle">Our initiative focuses on planting fruit-bearing trees in community spaces to create long-term environmental, nutritional, and economic benefits.</p>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="initiative-section" style="padding-bottom: 0;">
+    <div class="container reveal">
+      <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+        <div class="section-tag" style="background: var(--green-pale); color: var(--green); border:none;">VISION</div>
+        <h2 class="section-title">A Sustainable Legacy for Communities</h2>
+        <p style="font-size: 1.3rem; line-height: 1.8; color: var(--text-light); margin-bottom: 2rem;">
+          Unlike short-term plantation drives, our approach ensures that every tree planted becomes a sustainable resource for the community. These trees provide fresh fruits, shade, improved air quality, and ecological balance, helping neighborhoods thrive naturally.
+        </p>
+        <p style="font-size: 1.3rem; line-height: 1.8; color: var(--green); font-weight: 700;">
+          Through community participation, partnerships, and ongoing care, we are building living ecosystems that benefit both people and nature for generations.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="initiative-section">
+    <div class="container">
+      <div style="text-align: center;" class="reveal">
+        <div class="section-tag">Process</div>
+        <h2 class="section-title">How It Works</h2>
+        <p style="max-width: 700px; margin: 1.5rem auto 0; font-size: 1.1rem; color: var(--text-light);">Our initiative follows a community-driven and sustainable model that ensures every planted tree grows into a long-term asset.</p>
+      </div>
+
+      <div class="process-flow">
+        <!-- Step 1 -->
+        <div class="process-step reveal">
+          <div class="process-marker">1</div>
+          <div class="process-content">
+            <h3><i class="fas fa-store"></i> Partnering with Local Nurseries</h3>
+            <p>We collaborate with trusted local nurseries to source healthy fruit saplings suitable for the region’s climate and soil. This ensures higher survival rates and supports local agricultural businesses.</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="process-step reveal">
+          <div class="process-marker">2</div>
+          <div class="process-content">
+            <h3><i class="fas fa-users-cog"></i> Community Participation</h3>
+            <p>Local residents, schools, and volunteers take part in community planting events, creating a sense of ownership and responsibility for the trees.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="process-step reveal">
+          <div class="process-marker">3</div>
+          <div class="process-content">
+            <h3><i class="fas fa-hand-holding-heart"></i> Funding Through Donations</h3>
+            <p>Generous donations help us purchase saplings, tools, and resources required for planting and maintenance. Every contribution directly supports expanding green spaces.</p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="process-step reveal">
+          <div class="process-marker">4</div>
+          <div class="process-content">
+            <h3><i class="fas fa-hands-helping"></i> Volunteer Engagement</h3>
+            <p>Volunteers play an important role in organizing plantation drives, spreading awareness, and supporting maintenance activities.</p>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="process-step reveal">
+          <div class="process-marker">5</div>
+          <div class="process-content">
+            <h3><i class="fas fa-seedling"></i> Long-Term Care and Monitoring</h3>
+            <p>Planting is only the first step. We work with communities to maintain and nurture the trees, ensuring they grow strong and continue benefiting the neighborhood.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Creating Impact Section -->
+  <section class="initiative-section" style="background: var(--white);">
+    <div class="container">
+      <div style="text-align: center;" class="reveal">
+        <div class="section-tag">Purpose</div>
+        <h2 class="section-title">Creating Impact Through Fruit Trees</h2>
+        <p style="max-width: 700px; margin: 1.5rem auto 0; font-size: 1.1rem; color: var(--text-light);">Planting fruit trees is more than just an environmental activity — it is a holistic solution for ecological and social wellbeing.</p>
+      </div>
+
+      <div class="impact-blocks-grid">
+        <!-- Impact 1 -->
+        <div class="impact-block reveal">
+          <div class="impact-block-content">
+            <h3><i class="fas fa-apple-alt"></i> Food Security</h3>
+            <p>Fruit trees provide free and nutritious food for communities. Families can access fresh fruits without cost, improving nutrition and reducing food insecurity.</p>
+          </div>
+        </div>
+        <!-- Impact 2 -->
+        <div class="impact-block reveal delay-1">
+          <div class="impact-block-content">
+            <h3><i class="fas fa-dove"></i> Ecosystem Support</h3>
+            <p>Fruit trees contribute to a healthy ecosystem by supporting various forms of life: bees, butterflies, birds, and small animals. These trees create a natural habitat that restores ecological balance.</p>
+          </div>
+        </div>
+        <!-- Impact 3 -->
+        <div class="impact-block reveal delay-2">
+          <div class="impact-block-content">
+            <h3><i class="fas fa-globe-americas"></i> Environment Improvement</h3>
+            <p>Fruit trees help improve the environment by producing oxygen, absorbing carbon dioxide, reducing air pollution, providing shade, and preventing soil erosion.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Biodiversity Section -->
+  <section class="initiative-section">
+    <div class="container">
+      <div class="biodiversity-layout">
+        <div class="bio-content reveal">
+          <div class="section-tag">Pollinators</div>
+          <h2 class="section-title" style="text-align: left; margin: 1.5rem 0;">Supporting Biodiversity</h2>
+          <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-light); margin-bottom: 1.5rem;">
+            Our fruit tree initiative plays a vital role in supporting pollinators and wildlife. Bees and butterflies are essential for pollination, which helps crops and plants reproduce.
+          </p>
+          <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-light);">
+            By planting fruit trees, we create safe and nourishing habitats where these pollinators can thrive. The presence of pollinators improves the health of surrounding vegetation and strengthens the entire ecological chain.
+          </p>
+        </div>
+        <div class="bio-visual reveal-right">
+          <div class="bio-img-item">
+            <i class="fas fa-bug"></i>
+            <span>Bees & Butterflies</span>
+          </div>
+          <div class="bio-img-item">
+            <i class="fas fa-dove"></i>
+            <span>Birds & Shelter</span>
+          </div>
+          <div class="bio-img-item">
+            <i class="fas fa-seedling"></i>
+            <span>Natural Habitat</span>
+          </div>
+          <div class="bio-img-item">
+            <i class="fas fa-sync-alt"></i>
+            <span>Ecological Balance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coaching Section -->
+  <section class="initiative-section" style="background: var(--white);">
+    <div class="container">
+      <div style="text-align: center;" class="reveal">
+        <div class="section-tag">Beyond Planting</div>
+        <h2 class="section-title">Financial and Health Coaching</h2>
+        <p style="max-width: 700px; margin: 1.5rem auto 0; font-size: 1.1rem; color: var(--text-light);">Along with planting trees, we also focus on empowering communities with knowledge and skills.</p>
+      </div>
+
+      <div class="coaching-grid">
+        <div class="coaching-card financial reveal">
+          <div class="coaching-icon-bg"><i class="fas fa-wallet"></i></div>
+          <h3>Financial Guidance</h3>
+          <p>We provide guidance to families on how fruit trees can contribute to small-scale income opportunities. Surplus fruits can be sold locally, creating an additional livelihood source.</p>
+        </div>
+        <div class="coaching-card health reveal delay-1">
+          <div class="coaching-icon-bg"><i class="fas fa-heartbeat"></i></div>
+          <h3>Health & Wellness Awareness</h3>
+          <p>We promote healthy lifestyles and nutrition awareness, encouraging communities to benefit from the natural fruits produced by the trees. This ensures community wellbeing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Movement Section -->
+  <section class="initiative-section" style="background: var(--bg-soft); text-align: center;">
+    <div class="container reveal">
+      <div style="max-width: 800px; margin: 0 auto;">
+        <h2 class="section-title">Join the Movement</h2>
+        <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-light); margin: 2rem 0 3.5rem;">
+          Every tree planted today becomes a gift for the future. By supporting our initiative, you help create greener spaces, healthier communities, and thriving ecosystems. Together, we can grow a greener and more sustainable world.
+        </p>
+        <a href="join.html" class="btn-primary" style="padding: 1.5rem 4rem; font-size: 1.2rem; border-radius: 50px;">Join Us</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="../assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation" />
+          </div>
+          <p>Planting the seeds of abundance, wellness, and financial freedom — one community at a time.</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube" class="social-icon"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-links-group">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html#story">Our Story</a></li>
+            <li><a href="../index.html#tree-mission">Tree Mission</a></li>
+            <li><a href="../index.html#health-coaching">Health Coaching</a></li>
+            <li><a href="../index.html#wealth-coaching">Wealth Coaching</a></li>
+            <li><a href="../index.html#impact-map">Impact Map</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4>Get Involved</h4>
+          <ul>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="join.html">Volunteer</a></li>
+            <li><a href="join.html">Partner With Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p><i class="fas fa-envelope"></i> hello@fruitforestfoundation.com</p>
+          <p><i class="fas fa-phone"></i> +1 (800) FRUIT-FOREST</p>
+          <p><i class="fas fa-map-marker-alt"></i> Global · Est. 2024</p>
+          <div class="footer-hashtag">
+            <i class="fab fa-instagram"></i>
+            <span>#Fruit ForestGlobal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p style="margin-bottom: 1rem; opacity: 0.8; font-size: 0.9rem;">Fruit Forest Foundation is a non-profit trust committed to building sustainable communities through fruit tree initiatives.</p>
+        <p>&copy; 2026 Fruit Forest Foundation. All rights reserved. Registered Non-Profit Trust.</p>
+        <p>Made with <i class="fas fa-heart" style="color:#e74c3c"></i> for the Earth.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    const revealElements = document.querySelectorAll('.reveal, .reveal-right');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+
+</html>

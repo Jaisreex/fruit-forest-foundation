@@ -2960,14 +2960,14 @@ img {
 }
 
 .mission-container {
-  max-width: 1300px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
 .mission-grid {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 1fr 1.2fr;
   gap: 5rem;
   align-items: center;
 }

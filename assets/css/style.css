@@ -1595,138 +1595,102 @@ img {
   font-size: 1.1rem;
 }
 
-/* ---------- GROWING MOVEMENT (ZIG-ZAG) ---------- */
-.movement-section {
-  padding: 10rem 0;
-  background: var(--white);
+/* ---------- CINEMATIC BANNERS ---------- */
+.cinematic-banners {
+  display: flex;
+  flex-direction: column;
+}
+
+.banner-strip {
   position: relative;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Parallax effect */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
 
-.movement-zigzag {
-  display: flex;
-  flex-direction: column;
-  gap: 8rem;
-  margin-top: 5rem;
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+  z-index: 1;
 }
 
-.movement-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 6rem;
-}
-
-.movement-row-reverse {
-  flex-direction: row-reverse;
-}
-
-.movement-content-block {
-  flex: 0 0 620px;
-  background: var(--bg-soft);
-  padding: 4.5rem;
-  border-radius: 40px;
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.05);
+.banner-strip .container {
   position: relative;
-  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-  border: 1px solid rgba(0, 0, 0, 0.02);
-  text-align: left;
+  z-index: 2;
+  text-align: center;
 }
 
-.movement-content-block:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 35px 70px rgba(45, 90, 39, 0.12);
-  background: var(--white);
+.banner-content {
+  max-width: 850px;
+  margin: 0 auto;
+  color: var(--white);
 }
 
-.movement-visual-spacer {
-  flex: 1;
-  height: 2px;
-  background: linear-gradient(to right, var(--green-pale), transparent);
-  opacity: 0.25;
-}
-
-.movement-row-reverse .movement-visual-spacer {
-  background: linear-gradient(to left, var(--green-pale), transparent);
-}
-
-.movement-icon-box {
-  width: 75px;
-  height: 75px;
-  background: var(--white);
-  color: var(--green);
-  border-radius: 22px;
-  display: grid;
-  place-items: center;
-  font-size: 2.2rem;
-  margin-bottom: 2.5rem;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-}
-
-.movement-content-block h3 {
-  font-size: 2.4rem;
-  margin-bottom: 1.5rem;
-  color: var(--green-dark);
+.banner-title {
+  font-size: 4.5rem;
+  margin-bottom: 2rem;
   font-weight: 900;
   font-family: var(--font-head);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  text-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
 }
 
-.movement-content-block p {
-  font-size: 1.2rem;
-  line-height: 1.85;
-  color: var(--text-light);
-  margin-bottom: 3rem;
+.banner-text {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  margin-bottom: 3.5rem;
+  opacity: 0.95;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  font-weight: 500;
 }
 
-.movement-btn-wrap {
+.banner-btn-wrap {
   display: flex;
+  justify-content: center;
 }
 
-/* smooth curved section styling */
-.movement-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -10%;
-  width: 120%;
-  height: 200px;
+.banner-strip .btn-primary {
+  padding: 1.2rem 3rem;
+  font-size: 1.2rem;
+  background: var(--gold);
+  color: var(--dark);
+  border: none;
+}
+
+.banner-strip .btn-primary:hover {
   background: var(--white);
-  border-radius: 0 0 50% 50%;
-  transform: translateY(-100px);
-  z-index: 5;
-  pointer-events: none;
-}
-
-@media (max-width: 1100px) {
-  .movement-content-block {
-    flex: 0 0 50%;
-  }
+  transform: translateY(-5px) scale(1.05);
 }
 
 @media (max-width: 992px) {
-  .movement-section {
-    padding: 6rem 0;
+  .banner-strip {
+    height: 500px;
+    background-attachment: scroll; /* Disable parallax for mobile performance */
   }
 
-  .movement-zigzag {
-    gap: 5rem;
+  .banner-title {
+    font-size: 3rem;
   }
 
-  .movement-row, .movement-row-reverse {
-    flex-direction: column;
-    gap: 0;
-    align-items: stretch;
+  .banner-text {
+    font-size: 1.15rem;
   }
-  
-  .movement-content-block {
-    flex: 1;
-    width: 100%;
-    padding: 3.5rem;
-    border-radius: 30px;
+}
+
+@media (max-width: 576px) {
+  .banner-strip {
+    height: 450px;
   }
-  
-  .movement-visual-spacer {
-    display: none;
+
+  .banner-title {
+    font-size: 2.2rem;
   }
 }
 

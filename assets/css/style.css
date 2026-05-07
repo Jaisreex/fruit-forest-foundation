@@ -2994,15 +2994,15 @@ img {
 }
 
 .mission-container {
-  max-width: 1550px;
+  max-width: 1650px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 2.5rem;
 }
 
 .mission-grid {
   display: grid;
   grid-template-columns: 1fr 900px;
-  gap: 6rem;
+  gap: 4rem;
   align-items: center;
 }
 

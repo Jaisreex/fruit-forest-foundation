@@ -416,45 +416,62 @@
     </div>
   </section>
 
-  <!-- ===== CINEMATIC BANNERS (GET INVOLVED) ===== -->
-  <section class="cinematic-banners" id="get-involved">
-    <!-- Banner 1: Volunteer -->
-    <div class="banner-strip volunteer-strip reveal" style="background-image: url('assets/images/cinematic_volunteer.png');">
-      <div class="banner-overlay"></div>
-      <div class="container">
-        <div class="banner-content">
-          <h2 class="banner-title">Volunteer <span class="text-white">With Us</span></h2>
-          <p class="banner-text">Join our community efforts to grow fruit forests and support a greener future. We believe in the power of collective action to transform urban landscapes.</p>
-          <div class="banner-btn-wrap">
-            <a href="pages/become-a-volunteer.html" class="btn-primary">👉 Join Now</a>
+  <!-- ===== FLIP CARDS (GET INVOLVED) ===== -->
+  <section class="involve-section" id="get-involved">
+    <div class="container reveal">
+      <div class="section-header" style="margin-bottom: 5rem;">
+        <h2 class="section-title">Be part of a <span class="text-gold">growing movement</span></h2>
+      </div>
+
+      <div class="flip-grid">
+        <!-- Card 1: Volunteer -->
+        <div class="flip-card reveal" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <!-- Front -->
+            <div class="flip-card-front">
+              <div class="flip-icon"><i class="fas fa-hands-helping"></i></div>
+              <h3>Volunteer With Us</h3>
+              <p>Join our community efforts to grow fruit forests and support a greener future.</p>
+              <span class="flip-hint">Click to interact <i class="fas fa-sync"></i></span>
+            </div>
+            <!-- Back -->
+            <div class="flip-card-back">
+              <a href="pages/become-a-volunteer.html" class="btn-primary">👉 Join Now</a>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Banner 2: Partner -->
-    <div class="banner-strip partner-strip reveal" style="background-image: url('assets/images/cinematic_partner.png');">
-      <div class="banner-overlay"></div>
-      <div class="container">
-        <div class="banner-content">
-          <h2 class="banner-title">Collaborate <span class="text-white">& Partner</span></h2>
-          <p class="banner-text">Work with us to expand fruit forests and create sustainable community impact. We partner with organizations that share our vision for a nourished planet.</p>
-          <div class="banner-btn-wrap">
-            <a href="pages/partner-with-us.html" class="btn-primary">🤝 Partner With Us</a>
+        <!-- Card 2: Partner -->
+        <div class="flip-card reveal delay-1" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <!-- Front -->
+            <div class="flip-card-front">
+              <div class="flip-icon"><i class="fas fa-handshake"></i></div>
+              <h3>Collaborate & Partner</h3>
+              <p>Work with us to expand fruit forests and create sustainable community impact.</p>
+              <span class="flip-hint">Click to interact <i class="fas fa-sync"></i></span>
+            </div>
+            <!-- Back -->
+            <div class="flip-card-back">
+              <a href="pages/partner-with-us.html" class="btn-primary">🤝 Partner With Us</a>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Banner 3: Explore -->
-    <div class="banner-strip explore-strip reveal" style="background-image: url('assets/images/cinematic_explore.png');">
-      <div class="banner-overlay"></div>
-      <div class="container">
-        <div class="banner-content">
-          <h2 class="banner-title">Explore <span class="text-white">Opportunities</span></h2>
-          <p class="banner-text">Discover programs for wellness, sustainability, and education to empower individuals. Explore the many ways you can grow alongside our forests.</p>
-          <div class="banner-btn-wrap">
-            <a href="pages/opportunities.html" class="btn-primary">🔍 View Programs</a>
+        <!-- Card 3: Explore -->
+        <div class="flip-card reveal delay-2" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <!-- Front -->
+            <div class="flip-card-front">
+              <div class="flip-icon"><i class="fas fa-seedling"></i></div>
+              <h3>Explore Opportunities</h3>
+              <p>Discover programs for wellness, sustainability, and education to empower individuals.</p>
+              <span class="flip-hint">Click to interact <i class="fas fa-sync"></i></span>
+            </div>
+            <!-- Back -->
+            <div class="flip-card-back">
+              <a href="pages/opportunities.html" class="btn-primary">🔍 View Programs</a>
+            </div>
           </div>
         </div>
       </div>

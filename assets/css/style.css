@@ -1346,8 +1346,8 @@ img {
 
 .why-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 0.85fr 1fr; /* Approximately 45/55 ratio */
+  gap: 3.5rem;
   align-items: stretch;
 }
 
@@ -1358,21 +1358,21 @@ img {
 .why-intro-line {
   font-weight: 700;
   color: var(--green-dark);
-  font-size: 1.35rem !important;
-  margin-bottom: 2.5rem !important;
+  font-size: 1.25rem !important;
+  margin-bottom: 2rem !important;
   display: block;
 }
 
 .why-cards-container {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.2rem;
   width: 100%;
 }
 
 .stat-card {
   background: var(--white);
-  padding: 2.5rem;
+  padding: 1.8rem 2.2rem;
   border-radius: 24px;
   display: flex;
   align-items: flex-start;
@@ -1415,9 +1415,9 @@ img {
 }
 
 .stat-info p {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--text-light);
-  line-height: 1.75;
+  line-height: 1.7;
   text-align: left;
   margin: 0;
 }

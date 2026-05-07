@@ -2971,14 +2971,14 @@ img {
 }
 
 .mission-container {
-  max-width: 1400px;
+  max-width: 1550px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
 .mission-grid {
   display: grid;
-  grid-template-columns: 1fr 770px;
+  grid-template-columns: 1fr 900px;
   gap: 4rem;
   align-items: center;
 }
@@ -2997,8 +2997,8 @@ img {
 }
 
 .mission-img-modern {
-  width: 780px;
-  height: 460px;
+  width: 900px;
+  height: 520px;
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
@@ -3075,7 +3075,7 @@ img {
   .mission-img-modern {
     width: 100%;
     height: auto;
-    aspect-ratio: 770 / 445;
+    aspect-ratio: 900 / 520;
   }
 
   .mission-text-side {

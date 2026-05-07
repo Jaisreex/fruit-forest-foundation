@@ -1080,12 +1080,13 @@ img {
 
 .solution-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2.5rem;
   margin-top: 4rem;
 }
 
 .solution-card {
+  grid-column: span 2;
   background: var(--white);
   padding: 2.5rem;
   /* Slightly more compact */
@@ -1100,6 +1101,10 @@ img {
   /* Side-by-side */
   align-items: flex-start;
   gap: 1.5rem;
+}
+
+.solution-card:last-child {
+  grid-column: 2 / span 2;
 }
 
 .solution-card:hover {
@@ -1239,7 +1244,12 @@ img {
   }
 
   .solution-card {
+    grid-column: span 1;
     padding: 2.5rem 2rem;
+  }
+
+  .solution-card:last-child {
+    grid-column: span 1;
   }
 }
 

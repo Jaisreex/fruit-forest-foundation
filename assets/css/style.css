@@ -1595,250 +1595,139 @@ img {
   font-size: 1.1rem;
 }
 
-/* ---------- GET INVOLVED ---------- */
-.involve-section {
-  padding: var(--section-padding);
-  background: #ffffff;
-  color: var(--text);
-}
-
-.involve-section .section-title {
-  color: var(--dark);
-}
-
-.opp-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 3.5rem;
-}
-
-.opp-card {
+/* ---------- GROWING MOVEMENT (ZIG-ZAG) ---------- */
+.movement-section {
+  padding: 10rem 0;
   background: var(--white);
-  padding: 0;
-  /* Remove top/bottom padding to allow image to span full width */
-  border-radius: 24px;
-  text-align: center;
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   position: relative;
   overflow: hidden;
-  cursor: pointer;
+}
+
+.movement-zigzag {
   display: flex;
   flex-direction: column;
+  gap: 8rem;
+  margin-top: 5rem;
+}
+
+.movement-row {
+  display: flex;
   align-items: center;
-  z-index: 1;
+  justify-content: space-between;
+  gap: 6rem;
 }
 
-.opp-card-img {
-  width: 100%;
-  height: 140px;
-  background-size: cover;
-  background-position: center;
+.movement-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.movement-content-block {
+  flex: 0 0 620px;
+  background: var(--bg-soft);
+  padding: 4.5rem;
+  border-radius: 40px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.05);
   position: relative;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  text-align: left;
 }
 
-.opp-card-img::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+.movement-content-block:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 35px 70px rgba(45, 90, 39, 0.12);
+  background: var(--white);
 }
 
-.opp-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('../assets/images/fruit_plantation_hero.png');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.04;
-  z-index: -1;
-  transition: var(--transition);
+.movement-visual-spacer {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, var(--green-pale), transparent);
+  opacity: 0.25;
 }
 
-.opp-card:nth-child(1) {
-  background: linear-gradient(135deg, #ffffff 0%, #f1f8f0 100%);
+.movement-row-reverse .movement-visual-spacer {
+  background: linear-gradient(to left, var(--green-pale), transparent);
 }
 
-.opp-card:nth-child(2) {
-  background: linear-gradient(135deg, #ffffff 0%, #fffdf0 100%);
-}
-
-.opp-card:nth-child(3) {
-  background: linear-gradient(135deg, #f1f8f0 0%, #fffdf0 100%);
-}
-
-/* Reveal Animation specific to opp-cards */
-.opp-card.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s cubic-bezier(0.25, 1, 0.5, 1), transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s ease;
-}
-
-.opp-card.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.opp-icon-wrapper {
-  width: 70px;
-  height: 70px;
-  border-radius: 20px;
+.movement-icon-box {
+  width: 75px;
+  height: 75px;
   background: var(--white);
   color: var(--green);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.8rem;
-  margin-top: -35px;
-  /* Overlap image */
+  border-radius: 22px;
+  display: grid;
+  place-items: center;
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.movement-content-block h3 {
+  font-size: 2.4rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  z-index: 2;
-  transition: all 0.4s ease;
-}
-
-.opp-card h3 {
-  font-size: 1.6rem;
-  margin: 0 1.5rem 1.2rem;
   color: var(--green-dark);
-  font-weight: 800;
+  font-weight: 900;
+  font-family: var(--font-head);
 }
 
-.opp-card p {
-  color: var(--text);
-  font-size: 1rem;
-  line-height: 1.7;
-  margin: 0 2rem 2.5rem;
-  flex-grow: 1;
-  width: auto;
+.movement-content-block p {
+  font-size: 1.2rem;
+  line-height: 1.85;
+  color: var(--text-light);
+  margin-bottom: 3rem;
 }
 
-.opp-arrow {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background: var(--white);
-  border: 2px solid var(--gold);
-  color: var(--gold);
+.movement-btn-wrap {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  transition: all 0.4s ease;
-  margin-top: auto;
 }
 
-/* Hover effects */
-.opp-card:hover,
-.opp-card.reveal.active:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-  border-color: rgba(255, 208, 0, 0.3);
-  /* Soft gold accent border */
-}
-
-.opp-card:hover .opp-icon-wrapper {
-  background: var(--green);
-  color: var(--white);
-  transform: scale(1.1);
-}
-
-.opp-card:hover .opp-arrow {
-  background: var(--gold);
-  color: var(--white);
-  transform: rotate(-45deg);
-  /* Moves/points diagonally */
-}
-
-/* Click color-flow animation */
-@keyframes colorRise {
-  0% {
-    background-position: 0% 0%;
-  }
-
-  100% {
-    background-position: 0% 100%;
-  }
-}
-
-.opp-card:active,
-.opp-card.animating,
-.opp-card.reveal.active:active,
-.opp-card.reveal.active.animating {
-  transform: scale(0.97) translateY(-5px);
-  background: linear-gradient(to bottom, var(--white) 40%, rgba(45, 90, 39, 0.05) 55%, rgba(45, 90, 39, 0.12) 100%);
-  background-size: 100% 210%;
-  animation: colorRise 0.4s ease-out forwards;
-}
-
-
-
-/* --- Floating Wave Animation for Home Cards --- */
-.opp-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.opp-card::after {
-  content: "";
+/* smooth curved section styling */
+.movement-section::before {
+  content: '';
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(45deg,
-      transparent 0%,
-      rgba(45, 90, 39, 0.03) 30%,
-      rgba(45, 90, 39, 0.08) 50%,
-      rgba(45, 90, 39, 0.03) 70%,
-      transparent 100%);
-  transform: rotate(25deg);
-  transition: transform 0.8s ease-in-out;
+  top: 0;
+  left: -10%;
+  width: 120%;
+  height: 200px;
+  background: var(--white);
+  border-radius: 0 0 50% 50%;
+  transform: translateY(-100px);
+  z-index: 5;
   pointer-events: none;
-  opacity: 0;
-  z-index: 0;
 }
 
-.opp-card:hover::after {
-  opacity: 1;
-  animation: waveFlow 2.5s infinite linear;
-}
-
-@keyframes waveFlow {
-  0% {
-    transform: translate(-30%, -30%) rotate(25deg);
-  }
-
-  100% {
-    transform: translate(10%, 10%) rotate(25deg);
+@media (max-width: 1100px) {
+  .movement-content-block {
+    flex: 0 0 50%;
   }
 }
 
-.opp-card:hover {
-  transform: translateY(-12px) !important;
-  box-shadow: 0 25px 50px rgba(45, 90, 39, 0.12) !important;
-}
+@media (max-width: 992px) {
+  .movement-section {
+    padding: 6rem 0;
+  }
 
-/* Specific Glow for Home Cards */
-.volunteer-card-home:hover {
-  background: linear-gradient(135deg, #fff 0%, #f1f8f0 100%);
-}
+  .movement-zigzag {
+    gap: 5rem;
+  }
 
-.partner-card-home:hover {
-  background: linear-gradient(135deg, #fff 0%, #fffdf0 100%);
-}
-
-.opportunities-card-home:hover {
-  background: linear-gradient(135deg, #f1f8f0 0%, #fffdf0 100%);
+  .movement-row, .movement-row-reverse {
+    flex-direction: column;
+    gap: 0;
+    align-items: stretch;
+  }
+  
+  .movement-content-block {
+    flex: 1;
+    width: 100%;
+    padding: 3.5rem;
+    border-radius: 30px;
+  }
+  
+  .movement-visual-spacer {
+    display: none;
+  }
 }
 
 

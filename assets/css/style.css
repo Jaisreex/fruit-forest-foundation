@@ -1414,7 +1414,7 @@ img {
   width: 100%;
   height: auto;
   max-height: 700px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 40px;
   box-shadow: var(--shadow-lg);
 }
@@ -1772,14 +1772,12 @@ img {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(
-    45deg,
-    transparent 0%,
-    rgba(45, 90, 39, 0.03) 30%,
-    rgba(45, 90, 39, 0.08) 50%,
-    rgba(45, 90, 39, 0.03) 70%,
-    transparent 100%
-  );
+  background: linear-gradient(45deg,
+      transparent 0%,
+      rgba(45, 90, 39, 0.03) 30%,
+      rgba(45, 90, 39, 0.08) 50%,
+      rgba(45, 90, 39, 0.03) 70%,
+      transparent 100%);
   transform: rotate(25deg);
   transition: transform 0.8s ease-in-out;
   pointer-events: none;
@@ -1793,8 +1791,13 @@ img {
 }
 
 @keyframes waveFlow {
-  0% { transform: translate(-30%, -30%) rotate(25deg); }
-  100% { transform: translate(10%, 10%) rotate(25deg); }
+  0% {
+    transform: translate(-30%, -30%) rotate(25deg);
+  }
+
+  100% {
+    transform: translate(10%, 10%) rotate(25deg);
+  }
 }
 
 .opp-card:hover {
@@ -1803,9 +1806,17 @@ img {
 }
 
 /* Specific Glow for Home Cards */
-.volunteer-card-home:hover { background: linear-gradient(135deg, #fff 0%, #f1f8f0 100%); }
-.partner-card-home:hover { background: linear-gradient(135deg, #fff 0%, #fffdf0 100%); }
-.opportunities-card-home:hover { background: linear-gradient(135deg, #f1f8f0 0%, #fffdf0 100%); }
+.volunteer-card-home:hover {
+  background: linear-gradient(135deg, #fff 0%, #f1f8f0 100%);
+}
+
+.partner-card-home:hover {
+  background: linear-gradient(135deg, #fff 0%, #fffdf0 100%);
+}
+
+.opportunities-card-home:hover {
+  background: linear-gradient(135deg, #f1f8f0 0%, #fffdf0 100%);
+}
 
 
 
@@ -2986,8 +2997,8 @@ img {
 }
 
 .mission-img-modern {
-  width: 770px;
-  height: 445px;
+  width: 780px;
+  height: 460px;
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
@@ -3168,22 +3179,23 @@ img {
     padding: 2.5rem 1.5rem;
   }
 }
+
 /* ---------- GLOBAL INTERACTIVE ENHANCEMENTS ---------- */
 
 /* Buttons: Slight zoom-in + soft shadow glow */
-.btn-primary, 
-.btn-secondary, 
-.btn-gold-solid, 
-.btn-donate-nav, 
+.btn-primary,
+.btn-secondary,
+.btn-gold-solid,
+.btn-donate-nav,
 .btn-donate-hero,
 .btn-expand-card {
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
 }
 
-.btn-primary:hover, 
-.btn-secondary:hover, 
-.btn-gold-solid:hover, 
-.btn-donate-nav:hover, 
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-gold-solid:hover,
+.btn-donate-nav:hover,
 .btn-donate-hero:hover,
 .btn-expand-card:hover {
   transform: scale(1.05) translateY(-2px) !important;
@@ -3191,26 +3203,26 @@ img {
 }
 
 /* Specific glow for gold buttons */
-.btn-gold-solid:hover, 
-.btn-donate-nav:hover, 
+.btn-gold-solid:hover,
+.btn-donate-nav:hover,
 .btn-donate-hero:hover {
   box-shadow: 0 10px 25px rgba(255, 208, 0, 0.4) !important;
 }
 
 /* Cards: Light lift + shadow + subtle color highlight */
-.opp-card, 
-.opp-detail-card, 
-.crisis-card, 
-.solution-card, 
+.opp-card,
+.opp-detail-card,
+.crisis-card,
+.solution-card,
 .impact-card,
 .role-card {
   transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
 }
 
-.opp-card:hover, 
-.opp-detail-card:hover, 
-.crisis-card:hover, 
-.solution-card:hover, 
+.opp-card:hover,
+.opp-detail-card:hover,
+.crisis-card:hover,
+.solution-card:hover,
 .impact-card:hover,
 .role-card:hover {
   transform: translateY(-8px) !important;
@@ -3273,9 +3285,17 @@ img {
 }
 
 @keyframes sweep {
-  0% { transform: translate(-20%, -20%); }
-  50% { transform: translate(20%, 20%); }
-  100% { transform: translate(-20%, -20%); }
+  0% {
+    transform: translate(-20%, -20%);
+  }
+
+  50% {
+    transform: translate(20%, 20%);
+  }
+
+  100% {
+    transform: translate(-20%, -20%);
+  }
 }
 
 /* Content visibility toggle */
@@ -3320,16 +3340,16 @@ img {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  
+
   .opp-card.highlighted {
     transform: scale(1);
   }
-  
+
   .opp-card {
     height: auto;
     min-height: 400px;
   }
-  
+
   .card-details {
     max-height: none;
     opacity: 1;
@@ -3443,18 +3463,18 @@ img {
   .impact-timeline::after {
     left: 31px;
   }
-  
+
   .timeline-item {
     width: 100%;
     padding-left: 70px;
     padding-right: 25px;
     text-align: left;
   }
-  
+
   .timeline-item::after {
     left: 21px;
   }
-  
+
   .timeline-right {
     left: 0%;
   }

@@ -216,15 +216,19 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mapContainer) {
     const map = L.map('impact-map-container', {
       center: [20, 80],
-      zoom: 4,
+      zoom: 3, // Start slightly further out
       scrollWheelZoom: false,
-      attributionControl: false
+      attributionControl: true // Keep for legal reasons
     });
 
-    // Minimal Light Map style
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      maxZoom: 19
+    // Use standard OpenStreetMap tiles for better compatibility
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
+
+    // Ensure map is visible even if tiles are slow
+    mapContainer.style.background = '#e5e3df'; // Map-like neutral color
 
     // Custom Tree Icon
     const treeIcon = L.divIcon({

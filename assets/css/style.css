@@ -1340,15 +1340,15 @@ img {
 
 .why-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 6rem;
   align-items: center;
 }
 
 .why-stats {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2.5rem;
   text-align: left;
 }
 
@@ -1408,6 +1408,8 @@ img {
   justify-content: center;
   /* Horizontally centered in its grid column */
   height: 100%;
+  margin-top: 3rem;
+  /* Moved slightly downward for visual balance */
 }
 
 .impact-img-full {

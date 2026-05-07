@@ -2979,7 +2979,7 @@ img {
 .mission-grid {
   display: grid;
   grid-template-columns: 1fr 900px;
-  gap: 4rem;
+  gap: 6rem;
   align-items: center;
 }
 
@@ -3030,8 +3030,8 @@ img {
   color: var(--text);
   line-height: 1.75;
   /* Proper line height (1.6-1.8) */
-  margin-bottom: 1rem;
-  /* Reduced spacing between paragraphs */
+  margin-bottom: 1.8rem;
+  /* Increased spacing for professional appearance */
 }
 
 .mission-intro-line {

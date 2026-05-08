@@ -287,10 +287,6 @@ document.addEventListener('DOMContentLoaded', () => {
       { coords: [26.7333, 93.1500], name: "Biswanath Eco Zone" },
       { coords: [27.3833, 95.6333], name: "Digboi Oil City Forest" },
 
-      // International (3)
-      { coords: [1.3521, 103.8198], name: "Singapore Urban Canopy" },
-      { coords: [25.2048, 55.2708], name: "Dubai Desert Oasis" },
-      { coords: [51.5074, -0.1278], name: "London Community Orchard" }
     ];
 
     locations.forEach(loc => {

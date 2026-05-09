@@ -353,6 +353,23 @@ window.switchTab = function(event, tabId) {
   }
 };
 
+// ---- Toggle Card for Opportunities Page ----
+window.toggleCard = function(cardId) {
+  const card = document.getElementById(cardId);
+  if (card) {
+    card.classList.toggle('expanded');
+    
+    // Update Button Icon
+    const btn = card.querySelector('.btn-expand-card');
+    const icon = btn.querySelector('i');
+    if (card.classList.contains('expanded')) {
+      icon.className = 'fas fa-chevron-up';
+    } else {
+      icon.className = 'fas fa-chevron-down';
+    }
+  }
+};
+
 
 
 

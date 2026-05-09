@@ -311,6 +311,111 @@
       }
     }
 
+    /* --- Modern Hero Section --- */
+    .opportunities-hero {
+      position: relative;
+      height: 80vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/images/explore opportunities.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: var(--white);
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      letter-spacing: -0.02em;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+      opacity: 0.95;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 500;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-hero {
+      padding: 1.2rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: var(--transition);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .btn-hero-primary {
+      background: var(--green);
+      color: var(--white);
+      box-shadow: 0 10px 20px rgba(45, 90, 39, 0.3);
+    }
+
+    .btn-hero-primary:hover {
+      background: var(--green-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 25px rgba(45, 90, 39, 0.4);
+    }
+
+    .btn-hero-outline {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-hero-outline:hover {
+      background: var(--white);
+      color: var(--green);
+      border-color: var(--white);
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 768px) {
+      .opportunities-hero {
+        height: 70vh;
+        background-attachment: scroll;
+      }
+    }
   </style>
 </head>
 
@@ -340,11 +445,16 @@
     </div>
   </nav>
 
-  <section class="standard-hero full-screen" style="background-image: url('../assets/images/join_hero_bg.png');">
-    <div class="container reveal">
-      <div class="section-tag" style="background: var(--gold); color: var(--green-dark); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; display: inline-block; margin-bottom: 1.5rem;">Opportunities</div>
-      <h1 class="hero-title">Explore Opportunities</h1>
-      <p class="hero-subtitle">Discover meaningful ways to contribute to our mission and make a real impact in communities.</p>
+  <section class="opportunities-hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content reveal">
+      <div class="section-tag" style="background: var(--gold); color: var(--green-dark); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; display: inline-block; margin-bottom: 1.5rem;">Join Our Mission</div>
+      <h1 class="hero-title">Cultivating Abundance, One Tree at a Time</h1>
+      <p class="hero-subtitle">Empowering communities through fruit tree awareness, affordable plant distribution, and holistic coaching for wellness and wealth.</p>
+      <div class="hero-btns">
+        <a href="#programs" class="btn-hero btn-hero-primary">Explore Programs <i class="fas fa-arrow-right"></i></a>
+        <a href="contact.html" class="btn-hero btn-hero-outline">Partner With Us</a>
+      </div>
     </div>
   </section>
 
@@ -396,14 +506,14 @@
         <h2 class="section-title"><b>Our Opportunity Areas</b></h2>
       </div>
 
-      <div class="opportunities-grid">
-        <!-- Card 1: Volunteer Opportunities -->
-        <div class="opp-detail-card reveal volunteer-card" id="volunteer-card">
+      <div class="opportunities-grid" id="programs">
+        <!-- Card 1: Fruit Forest Awareness -->
+        <div class="opp-detail-card reveal volunteer-card" id="awareness-card">
           <div class="card-front">
-            <div class="opp-detail-icon"><i class="fas fa-hands-helping"></i></div>
-            <h3>Volunteer Opportunities</h3>
-            <p>Join our community efforts to grow fruit forests and support a greener future.</p>
-            <button class="btn-expand-card" onclick="toggleCard('volunteer-card')">
+            <div class="opp-detail-icon"><i class="fas fa-bullhorn"></i></div>
+            <h3>Awareness & Education</h3>
+            <p>Spread the word about fruit tree planting and sustainable ecosystems in public spaces.</p>
+            <button class="btn-expand-card" onclick="toggleCard('awareness-card')">
               Explore Role <i class="fas fa-chevron-down"></i>
             </button>
           </div>
@@ -411,85 +521,116 @@
           <div class="card-expanded-content">
             <div class="about-role">
               <h4>About the Role</h4>
-              <p>Be part of a hands-on movement creating fruit-bearing ecosystems in public spaces. Your contribution helps provide free food, supports biodiversity, and improves local environments.</p>
+              <p>Advocate for the transformation of unused lands into fruit-bearing forests. Educate others on food security and ecological restoration.</p>
             </div>
             
             <div class="card-tabs">
-              <button class="tab-btn active" onclick="switchTab(event, 'activities')">Activities</button>
-              <button class="tab-btn" onclick="switchTab(event, 'benefits')">Benefits</button>
-              <button class="tab-btn" onclick="switchTab(event, 'eligibility')">Eligibility</button>
+              <button class="tab-btn active" onclick="switchTab(event, 'awareness-activities')">Activities</button>
+              <button class="tab-btn" onclick="switchTab(event, 'awareness-benefits')">Impact</button>
             </div>
             
-            <!-- Tab 1: Activities (Icon Grid) -->
-            <div class="tab-pane active" id="activities">
+            <div class="tab-pane active" id="awareness-activities">
               <div class="icon-grid">
-                <div class="icon-item">
-                  <i class="fas fa-tree"></i>
-                  <span>Plant Trees</span>
-                </div>
-                <div class="icon-item">
-                  <i class="fas fa-tools"></i>
-                  <span>Maintain Forests</span>
-                </div>
-                <div class="icon-item">
-                  <i class="fas fa-bullhorn"></i>
-                  <span>Awareness Programs</span>
-                </div>
-                <div class="icon-item">
-                  <i class="fas fa-globe"></i>
-                  <span>Sustainability</span>
-                </div>
+                <div class="icon-item"><i class="fas fa-users"></i><span>Workshops</span></div>
+                <div class="icon-item"><i class="fas fa-share-alt"></i><span>Campaigns</span></div>
               </div>
             </div>
             
-            <!-- Tab 2: Benefits -->
-            <div class="tab-pane" id="benefits">
+            <div class="tab-pane" id="awareness-benefits">
               <div class="benefit-list">
-                <div class="benefit-item">
-                  <i class="fas fa-check-circle"></i>
-                  <span>Real-world environmental experience</span>
-                </div>
-                <div class="benefit-item">
-                  <i class="fas fa-check-circle"></i>
-                  <span>Community engagement and teamwork</span>
-                </div>
-                <div class="benefit-item">
-                  <i class="fas fa-check-circle"></i>
-                  <span>Knowledge about sustainable practices</span>
-                </div>
-                <div class="benefit-item">
-                  <i class="fas fa-check-circle"></i>
-                  <span>Opportunity to create visible impact</span>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Tab 3: Eligibility -->
-            <div class="tab-pane" id="eligibility">
-              <div class="eligibility-box">
-                <p>Students, professionals, nature lovers — anyone willing to contribute time and effort to our green mission.</p>
+                <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Building food security</span></div>
+                <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Restoring biodiversity</span></div>
               </div>
             </div>
             
             <div class="card-cta">
-              <a href="become-a-volunteer.html" class="btn-primary" style="width: 100%; justify-content: center;">👉 Become a Volunteer</a>
+              <a href="become-a-volunteer.html" class="btn-primary" style="width: 100%; justify-content: center;">👉 Join as Advocate</a>
             </div>
           </div>
         </div>
 
+        <!-- Card 2: Affordable Distribution -->
+        <div class="opp-detail-card reveal delay-1 volunteer-card" id="distribution-card">
+          <div class="card-front">
+            <div class="opp-detail-icon"><i class="fas fa-truck-loading"></i></div>
+            <h3>Plant Distribution</h3>
+            <p>Support our affordable plant distribution model to make fruit trees accessible to everyone.</p>
+            <button class="btn-expand-card" onclick="toggleCard('distribution-card')">
+              Explore Role <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
 
-        <!-- Card 2: Community Programs -->
-        <div class="opp-detail-card reveal delay-1">
-          <div class="opp-detail-icon"><i class="fas fa-users"></i></div>
-          <h3>Community Programs</h3>
-          <p>Support activities related to education, health, and rural development to empower those in need.</p>
+          <div class="card-expanded-content">
+            <div class="about-role">
+              <h4>About the Role</h4>
+              <p>Assist in our nursery operations and distribution drives, ensuring low-cost, high-quality saplings reach every community.</p>
+            </div>
+            
+            <div class="card-tabs">
+              <button class="tab-btn active" onclick="switchTab(event, 'dist-activities')">Activities</button>
+              <button class="tab-btn" onclick="switchTab(event, 'dist-benefits')">Impact</button>
+            </div>
+            
+            <div class="tab-pane active" id="dist-activities">
+              <div class="icon-grid">
+                <div class="icon-item"><i class="fas fa-seedling"></i><span>Nursery Care</span></div>
+                <div class="icon-item"><i class="fas fa-box"></i><span>Distribution</span></div>
+              </div>
+            </div>
+            
+            <div class="tab-pane" id="dist-benefits">
+              <div class="benefit-list">
+                <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Accessible nutrition</span></div>
+                <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Greener urban spaces</span></div>
+              </div>
+            </div>
+            
+            <div class="card-cta">
+              <a href="become-a-volunteer.html" class="btn-primary" style="width: 100%; justify-content: center;">👉 Help Distribute</a>
+            </div>
+          </div>
         </div>
 
-        <!-- Card 3: Environmental Initiatives -->
-        <div class="opp-detail-card reveal delay-2">
-          <div class="opp-detail-icon"><i class="fas fa-leaf"></i></div>
-          <h3>Environmental Initiatives</h3>
-          <p>Take part in tree planting and sustainability programs that support nature and local livelihoods.</p>
+        <!-- Card 3: Wellness & Wealth Coaching -->
+        <div class="opp-detail-card reveal delay-2 volunteer-card" id="coaching-card">
+          <div class="card-front">
+            <div class="opp-detail-icon"><i class="fas fa-heartbeat"></i></div>
+            <h3>Coaching Programs</h3>
+            <p>Empower individuals through holistic wellness and wealth coaching for a sustainable lifestyle.</p>
+            <button class="btn-expand-card" onclick="toggleCard('coaching-card')">
+              Explore Role <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+
+          <div class="card-expanded-content">
+            <div class="about-role">
+              <h4>About the Role</h4>
+              <p>Collaborate with our coaching teams to deliver programs that bridge the gap between financial freedom and physical wellness.</p>
+            </div>
+            
+            <div class="card-tabs">
+              <button class="tab-btn active" onclick="switchTab(event, 'coach-activities')">Programs</button>
+              <button class="tab-btn" onclick="switchTab(event, 'coach-benefits')">Impact</button>
+            </div>
+            
+            <div class="tab-pane active" id="coach-activities">
+              <div class="icon-grid">
+                <div class="icon-item"><i class="fas fa-apple-alt"></i><span>Wellness</span></div>
+                <div class="icon-item"><i class="fas fa-coins"></i><span>Wealth</span></div>
+              </div>
+            </div>
+            
+            <div class="tab-pane" id="coach-benefits">
+              <div class="benefit-list">
+                <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Holistic empowerment</span></div>
+                <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Sustainable living</span></div>
+              </div>
+            </div>
+            
+            <div class="card-cta">
+              <a href="become-a-volunteer.html" class="btn-primary" style="width: 100%; justify-content: center;">👉 Become a Coach</a>
+            </div>
+          </div>
         </div>
       </div>
 

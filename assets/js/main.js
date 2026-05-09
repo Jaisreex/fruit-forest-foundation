@@ -1,3 +1,45 @@
+// ---- Global Functions for Interactivity ----
+window.switchTab = function(event, tabId) {
+  event.preventDefault();
+  event.stopPropagation();
+  
+  const container = event.currentTarget.closest('.volunteer-card');
+  if (!container) return;
+  
+  // Update Buttons
+  container.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  
+  // Update Panes
+  container.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+  
+  // Find pane within container
+  const pane = container.querySelector(`.tab-pane[id="${tabId}"]`);
+  if (pane) {
+    pane.classList.add('active');
+  }
+};
+
+window.toggleCard = function(cardId) {
+  const card = document.getElementById(cardId);
+  if (card) {
+    card.classList.toggle('expanded');
+    
+    // Update Button Icon
+    const btn = card.querySelector('.btn-expand-card');
+    if (btn) {
+      const icon = btn.querySelector('i');
+      if (icon) {
+        if (card.classList.contains('expanded')) {
+          icon.className = 'fas fa-chevron-up';
+        } else {
+          icon.className = 'fas fa-chevron-down';
+        }
+      }
+    }
+  }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.getElementById('navbar');
 
@@ -211,6 +253,96 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
+  // ---- Interactive Impact Map (Leaflet) ----
+  const mapContainer = document.getElementById('impact-map-container');
+  if (mapContainer) {
+    const map = L.map('impact-map-container', {
+      center: [20, 80],
+      zoom: 3, // Start slightly further out
+      scrollWheelZoom: false,
+      attributionControl: true // Keep for legal reasons
+    });
+
+    // Use standard OpenStreetMap tiles for better compatibility
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Ensure map is visible even if tiles are slow
+    mapContainer.style.background = '#e5e3df'; // Map-like neutral color
+
+    // Custom Tree Icon
+    const treeIcon = L.divIcon({
+      html: '<div style="color: #2D5A27; font-size: 1.2rem;"><i class="fas fa-tree"></i></div>',
+      className: 'custom-tree-marker',
+      iconSize: [24, 24],
+      iconAnchor: [12, 12]
+    });
+
+    const locations = [
+      // Tamil Nadu (22)
+      { coords: [13.0827, 80.2707], name: "Chennai Forest Site" },
+      { coords: [11.0168, 76.9558], name: "Coimbatore Green Zone" },
+      { coords: [9.9252, 78.1198], name: "Madurai Orchard" },
+      { coords: [10.7905, 78.7047], name: "Trichy Community Hub" },
+      { coords: [11.6643, 78.1460], name: "Salem Planting Area" },
+      { coords: [8.7139, 77.7567], name: "Tirunelveli Eco Project" },
+      { coords: [12.9165, 79.1325], name: "Vellore Fruit Belt" },
+      { coords: [11.3410, 77.7172], name: "Erode River-side Site" },
+      { coords: [8.8053, 78.1460], name: "Thoothukudi Coastal Plantation" },
+      { coords: [10.7870, 79.1378], name: "Thanjavur Cultural Orchard" },
+      { coords: [10.3673, 77.9803], name: "Dindigul Hill Base Site" },
+      { coords: [12.9272, 79.3333], name: "Ranipet Green Belt" },
+      { coords: [9.5850, 77.9510], name: "Virudhunagar Farm Site" },
+      { coords: [10.9500, 78.0833], name: "Karur River Plantation" },
+      { coords: [11.2333, 78.1667], name: "Namakkal Eco Center" },
+      { coords: [10.9600, 79.3800], name: "Kumbakonam Heritage Orchard" },
+      { coords: [8.1833, 77.4167], name: "Nagercoil Southern Tip Site" },
+      { coords: [12.8342, 79.7031], name: "Kanchipuram Temple Grove" },
+      { coords: [11.1085, 77.3411], name: "Tiruppur Urban Forest" },
+      { coords: [12.7409, 77.8253], name: "Hosur Plateau Plantation" },
+      { coords: [10.0734, 78.7733], name: "Karaikudi Heritage Site" },
+      { coords: [11.7480, 79.7714], name: "Cuddalore Mangrove Buffer" },
+
+      // Assam (22)
+      { coords: [26.1445, 91.7362], name: "Guwahati Brahmaputra Site" },
+      { coords: [27.4728, 94.9120], name: "Dibrugarh Tea-side Grove" },
+      { coords: [24.8333, 92.7789], name: "Silchar Valley Orchard" },
+      { coords: [26.7509, 94.2037], name: "Jorhat Research Plantation" },
+      { coords: [26.3483, 92.6841], name: "Nagaon Central Site" },
+      { coords: [27.4922, 95.3558], name: "Tinsukia Green Corridor" },
+      { coords: [26.6333, 92.8000], name: "Tezpur Himalayan View Site" },
+      { coords: [26.9822, 94.6344], name: "Sivasagar Heritage Grove" },
+      { coords: [24.8640, 92.3592], name: "Karimganj Border Site" },
+      { coords: [26.0203, 89.9667], name: "Dhubri Gateway Forest" },
+      { coords: [27.2351, 94.1033], name: "North Lakhimpur High Lands" },
+      { coords: [26.1743, 90.6278], name: "Goalpara Hill Plantation" },
+      { coords: [26.3244, 91.0044], name: "Barpeta Community Orchard" },
+      { coords: [26.5222, 93.9611], name: "Golaghat Wildlife Buffer" },
+      { coords: [26.4355, 92.0366], name: "Mangaldoi Farm Site" },
+      { coords: [26.3989, 90.2667], name: "Kokrajhar Forest Site" },
+      { coords: [24.6833, 92.5667], name: "Hailakandi Southern Assam Site" },
+      { coords: [25.8450, 93.4333], name: "Diphu Hill Eco Project" },
+      { coords: [27.2833, 95.6833], name: "Margherita Mining Buffer" },
+      { coords: [27.5667, 95.5667], name: "Doom Dooma Tea Hub" },
+      { coords: [26.7333, 93.1500], name: "Biswanath Eco Zone" },
+      { coords: [27.3833, 95.6333], name: "Digboi Oil City Forest" },
+
+    ];
+
+    locations.forEach(loc => {
+      L.marker(loc.coords, { icon: treeIcon })
+        .addTo(map)
+        .bindPopup(`<strong>${loc.name}</strong><br>Status: Growing Strong 🌱`);
+    });
+
+    // Handle responsiveness: auto-fit markers on load
+    const group = new L.featureGroup(locations.map(loc => L.marker(loc.coords)));
+    map.fitBounds(group.getBounds().pad(0.1));
+  }
+
+
 });
 
 // ---- Newsletter Form Handler ----
@@ -240,28 +372,7 @@ function showToast(message, type = 'green') {
 
 
 
-window.switchTab = function(event, tabId) {
-  event.preventDefault();
-  event.stopPropagation();
-  
-  const container = event.currentTarget.closest('.volunteer-card');
-  
-  // Update Buttons
-  container.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-  event.currentTarget.classList.add('active');
-  
-  // Update Panes
-  container.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
-  
-  // Note: Since IDs must be unique, and we might have multiple cards with same tab names, 
-  // it's better to find the pane within the container. 
-  // However, in our specific HTML, I used IDs. I should fix the HTML to use classes if I want to reuse this.
-  // For now, I'll stick to finding within container.
-  const pane = container.querySelector(`.tab-pane[id="${tabId}"]`);
-  if (pane) {
-    pane.classList.add('active');
-  }
-};
+
 
 
 

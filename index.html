@@ -15,6 +15,9 @@
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Leaflet Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 
 <body>
@@ -89,7 +92,7 @@
           </div>
         </div>
         <div class="mission-image-side reveal-right">
-          <img src="assets/images/mission_road_planting.png" alt="Family planting fruit trees together in a garden"
+          <img src="assets/images/mission.png" alt="Highway lined with fruit-bearing trees"
             class="mission-img-modern">
         </div>
       </div>
@@ -237,17 +240,14 @@
         <div class="map-counter"><i class="fas fa-tree"></i><span class="counter"
             data-target="12450">0</span><small>Trees Planted</small></div>
         <div class="map-counter"><i class="fas fa-map-marker-alt"></i><span class="counter"
-            data-target="47">0</span><small>Locations</small></div>
+            data-target="44">0</span><small>Locations</small></div>
         <div class="map-counter"><i class="fas fa-globe"></i><span class="counter"
-            data-target="15">0</span><small>Countries</small></div>
+            data-target="1">0</span><small>Countries</small></div>
         <div class="map-counter"><i class="fas fa-users"></i><span class="counter"
             data-target="5200">0</span><small>Lives Touched</small></div>
       </div>
       <div class="map-wrapper" id="map-wrapper">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d30000000!2d78.9629!3d20.5937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-          width="100%" height="500" style="border:0;border-radius:16px;" allowfullscreen loading="lazy"
-          title="Fruit Forest Foundation Global Impact Map"></iframe>
+        <div id="impact-map-container" style="height: 500px; width: 100%; border-radius: 16px; z-index: 1;"></div>
         <div class="map-pins-overlay">
           <div class="map-pin-info">
             <i class="fas fa-info-circle"></i>
@@ -260,48 +260,46 @@
 
   <!-- ===== WHY IT MATTERS ===== -->
   <section class="why-section" id="why">
-    <div class="container">
+    <div class="why-container">
       <div class="why-grid">
-        <div class="why-stats reveal-left">
+        <div class="why-text-side reveal-left">
           <div class="section-tag">Why Fruit Trees</div>
-          <h2 class="section-title">A Living Solution for <span class="text-green">People, Wildlife, and the
-              Planet</span></h2>
-          <p class="why-subtitle">Restoring the bond between nature and community.</p>
+          <h2 class="section-title">A Living Solution for <span class="text-green">People, Wildlife, and the Planet</span></h2>
+          <p class="why-intro-line">Restoring the bond between nature and community.</p>
+          
+          <div class="why-cards-container">
+            <div class="stat-card reveal">
+              <div class="stat-icon"><i class="fas fa-users"></i></div>
+              <div class="stat-info">
+                <h3>🌱 For People</h3>
+                <p>Fresh, seasonal nutrition should not be a privilege. Fruit trees in public spaces ensure anyone can
+                  access healthy food freely, while building stronger, more connected communities.</p>
+              </div>
+            </div>
 
-          <div class="stat-card stat-hunger">
-            <div class="stat-icon"><i class="fas fa-users"></i></div>
-            <div class="stat-info">
-              <h3>🌱 For People</h3>
-              <p>Fresh, seasonal nutrition should not be a privilege. Fruit trees in public spaces ensure anyone can
-                access healthy food freely, while building stronger, more connected communities.</p>
+            <div class="stat-card reveal delay-1">
+              <div class="stat-icon"><i class="fas fa-dove"></i></div>
+              <div class="stat-info">
+                <h3>🐦 For Wildlife</h3>
+                <p>Cities often disconnect animals from their environment — fruit trees reconnect them. They create
+                  natural food sources for birds and pollinators, safe nesting habitats, and restored biodiversity in
+                  urban environments.</p>
+              </div>
             </div>
-          </div>
-          <div class="stat-card stat-stress">
-            <div class="stat-icon"><i class="fas fa-dove"></i></div>
-            <div class="stat-info">
-              <h3>🐦 For Wildlife</h3>
-              <p>Cities often disconnect animals from their environment — fruit trees reconnect them. They create
-                natural food sources for birds and pollinators, safe nesting habitats, and restored biodiversity in
-                urban environments.</p>
-            </div>
-          </div>
-          <div class="stat-card stat-finance">
-            <div class="stat-icon"><i class="fas fa-globe-americas"></i></div>
-            <div class="stat-info">
-              <h3>🌍 For the Planet</h3>
-              <p>Each tree is a long-term climate investment. Our plantations reduce urban heat, improve air quality,
-                absorb carbon dioxide, and restore ecological balance in modern cities.</p>
+
+            <div class="stat-card reveal delay-2">
+              <div class="stat-icon"><i class="fas fa-globe-americas"></i></div>
+              <div class="stat-info">
+                <h3>🌍 For the Planet</h3>
+                <p>Each tree is a long-term climate investment. Our plantations reduce urban heat, improve air quality,
+                  absorb carbon dioxide, and restore ecological balance in modern cities.</p>
+              </div>
             </div>
           </div>
         </div>
-
-        <div class="why-image reveal-right">
-          <img src="assets/images/thriving_forest.png?v=2" alt="Thriving community fruit forest"
-            class="impact-img-full">
-          <div class="image-experience-tag">
-            <i class="fas fa-sun"></i>
-            <span>Real-world impact across 15+ countries</span>
-          </div>
+        <div class="why-image-side reveal-right">
+          <img src="assets/images/why_fruit_trees.png" alt="Vibrant community fruit forest"
+            class="why-img-modern">
         </div>
       </div>
     </div>
@@ -418,67 +416,43 @@
     </div>
   </section>
 
-  <!-- ===== OPPORTUNITIES (GET INVOLVED) ===== -->
+  <!-- ===== GROWING MOVEMENT (GET INVOLVED) ===== -->
   <section class="involve-section" id="get-involved">
     <div class="container reveal">
-      <div class="section-header">
+      <div class="section-header" style="margin-bottom: 5rem;">
         <h2 class="section-title">Be part of a <span class="text-gold">growing movement</span></h2>
       </div>
 
-      <div class="opp-grid">
+      <div class="movement-grid">
         <!-- Card 1: Volunteer -->
-        <div class="opp-card reveal volunteer-card-home" id="volunteer-home">
-          <div class="opp-icon-wrapper">
-            <i class="fas fa-hands-helping"></i>
-          </div>
-          <div class="card-front-content" style="width: 100%; text-align: center; padding-top: 1rem;">
-            <h3 style="margin-bottom: 0.5rem;">Volunteer With Us</h3>
-            <div class="card-details">
-              <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Join our community efforts to grow fruit forests and support a greener future.</p>
-            </div>
-            <a href="pages/become-a-volunteer.html" class="btn-primary" style="margin-top: 1.5rem;">👉 Join Now</a>
+        <div class="movement-card reveal">
+          <div class="movement-card-icon"><i class="fas fa-hands-helping"></i></div>
+          <h3>Volunteer With Us</h3>
+          <p>Join our community efforts to grow fruit forests and support a greener future for everyone.</p>
+          <div class="movement-card-footer">
+            <a href="pages/become-a-volunteer.html" class="btn-primary">👉 Join Now</a>
           </div>
         </div>
 
-
-
-
-
-        <!-- Card 2: Partner (Highlighted) -->
-        <div class="opp-card reveal delay-1 highlighted partner-card-home" id="partner-home">
-          <div class="opp-icon-wrapper">
-            <i class="fas fa-handshake"></i>
-          </div>
-          <div class="card-front-content" style="width: 100%; text-align: center; padding-top: 1rem;">
-            <h3 style="margin-bottom: 0.5rem;">Collaborate & Partner</h3>
-            <div class="card-details">
-              <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Work with us to expand fruit forests and create sustainable community impact.</p>
-            </div>
-            <a href="pages/partner-with-us.html" class="btn-primary" style="margin-top: 1.5rem;">🤝 Partner With Us</a>
+        <!-- Card 2: Partner -->
+        <div class="movement-card reveal delay-1">
+          <div class="movement-card-icon"><i class="fas fa-handshake"></i></div>
+          <h3>Collaborate & Partner</h3>
+          <p>Work with us to expand fruit forests and create sustainable community impact worldwide.</p>
+          <div class="movement-card-footer">
+            <a href="pages/partner-with-us.html" class="btn-primary">🤝 Partner With Us</a>
           </div>
         </div>
 
-
-
-
-
-        <!-- Card 3: Opportunities -->
-        <div class="opp-card reveal delay-2 opportunities-card-home" id="opportunities-home">
-          <div class="opp-icon-wrapper">
-            <i class="fas fa-seedling"></i>
-          </div>
-          <div class="card-front-content" style="width: 100%; text-align: center; padding-top: 1rem;">
-            <h3 style="margin-bottom: 0.5rem;">Explore Opportunities</h3>
-            <div class="card-details">
-              <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Discover programs for wellness, sustainability, and education to empower individuals.</p>
-            </div>
-            <a href="pages/opportunities.html" class="btn-primary" style="margin-top: 1.5rem;">🔍 View Programs</a>
+        <!-- Card 3: Explore -->
+        <div class="movement-card reveal delay-2">
+          <div class="movement-card-icon"><i class="fas fa-seedling"></i></div>
+          <h3>Explore Opportunities</h3>
+          <p>Discover programs for wellness, sustainability, and education to empower individuals.</p>
+          <div class="movement-card-footer">
+            <a href="pages/opportunities.html" class="btn-primary">🔍 View Programs</a>
           </div>
         </div>
-
-
-
-
       </div>
     </div>
   </section>
@@ -561,7 +535,7 @@
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer" id="footer">
+    <footer class="footer" id="footer">
     <div class="footer-top">
       <div class="container footer-grid">
         <div class="footer-brand">
@@ -580,7 +554,7 @@
         <div class="footer-links-group">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="#story">Our Story</a></li>
+            <li><a href="#home">Our Story</a></li>
             <li><a href="#tree-mission">Tree Mission</a></li>
             <li><a href="#health-coaching">Health Coaching</a></li>
             <li><a href="#wealth-coaching">Wealth Coaching</a></li>
@@ -613,8 +587,7 @@
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <p style="margin-bottom: 1rem; opacity: 0.8; font-size: 0.9rem;">Fruit Forest Foundation is a non-profit trust
-          committed to building sustainable communities through fruit tree initiatives.</p>
+        <p style="margin-bottom: 1rem; opacity: 0.8; font-size: 0.9rem;">Fruit Forest Foundation is a non-profit trust committed to building sustainable communities through fruit tree initiatives.</p>
         <p>&copy; 2026 Fruit Forest Foundation. All rights reserved. Registered Non-Profit Trust.</p>
         <p>Made with <i class="fas fa-heart" style="color:#e74c3c"></i> for the Earth.</p>
       </div>

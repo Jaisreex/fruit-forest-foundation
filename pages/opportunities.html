@@ -594,7 +594,35 @@
   </footer>
 
   <script src="../assets/js/main.js"></script>
+  <script>
+    // Inline Fallback for Interactivity
+    function toggleCard(cardId) {
+      const card = document.getElementById(cardId);
+      if (card) {
+        card.classList.toggle('expanded');
+        const btn = card.querySelector('.btn-expand-card');
+        if (btn) {
+          const icon = btn.querySelector('i');
+          if (icon) {
+            icon.className = card.classList.contains('expanded') ? 'fas fa-chevron-up' : 'fas fa-chevron-down';
+          }
+        }
+      }
+    }
 
+    function switchTab(event, tabId) {
+      event.preventDefault();
+      event.stopPropagation();
+      const container = event.currentTarget.closest('.volunteer-card');
+      if (container) {
+        container.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        event.currentTarget.classList.add('active');
+        container.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+        const pane = container.querySelector('.tab-pane[id="' + tabId + '"]');
+        if (pane) pane.classList.add('active');
+      }
+    }
+  </script>
 </body>
 
 </html>

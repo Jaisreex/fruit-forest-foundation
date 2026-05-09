@@ -1,3 +1,45 @@
+// ---- Global Functions for Interactivity ----
+window.switchTab = function(event, tabId) {
+  event.preventDefault();
+  event.stopPropagation();
+  
+  const container = event.currentTarget.closest('.volunteer-card');
+  if (!container) return;
+  
+  // Update Buttons
+  container.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  
+  // Update Panes
+  container.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+  
+  // Find pane within container
+  const pane = container.querySelector(`.tab-pane[id="${tabId}"]`);
+  if (pane) {
+    pane.classList.add('active');
+  }
+};
+
+window.toggleCard = function(cardId) {
+  const card = document.getElementById(cardId);
+  if (card) {
+    card.classList.toggle('expanded');
+    
+    // Update Button Icon
+    const btn = card.querySelector('.btn-expand-card');
+    if (btn) {
+      const icon = btn.querySelector('i');
+      if (icon) {
+        if (card.classList.contains('expanded')) {
+          icon.className = 'fas fa-chevron-up';
+        } else {
+          icon.className = 'fas fa-chevron-down';
+        }
+      }
+    }
+  }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.getElementById('navbar');
 
@@ -330,45 +372,7 @@ function showToast(message, type = 'green') {
 
 
 
-window.switchTab = function(event, tabId) {
-  event.preventDefault();
-  event.stopPropagation();
-  
-  const container = event.currentTarget.closest('.volunteer-card');
-  
-  // Update Buttons
-  container.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-  event.currentTarget.classList.add('active');
-  
-  // Update Panes
-  container.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
-  
-  // Note: Since IDs must be unique, and we might have multiple cards with same tab names, 
-  // it's better to find the pane within the container. 
-  // However, in our specific HTML, I used IDs. I should fix the HTML to use classes if I want to reuse this.
-  // For now, I'll stick to finding within container.
-  const pane = container.querySelector(`.tab-pane[id="${tabId}"]`);
-  if (pane) {
-    pane.classList.add('active');
-  }
-};
 
-// ---- Toggle Card for Opportunities Page ----
-window.toggleCard = function(cardId) {
-  const card = document.getElementById(cardId);
-  if (card) {
-    card.classList.toggle('expanded');
-    
-    // Update Button Icon
-    const btn = card.querySelector('.btn-expand-card');
-    const icon = btn.querySelector('i');
-    if (card.classList.contains('expanded')) {
-      icon.className = 'fas fa-chevron-up';
-    } else {
-      icon.className = 'fas fa-chevron-down';
-    }
-  }
-};
 
 
 

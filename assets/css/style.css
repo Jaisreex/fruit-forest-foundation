@@ -692,12 +692,17 @@ img {
   margin-bottom: 2rem;
 }
 
-#home, #home *, #home *::before, #home *::after {
+#home .hero-title, 
+#home .hero-title *,
+#home .hero-mission-desc {
   background-color: transparent !important;
+  background-image: none !important;
 }
 
 #home {
   background-image: url('assets/images/hero_home_vibrant.jpg') !important;
+  background-size: cover;
+  background-position: center;
 }
 
 #home.standard-hero::before {

@@ -689,7 +689,7 @@ img {
   backdrop-filter: none !important;
   border: none !important;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: -12rem !important; /* Moves it up towards the navbar */
 }
 
 .hero-main-name {
@@ -701,6 +701,7 @@ img {
   line-height: 1;
   letter-spacing: -0.02em;
   text-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+  background: none !important;
 }
 
 .hero-sub-name {
@@ -714,6 +715,7 @@ img {
   margin-top: 1rem;
   padding-left: 0.6em;
   text-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
+  background: none !important;
 }
 
 .hero-title-accent {

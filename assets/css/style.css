@@ -712,35 +712,35 @@ img {
 .hero-main-name {
   display: block !important;
   font-family: var(--font-head);
-  font-weight: 700;
+  font-weight: 800;
   font-size: clamp(2.5rem, 8vw, 4.5rem);
-  color: #2d1b0d !important; /* Elegant Earthy Dark Brown */
+  color: #1b3317 !important; /* Premium Deep Forest Green */
   line-height: 1;
   letter-spacing: -0.02em;
-  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.6); 
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 2px 5px rgba(255, 255, 255, 0.5); 
 }
 
 .hero-sub-name {
   display: block !important;
   font-family: var(--font-head);
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.6em;
-  color: #3e2723 !important;
+  color: #3e2723 !important; /* Elegant Earthy Brown */
   margin-top: 0.2rem !important;
   padding-left: 0.6em;
-  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
 }
 
 .hero-mission-desc {
   font-size: clamp(1.1rem, 2.2vw, 1.35rem);
-  color: #2d1b0d !important;
+  color: #1b3317 !important;
   max-width: 900px;
   margin: 2.5rem auto 0;
   line-height: 1.7;
   font-weight: 600;
-  text-shadow: 0 1px 5px rgba(255, 255, 255, 0.7);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 1px 3px rgba(255, 255, 255, 0.5);
   text-align: center;
   font-family: var(--font-body);
   letter-spacing: 0.01em;

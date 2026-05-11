@@ -692,8 +692,17 @@ img {
   margin-bottom: 2rem;
 }
 
+#home, #home *, #home *::before, #home *::after {
+  background-color: transparent !important;
+  background-image: none; /* Except the section itself which has the hero image */
+}
+
+#home {
+  background-image: url('assets/images/hero_home_vibrant.jpg') !important;
+}
+
 #home.standard-hero::before {
-  background: none !important; /* Keep image vibrant and clear as requested */
+  display: none !important;
 }
 
 .hero-main-name {
@@ -701,10 +710,10 @@ img {
   font-family: var(--font-head);
   font-weight: 700;
   font-size: clamp(2.5rem, 8vw, 4.5rem);
-  color: var(--green-dark) !important;
+  color: #2d1b0d !important; /* Elegant Earthy Dark Brown */
   line-height: 1;
   letter-spacing: -0.02em;
-  text-shadow: 0 1px 15px rgba(255, 255, 255, 0.5); /* Light shadow for depth on clear bg */
+  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.6); 
 }
 
 .hero-sub-name {
@@ -714,20 +723,20 @@ img {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.6em;
-  color: var(--green) !important;
+  color: #3e2723 !important;
   margin-top: 0.2rem !important;
   padding-left: 0.6em;
-  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.4);
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.5);
 }
 
 .hero-mission-desc {
   font-size: clamp(1.1rem, 2.2vw, 1.35rem);
-  color: #2c4a25 !important; /* Deep earth-green for readability */
+  color: #2d1b0d !important;
   max-width: 900px;
   margin: 2.5rem auto 0;
   line-height: 1.7;
   font-weight: 600;
-  text-shadow: 0 1px 5px rgba(255, 255, 255, 0.6);
+  text-shadow: 0 1px 5px rgba(255, 255, 255, 0.7);
   text-align: center;
   font-family: var(--font-body);
   letter-spacing: 0.01em;

@@ -2768,12 +2768,11 @@ img {
 .page-header h1,
 .page-header .hero-title {
   font-size: clamp(2.5rem, 8vw, 4.5rem);
-  color: var(--white);
   margin-bottom: 1.5rem;
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.1;
+  line-height: 1;
   font-weight: 800;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }

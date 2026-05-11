@@ -689,14 +689,14 @@ img {
   backdrop-filter: none !important;
   border: none !important;
   text-align: center;
-  margin-top: -12rem !important; /* Moves it up towards the navbar */
+  margin-top: -15rem !important;
 }
 
 .hero-main-name {
   display: block !important;
   font-family: var(--font-head);
-  font-weight: 900;
-  font-size: clamp(3.5rem, 12vw, 8.5rem);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
   color: var(--white) !important;
   line-height: 1;
   letter-spacing: -0.02em;
@@ -707,8 +707,8 @@ img {
 .hero-sub-name {
   display: block !important;
   font-family: var(--font-head);
-  font-size: clamp(1rem, 3vw, 2.2rem);
-  font-weight: 700;
+  font-size: 1.1rem;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.6em;
   color: var(--white) !important;

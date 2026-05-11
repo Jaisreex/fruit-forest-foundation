@@ -700,7 +700,7 @@ img {
 }
 
 #home {
-  background-image: url('assets/images/hero_home_vibrant.jpg') !important;
+  background-image: url('../images/hero_home_vibrant.jpg') !important;
   background-size: cover;
   background-position: center;
 }

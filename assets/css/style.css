@@ -689,7 +689,7 @@ img {
   backdrop-filter: none !important;
   border: none !important;
   text-align: center;
-  margin-top: -15rem !important;
+  margin-top: -18rem !important;
 }
 
 .hero-main-name {
@@ -712,7 +712,7 @@ img {
   text-transform: uppercase;
   letter-spacing: 0.6em;
   color: var(--white) !important;
-  margin-top: 1rem;
+  margin-top: 0.2rem !important;
   padding-left: 0.6em;
   text-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
   background: none !important;

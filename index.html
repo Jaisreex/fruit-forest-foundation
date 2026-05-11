@@ -8,62 +8,60 @@
   <meta name="description"
     content="We plant fruit trees in public spaces so that people can access free food, wildlife can find natural food, and cities become greener and cooler." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  <link rel="stylesheet" href="assets/css/style.css?v=1.16" />
+  <link rel="stylesheet" href="assets/css/style.css?v=1.18" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <!-- Leaflet Map -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 
-<body>
-
-  <!-- ===== NAVIGATION ===== -->
+<body class="smooth-scroll">
+  <!-- Navbar Section -->
   <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <!-- Logo Left -->
-      <a href="index.html" class="nav-brand" id="nav-brand-home">
-        <img src="assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation Logo" class="logo-img-main"
-          id="navbar-logo" />
+    <div class="container nav-container">
+      <a href="index.html" class="logo-link">
+        <div class="logo-container">
+          <img src="assets/images/fruitforest-logo.png" alt="FruitForest Foundation Logo" class="logo-img" />
+        </div>
       </a>
 
-      <!-- Menu Center -->
-      <div class="nav-links" id="navLinks">
-        <a href="#home" class="nav-link active">Home</a>
-        <a href="pages/about.html" class="nav-link">About Us</a>
-        <a href="pages/services.html" class="nav-link">Our Initiative</a>
-        <a href="#impact-map" class="nav-link">Impact</a>
-        <a href="pages/join.html" class="nav-link">Get Involved</a>
-        <a href="#faq" class="nav-link">FAQ</a>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
 
-
-
-
-      <!-- Actions Right -->
-      <div class="nav-actions">
-        <a href="pages/donate.html" class="btn-donate-nav">Donate</a>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+      <ul class="nav-links" id="navLinks">
+        <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+        <li class="nav-item"><a href="pages/about.html" class="nav-link">About Us</a></li>
+        <li class="nav-item"><a href="pages/initiatives.html" class="nav-link">Our Initiative</a></li>
+        <li class="nav-item"><a href="pages/impact.html" class="nav-link">Impact</a></li>
+        <li class="nav-item nav-item-dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id="getInvolvedToggle">Get Involved</a>
+          <ul class="dropdown-menu">
+            <li><a href="pages/partner.html" class="dropdown-item">Partner With Us</a></li>
+            <li><a href="pages/volunteer.html" class="dropdown-item">Volunteer</a></li>
+            <li><a href="pages/donate.html" class="dropdown-item">Donate</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="pages/faq.html" class="nav-link">FAQ</a></li>
+        <li class="nav-item"><a href="pages/donate.html" class="btn btn-donate">DONATE</a></li>
+      </ul>
     </div>
   </nav>
 
-
-
   <section class="standard-hero full-screen" id="home"
-    style="background-image:url('assets/images/hero_home_vibrant.jpg?v=1.1')">
+    style="background-image:url('assets/images/hero_home_v3.jpg')">
     <div class="container reveal-left">
-      <h1 class="hero-title">
-        <span class="hero-main-name">FruitForest</span>
-        <span class="hero-sub-name">Foundation</span>
+      <h1 class="hero-title" style="background: none !important; box-shadow: none !important; border: none !important; backdrop-filter: none !important;">
+        <span class="hero-main-name" style="color: #1b3317 !important; background: none !important; text-shadow: 0 0 15px rgba(255,255,255,0.8) !important;">FruitForest</span>
+        <span class="hero-sub-name" style="color: #3e2723 !important; background: none !important; text-shadow: 0 0 10px rgba(255,255,255,0.7) !important;">Foundation</span>
       </h1>
-      <p class="hero-mission-desc reveal">
+      <p class="hero-mission-desc reveal" style="color: #1b3317 !important; background: none !important; text-shadow: 0 0 10px rgba(255,255,255,0.8) !important;">
         Plant one native fruit tree in every backyard and public space today. <br>
         One tree can feed people, bees, birds, and animals — a simple act of love that reaches far beyond humanity. <br>
         As birds, animals, rivers, and soil carry its seeds across the land, one tree becomes thousands, creating a living

@@ -679,28 +679,40 @@ img {
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 8vw, 4.5rem);
-  line-height: 1;
-  margin-bottom: 2rem;
-  color: var(--white);
-  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  text-align: center;
+  margin-top: 2rem;
 }
 
 .hero-main-name {
   display: block;
-  font-weight: 900;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  color: var(--green);
+  line-height: 1;
   letter-spacing: -0.02em;
 }
 
 .hero-sub-name {
   display: block;
-  font-size: clamp(1rem, 2.5vw, 1.8rem);
-  font-weight: 500;
+  font-family: var(--font-head);
+  font-size: clamp(0.7rem, 1.8vw, 1.2rem);
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5em;
-  opacity: 0.9;
-  margin-top: 1rem;
-  color: var(--white);
+  letter-spacing: 0.6em;
+  color: #3d6b38;
+  margin-top: 0.6rem;
+  padding-left: 0.6em; /* Balances the letter-spacing on the right */
 }
 
 .hero-title-accent {

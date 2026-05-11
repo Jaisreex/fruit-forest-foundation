@@ -694,23 +694,23 @@ img {
 }
 
 .hero-main-name {
-  display: block;
+  display: block !important;
   font-family: var(--font-head);
   font-weight: 800;
   font-size: clamp(2.5rem, 7vw, 5rem);
-  color: var(--green);
+  color: var(--green) !important;
   line-height: 1;
   letter-spacing: -0.02em;
 }
 
 .hero-sub-name {
-  display: block;
+  display: block !important;
   font-family: var(--font-head);
   font-size: clamp(0.7rem, 1.8vw, 1.2rem);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.6em;
-  color: #3d6b38;
+  color: #3d6b38 !important;
   margin-top: 0.6rem;
   padding-left: 0.6em; /* Balances the letter-spacing on the right */
 }

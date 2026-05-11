@@ -680,10 +680,27 @@ img {
 
 .hero-title {
   font-size: clamp(2.5rem, 8vw, 4.5rem);
-  line-height: 1.1;
+  line-height: 1;
   margin-bottom: 2rem;
   color: var(--white);
   text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero-main-name {
+  display: block;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.hero-sub-name {
+  display: block;
+  font-size: clamp(1rem, 2.5vw, 1.8rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  opacity: 0.9;
+  margin-top: 1rem;
+  color: var(--white);
 }
 
 .hero-title-accent {

@@ -350,13 +350,13 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 90px; /* Compact height */
+  height: 85px; /* Tightened height */
   /* Reduced from 200px to eliminate extra vertical whitespace */
   transition: height 0.35s ease, padding 0.35s ease;
 }
 
 .navbar.scrolled .nav-container {
-  height: 75px;
+  height: 70px;
   /* Match scrolled logo height */
 }
 
@@ -369,14 +369,14 @@ img {
 }
 
 .logo-img-main, .logo-img {
-  height: 82px; /* Large relative to 90px container */
+  height: 80px; /* Fitting tightly in 85px container */
   width: auto;
   object-fit: contain;
   transition: height 0.35s ease;
 }
 
 .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-  height: 68px;
+  height: 65px;
 }
 
 .nav-tagline {
@@ -543,7 +543,7 @@ img {
   display: block;
   padding: 0.8rem 1.5rem;
   font-family: var(--font-head);
-  font-weight: 700;
+  font-weight: 900;
   font-size: 0.95rem;
   color: var(--dark);
   text-transform: uppercase;

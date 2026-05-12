@@ -350,13 +350,13 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 140px; /* Increased to accommodate larger logo */
+  height: 90px; /* Compact height */
   /* Reduced from 200px to eliminate extra vertical whitespace */
   transition: height 0.35s ease, padding 0.35s ease;
 }
 
 .navbar.scrolled .nav-container {
-  height: 100px;
+  height: 75px;
   /* Match scrolled logo height */
 }
 
@@ -369,14 +369,14 @@ img {
 }
 
 .logo-img-main, .logo-img {
-  height: 120px; /* Further increased */
+  height: 82px; /* Large relative to 90px container */
   width: auto;
   object-fit: contain;
   transition: height 0.35s ease;
 }
 
 .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-  height: 80px; /* Further increased */
+  height: 68px;
 }
 
 .nav-tagline {

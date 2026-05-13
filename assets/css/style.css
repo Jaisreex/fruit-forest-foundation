@@ -340,7 +340,7 @@ img {
 .navbar.scrolled {
   background: rgba(255, 255, 255, 1);
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
-  top: 15px;
+  top: 25px; /* Same as default */
 }
 
 .nav-container {
@@ -348,35 +348,39 @@ img {
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 2rem;
   align-items: center;
-  height: 85px; /* Tightened height */
-  /* Reduced from 200px to eliminate extra vertical whitespace */
+  height: 90px;
   transition: height 0.35s ease, padding 0.35s ease;
 }
 
 .navbar.scrolled .nav-container {
-  height: 70px;
-  /* Match scrolled logo height */
+  height: 90px;
 }
 
 .nav-brand {
   display: flex;
   align-items: center;
+  height: 100%;
   text-decoration: none;
   /* Logo entrance animation */
   animation: nav-logo-fade 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
 }
 
 .logo-img-main, .logo-img {
-  height: 80px; /* Fitting tightly in 85px container */
+  height: 1200px; /* Maximum prominence */
+  max-height: none !important;
   width: auto;
   object-fit: contain;
-  transition: height 0.35s ease;
+  transition: all 0.35s ease;
+  transform: translateY(0);
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-  height: 65px;
+  height: 1200px;
+  transform: translateY(0);
 }
 
 .nav-tagline {
@@ -416,7 +420,7 @@ img {
 
 .nav-link {
   font-family: var(--font-head);
-  font-weight: 900; /* Maximized boldness */
+  font-weight: 800; /* Bold geometric style */
   font-size: 1.05rem;
   letter-spacing: 0.03em;
   color: var(--text);
@@ -715,36 +719,40 @@ img {
   font-family: var(--font-head);
   font-weight: 800;
   font-size: clamp(2.5rem, 8vw, 4.5rem);
-  color: #F8F6F1 !important;
-  line-height: 1;
+  color: #FFFFFF !important;
+  line-height: 1.1;
   letter-spacing: -0.02em;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35); 
+  /* Multi-layered shadow for extreme readability on bright/busy backgrounds */
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 4px 15px rgba(0, 0, 0, 0.2),
+    0 10px 40px rgba(0, 0, 0, 0.15);
 }
 
 .hero-sub-name {
   display: block !important;
   font-family: var(--font-head);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.6em;
-  color: #D8E8D2 !important;
-  margin-top: 0.2rem !important;
-  padding-left: 0.6em;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  letter-spacing: 0.5em;
+  color: #D4EDC3 !important; /* Fresh Eco-Green */
+  margin-top: 0.5rem !important;
+  padding-left: 0.5em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 .hero-mission-desc {
-  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
-  color: #F3EFE7 !important;
-  max-width: 900px;
-  margin: 2.5rem auto 0;
-  line-height: 1.7;
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  color: #F8F6F1 !important; /* Premium Off-White */
+  max-width: 950px;
+  margin: 3rem auto 0;
+  line-height: 1.8;
   font-weight: 500;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
   text-align: center;
   font-family: var(--font-body);
-  letter-spacing: 0.01em;
+  letter-spacing: 0.015em;
 }
 
 .hero-highlight-text {
@@ -760,13 +768,14 @@ img {
 }
 
 .hero-subtitle {
-  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 800px;
+  font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+  color: #E9F5E3 !important; /* Soft Nature Mint */
+  max-width: 850px;
   margin: 0 auto 3.5rem;
   font-weight: 500;
-  line-height: 1.4;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  line-height: 1.6;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.01em;
 }
 
 .hero-buttons {
@@ -2805,13 +2814,16 @@ img {
 .page-header h1,
 .page-header .hero-title {
   font-size: clamp(2.5rem, 8vw, 4.5rem);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1;
+  line-height: 1.1;
   font-weight: 800;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  color: #FFFFFF !important;
+  text-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.4),
+    0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
 .standard-hero p,
@@ -2820,10 +2832,14 @@ img {
 .detail-hero .hero-subtitle,
 .page-header p,
 .page-header .hero-subtitle {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 800px;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  color: #E9F5E3 !important;
+  max-width: 850px;
   margin: 0 auto 2.5rem;
+  font-weight: 500;
+  line-height: 1.6;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+}
   line-height: 1.6;
 }
 

@@ -823,47 +823,113 @@
   <!-- ===== FAQ SECTION ===== -->
 
   <!-- ===== ABOUT US SECTION ===== -->
-  <section class="about-section" id="about" style="padding: 10rem 0; background: var(--white);">
+
+  <!-- ===== FULL ABOUT US SECTION ===== -->
+  <section class="about-section-container" id="about" style="padding: 10rem 0; background: var(--white);">
     <div class="container">
-      <div class="section-header reveal">
-        <div class="section-tag">Who We Are</div>
-        <h2 class="section-title">Our <span class="text-green">Purpose</span></h2>
-        <p class="section-subtitle">We are working towards building a better world through environmental sustainability, personal well-being, and financial awareness.</p>
+      <!-- Migrated Hero Content -->
+      <div class="section-header reveal" style="margin-bottom: 5rem;">
+        <div class="section-tag" style="background: var(--gold); color: var(--green-dark); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; display: inline-block; margin-bottom: 1.5rem;">
+          Our Purpose</div>
+        <h2 class="section-title" style="font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.3; max-width: 1000px; margin: 0 auto;">
+          We are working towards building a better world through environmental sustainability, personal well-being, and financial awareness.
+        </h2>
       </div>
 
-      <div class="about-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-top: 5rem;">
-        <div class="reveal-left">
-          <h3 style="font-size: 2rem; margin-bottom: 2rem; color: var(--green-dark);">Bridging Nature, Health, and Wealth</h3>
-          <p style="margin-bottom: 1.5rem; line-height: 1.8;">We are a non-profit trust dedicated to environmental sustainability and community wellbeing. Our mission is to plant fruit trees in public spaces, creating long-term food security, supporting biodiversity, and improving ecosystems through community participation and partnerships.</p>
-          <div class="vision-quote" style="border-left: 4px solid var(--green); padding-left: 2rem; font-style: italic; margin: 3rem 0; font-size: 1.3rem; color: var(--text-light);">
-            "Building a better future for people and the planet — one tree, one healthy life, and one empowered community at a time."
+      <!-- Core Initiatives / Pillars -->
+      <div class="pillars-intro reveal-left" style="text-align: center;">
+        <div class="section-tag">Core Initiatives</div>
+        <h2 class="section-title">Bridging Nature, Health, and Wealth</h2>
+        <p style="max-width: 800px; margin: 2rem auto; font-size: 1.2rem; color: var(--text-light);">We believe that a
+          truly sustainable world starts with healthy individuals who have the food they need and the knowledge to
+          secure their future.</p>
+        <p style="max-width: 800px; margin: 2rem auto; font-size: 1.1rem; color: var(--text-light); line-height: 1.8;">
+          We are a non-profit trust dedicated to environmental sustainability and community wellbeing. Our mission is to plant fruit trees in public spaces, creating long-term food security, supporting biodiversity, and improving ecosystems through community participation and partnerships.
+        </p>
+      </div>
+
+      <!-- Service Cards Grid -->
+      <div class="service-cards-grid reveal">
+        <!-- Fruit plantation card -->
+        <a href="pages/tree-planting.html" class="service-card reveal">
+          <div class="card-img-wrap">
+            <img src="assets/images/tree_planting_impact.jpg" alt="Fruit Tree Plantation Drive" />
           </div>
-        </div>
-        <div class="reveal-right">
-          <div class="about-highlights" style="display: grid; gap: 2rem;">
-            <div class="comm-item">
-              <i class="fas fa-leaf" style="color: var(--green); font-size: 1.5rem;"></i>
-              <div>
-                <h4 style="margin-bottom: 0.5rem;">Nature Driven</h4>
-                <p style="font-size: 0.9rem;">Planting fruit-bearing trees for ecological balance.</p>
-              </div>
-            </div>
-            <div class="comm-item">
-              <i class="fas fa-heartbeat" style="color: var(--green); font-size: 1.5rem;"></i>
-              <div>
-                <h4 style="margin-bottom: 0.5rem;">Health Focused</h4>
-                <p style="font-size: 0.9rem;">Empowering people through wellness and lifestyle awareness.</p>
-              </div>
-            </div>
-            <div class="comm-item">
-              <i class="fas fa-coins" style="color: var(--green); font-size: 1.5rem;"></i>
-              <div>
-                <h4 style="margin-bottom: 0.5rem;">Wealth Aware</h4>
-                <p style="font-size: 0.9rem;">Providing financial education for community empowerment.</p>
-              </div>
-            </div>
+          <div class="card-icon-badge"><i class="fas fa-leaf"></i></div>
+          <div class="card-body">
+            <h3>Fruit Tree Plantation </h3>
+            <p>We plant fruit-bearing trees in communities to restore ecosystems and create sustainable food sources for
+              generations to come.</p>
+            <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
           </div>
+        </a>
+
+        <!-- Wellness Coaching Card -->
+        <a href="pages/wellness-coaching.html" class="service-card reveal delay-1">
+          <div class="card-img-wrap">
+            <img src="assets/images/WELLNESS COACHING.png" alt="Wellness Coaching Initiative" />
+          </div>
+          <div class="card-icon-badge"><i class="fas fa-hand-holding-heart"></i></div>
+          <div class="card-body">
+            <h3>Wellness Coaching</h3>
+            <p>Programs focused on improving physical, mental, and emotional well-being through practical and healthy
+              lifestyle practices.</p>
+            <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+
+        <!-- Wealth Coaching Card -->
+        <a href="pages/wealth-coaching.html" class="service-card reveal delay-2">
+          <div class="card-img-wrap">
+            <img src="assets/images/wealth_coaching_hero_final.png" alt="Wealth Coaching Initiative" />
+          </div>
+          <div class="card-icon-badge"><i class="fas fa-coins"></i></div>
+          <div class="card-body">
+            <h3>Wealth Coaching</h3>
+            <p>Financial education that empowers individuals with practical knowledge about saving, investing, and
+              entrepreneurship skills.</p>
+            <div class="learn-more">Learn More <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </a>
+      </div>
+
+      <!-- What Makes Us Different -->
+      <div class="content-wide reveal">
+        <div class="section-tag" style="background: var(--green-pale); color: var(--green); border:none;">OUR CORE
+          DIFFERENCE</div>
+        <h2 class="diff-heading">What Makes Us Different</h2>
+        <div class="diff-text">
+          <p>At Fruit Forest Foundation, we go beyond traditional environmental and social initiatives. Our work is
+            built on the belief that true sustainability happens when nature, health, and human potential grow together.
+          </p>
+          <p>We don’t simply plant trees — we plant fruit-bearing trees that nourish communities, support biodiversity,
+            and create long-term ecological balance. At the same time, we empower people through health and wellness
+            coaching, helping individuals build healthier lifestyles and stronger communities.</p>
+          <p>By combining environmental action with human well-being, we aim to create a future where people and nature
+            thrive together.</p>
         </div>
+      </div>
+
+      <!-- Final Vision Block -->
+      <div class="vision-accent-box reveal">
+        <div class="section-tag">FINAL VISION</div>
+        <h2 class="diff-heading">Our Commitment to the Future</h2>
+
+        <p class="vision-quote">
+          "Building a better future for people and the planet — one tree, one healthy life, and one empowered community
+          at a time."
+        </p>
+
+        <div class="diff-text" style="margin-bottom: 3rem;">
+          <p>Our vision is a world where every community has access to sustainable food sources, improved well-being,
+            and the knowledge needed to live healthy and meaningful lives.</p>
+          <p>Through tree plantation, wellness programs, and health education, we strive to create lasting change that
+            benefits both present and future generations.</p>
+          <p>We invite individuals, communities, and organizations to join us in building a future where nature is
+            protected, people are healthy, and communities are empowered.</p>
+        </div>
+
+        <a href="pages/join.html" class="btn-primary">Join the Movement</a>
       </div>
     </div>
   </section>

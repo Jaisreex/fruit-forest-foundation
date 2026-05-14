@@ -1987,7 +1987,18 @@ img {
   margin-bottom: 0.5rem;
 }
 
-/* ---------- FLOATING ACTION BUTTON ---------- */
+/* ---------- FLOATING ACTION BUTTONS ---------- */
+.fab-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 2000;
+  align-items: flex-end;
+}
+
 .float-btn {
   position: fixed;
   bottom: 2rem;
@@ -2011,6 +2022,13 @@ img {
   visibility: visible;
   /* Smooth breathing animation */
   animation: float-breathing 3s ease-in-out infinite;
+}
+
+/* When buttons are in a stack, let the container handle positioning */
+.fab-container .float-btn {
+  position: relative;
+  bottom: auto;
+  right: auto;
 }
 
 .float-btn:hover {

@@ -697,7 +697,7 @@ img {
   backdrop-filter: none !important;
   border: none !important;
   text-align: center;
-  margin-top: -5rem !important;
+  margin-top: 0 !important;
   margin-bottom: 2rem;
 }
 

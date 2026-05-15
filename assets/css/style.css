@@ -379,7 +379,7 @@ img {
 }
 
 .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-  height: 85px;
+  height: 100px;
   transform: translateY(0);
 }
 
@@ -2372,7 +2372,7 @@ img {
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 80px;
+    height: 100px;
   }
 }
 
@@ -2382,11 +2382,11 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 120px;
+    height: 100px;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 90px;
+    height: 100px;
   }
 
   .hero-title {
@@ -2712,11 +2712,11 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 160px;
+    height: 100px;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 50px;
+    height: 100px;
   }
 }
 

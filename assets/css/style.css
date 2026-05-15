@@ -351,12 +351,12 @@ img {
   justify-content: flex-start;
   gap: 2rem;
   align-items: center;
-  height: 115px;
+  height: 130px;
   transition: height 0.35s ease, padding 0.35s ease;
 }
 
 .navbar.scrolled .nav-container {
-  height: 105px;
+  height: 115px;
 }
 
 .nav-brand {
@@ -369,7 +369,7 @@ img {
 }
 
 .logo-img-main, .logo-img {
-  height: 85px; /* Increased for better prominence */
+  height: 100px; /* Increased for better prominence */
   max-height: none !important;
   width: auto;
   object-fit: contain;
@@ -379,7 +379,7 @@ img {
 }
 
 .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-  height: 75px;
+  height: 85px;
   transform: translateY(0);
 }
 
@@ -2368,11 +2368,11 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 80px;
+    height: 100px;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 70px;
+    height: 80px;
   }
 }
 

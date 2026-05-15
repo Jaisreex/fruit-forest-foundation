@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.disconnect();
       }
     }, { threshold: 0.5 });
-    counterSections.forEach(s => { if(s.querySelector(".counter")) observer.observe(s); });
+    observer.observe(impactSection);
   }
 
   // ---- ScrollSpy & Active State Logic ----

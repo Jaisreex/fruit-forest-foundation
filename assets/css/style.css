@@ -1340,6 +1340,95 @@ img {
   }
 }
 
+/* ---------- INITIATIVES SECTION ---------- */
+.initiatives-section {
+  padding: 10rem 0;
+  background: var(--white);
+  position: relative;
+}
+
+.initiatives-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 5rem;
+}
+
+.initiative-card {
+  background: var(--bg-soft);
+  padding: 4rem 3rem;
+  border-radius: 30px;
+  text-align: center;
+  transition: var(--transition);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.initiative-card:hover {
+  background: var(--white);
+  transform: translateY(-15px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--green-pale);
+}
+
+.initiative-icon {
+  width: 90px;
+  height: 90px;
+  background: var(--white);
+  color: var(--green);
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+.initiative-card:hover .initiative-icon {
+  background: var(--green);
+  color: var(--white);
+  transform: scale(1.1) rotate(5deg);
+}
+
+.initiative-content h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: var(--dark);
+  font-weight: 800;
+}
+
+.initiative-content p {
+  color: var(--text-light);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 1100px) {
+  .initiatives-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .initiatives-section {
+    padding: 6rem 0;
+  }
+  
+  .initiatives-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .initiative-card {
+    padding: 3rem 2rem;
+  }
+}
+
 /* ---------- IMPACT MAP ---------- */
 .map-section {
   padding: var(--section-padding);

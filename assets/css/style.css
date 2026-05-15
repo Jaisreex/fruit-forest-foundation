@@ -351,12 +351,12 @@ img {
   justify-content: flex-start;
   gap: 2rem;
   align-items: center;
-  height: 105px;
+  height: 115px;
   transition: height 0.35s ease, padding 0.35s ease;
 }
 
 .navbar.scrolled .nav-container {
-  height: 95px;
+  height: 105px;
 }
 
 .nav-brand {
@@ -369,7 +369,7 @@ img {
 }
 
 .logo-img-main, .logo-img {
-  height: 75px; /* Increased for better prominence */
+  height: 85px; /* Increased for better prominence */
   max-height: none !important;
   width: auto;
   object-fit: contain;
@@ -379,7 +379,7 @@ img {
 }
 
 .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-  height: 65px;
+  height: 75px;
   transform: translateY(0);
 }
 
@@ -2367,12 +2367,12 @@ img {
     display: block;
   }
 
-  .logo-img-main {
-    height: 70px;
+  .logo-img-main, .logo-img {
+    height: 80px;
   }
 
-  .navbar.scrolled .logo-img-main {
-    height: 60px;
+  .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
+    height: 70px;
   }
 }
 
@@ -2381,12 +2381,12 @@ img {
     padding: 0 1.5rem;
   }
 
-  .logo-img-main {
-    height: 110px;
+  .logo-img-main, .logo-img {
+    height: 120px;
   }
 
-  .navbar.scrolled .logo-img-main {
-    height: 80px;
+  .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
+    height: 90px;
   }
 
   .hero-title {
@@ -2711,12 +2711,12 @@ img {
     font-size: 2.2rem;
   }
 
-  .logo-img-main {
-    height: 150px;
+  .logo-img-main, .logo-img {
+    height: 160px;
   }
 
-  .navbar.scrolled .logo-img-main {
-    height: 40px;
+  .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
+    height: 50px;
   }
 }
 

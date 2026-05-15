@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ---- Reveal Animation ----
-  const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {

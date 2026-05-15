@@ -16,6 +16,8 @@
   --text-light: #666666;
   --bg-soft: #f8f9fa;
   /* Soft Sand */
+  --bg-nature: #f1f8f0;
+  /* Nature Pale Green */
 
   /* Typography */
   --font-head: "Montserrat", sans-serif;
@@ -4179,4 +4181,436 @@ img {
   .service-card {
     padding: 3rem 2rem;
   }
+}
+/* ---------- REDESIGNED FOUNDER & TEAM SECTIONS (PREMIUM) ---------- */
+
+/* --- Enhanced Custom Animations --- */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(20px) rotate(-5deg); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.1); }
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-scale.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* --- Founder Spotlight (Cinematic Split-Screen) --- */
+.founder-spotlight {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+  background: var(--white);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.founder-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.founder-visual {
+  flex: 1;
+  min-width: 50%;
+  position: relative;
+  background: radial-gradient(circle at center, #e8f5e9 0%, #f1f8f0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Floating Nature Elements */
+.founder-visual::before {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: url('../images/pattern.png');
+  opacity: 0.03;
+  animation: rotate-leaf 60s linear infinite;
+}
+
+.founder-image-frame {
+  position: relative;
+  width: 75%;
+  max-width: 600px;
+  aspect-ratio: 4/5;
+  z-index: 2;
+  perspective: 2000px;
+}
+
+.founder-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 60px 20px 60px 20px;
+  box-shadow: 0 30px 100px rgba(45, 90, 39, 0.2);
+  transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.founder-visual:hover img {
+  transform: scale(1.05) rotateY(-8deg) rotateX(2deg);
+}
+
+.float-leaf {
+  position: absolute;
+  color: var(--green);
+  opacity: 0.15;
+  z-index: 3;
+}
+
+.leaf-1 { top: 10%; left: 10%; font-size: 4rem; animation: float 8s ease-in-out infinite; }
+.leaf-2 { bottom: 15%; right: 10%; font-size: 5rem; animation: float-reverse 10s ease-in-out infinite; }
+.orb {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(45, 90, 39, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: pulse-soft 5s infinite;
+}
+.orb-1 { top: -50px; right: -50px; }
+.orb-2 { bottom: -100px; left: -100px; }
+
+.founder-content {
+  flex: 1;
+  min-width: 50%;
+  padding: 10rem 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--white);
+  position: relative;
+}
+
+.founder-label {
+  font-weight: 900;
+  color: var(--green);
+  letter-spacing: 0.4em;
+  margin-bottom: 2rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.founder-name {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  line-height: 1;
+  color: var(--green-dark);
+  margin-bottom: 1.5rem;
+  font-weight: 900;
+}
+
+.founder-name .nick {
+  color: var(--gold-dark);
+  font-family: var(--font-head);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.founder-role {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 4rem;
+  padding-left: 2rem;
+  border-left: 6px solid var(--gold);
+  line-height: 1.2;
+}
+
+.glass-panel-story {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 4rem;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-panel-story::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+  pointer-events: none;
+}
+
+.founder-story, .founder-quote {
+  font-size: 1.25rem;
+  line-height: 1.9;
+  color: var(--text);
+  margin-bottom: 2.5rem;
+}
+
+.founder-quote {
+  font-weight: 600;
+  color: var(--green-dark);
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+@media (max-width: 1400px) {
+  .founder-content { padding: 8rem 4rem; }
+}
+
+@media (max-width: 992px) {
+  .founder-spotlight { min-height: auto; }
+  .founder-visual, .founder-content { min-width: 100%; }
+  .founder-content { padding: 6rem 2rem; }
+  .founder-visual { height: 600px; padding: 2rem; }
+  .founder-image-frame { width: 100%; height: 100%; }
+}
+
+/* --- Goal Showcase (Premium Glassmorphism Cards) --- */
+.goal-showcase {
+  padding: 12rem 0;
+  background: var(--bg-nature);
+  position: relative;
+  overflow: hidden;
+}
+
+.goal-showcase::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 100% 0%, rgba(45, 90, 39, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.goal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+  margin-top: 8rem;
+  position: relative;
+}
+
+/* Animated connecting line for desktop */
+@media (min-width: 1200px) {
+  .goal-grid::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--green), transparent);
+    opacity: 0.1;
+    z-index: 0;
+  }
+}
+
+.goal-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  padding: 5rem 4rem;
+  border-radius: 45px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.03);
+  transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.goal-card:hover {
+  transform: translateY(-25px) scale(1.05);
+  box-shadow: 0 50px 100px rgba(45, 90, 39, 0.18);
+  background: var(--white);
+  border-color: var(--green);
+}
+
+.goal-icon {
+  width: 110px;
+  height: 110px;
+  background: linear-gradient(135deg, var(--green-pale) 0%, #e8f5e9 100%);
+  color: var(--green);
+  border-radius: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin-bottom: 3.5rem;
+  transition: all 0.6s ease;
+  box-shadow: 0 10px 30px rgba(45, 90, 39, 0.1);
+}
+
+.goal-card:hover .goal-icon {
+  background: var(--green);
+  color: var(--white);
+  transform: scale(1.2) rotate(15deg);
+  box-shadow: 0 20px 40px rgba(45, 90, 39, 0.3);
+}
+
+.goal-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--green-dark);
+  font-weight: 900;
+}
+
+.goal-card p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+/* --- Team Interactive Section (3D Tilt & Immersive Panels) --- */
+.team-interactive-section {
+  padding: 12rem 0;
+  background: var(--white);
+  perspective: 2000px;
+  position: relative;
+}
+
+.team-cards-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  margin-top: 8rem;
+}
+
+.team-profile-panel {
+  height: 480px;
+  perspective: 2000px;
+}
+
+.panel-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.team-profile-panel:hover .panel-inner {
+  transform: rotateY(180deg);
+}
+
+.panel-front, .panel-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+}
+
+.panel-front {
+  background: var(--white);
+  border: 1px solid rgba(45, 90, 39, 0.08);
+}
+
+.panel-back {
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 100%);
+  color: var(--white);
+  transform: rotateY(180deg);
+  text-align: center;
+  padding: 4rem;
+}
+
+.panel-avatar {
+  width: 130px;
+  height: 130px;
+  background: var(--green-pale);
+  color: var(--green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  margin-bottom: 3rem;
+  border: 6px solid var(--white);
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+.team-profile-panel:hover .panel-avatar {
+  transform: scale(1.15) rotate(-10deg);
+}
+
+.panel-front h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: var(--green-dark);
+  font-weight: 900;
+  text-align: center;
+}
+
+.panel-front p {
+  color: var(--green);
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.panel-back p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .team-profile-panel { height: 440px; }
+  .goal-card { padding: 4rem 2rem; }
+}
+
+/* --- Section Wave Divider --- */
+.wave-container {
+  width: 100%;
+  line-height: 0;
+  overflow: hidden;
+  background: var(--white);
+}
+
+.wave-container svg {
+  display: block;
+  width: 200%;
+  height: 120px;
+  fill: var(--bg-nature);
+  animation: wave-move 20s linear infinite;
+}
+
+@keyframes wave-move {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }

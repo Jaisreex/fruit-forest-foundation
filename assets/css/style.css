@@ -3000,6 +3000,227 @@ img {
   z-index: 1;
 }
 
+/* ---------- ABOUT US ENHANCEMENTS ---------- */
+.about-section {
+  padding: 8rem 0;
+  background: var(--bg-soft);
+}
+
+.about-who-we-are {
+  margin-bottom: 5rem;
+}
+
+.about-content-card {
+  background: var(--white);
+  padding: 4rem;
+  border-radius: 30px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.03);
+  border-left: 8px solid var(--green);
+}
+
+.about-content-card h3 {
+  font-size: 2.2rem;
+  color: var(--green-dark);
+  margin-bottom: 2rem;
+  font-weight: 800;
+}
+
+.about-content-card p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.about-mvp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-bottom: 6rem;
+}
+
+.mvp-card {
+  background: var(--white);
+  padding: 3rem 2.5rem;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.mvp-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--green-pale);
+}
+
+.mvp-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--green-pale);
+  color: var(--green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  transition: var(--transition);
+}
+
+.mvp-card:hover .mvp-icon {
+  background: var(--green);
+  color: var(--white);
+  transform: rotate(360deg);
+}
+
+.mvp-info h4 {
+  font-size: 1.5rem;
+  color: var(--dark);
+  margin-bottom: 1.2rem;
+  font-weight: 800;
+}
+
+.mvp-info p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-light);
+}
+
+.about-values-section {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.about-values-section h3 {
+  font-size: 2.2rem;
+  color: var(--dark);
+  margin-bottom: 3rem;
+  font-weight: 800;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.value-card {
+  background: var(--white);
+  padding: 1.8rem;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-weight: 700;
+  color: var(--dark);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+
+.value-card:hover {
+  border-color: var(--green);
+  color: var(--green);
+  transform: scale(1.05);
+}
+
+.value-card i {
+  color: var(--green);
+  font-size: 1.2rem;
+}
+
+.about-team-section {
+  margin-top: 4rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.profile-card {
+  background: var(--white);
+  padding: 3.5rem;
+  border-radius: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+  transition: var(--transition);
+}
+
+.profile-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.profile-avatar {
+  width: 90px;
+  height: 90px;
+  background: var(--bg-soft);
+  color: var(--green);
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  border: 2px solid var(--green-pale);
+}
+
+.profile-header h3 {
+  font-size: 1.8rem;
+  color: var(--dark);
+  font-weight: 800;
+}
+
+.profile-card p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+@media (max-width: 1100px) {
+  .about-mvp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-content-card {
+    padding: 2.5rem;
+  }
+  
+  .about-mvp-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .profile-card {
+    padding: 2.5rem;
+  }
+}
+
 .consistent-hero .container {
   position: relative;
   z-index: 2;

@@ -1344,7 +1344,7 @@ img {
 
 /* ---------- INITIATIVES SECTION ---------- */
 .initiatives-section {
-  padding: 0;
+  padding: 3rem 0 0;
   background: var(--white);
   position: relative;
 }
@@ -3400,7 +3400,7 @@ img {
 
 /* ---------- THE GROWING CRISIS SECTION ---------- */
 .crisis-section {
-  padding: 6rem 0 0;
+  padding: 6rem 0 3rem;
   background-color: #fcfcfc;
 }
 

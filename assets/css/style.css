@@ -365,27 +365,23 @@ img {
   align-items: center;
   height: 100%;
   text-decoration: none;
-  margin-left: -2rem;
-  margin-right: 120px;
+  margin-left: -2.5rem; /* Pull logo to the extreme left corner */
+  /* margin-right removed so flexbox can calculate naturally */
   /* Logo entrance animation */
   animation: nav-logo-fade 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
 }
 
 .logo-img-main, .logo-img {
-  height: 130px; /* Same as nav-container height */
+  height: 200px; /* Actual height increase instead of transform */
   max-height: none !important;
   width: auto;
   object-fit: contain;
   transition: all 0.35s ease;
-  transform: scale(1.6);
-  transform-origin: left center;
   image-rendering: -webkit-optimize-contrast;
 }
 
 .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-  height: 115px; /* Same as scrolled nav-container height */
-  transform: scale(1.6);
-  transform-origin: left center;
+  height: 175px; /* Actual height increase instead of transform */
 }
 
 .nav-tagline {

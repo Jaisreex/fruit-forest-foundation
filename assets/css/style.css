@@ -4604,13 +4604,7 @@ img {
 
 .wave-container svg {
   display: block;
-  width: 200%;
+  width: 100%;
   height: 120px;
   fill: var(--bg-nature);
-  animation: wave-move 20s linear infinite;
-}
-
-@keyframes wave-move {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
 }

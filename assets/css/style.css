@@ -4390,7 +4390,7 @@ img {
 
 /* --- Goal Showcase (Premium Glassmorphism Cards) --- */
 .goal-showcase {
-  padding: 0 0 8rem;
+  padding: 0 0 2rem;
   background: var(--white);
   position: relative;
   overflow: hidden;
@@ -4406,9 +4406,9 @@ img {
 
 .goal-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 3rem;
-  margin-top: 8rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
   position: relative;
 }
 
@@ -4488,7 +4488,7 @@ img {
 
 /* --- Team Interactive Section (3D Tilt & Immersive Panels) --- */
 .team-interactive-section {
-  padding: 12rem 0;
+  padding: 2rem 0;
   background: var(--white);
   perspective: 2000px;
   position: relative;

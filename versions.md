@@ -2,7 +2,7 @@
 
 ## v2.1.0 (Latest Release)
 - **Founder & Team Redesign**: Completely overhauled the Founder Profile and Leadership Team sections with a cinematic split-screen layout, 3D flip cards, and interactive goal showcases.
-- **Section Reorganization**: Relocated "What Makes Us Different" and "Our Future Commitment" sections from the homepage to the "Our Initiatives" page (services.html) to better align with the project's core mission details.
+- **Section Reorganization**: Integrated "What Makes Us Different" and "Our Future Commitment" sections back into the homepage, positioned immediately below the "Our Initiatives" section for consistent messaging.
 - **Visual Polish**: Added nature-inspired wave dividers and standardized global design tokens for sections.
 - **Content Restoration**: Restored core brand messaging regarding the foundation's unique approach and long-term commitments.
 

@@ -1,11 +1,13 @@
 # Website Versions
 
-## v2.0.0 (Latest Release)
+## v2.1.0 (Latest Release)
+- **Founder & Team Redesign**: Completely overhauled the Founder Profile and Leadership Team sections with a cinematic split-screen layout, 3D flip cards, and interactive goal showcases.
+- **Section Reorganization**: Integrated "What Makes Us Different" and "Our Future Commitment" sections into the homepage, positioned for better storytelling flow before the FAQ.
+- **Visual Polish**: Added nature-inspired wave dividers and standardized global design tokens for sections.
+- **Content Restoration**: Restored core brand messaging regarding the foundation's unique approach and long-term commitments.
+
+## v2.0.0
 - **Opportunities Page Overhaul**: Redesigned the "Explore Opportunities" hero section with full-screen cinematic imagery and responsive alignment.
-- **Interactive Role Logic**: Implemented dynamic "Explore Role" card functionality with global JS logic and inline fallbacks for high reliability.
-- **Visual Branding Updates**: Standardized Wellness and Wealth Coaching imagery with high-resolution user-provided photography across all pages.
-- **Impact Map Focus**: Updated the interactive impact map to focus exclusively on project locations in Tamil Nadu and Assam with 47 location pins.
-- **Section Layout Refinement**: Implemented premium 50/50 balanced layouts for the "Why Fruit Trees" section to improve readability and visual impact.
 
 ## v1.1.0
 - **Partner Hero Standardization**: Standardized "Partner With Us" hero imagery across all partnership application and contact pages.

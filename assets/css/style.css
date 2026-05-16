@@ -1344,7 +1344,7 @@ img {
 
 /* ---------- INITIATIVES SECTION ---------- */
 .initiatives-section {
-  padding: 10rem 0;
+  padding: 10rem 0 2rem;
   background: var(--white);
   position: relative;
 }

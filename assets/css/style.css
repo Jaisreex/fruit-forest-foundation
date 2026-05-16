@@ -4215,7 +4215,8 @@ img {
 /* --- Founder Spotlight (Cinematic Split-Screen) --- */
 .founder-spotlight {
   width: 100%;
-  min-height: 100vh;
+  min-height: auto;
+  padding: 8rem 0;
   display: flex;
   align-items: stretch;
   background: var(--white);
@@ -4389,7 +4390,7 @@ img {
 
 /* --- Goal Showcase (Premium Glassmorphism Cards) --- */
 .goal-showcase {
-  padding: 12rem 0;
+  padding: 2rem 0 10rem;
   background: var(--white);
   position: relative;
   overflow: hidden;

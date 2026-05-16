@@ -571,11 +571,12 @@ img {
   color: var(--green-dark) !important;
   padding: 0.8rem 2.2rem !important;
   border-radius: 50px;
-  font-family: var(--font-head) !important;
+  font-family: var(--font-body) !important;
   font-weight: 900 !important;
-  font-size: 1rem !important;
+  font-size: 1.05rem !important;
   text-transform: uppercase;
   letter-spacing: 0.12em;
+  -webkit-text-stroke: 0.5px currentColor;
   box-shadow: 0 6px 22px rgba(255, 208, 0, 0.4) !important;
   white-space: nowrap !important;
   display: inline-flex !important;

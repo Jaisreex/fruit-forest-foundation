@@ -371,7 +371,7 @@ img {
 }
 
 .logo-img-main, .logo-img {
-  height: 100px; /* Increased for better prominence */
+  height: 130px; /* Same as nav-container height */
   max-height: none !important;
   width: auto;
   object-fit: contain;
@@ -381,7 +381,7 @@ img {
 }
 
 .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-  height: 100px;
+  height: 115px; /* Same as scrolled nav-container height */
   transform: translateY(0);
 }
 
@@ -422,7 +422,7 @@ img {
 
 .nav-link {
   font-family: var(--font-head);
-  font-weight: 800; /* Bold geometric style */
+  font-weight: 900; /* Bolder text for navbar options */
   font-size: 1.05rem;
   letter-spacing: 0.03em;
   color: var(--text);

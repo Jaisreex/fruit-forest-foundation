@@ -4216,7 +4216,7 @@ img {
 .founder-spotlight {
   width: 100%;
   min-height: auto;
-  padding: 8rem 0;
+  padding: 4rem 0 0;
   display: flex;
   align-items: stretch;
   background: var(--white);
@@ -4390,7 +4390,7 @@ img {
 
 /* --- Goal Showcase (Premium Glassmorphism Cards) --- */
 .goal-showcase {
-  padding: 2rem 0 10rem;
+  padding: 0 0 8rem;
   background: var(--white);
   position: relative;
   overflow: hidden;

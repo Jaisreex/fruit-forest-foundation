@@ -4234,22 +4234,38 @@ img {
   flex: 1;
   min-width: 50%;
   position: relative;
-  background: radial-gradient(circle at center, #e8f5e9 0%, #f1f8f0 100%);
+  background: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  padding: 4rem;
 }
 
-/* Floating Nature Elements */
-.founder-visual::before {
-  content: "";
-  position: absolute;
-  width: 150%;
-  height: 150%;
-  background: url('../images/pattern.png');
-  opacity: 0.03;
-  animation: rotate-leaf 60s linear infinite;
+/* New Founder Extended Bio Styles */
+.founder-extended-bio {
+  max-width: 500px;
+  z-index: 2;
+}
+
+.bio-block {
+  margin-bottom: 3rem;
+  border-left: 4px solid var(--green);
+  padding-left: 2rem;
+}
+
+.bio-block h3 {
+  font-size: 1.4rem;
+  color: var(--green-dark);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bio-block p {
+  color: var(--text-light);
+  line-height: 1.7;
+  font-size: 1.1rem;
 }
 
 .founder-image-frame {
@@ -4341,26 +4357,8 @@ img {
 }
 
 .glass-panel-story {
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  padding: 4rem;
-  border-radius: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.04);
+  padding: 4rem 0;
   position: relative;
-  overflow: hidden;
-}
-
-.glass-panel-story::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
-  pointer-events: none;
 }
 
 .founder-story, .founder-quote {
@@ -4392,7 +4390,7 @@ img {
 /* --- Goal Showcase (Premium Glassmorphism Cards) --- */
 .goal-showcase {
   padding: 12rem 0;
-  background: var(--bg-nature);
+  background: var(--white);
   position: relative;
   overflow: hidden;
 }

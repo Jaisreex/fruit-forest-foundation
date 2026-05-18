@@ -3024,14 +3024,14 @@ img {
 
 .about-intro-modern {
   display: grid;
-  grid-template-columns: 42% 58%;
-  gap: 7rem;
+  grid-template-columns: 52% 48%;
+  gap: 5rem;
   align-items: center; /* Align vertically centered */
   margin-bottom: 7rem;
 }
 
 .about-modern-content {
-  max-width: 520px; /* Reduced excessive width */
+  max-width: 700px; /* Increased to cover empty whitespace and keep content wide */
 }
 
 .about-modern-title {
@@ -3953,19 +3953,44 @@ img {
   pointer-events: none;
 }
 
-/* Split Layout for Get Involved */
-.gi-split-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
+/* Zigzag Layout for Get Involved */
+.gi-zigzag-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  margin-top: 4rem;
+  margin-bottom: 6rem;
 }
 
-.gi-image-placeholder {
+.gi-zigzag-row {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.gi-zigzag-row.gi-zigzag-reverse {
+  flex-direction: row-reverse;
+}
+
+.gi-zigzag-media {
+  flex: 1.1;
+  display: flex;
+  justify-content: center;
+}
+
+.gi-zigzag-content {
+  flex: 0.9;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.gi-zigzag-placeholder {
   width: 100%;
-  height: 100%;
-  min-height: 700px;
-  background: linear-gradient(135deg, #fdfbf7 0%, #f1f8f0 100%);
+  aspect-ratio: 16 / 10;
+  max-width: 620px; /* Increased from 550px to cover more whitespace on wide screens */
+  background: #fdfbf7; /* soft light cream */
+  border: 1px dashed rgba(45, 90, 39, 0.25);
   border-radius: var(--radius);
   display: flex;
   align-items: center;
@@ -3973,50 +3998,39 @@ img {
   font-family: var(--font-head);
   font-weight: 600;
   color: rgba(45, 90, 39, 0.4);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  transition: var(--transition);
+}
+
+.gi-zigzag-placeholder:hover {
+  border-color: var(--green);
+  background: #f1f8f0; /* pale green on hover */
+  color: var(--green);
+  transform: translateY(-5px);
   box-shadow: var(--shadow);
-  border: 1px dashed rgba(45, 90, 39, 0.2);
-  position: sticky;
-  top: 150px;
 }
 
-.gi-right {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  padding: 1rem 0;
-}
-
-.gi-content-blocks {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-}
-
-.gi-block {
-  position: relative;
-  padding-bottom: 2.5rem;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-.gi-block:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.gi-block h4 {
-  font-size: 1.3rem;
+.gi-zigzag-content h4 {
+  font-size: 1.4rem;
   color: var(--dark);
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
   font-weight: 700;
   line-height: 1.4;
   font-family: var(--font-head);
 }
 
-.gi-block p {
+.gi-zigzag-content p {
   color: var(--text-light);
-  line-height: 1.8;
+  line-height: 1.85;
   font-size: 1.05rem;
+}
+
+/* Centered highlight box at the bottom */
+.gi-bottom-highlight {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .gi-highlight-box {
@@ -4026,6 +4040,7 @@ img {
   margin-top: 1rem;
   box-shadow: 0 10px 30px rgba(45, 90, 39, 0.05);
   border: 1px solid rgba(45, 90, 39, 0.1);
+  text-align: left;
 }
 
 .gi-highlight-box h4 {
@@ -4038,7 +4053,7 @@ img {
 
 .gi-support-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.2rem;
 }
 
@@ -4062,19 +4077,40 @@ img {
   font-size: 1.6rem;
   font-weight: 800;
   color: var(--gold-dark);
-  text-align: left;
-  margin-top: 1rem;
+  text-align: center;
+  margin-top: 3rem;
   letter-spacing: -0.01em;
 }
 
 @media (max-width: 992px) {
-  .gi-split-layout {
-    grid-template-columns: 1fr;
+  .gi-zigzag-row {
     gap: 3rem;
   }
-  .gi-image-placeholder {
-    min-height: 400px;
-    position: static;
+}
+
+@media (max-width: 768px) {
+  .gi-zigzag-row, 
+  .gi-zigzag-row.gi-zigzag-reverse {
+    flex-direction: column !important; /* image placeholder on top, content below */
+    gap: 2rem;
+  }
+
+  .gi-zigzag-media, 
+  .gi-zigzag-content {
+    flex: none;
+    width: 100%;
+  }
+
+  .gi-zigzag-content {
+    text-align: center;
+  }
+
+  .gi-zigzag-placeholder {
+    aspect-ratio: 16 / 9;
+  }
+
+  .gi-closing-statement {
+    font-size: 1.4rem;
   }
 }
 

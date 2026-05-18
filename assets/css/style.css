@@ -4467,180 +4467,221 @@ img {
   transform: scale(1);
 }
 
-/* --- Founder Spotlight (Cinematic Split-Screen) --- */
-.founder-spotlight {
-  width: 100%;
-  min-height: auto;
-  padding: 1.5rem 0 0;
-  display: flex;
-  align-items: stretch;
-  background: var(--white);
+/* Redesigned Storytelling Founder Spotlight Section */
+.founder-spotlight-modern {
+  padding: 10rem 0;
+  background-color: #FAF8F5; /* Warm cream / earth tone */
+  position: relative;
   overflow: hidden;
-  position: relative;
-  z-index: 1;
 }
 
-.founder-container {
-  display: flex;
+.founder-spotlight-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  flex-wrap: wrap;
+  height: 100%;
+  background: radial-gradient(circle at 10% 20%, rgba(45, 90, 39, 0.03) 0%, transparent 60%);
+  pointer-events: none;
 }
 
-.founder-visual {
-  flex: 1;
-  min-width: 50%;
-  position: relative;
-  background: var(--white);
+.founder-story-wrapper {
+  display: grid;
+  grid-template-columns: 46% 54%;
+  gap: 7rem;
+  align-items: center; /* Vertically centered */
+}
+
+/* LEFT SIDE: Image Frame styling */
+.founder-story-image {
+  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 4rem;
 }
 
-/* New Founder Extended Bio Styles */
-.founder-extended-bio {
-  max-width: 500px;
-  z-index: 2;
-}
-
-.bio-block {
-  margin-bottom: 1.5rem;
-  border-left: 4px solid var(--green);
-  padding-left: 2rem;
-}
-
-.bio-block h3 {
-  font-size: 1.4rem;
-  color: var(--green-dark);
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.bio-block p {
-  color: var(--text-light);
-  line-height: 1.7;
-  font-size: 1.1rem;
-}
-
-.founder-image-frame {
+.founder-img-frame {
   position: relative;
-  width: 75%;
-  max-width: 600px;
-  aspect-ratio: 4/5;
-  z-index: 2;
-  perspective: 2000px;
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 1 / 1;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 65px rgba(45, 90, 39, 0.1);
+  background-color: var(--white);
+  border: 1px solid rgba(45, 90, 39, 0.05);
+  transition: transform 0.4s ease;
 }
 
-.founder-image-frame img {
+.founder-img-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 60px 20px 60px 20px;
-  box-shadow: 0 30px 100px rgba(45, 90, 39, 0.2);
-  transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: block;
 }
 
-.founder-visual:hover img {
-  transform: scale(1.05) rotateY(-8deg) rotateX(2deg);
+.founder-img-frame:hover img {
+  transform: scale(1.05); /* Slight hover zoom */
 }
 
-.float-leaf {
-  position: absolute;
-  color: var(--green);
-  opacity: 0.15;
-  z-index: 3;
-}
-
-.leaf-1 { top: 10%; left: 10%; font-size: 4rem; animation: float 8s ease-in-out infinite; }
-.leaf-2 { bottom: 15%; right: 10%; font-size: 5rem; animation: float-reverse 10s ease-in-out infinite; }
-.orb {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(45, 90, 39, 0.1) 0%, transparent 70%);
-  border-radius: 50%;
-  filter: blur(40px);
-  animation: pulse-soft 5s infinite;
-}
-.orb-1 { top: -50px; right: -50px; }
-.orb-2 { bottom: -100px; left: -100px; }
-
-.founder-content {
-  flex: 1;
-  min-width: 50%;
-  padding: 10rem 8rem;
+/* RIGHT SIDE: Text content styling */
+.founder-story-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: var(--white);
-  position: relative;
 }
 
-.founder-label {
-  font-weight: 900;
-  color: var(--green);
-  letter-spacing: 0.4em;
-  margin-bottom: 2rem;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-}
-
-.founder-name {
-  font-size: clamp(3rem, 6vw, 4.5rem);
-  line-height: 1;
-  color: var(--green-dark);
-  margin-bottom: 1.5rem;
-  font-weight: 900;
-}
-
-.founder-name .nick {
-  color: var(--gold-dark);
+.founder-story-badge {
+  display: inline-block;
+  align-self: flex-start;
   font-family: var(--font-head);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--green);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--green-pale);
+}
+
+.founder-story-heading {
+  font-family: var(--font-head);
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--green-dark);
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.founder-story-heading span {
+  color: var(--green);
+}
+
+.founder-story-name {
+  font-family: var(--font-head);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+
+.founder-story-nick {
+  color: var(--gold-dark);
   font-weight: 400;
   font-style: italic;
+  font-family: var(--font-head);
 }
 
-.founder-role {
-  font-size: 1.4rem;
-  font-weight: 700;
+.founder-story-role {
+  font-size: 1.1rem;
+  font-weight: 600;
   color: var(--text-light);
-  margin-bottom: 4rem;
-  padding-left: 2rem;
-  border-left: 6px solid var(--gold);
-  line-height: 1.2;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.glass-panel-story {
-  padding: 1.5rem 0;
+.founder-story-text p {
+  font-size: 1.08rem;
+  color: var(--text);
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+}
+
+.founder-story-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Quote styling */
+.founder-story-quote {
+  margin-top: 3rem;
+  padding: 2rem 2.5rem;
+  background-color: var(--white);
+  border-left: 5px solid var(--green);
+  border-radius: 0 16px 16px 0;
+  box-shadow: 0 10px 30px rgba(45, 90, 39, 0.02);
   position: relative;
 }
 
-.founder-story, .founder-quote {
-  font-size: 1.25rem;
-  line-height: 1.9;
-  color: var(--text);
-  margin-bottom: 2.5rem;
+.founder-story-quote i {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  font-size: 3rem;
+  color: rgba(45, 90, 39, 0.05);
+  pointer-events: none;
 }
 
-.founder-quote {
+.founder-story-quote p {
+  font-family: var(--font-head);
+  font-size: 1.15rem;
   font-weight: 600;
-  color: var(--green-dark);
-  margin-bottom: 0;
   font-style: italic;
+  color: var(--green-dark);
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
 }
 
-@media (max-width: 1400px) {
-  .founder-content { padding: 8rem 4rem; }
+/* Responsiveness */
+@media (max-width: 1200px) {
+  .founder-story-wrapper {
+    gap: 4rem;
+  }
 }
 
 @media (max-width: 992px) {
-  .founder-spotlight { min-height: auto; }
-  .founder-visual, .founder-content { min-width: 100%; }
-  .founder-content { padding: 6rem 2rem; }
-  .founder-visual { height: 600px; padding: 2rem; }
-  .founder-image-frame { width: 100%; height: 100%; }
+  .founder-spotlight-modern {
+    padding: 7rem 0;
+  }
+
+  .founder-story-wrapper {
+    grid-template-columns: 1fr; /* Stack layout */
+    gap: 4rem;
+  }
+
+  .founder-story-image {
+    order: 1; /* Image first on mobile/tablet */
+  }
+
+  .founder-story-content {
+    order: 2;
+  }
+
+  .founder-img-frame {
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .founder-spotlight-modern {
+    padding: 6rem 0;
+  }
+
+  .founder-story-heading {
+    font-size: 2rem;
+  }
+
+  .founder-story-name {
+    font-size: 1.5rem;
+  }
+
+  .founder-story-role {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .founder-story-quote {
+    padding: 1.5rem 1.8rem;
+    margin-top: 2rem;
+  }
+  
+  .founder-story-quote p {
+    font-size: 1.05rem;
+  }
 }
 
 /* --- Goal Showcase (Premium Glassmorphism Cards) --- */

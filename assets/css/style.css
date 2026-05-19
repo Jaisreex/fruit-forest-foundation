@@ -5069,6 +5069,18 @@ img {
   overflow: hidden;
 }
 
+.action-card .action-title {
+  color: var(--white) !important;
+}
+
+.action-card .action-desc {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.action-card .action-icon {
+  color: var(--green-pale) !important;
+}
+
 /* Organic decoration detail shapes inside the forest-green card */
 .action-card::before {
   content: '';

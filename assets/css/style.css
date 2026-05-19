@@ -4851,7 +4851,7 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 3rem;
-  margin-top: 8rem;
+  margin-top: 3rem;
 }
 
 .team-profile-panel {

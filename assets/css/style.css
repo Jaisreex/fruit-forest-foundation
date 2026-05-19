@@ -4011,6 +4011,25 @@ img {
   box-shadow: var(--shadow);
 }
 
+.gi-zigzag-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  max-width: 620px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+  border: 1px solid rgba(45, 90, 39, 0.1);
+  display: block;
+}
+
+.gi-zigzag-img:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+  border-color: var(--green);
+}
+
+
 .gi-zigzag-content h4 {
   font-size: 1.4rem;
   color: var(--dark);

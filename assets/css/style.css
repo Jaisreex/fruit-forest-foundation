@@ -4971,7 +4971,7 @@ img {
 
 /* How We Create Change Section */
 .change-section {
-  padding: 10rem 0;
+  padding: 4rem 0 6rem;
   background-color: #FAF8F5; /* Warm off-white/soft cream */
   position: relative;
 }
@@ -4980,7 +4980,7 @@ img {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 
 .change-card {

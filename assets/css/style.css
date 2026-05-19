@@ -18,6 +18,9 @@
   /* Soft Sand */
   --bg-nature: #f1f8f0;
   /* Nature Pale Green */
+  --earth-brown: #6C584C;
+  --light-cream: #F8F9F1;
+  --leaf-green: #40916C;
 
   /* Typography */
   --font-head: "Montserrat", sans-serif;
@@ -5235,6 +5238,255 @@ img {
   background-color: rgba(255, 213, 79, 0.2) !important;
   border-radius: 4px;
   padding: 2px 8px !important;
+}
+
+/* --- Initiatives Section Content Styles (from services.html) --- */
+.initiative-section {
+  padding: 8rem 0;
+}
+
+/* How It Works Section */
+/* Process Flow Section */
+.process-flow {
+  max-width: 1000px;
+  margin: 5rem auto 0;
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.process-flow::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--green-pale);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.process-step {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6rem;
+  position: relative;
+  width: 100%;
+}
+
+.process-step:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.process-content {
+  width: 44%;
+  background: var(--white);
+  padding: 3rem;
+  border-radius: 35px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  position: relative;
+}
+
+.process-content:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(45, 90, 39, 0.1);
+  border-color: var(--green-pale);
+}
+
+.process-marker {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 64px;
+  background: var(--green);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1.4rem;
+  box-shadow: 0 0 0 10px var(--white), 0 0 0 15px var(--green-pale);
+  z-index: 5;
+}
+
+.process-content h3 {
+  font-size: 1.5rem;
+  color: var(--green-dark);
+  margin-bottom: 1.2rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.process-content h3 i {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  color: var(--green);
+}
+
+.process-content p {
+  color: var(--text-light);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .process-flow::before {
+    left: 40px;
+  }
+  .process-step {
+    flex-direction: row !important;
+    justify-content: flex-start;
+    padding-left: 90px;
+    margin-bottom: 4rem;
+  }
+  .process-content {
+    width: 100%;
+    padding: 2.5rem;
+  }
+  .process-marker {
+    left: 40px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.1rem;
+    box-shadow: 0 0 0 8px var(--white), 0 0 0 12px var(--green-pale);
+  }
+}
+
+/* Impact Section */
+.impact-blocks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+.impact-block {
+  background: var(--white);
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.impact-block-content {
+  padding: 3rem;
+}
+
+.impact-block h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.impact-block h3 i {
+  color: var(--green);
+}
+
+.impact-block p {
+  line-height: 1.8;
+  color: var(--text-light);
+  font-size: 1.05rem;
+}
+
+/* Biodiversity Section */
+.biodiversity-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.bio-visual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.bio-img-item {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.bio-img-item i {
+  font-size: 2.5rem;
+  color: var(--green);
+  margin-bottom: 1rem;
+}
+
+.bio-img-item span {
+  display: block;
+  font-weight: 700;
+  color: var(--dark);
+  font-size: 0.9rem;
+}
+
+/* Coaching Section */
+.coaching-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.coaching-card {
+  padding: 4rem 3rem;
+  border-radius: 30px;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.coaching-card.financial {
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+}
+
+.coaching-card.health {
+  background: linear-gradient(135deg, var(--earth-brown) 0%, #8E7A6E 100%);
+}
+
+.coaching-card h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  color: var(--white);
+}
+
+.coaching-card p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+.coaching-icon-bg {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  font-size: 8rem;
+  opacity: 0.1;
+  transform: rotate(-15deg);
+}
+
+@media (max-width: 992px) {
+  .biodiversity-layout, .coaching-grid {
+    grid-template-columns: 1fr;
+  }
+  .biodiversity-layout {
+    gap: 3rem;
+  }
 }
 
 

@@ -372,16 +372,18 @@ img {
 }
 
 .logo-img-main, .logo-img {
-  height: 200px; /* Actual height increase instead of transform */
+  height: 235px; /* Increased size of the logo */
   max-height: none !important;
   width: auto;
   object-fit: contain;
   transition: all 0.35s ease;
   image-rendering: -webkit-optimize-contrast;
+  margin-top: 15px; /* Move the logo slightly down */
 }
 
 .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-  height: 175px; /* Actual height increase instead of transform */
+  height: 190px; /* Scaled down slightly when scrolled */
+  margin-top: 8px; /* Move the logo slightly down when scrolled */
 }
 
 .nav-tagline {

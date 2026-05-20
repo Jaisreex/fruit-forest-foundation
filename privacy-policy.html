@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | Fruit Forest Foundation</title>
+  <meta name="description" content="Privacy Policy for FruitForest Foundation - Protecting your information while building a greener future." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="assets/css/style.css?v=1.21" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <style>
+    /* Privacy Policy Page Specific Styles */
+    .privacy-content-section {
+      padding: 5rem 0;
+      background-color: var(--bg-nature);
+    }
+    .privacy-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .privacy-welcome-card {
+      background: var(--white);
+      padding: 3rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 3rem;
+      border-left: 5px solid var(--green);
+      line-height: 1.8;
+      font-size: 1.15rem;
+      color: var(--text);
+    }
+    .privacy-welcome-card p {
+      margin-bottom: 0;
+    }
+    .privacy-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    @media (max-width: 768px) {
+      .privacy-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .privacy-card {
+      background: var(--white);
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border: 1px solid rgba(45, 90, 39, 0.05);
+    }
+    .privacy-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+    .privacy-card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .privacy-card-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--green-pale);
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+    .privacy-card-title {
+      font-family: var(--font-head);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin: 0;
+    }
+    .privacy-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .privacy-list li {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      line-height: 1.6;
+      color: var(--text);
+    }
+    .privacy-list li:last-child {
+      margin-bottom: 0;
+    }
+    .privacy-list li i {
+      color: var(--leaf-green);
+      margin-top: 0.25rem;
+    }
+    
+    /* Mission section callout */
+    .privacy-mission-box {
+      grid-column: span 2;
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      color: var(--white);
+      padding: 3rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    @media (max-width: 768px) {
+      .privacy-mission-box {
+        grid-column: span 1;
+      }
+    }
+    .privacy-mission-box h3 {
+      font-family: var(--font-head);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      margin-top: 0;
+    }
+    .privacy-mission-box h4 {
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: var(--white);
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      padding-bottom: 0.5rem;
+    }
+    .privacy-mission-box p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      opacity: 0.95;
+    }
+    
+    /* Commitment section */
+    .commitment-section-wrapper {
+      background: var(--white);
+      padding: 3rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 3rem;
+      border-top: 4px solid var(--gold);
+    }
+    .commitment-title-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .commitment-title-wrapper h3 {
+      font-family: var(--font-head);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      margin: 0;
+    }
+    .commitment-text {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--text-light);
+      margin-bottom: 2rem;
+    }
+    .commitment-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 992px) {
+      .commitment-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 576px) {
+      .commitment-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .commitment-item {
+      background: var(--green-pale);
+      padding: 2rem 1.5rem;
+      border-radius: var(--radius-sm);
+      text-align: center;
+      transition: var(--transition);
+    }
+    .commitment-item:hover {
+      transform: translateY(-3px);
+      background: var(--white);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--green);
+    }
+    .commitment-emoji {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .commitment-label {
+      font-family: var(--font-head);
+      font-weight: 700;
+      color: var(--green-dark);
+      font-size: 1.05rem;
+      line-height: 1.4;
+    }
+    
+    /* General Policy Grid */
+    .general-policies {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    @media (max-width: 992px) {
+      .general-policies {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 768px) {
+      .general-policies {
+        grid-template-columns: 1fr;
+      }
+    }
+    .policy-box {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border-top: 3px solid var(--green);
+    }
+    .policy-box h4 {
+      font-family: var(--font-head);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-top: 0;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .policy-box h4 i {
+      color: var(--green);
+    }
+    .policy-box p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text-light);
+      margin: 0;
+    }
+    
+    /* Contact CTA */
+    .privacy-contact-cta {
+      background: linear-gradient(135deg, var(--white), var(--bg-soft));
+      border: 2px dashed var(--green);
+      padding: 3rem;
+      border-radius: var(--radius);
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .privacy-contact-cta h3 {
+      font-family: var(--font-head);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+    .privacy-contact-cta p {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      margin-bottom: 2rem;
+    }
+    .btn-contact-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--green);
+      color: var(--white);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 1.1rem 2.5rem;
+      border-radius: 50px;
+      border: 2px solid var(--green);
+      transition: var(--transition);
+      cursor: pointer;
+      text-decoration: none;
+      gap: 0.75rem;
+    }
+    .btn-contact-cta:hover {
+      transform: translateY(-2px);
+      background-color: var(--green-dark);
+      border-color: var(--green-dark);
+      box-shadow: 0 8px 20px rgba(45, 90, 39, 0.25);
+    }
+  </style>
+</head>
+
+<body class="smooth-scroll">
+  <!-- Navbar Section -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/images/fruitforest-logo.png" alt="FruitForest Foundation Logo" class="logo-img-main" />
+      </a>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#home" class="nav-link">Home</a>
+        <a href="index.html#our-initiatives" class="nav-link">Our Initiatives</a>
+        <a href="index.html#get-involved" class="nav-link">Get Involved</a>
+        <a href="index.html#about-us" class="nav-link">About Us</a>
+        <a href="index.html#impact-map" class="nav-link">Impact</a>
+        <a href="index.html#faq" class="nav-link">FAQ</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="pages/donate.html" class="btn-donate-nav">PLANT A TREE</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="standard-hero" style="background-image: url('assets/images/nature.png'); min-height: 50vh; display: flex; align-items: center; justify-content: center; padding: 7rem 0 5rem;">
+    <div class="container reveal-left">
+      <div class="section-tag" style="background: var(--gold); color: var(--green-dark); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; display: inline-block; margin-bottom: 1.5rem;">FruitForest Foundation</div>
+      <h1 class="hero-title" style="margin-bottom: 1rem; color: #FFFFFF !important; text-shadow: 0 2px 10px rgba(0,0,0,0.35) !important;">Privacy Policy</h1>
+      <p class="hero-subtitle" style="margin: 0 auto; color: #E9F5E3 !important; max-width: 600px; text-shadow: 0 2px 10px rgba(0,0,0,0.35) !important; font-size: 1.25rem;">Protecting your information while building a greener future</p>
+    </div>
+  </section>
+
+  <!-- Privacy Content Section -->
+  <section class="privacy-content-section">
+    <div class="privacy-container">
+      
+      <!-- Welcome Message -->
+      <div class="privacy-welcome-card reveal">
+        <p><strong>Welcome to FruitForest Foundation.</strong></p>
+        <p style="margin-top: 1rem;">Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when you visit our website, participate in our initiatives, donate, volunteer, or contact us.</p>
+      </div>
+
+      <div class="privacy-grid">
+        
+        <!-- 1. Information We Collect -->
+        <div class="privacy-card reveal">
+          <div class="privacy-card-header">
+            <div class="privacy-card-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3 class="privacy-card-title">1. Information We Collect</h3>
+          </div>
+          <ul class="privacy-list">
+            <li><i class="fas fa-check-circle"></i> Full name</li>
+            <li><i class="fas fa-check-circle"></i> Email address</li>
+            <li><i class="fas fa-check-circle"></i> Phone number</li>
+            <li><i class="fas fa-check-circle"></i> Donation details</li>
+            <li><i class="fas fa-check-circle"></i> Volunteer registration details</li>
+            <li><i class="fas fa-check-circle"></i> Messages submitted through forms</li>
+            <li><i class="fas fa-check-circle"></i> Website usage analytics and browser information</li>
+          </ul>
+        </div>
+
+        <!-- 2. How We Use Your Information -->
+        <div class="privacy-card reveal">
+          <div class="privacy-card-header">
+            <div class="privacy-card-icon">
+              <i class="fas fa-cogs"></i>
+            </div>
+            <h3 class="privacy-card-title">2. How We Use Your Information</h3>
+          </div>
+          <ul class="privacy-list">
+            <li><i class="fas fa-arrow-right"></i> Respond to inquiries</li>
+            <li><i class="fas fa-arrow-right"></i> Manage volunteers and programs</li>
+            <li><i class="fas fa-arrow-right"></i> Process donations</li>
+            <li><i class="fas fa-arrow-right"></i> Send updates about plantation drives and initiatives</li>
+            <li><i class="fas fa-arrow-right"></i> Improve our services and website</li>
+            <li><i class="fas fa-arrow-right"></i> Maintain website security</li>
+          </ul>
+        </div>
+
+        <!-- 3. Mission and Purpose -->
+        <div class="privacy-mission-box reveal">
+          <h3>3. Mission and Purpose</h3>
+          
+          <h4>FruitForest Foundation’s mission:</h4>
+          <ul class="privacy-list" style="margin-bottom: 2rem;">
+            <li style="color: var(--white);"><i class="fas fa-seedling" style="color: var(--gold);"></i> To plant fruit trees across the world to reduce hunger and restore ecosystems</li>
+            <li style="color: var(--white);"><i class="fas fa-seedling" style="color: var(--gold);"></i> To empower people through wealth education and wellness</li>
+          </ul>
+
+          <h4>Goal:</h4>
+          <ul class="privacy-list">
+            <li style="color: var(--white);"><i class="fas fa-bullseye" style="color: var(--gold);"></i> Create abundant, self-sustaining food sources for communities everywhere</li>
+            <li style="color: var(--white);"><i class="fas fa-bullseye" style="color: var(--gold);"></i> Build financially educated, healthy, and self-reliant societies</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- 4. Our Environmental Commitment -->
+      <div class="commitment-section-wrapper reveal">
+        <div class="commitment-title-wrapper">
+          <span style="font-size: 1.8rem;">🌱</span>
+          <h3>4. Our Environmental Commitment</h3>
+        </div>
+        <p class="commitment-text">
+          <strong>Our Goal:</strong> We aim to create awareness and provide fruit trees that can be planted in public spaces. Planting fruit trees nourishes communities, wildlife, and the planet.
+        </p>
+        
+        <div style="font-family: var(--font-head); font-weight: 700; color: var(--green-dark); margin-bottom: 1.5rem; font-size: 1.1rem;">These trees help:</div>
+        
+        <div class="commitment-grid">
+          <div class="commitment-item">
+            <span class="commitment-emoji">🐦</span>
+            <span class="commitment-label">Support wildlife</span>
+          </div>
+          <div class="commitment-item">
+            <span class="commitment-emoji">🚶</span>
+            <span class="commitment-label">Help people access fruits</span>
+          </div>
+          <div class="commitment-item">
+            <span class="commitment-emoji">🌍</span>
+            <span class="commitment-label">Improve environment</span>
+          </div>
+          <div class="commitment-item">
+            <span class="commitment-emoji">🔄</span>
+            <span class="commitment-label">Encourage natural growth</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- General Policy Grid (5 to 10) -->
+      <div class="general-policies">
+        
+        <!-- 5. Sharing of Information -->
+        <div class="policy-box reveal">
+          <h4><i class="fas fa-share-alt"></i> 5. Sharing of Info</h4>
+          <p>We do not sell or rent personal information to third parties.</p>
+        </div>
+
+        <!-- 6. Data Security -->
+        <div class="policy-box reveal">
+          <h4><i class="fas fa-shield-alt"></i> 6. Data Security</h4>
+          <p>We implement reasonable security measures to protect user information.</p>
+        </div>
+
+        <!-- 7. Cookies -->
+        <div class="policy-box reveal">
+          <h4><i class="fas fa-cookie-bite"></i> 7. Cookies</h4>
+          <p>Our website may use cookies to improve user experience and analytics.</p>
+        </div>
+
+        <!-- 8. Third-Party Links -->
+        <div class="policy-box reveal">
+          <h4><i class="fas fa-external-link-alt"></i> 8. Third-Party Links</h4>
+          <p>We are not responsible for third-party website privacy practices.</p>
+        </div>
+
+        <!-- 9. Children’s Privacy -->
+        <div class="policy-box reveal">
+          <h4><i class="fas fa-child"></i> 9. Children’s Privacy</h4>
+          <p>We do not knowingly collect personal information from children without proper consent.</p>
+        </div>
+
+        <!-- 10. Changes to This Policy -->
+        <div class="policy-box reveal">
+          <h4><i class="fas fa-sync-alt"></i> 10. Changes to Policy</h4>
+          <p>FruitForest Foundation may update this Privacy Policy at any time.</p>
+        </div>
+
+      </div>
+
+      <!-- 11. Contact Information CTA -->
+      <div class="privacy-contact-cta reveal">
+        <h3>11. Contact Information</h3>
+        <p>For questions regarding this Privacy Policy, contact us through our contact page.</p>
+        <a href="pages/contact.html" class="btn-contact-cta">
+          <i class="fas fa-paper-plane"></i> Get in Touch
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer" id="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/images/fruitforest-logo.png" alt="Fruit Forest Foundation" />
+          </div>
+          <p>Planting the seeds of abundance, wellness, and financial freedom — one community at a time.</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube" class="social-icon"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-links-group">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html#home">Our Story</a></li>
+            <li><a href="index.html#tree-mission">Tree Mission</a></li>
+            <li><a href="index.html#health-coaching">Health Coaching</a></li>
+            <li><a href="index.html#wealth-coaching">Wealth Coaching</a></li>
+            <li><a href="index.html#impact-map">Impact Map</a></li>
+            <li><a href="pages/blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4>Get Involved</h4>
+          <ul>
+            <li><a href="pages/donate.html">PLANT A TREE</a></li>
+            <li><a href="pages/join.html">Volunteer</a></li>
+            <li><a href="pages/join.html">Partner With Us</a></li>
+            <li><a href="pages/contact.html">Contact Us</a></li>
+            <li><a href="/privacy-policy" class="footer-highlight-link">Privacy Policy</a></li>
+            <li><a href="javascript:void(0)" class="footer-highlight-link" onclick="this.classList.toggle('highlighted')">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p><i class="fas fa-envelope"></i> hello@fruitforestfoundation.com</p>
+          <p><i class="fas fa-phone"></i> +1 (800) FRUIT-FOREST</p>
+          <p><i class="fas fa-map-marker-alt"></i> Global · Est. 2024</p>
+          <div class="footer-hashtag">
+            <i class="fab fa-instagram"></i>
+            <span>#Fruit ForestGlobal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p style="margin-bottom: 1rem; opacity: 0.8; font-size: 0.9rem;">Fruit Forest Foundation is a non-profit trust committed to building sustainable communities through fruit tree initiatives.</p>
+        <p>&copy; 2026 Fruit Forest Foundation. All rights reserved. Registered Non-Profit Trust.</p>
+        <p>Made with <i class="fas fa-heart" style="color:#e74c3c"></i> for the Earth.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy | Fruit Forest Foundation</title>
-  <meta name="description" content="Privacy Policy for FruitForest Foundation - Protecting your information while building a greener future." />
+  <title>Terms of Service | Fruit Forest Foundation</title>
+  <meta name="description" content="Terms of Service for FruitForest Foundation - Guidelines for using and supporting our green initiatives." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="stylesheet" href="assets/css/style.css?v=1.21" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,17 +16,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
   <style>
-    /* Privacy Policy Page Specific Styles */
-    .privacy-content-section {
+    /* Terms of Service Page Specific Styles */
+    .terms-content-section {
       padding: 5rem 0;
       background-color: var(--bg-nature);
     }
-    .privacy-container {
+    .terms-container {
       max-width: 1000px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
-    .privacy-welcome-card {
+    .terms-welcome-card {
       background: var(--white);
       padding: 3rem;
       border-radius: var(--radius);
@@ -37,21 +37,21 @@
       font-size: 1.15rem;
       color: var(--text);
     }
-    .privacy-welcome-card p {
+    .terms-welcome-card p {
       margin-bottom: 0;
     }
-    .privacy-grid {
+    .terms-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
       margin-bottom: 3rem;
     }
     @media (max-width: 768px) {
-      .privacy-grid {
+      .terms-grid {
         grid-template-columns: 1fr;
       }
     }
-    .privacy-card {
+    .terms-card {
       background: var(--white);
       padding: 2.5rem;
       border-radius: var(--radius);
@@ -59,17 +59,17 @@
       transition: var(--transition);
       border: 1px solid rgba(45, 90, 39, 0.05);
     }
-    .privacy-card:hover {
+    .terms-card:hover {
       transform: translateY(-5px);
       box-shadow: var(--shadow-lg);
     }
-    .privacy-card-header {
+    .terms-card-header {
       display: flex;
       align-items: center;
       gap: 1rem;
       margin-bottom: 1.5rem;
     }
-    .privacy-card-icon {
+    .terms-card-icon {
       width: 50px;
       height: 50px;
       border-radius: 50%;
@@ -80,19 +80,19 @@
       justify-content: center;
       font-size: 1.4rem;
     }
-    .privacy-card-title {
+    .terms-card-title {
       font-family: var(--font-head);
       font-size: 1.4rem;
       font-weight: 700;
       color: var(--green-dark);
       margin: 0;
     }
-    .privacy-list {
+    .terms-list {
       list-style: none;
       padding: 0;
       margin: 0;
     }
-    .privacy-list li {
+    .terms-list li {
       margin-bottom: 1rem;
       display: flex;
       align-items: flex-start;
@@ -100,16 +100,16 @@
       line-height: 1.6;
       color: var(--text);
     }
-    .privacy-list li:last-child {
+    .terms-list li:last-child {
       margin-bottom: 0;
     }
-    .privacy-list li i {
+    .terms-list li i {
       color: var(--leaf-green);
       margin-top: 0.25rem;
     }
     
-    /* Mission section callout */
-    .privacy-mission-box {
+    /* About section callout (gradient) */
+    .terms-about-box {
       grid-column: span 2;
       background: linear-gradient(135deg, var(--green), var(--green-dark));
       color: var(--white);
@@ -118,11 +118,11 @@
       box-shadow: var(--shadow);
     }
     @media (max-width: 768px) {
-      .privacy-mission-box {
+      .terms-about-box {
         grid-column: span 1;
       }
     }
-    .privacy-mission-box h3 {
+    .terms-about-box h3 {
       font-family: var(--font-head);
       font-size: 1.8rem;
       font-weight: 800;
@@ -130,7 +130,7 @@
       margin-bottom: 1.5rem;
       margin-top: 0;
     }
-    .privacy-mission-box h4 {
+    .terms-about-box h4 {
       font-family: var(--font-head);
       font-size: 1.3rem;
       font-weight: 700;
@@ -140,14 +140,14 @@
       border-bottom: 1px solid rgba(255,255,255,0.15);
       padding-bottom: 0.5rem;
     }
-    .privacy-mission-box p {
+    .terms-about-box p {
       font-size: 1.1rem;
       line-height: 1.7;
       opacity: 0.95;
     }
-    
-    /* Commitment section */
-    .commitment-section-wrapper {
+
+    /* Environmental commitment/mission section */
+    .mission-section-wrapper {
       background: var(--white);
       padding: 3rem;
       border-radius: var(--radius);
@@ -155,59 +155,59 @@
       margin-bottom: 3rem;
       border-top: 4px solid var(--gold);
     }
-    .commitment-title-wrapper {
+    .mission-title-wrapper {
       display: flex;
       align-items: center;
       gap: 0.75rem;
       margin-bottom: 1.5rem;
     }
-    .commitment-title-wrapper h3 {
+    .mission-title-wrapper h3 {
       font-family: var(--font-head);
       font-size: 1.6rem;
       font-weight: 800;
       color: var(--green-dark);
       margin: 0;
     }
-    .commitment-text {
+    .mission-text {
       font-size: 1.15rem;
       line-height: 1.7;
       color: var(--text-light);
       margin-bottom: 2rem;
     }
-    .commitment-grid {
+    .mission-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
     }
     @media (max-width: 992px) {
-      .commitment-grid {
+      .mission-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
     @media (max-width: 576px) {
-      .commitment-grid {
+      .mission-grid {
         grid-template-columns: 1fr;
       }
     }
-    .commitment-item {
+    .mission-item {
       background: var(--green-pale);
       padding: 2rem 1.5rem;
       border-radius: var(--radius-sm);
       text-align: center;
       transition: var(--transition);
     }
-    .commitment-item:hover {
+    .mission-item:hover {
       transform: translateY(-3px);
       background: var(--white);
       box-shadow: var(--shadow);
       border: 1px solid var(--green);
     }
-    .commitment-emoji {
+    .mission-emoji {
       font-size: 2.2rem;
       margin-bottom: 1rem;
       display: block;
     }
-    .commitment-label {
+    .mission-label {
       font-family: var(--font-head);
       font-weight: 700;
       color: var(--green-dark);
@@ -261,7 +261,7 @@
     }
     
     /* Contact CTA */
-    .privacy-contact-cta {
+    .terms-contact-cta {
       background: linear-gradient(135deg, var(--white), var(--bg-soft));
       border: 2px dashed var(--green);
       padding: 3rem;
@@ -269,7 +269,7 @@
       text-align: center;
       box-shadow: var(--shadow);
     }
-    .privacy-contact-cta h3 {
+    .terms-contact-cta h3 {
       font-family: var(--font-head);
       font-size: 1.6rem;
       font-weight: 800;
@@ -277,7 +277,7 @@
       margin-top: 0;
       margin-bottom: 1rem;
     }
-    .privacy-contact-cta p {
+    .terms-contact-cta p {
       font-size: 1.1rem;
       color: var(--text-light);
       margin-bottom: 2rem;
@@ -344,158 +344,171 @@
   <section class="standard-hero" style="background-image: url('assets/images/nature.png'); min-height: 50vh; display: flex; align-items: center; justify-content: center; padding: 7rem 0 5rem;">
     <div class="container reveal-left">
       <div class="section-tag" style="background: var(--gold); color: var(--green-dark); padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; display: inline-block; margin-bottom: 1.5rem;">FruitForest Foundation</div>
-      <h1 class="hero-title" style="margin-bottom: 1rem; color: #FFFFFF !important; text-shadow: 0 2px 10px rgba(0,0,0,0.35) !important;">Privacy Policy</h1>
-      <p class="hero-subtitle" style="margin: 0 auto; color: #E9F5E3 !important; max-width: 600px; text-shadow: 0 2px 10px rgba(0,0,0,0.35) !important; font-size: 1.25rem;">Protecting your information while building a greener future</p>
+      <h1 class="hero-title" style="margin-bottom: 1rem; color: #FFFFFF !important; text-shadow: 0 2px 10px rgba(0,0,0,0.35) !important;">Terms of Service</h1>
+      <p class="hero-subtitle" style="margin: 0 auto; color: #E9F5E3 !important; max-width: 600px; text-shadow: 0 2px 10px rgba(0,0,0,0.35) !important; font-size: 1.25rem;">Guidelines for using and supporting FruitForest Foundation</p>
     </div>
   </section>
 
-  <!-- Privacy Content Section -->
-  <section class="privacy-content-section">
-    <div class="privacy-container">
+  <!-- Terms Content Section -->
+  <section class="terms-content-section">
+    <div class="terms-container">
       
       <!-- Welcome Message -->
-      <div class="privacy-welcome-card reveal">
+      <div class="terms-welcome-card reveal">
         <p><strong>Welcome to FruitForest Foundation.</strong></p>
-        <p style="margin-top: 1rem;">Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when you visit our website, participate in our initiatives, donate, volunteer, or contact us.</p>
+        <p style="margin-top: 1rem;">By accessing or using this website, you agree to comply with these Terms of Service.</p>
       </div>
 
-      <div class="privacy-grid">
+      <div class="terms-grid">
         
-        <!-- 1. Information We Collect -->
-        <div class="privacy-card reveal">
-          <div class="privacy-card-header">
-            <div class="privacy-card-icon">
-              <i class="fas fa-database"></i>
+        <!-- 1. Acceptance of Terms -->
+        <div class="terms-card reveal">
+          <div class="terms-card-header">
+            <div class="terms-card-icon">
+              <i class="fas fa-file-contract"></i>
             </div>
-            <h3 class="privacy-card-title">1. Information We Collect</h3>
+            <h3 class="terms-card-title">1. Acceptance of Terms</h3>
           </div>
-          <ul class="privacy-list">
-            <li><i class="fas fa-check-circle"></i> Full name</li>
-            <li><i class="fas fa-check-circle"></i> Email address</li>
-            <li><i class="fas fa-check-circle"></i> Phone number</li>
-            <li><i class="fas fa-check-circle"></i> Donation details</li>
-            <li><i class="fas fa-check-circle"></i> Volunteer registration details</li>
-            <li><i class="fas fa-check-circle"></i> Messages submitted through forms</li>
-            <li><i class="fas fa-check-circle"></i> Website usage analytics and browser information</li>
+          <p style="line-height: 1.7; color: var(--text-light); margin: 0;">By using this website, you acknowledge that you have read, understood, and agreed to these terms and applicable laws.</p>
+        </div>
+
+        <!-- 3. Use of Website -->
+        <div class="terms-card reveal">
+          <div class="terms-card-header">
+            <div class="terms-card-icon">
+              <i class="fas fa-user-shield"></i>
+            </div>
+            <h3 class="terms-card-title">3. Use of Website</h3>
+          </div>
+          <div style="font-family: var(--font-head); font-weight: 700; color: var(--green-dark); margin-bottom: 1rem;">Users agree to:</div>
+          <ul class="terms-list">
+            <li><i class="fas fa-check-circle"></i> Use the website lawfully and respectfully</li>
+            <li><i class="fas fa-check-circle"></i> Provide accurate information in forms</li>
+            <li><i class="fas fa-check-circle"></i> Avoid misuse or harmful activities</li>
+            <li><i class="fas fa-check-circle"></i> Not attempt unauthorized access to systems or data</li>
           </ul>
         </div>
 
-        <!-- 2. How We Use Your Information -->
-        <div class="privacy-card reveal">
-          <div class="privacy-card-header">
-            <div class="privacy-card-icon">
-              <i class="fas fa-cogs"></i>
-            </div>
-            <h3 class="privacy-card-title">2. How We Use Your Information</h3>
-          </div>
-          <ul class="privacy-list">
-            <li><i class="fas fa-arrow-right"></i> Respond to inquiries</li>
-            <li><i class="fas fa-arrow-right"></i> Manage volunteers and programs</li>
-            <li><i class="fas fa-arrow-right"></i> Process donations</li>
-            <li><i class="fas fa-arrow-right"></i> Send updates about plantation drives and initiatives</li>
-            <li><i class="fas fa-arrow-right"></i> Improve our services and website</li>
-            <li><i class="fas fa-arrow-right"></i> Maintain website security</li>
+        <!-- 2. About FruitForest Foundation -->
+        <div class="terms-about-box reveal">
+          <h3>2. About FruitForest Foundation</h3>
+          <p>FruitForest Foundation is a non-profit organization focused on:</p>
+          <ul class="terms-list" style="margin-top: 1rem; margin-bottom: 2rem;">
+            <li style="color: var(--white);"><i class="fas fa-seedling" style="color: var(--gold);"></i> Planting fruit trees across the world</li>
+            <li style="color: var(--white);"><i class="fas fa-seedling" style="color: var(--gold);"></i> Reducing hunger and restoring ecosystems</li>
+            <li style="color: var(--white);"><i class="fas fa-seedling" style="color: var(--gold);"></i> Supporting environmental sustainability</li>
+            <li style="color: var(--white);"><i class="fas fa-seedling" style="color: var(--gold);"></i> Promoting wellness and wealth education</li>
+            <li style="color: var(--white);"><i class="fas fa-seedling" style="color: var(--gold);"></i> Encouraging community participation</li>
           </ul>
-        </div>
 
-        <!-- 3. Mission and Purpose -->
-        <div class="privacy-mission-box reveal">
-          <h3>3. Mission and Purpose</h3>
-          
-          <h4>FruitForest Foundation’s mission:</h4>
-          <ul class="privacy-list" style="margin-bottom: 2rem;">
-            <li style="color: var(--white);"><i class="fas fa-seedling" style="color: var(--gold);"></i> To plant fruit trees across the world to reduce hunger and restore ecosystems</li>
-            <li style="color: var(--white);"><i class="fas fa-seedling" style="color: var(--gold);"></i> To empower people through wealth education and wellness</li>
+          <h4>Mission:</h4>
+          <ul class="terms-list" style="margin-bottom: 2rem;">
+            <li style="color: var(--white);"><i class="fas fa-bullseye" style="color: var(--gold);"></i> To plant fruit trees across the world to reduce hunger and restore ecosystems</li>
+            <li style="color: var(--white);"><i class="fas fa-bullseye" style="color: var(--gold);"></i> To empower people through wealth education and wellness</li>
           </ul>
 
           <h4>Goal:</h4>
-          <ul class="privacy-list">
-            <li style="color: var(--white);"><i class="fas fa-bullseye" style="color: var(--gold);"></i> Create abundant, self-sustaining food sources for communities everywhere</li>
-            <li style="color: var(--white);"><i class="fas fa-bullseye" style="color: var(--gold);"></i> Build financially educated, healthy, and self-reliant societies</li>
+          <ul class="terms-list">
+            <li style="color: var(--white);"><i class="fas fa-star" style="color: var(--gold);"></i> Create abundant, self-sustaining food sources for communities everywhere</li>
+            <li style="color: var(--white);"><i class="fas fa-star" style="color: var(--gold);"></i> Build financially educated, healthy, and self-reliant societies</li>
           </ul>
         </div>
 
+        <!-- 4. Donations and Contributions -->
+        <div class="terms-card reveal">
+          <div class="terms-card-header">
+            <div class="terms-card-icon">
+              <i class="fas fa-hand-holding-heart"></i>
+            </div>
+            <h3 class="terms-card-title">4. Donations & Contributions</h3>
+          </div>
+          <p style="line-height: 1.7; color: var(--text-light); margin: 0;">All donations are voluntary and support environmental and social initiatives of FruitForest Foundation.</p>
+        </div>
+
+        <!-- 5. Volunteer Participation -->
+        <div class="terms-card reveal">
+          <div class="terms-card-header">
+            <div class="terms-card-icon">
+              <i class="fas fa-hands-helping"></i>
+            </div>
+            <h3 class="terms-card-title">5. Volunteer Participation</h3>
+          </div>
+          <p style="line-height: 1.7; color: var(--text-light); margin: 0;">Volunteers are expected to participate responsibly, respectfully, and safely during events and activities.</p>
+        </div>
+
+        <!-- 6. Intellectual Property -->
+        <div class="terms-card reveal" style="grid-column: span 2;">
+          <div class="terms-card-header">
+            <div class="terms-card-icon">
+              <i class="fas fa-copyright"></i>
+            </div>
+            <h3 class="terms-card-title">6. Intellectual Property</h3>
+          </div>
+          <p style="line-height: 1.7; color: var(--text-light); margin-bottom: 1rem;">All website content including logos, text, graphics, and images belong to FruitForest Foundation unless otherwise stated.</p>
+          <p style="line-height: 1.7; color: var(--green-dark); font-weight: 700; margin: 0;">Unauthorized reproduction or distribution is prohibited.</p>
+        </div>
+        
       </div>
 
-      <!-- 4. Our Environmental Commitment -->
-      <div class="commitment-section-wrapper reveal">
-        <div class="commitment-title-wrapper">
+      <!-- 7. Environmental Mission -->
+      <div class="mission-section-wrapper reveal">
+        <div class="mission-title-wrapper">
           <span style="font-size: 1.8rem;">🌱</span>
-          <h3>4. Our Environmental Commitment</h3>
+          <h3>7. Environmental Mission</h3>
         </div>
-        <p class="commitment-text">
-          <strong>Our Goal:</strong> We aim to create awareness and provide fruit trees that can be planted in public spaces. Planting fruit trees nourishes communities, wildlife, and the planet.
+        <p class="mission-text">
+          <strong>Our Goal:</strong> We aim to create awareness and provide fruit trees that can be planted in public spaces to:
         </p>
         
-        <div style="font-family: var(--font-head); font-weight: 700; color: var(--green-dark); margin-bottom: 1.5rem; font-size: 1.1rem;">These trees help:</div>
-        
-        <div class="commitment-grid">
-          <div class="commitment-item">
-            <span class="commitment-emoji">🐦</span>
-            <span class="commitment-label">Support wildlife</span>
+        <div class="mission-grid">
+          <div class="mission-item">
+            <span class="mission-emoji">🐦</span>
+            <span class="mission-label">Support wildlife</span>
           </div>
-          <div class="commitment-item">
-            <span class="commitment-emoji">🚶</span>
-            <span class="commitment-label">Help people access fruits</span>
+          <div class="mission-item">
+            <span class="mission-emoji">🍎</span>
+            <span class="mission-label">Reduce hunger</span>
           </div>
-          <div class="commitment-item">
-            <span class="commitment-emoji">🌍</span>
-            <span class="commitment-label">Improve environment</span>
+          <div class="mission-item">
+            <span class="mission-emoji">🌍</span>
+            <span class="mission-label">Improve environment</span>
           </div>
-          <div class="commitment-item">
-            <span class="commitment-emoji">🔄</span>
-            <span class="commitment-label">Encourage natural growth</span>
+          <div class="mission-item">
+            <span class="mission-emoji">🔄</span>
+            <span class="mission-label">Encourage growth</span>
           </div>
         </div>
       </div>
 
-      <!-- General Policy Grid (5 to 10) -->
+      <!-- General Policy Grid (8 to 10) -->
       <div class="general-policies">
         
-        <!-- 5. Sharing of Information -->
+        <!-- 8. Limitation of Liability -->
         <div class="policy-box reveal">
-          <h4><i class="fas fa-share-alt"></i> 5. Sharing of Info</h4>
-          <p>We do not sell or rent personal information to third parties.</p>
+          <h4><i class="fas fa-exclamation-triangle"></i> 8. Limitation of Liability</h4>
+          <p>FruitForest Foundation is not liable for damages arising from website usage or participation in programs.</p>
         </div>
 
-        <!-- 6. Data Security -->
+        <!-- 9. Third-Party Services -->
         <div class="policy-box reveal">
-          <h4><i class="fas fa-shield-alt"></i> 6. Data Security</h4>
-          <p>We implement reasonable security measures to protect user information.</p>
+          <h4><i class="fas fa-external-link-alt"></i> 9. Third-Party Services</h4>
+          <p>We may include links to third-party services and are not responsible for their content or practices.</p>
         </div>
 
-        <!-- 7. Cookies -->
+        <!-- 10. Modifications -->
         <div class="policy-box reveal">
-          <h4><i class="fas fa-cookie-bite"></i> 7. Cookies</h4>
-          <p>Our website may use cookies to improve user experience and analytics.</p>
-        </div>
-
-        <!-- 8. Third-Party Links -->
-        <div class="policy-box reveal">
-          <h4><i class="fas fa-external-link-alt"></i> 8. Third-Party Links</h4>
-          <p>We are not responsible for third-party website privacy practices.</p>
-        </div>
-
-        <!-- 9. Children’s Privacy -->
-        <div class="policy-box reveal">
-          <h4><i class="fas fa-child"></i> 9. Children’s Privacy</h4>
-          <p>We do not knowingly collect personal information from children without proper consent.</p>
-        </div>
-
-        <!-- 10. Changes to This Policy -->
-        <div class="policy-box reveal">
-          <h4><i class="fas fa-sync-alt"></i> 10. Changes to Policy</h4>
-          <p>FruitForest Foundation may update this Privacy Policy at any time.</p>
+          <h4><i class="fas fa-sync-alt"></i> 10. Modifications</h4>
+          <p>FruitForest Foundation reserves the right to update these Terms of Service at any time.</p>
         </div>
 
       </div>
 
       <!-- 11. Contact Information CTA -->
-      <div class="privacy-contact-cta reveal">
+      <div class="terms-contact-cta reveal">
         <h3>11. Contact Information</h3>
-        <p>For questions regarding this Privacy Policy, contact us through our contact page.</p>
+        <p>For questions regarding these Terms of Service, contact us through the official website contact page.</p>
         <a href="pages/contact.html" class="btn-contact-cta">
-          <i class="fas fa-paper-plane"></i> Get in Touch
+          <i class="fas fa-paper-plane"></i> Contact Us
         </a>
       </div>
 

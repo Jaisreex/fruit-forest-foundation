@@ -5059,7 +5059,7 @@ img {
 
 /* Community Action Strip Section */
 .action-strip-section {
-  padding: 5rem 0;
+  padding: 5rem 0 1rem;
   background-color: var(--bg-soft); /* Subtle contrast */
   position: relative;
 }

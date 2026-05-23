@@ -154,13 +154,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---- ScrollSpy & Active State Logic ----
   const navLinksList = document.querySelectorAll('.nav-link');
-  const sections = document.querySelectorAll('section[id]');
 
   const updateActiveState = () => {
-    let scrollPos = window.scrollY + 100;
     const currentPath = window.location.pathname;
     const currentHash = window.location.hash;
-    const isHome = currentPath === '/' || currentPath.endsWith('index.html') || currentPath === '';
+
+    // Check if we are on the homepage by verifying existence of key sections
+    const homeSection = document.getElementById('home');
+    const initiativesSection = document.getElementById('our-initiatives');
+    const isHome = homeSection && initiativesSection;
 
     // Handle Subpages (non-homepage)
     if (!isHome) {
@@ -175,32 +177,75 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Handle Homepage ScrollSpy
-    let currentSectionId = 'home';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-        currentSectionId = section.getAttribute('id');
+    const scrollY = window.scrollY;
+    const viewportHeight = window.innerHeight;
+
+    // Helper to get element's absolute top offset
+    const getTop = (id) => {
+      const el = document.getElementById(id);
+      if (!el) return 0;
+      return el.getBoundingClientRect().top + scrollY;
+    };
+
+    const initiativesTop = getTop('our-initiatives');
+    const getInvolvedTop = getTop('get-involved');
+    const aboutUsTop = getTop('about-us');
+    const impactTop = getTop('impact-map');
+    const faqTop = getTop('faq');
+
+    // Use a standard viewport threshold offset (e.g. 120px) to determine when a section is active
+    const threshold = 120;
+    const currentPos = scrollY + threshold;
+
+    let activeNavId = null;
+
+    // Determine if the footer has started appearing in the viewport
+    const footerEl = document.getElementById('footer');
+    let footerVisible = false;
+    if (footerEl) {
+      const footerRect = footerEl.getBoundingClientRect();
+      const scrollBottom = viewportHeight + scrollY;
+      const isAtBottom = scrollBottom >= document.documentElement.scrollHeight - 30;
+      // Footer is considered visible if its top is above the viewport bottom (with a buffer) or scrolled to bottom
+      if (footerRect.top < viewportHeight - 120 || isAtBottom) {
+        footerVisible = true;
       }
-    });
-
-    // If page just loaded and has a hash but hasn't fully scrolled, force the active state based on hash
-    if (window.scrollY < 50 && currentHash) {
-       const hashSection = currentHash.substring(1);
-       if (document.getElementById(hashSection)) {
-         currentSectionId = hashSection;
-       }
     }
 
-    // Exception for FAQ/Footer area to keep FAQ active if at bottom
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
-      currentSectionId = 'faq';
+    if (footerVisible) {
+      activeNavId = null;
+    } else if (currentPos >= faqTop) {
+      activeNavId = 'faq';
+    } else if (currentPos >= impactTop) {
+      activeNavId = 'impact-map';
+    } else if (currentPos >= aboutUsTop) {
+      activeNavId = 'about-us';
+    } else if (currentPos >= getInvolvedTop) {
+      activeNavId = 'get-involved';
+    } else if (currentPos >= initiativesTop) {
+      activeNavId = 'our-initiatives';
+    } else {
+      activeNavId = 'home';
     }
 
+    // Handle hash on page load
+    if (scrollY < 50 && currentHash) {
+      const hashSection = currentHash.substring(1);
+      if (document.getElementById(hashSection)) {
+        if (hashSection === 'home') activeNavId = 'home';
+        else if (['our-initiatives', 'create-change'].includes(hashSection)) activeNavId = 'our-initiatives';
+        else if (['get-involved', 'how-to-contribute'].includes(hashSection)) activeNavId = 'get-involved';
+        else if (['about-us', 'founder'].includes(hashSection)) activeNavId = 'about-us';
+        else if (['impact-map', 'gallery'].includes(hashSection)) activeNavId = 'impact-map';
+        else if (hashSection === 'faq') activeNavId = 'faq';
+      }
+    }
+
+    // Update active class on nav links
     navLinksList.forEach(link => {
       link.classList.remove('active');
       const href = link.getAttribute('href');
-      if (href === `#${currentSectionId}`) {
+      if (activeNavId && href === `#${activeNavId}`) {
         link.classList.add('active');
       }
     });

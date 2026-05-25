@@ -17,7 +17,7 @@ if start_idx != -1 and end_idx != -1:
         <div class="section-tag">JOIN THE MOVEMENT</div>
         <h2 class="section-title">How Can You <span class="text-green">Contribute Us?</span></h2>
         <p class="section-subtitle">
-          At Fruit Forest Foundation, we believe that every fruit tree planted today becomes a source of food, health, shade, and hope for future generations. Our mission is to transform public spaces into living fruit forests while spreading awareness about nature, wellness, and sustainable living.
+          At FruitForest Foundation, we believe that every fruit tree planted today becomes a source of food, health, shade, and hope for future generations. Our mission is to transform public spaces into living fruit forests while spreading awareness about nature, wellness, and sustainable living.
         </p>
       </div>
 

@@ -731,7 +731,6 @@ img {
   background-image: url('../images/hero_home_v3.jpg') !important;
   background-size: cover;
   background-position: center;
-  filter: brightness(1.08) contrast(1.15) saturate(1.08) sepia(0.04);
   z-index: 1;
 }
 

@@ -4396,6 +4396,7 @@ img {
   flex-grow: 1;
   max-width: 400px;
   text-align: center;
+  min-height: 7.6rem;
 }
 
 .learn-more {

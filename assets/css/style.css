@@ -716,13 +716,44 @@ img {
 }
 
 #home {
+  position: relative;
+  background-image: none !important;
+  overflow: hidden;
+}
+
+#home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url('../images/hero_home_v3.jpg') !important;
   background-size: cover;
   background-position: center;
+  filter: blur(3px);
+  transform: scale(1.05);
+  z-index: 1;
 }
 
-#home.standard-hero::before {
-  display: none !important;
+#home::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.3) 50%,
+      rgba(0, 0, 0, 0.7) 100%) !important;
+  z-index: 2;
+}
+
+#home .container,
+#home .hero-footer-tag {
+  position: relative;
+  z-index: 3;
 }
 
 .hero-main-name {

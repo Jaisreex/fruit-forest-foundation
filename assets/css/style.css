@@ -4972,7 +4972,7 @@ img {
 /* How We Create Change Section */
 .change-section {
   padding: 4rem 0 6rem;
-  background-color: #FAF8F5; /* Warm off-white/soft cream */
+  background-color: var(--green-pale);
   position: relative;
 }
 

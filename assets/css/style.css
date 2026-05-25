@@ -3414,7 +3414,7 @@ img {
 /* ---------- OUR MISSION SECTION ---------- */
 .mission-intro-section {
   padding: 6rem 0;
-  background: linear-gradient(180deg, var(--white) 0%, var(--bg-soft) 100%);
+  background: var(--white);
   position: relative;
 }
 
@@ -3567,7 +3567,7 @@ img {
 /* ---------- THE GROWING CRISIS SECTION ---------- */
 .crisis-section {
   padding: 6rem 0 3rem;
-  background-color: #fcfcfc;
+  background-color: var(--green-pale);
 }
 
 .crisis-header {

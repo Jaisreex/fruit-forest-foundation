@@ -2426,10 +2426,33 @@ img {
   }
 
   .nav-container {
+    position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     gap: 0;
     padding: 0 2rem;
+  }
+
+  .nav-brand {
+    margin: 0 auto !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-actions {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    margin: 0 !important;
+  }
+
+  .btn-donate-nav {
+    display: none !important;
   }
 
   .nav-wrapper-right {
@@ -2501,6 +2524,10 @@ img {
 @media (max-width: 768px) {
   .nav-container {
     padding: 0 1.5rem;
+  }
+
+  .nav-actions {
+    right: 1.5rem;
   }
 
   .logo-img-main, .logo-img {

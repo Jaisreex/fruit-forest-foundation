@@ -387,6 +387,74 @@ document.addEventListener('DOMContentLoaded', () => {
     map.fitBounds(group.getBounds().pad(0.1));
   }
 
+  // ---- Grow Fruit Trees Geolocation Handler ----
+  const growBtn = document.querySelector('.btn-action-primary');
+  if (growBtn) {
+    growBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      const originalText = growBtn.innerHTML;
+      growBtn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 0.6rem;"></i> Detecting Location...';
+      growBtn.style.pointerEvents = 'none';
+      
+      const basePhone = "919157989157";
+      const baseMessage = "Hello FruitForest Foundation 🌱\n\nI’m interested in planting fruit trees in my area/community.\n\nLocation:\n\nPlease guide me on how to get started.";
+      
+      const restoreButton = () => {
+        growBtn.innerHTML = originalText;
+        growBtn.style.pointerEvents = 'auto';
+      };
+      
+      const openWhatsApp = (msg) => {
+        const url = `https://api.whatsapp.com/send?phone=${basePhone}&text=${encodeURIComponent(msg)}`;
+        window.open(url, '_blank', 'noopener,noreferrer');
+        restoreButton();
+      };
+      
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          async (position) => {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            const mapsLink = `https://maps.google.com/?q=${lat},${lon}`;
+            let locationInfo = "";
+            
+            try {
+              const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`, {
+                headers: {
+                  'User-Agent': 'FruitForestFoundation/1.0'
+                }
+              });
+              if (response.ok) {
+                const data = await response.json();
+                const address = data.address;
+                const city = address.city || address.town || address.village || address.suburb || "";
+                const state = address.state || "";
+                if (city && state) {
+                  locationInfo = `${city}, ${state} `;
+                } else if (city || state) {
+                  locationInfo = `${city || state} `;
+                }
+              }
+            } catch (err) {
+              console.error("Reverse geocoding error:", err);
+            }
+            
+            const mapsString = `My location: ${locationInfo}(${mapsLink})`;
+            const updatedMessage = baseMessage.replace("Location:", `Location:\n${mapsString}`);
+            openWhatsApp(updatedMessage);
+          },
+          (error) => {
+            console.warn("Geolocation access denied or error:", error);
+            openWhatsApp(baseMessage);
+          },
+          { timeout: 6000 }
+        );
+      } else {
+        openWhatsApp(baseMessage);
+      }
+    });
+  }
 
 });
 

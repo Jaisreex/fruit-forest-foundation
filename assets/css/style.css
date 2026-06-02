@@ -2432,6 +2432,11 @@ img {
     align-items: center;
     gap: 0;
     padding: 0 2rem;
+    height: 100px !important;
+  }
+
+  .navbar.scrolled .nav-container {
+    height: 85px !important;
   }
 
   .nav-brand {
@@ -2439,6 +2444,19 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
+  }
+
+  .logo-img-main, .logo-img {
+    height: 130px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
+    height: 110px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
 
   .nav-actions {
@@ -2463,20 +2481,21 @@ img {
 
   .nav-links {
     display: none;
-    grid-column: unset;
-    justify-self: unset;
     flex-direction: column;
-    position: fixed;
-    top: 175px;
+    position: absolute;
+    top: calc(100% + 10px);
     left: 0;
     width: 100%;
-    background: var(--white);
-    padding: 3rem 2rem;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
     z-index: 999;
-    gap: 2rem;
+    gap: 1.5rem;
     text-align: center;
-    /* Disable entrance animations inside mobile menu */
+    border: 1px solid rgba(255, 255, 255, 0.7);
     animation: none;
   }
 
@@ -2511,19 +2530,16 @@ img {
   .nav-item-dropdown.open .dropdown-menu {
     display: block;
   }
-
-  .logo-img-main, .logo-img {
-    height: 180px;
-  }
-
-  .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 150px;
-  }
 }
 
 @media (max-width: 768px) {
   .nav-container {
     padding: 0 1.5rem;
+    height: 90px !important;
+  }
+
+  .navbar.scrolled .nav-container {
+    height: 75px !important;
   }
 
   .nav-actions {
@@ -2531,11 +2547,15 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 160px;
+    height: 110px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 130px;
+    height: 95px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
 
   .hero-title {
@@ -2860,12 +2880,24 @@ img {
     font-size: 2.2rem;
   }
 
+  .nav-container {
+    height: 80px !important;
+  }
+
+  .navbar.scrolled .nav-container {
+    height: 70px !important;
+  }
+
   .logo-img-main, .logo-img {
-    height: 140px;
+    height: 95px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 115px;
+    height: 80px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
 }
 

@@ -81,10 +81,22 @@
 
     .about-opp-list {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
       margin-top: 3rem;
       text-align: left;
+    }
+
+    @media (max-width: 1024px) {
+      .about-opp-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .about-opp-list {
+        grid-template-columns: 1fr;
+      }
     }
 
     .about-opp-item {

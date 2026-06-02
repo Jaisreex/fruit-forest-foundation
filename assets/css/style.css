@@ -754,8 +754,8 @@ img {
 .hero-main-name {
   display: block !important;
   font-family: var(--font-head);
-  font-weight: 800;
-  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 850;
+  font-size: clamp(3.5rem, 10vw, 6.5rem);
   color: #FFFFFF !important;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -769,12 +769,12 @@ img {
 .hero-sub-name {
   display: block !important;
   font-family: var(--font-head);
-  font-size: 1.2rem;
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5em;
   color: #D4EDC3 !important; /* Fresh Eco-Green */
-  margin-top: 0.5rem !important;
+  margin-top: 1rem !important;
   padding-left: 0.5em;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }

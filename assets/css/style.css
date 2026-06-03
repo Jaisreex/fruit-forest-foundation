@@ -2448,13 +2448,13 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 130px !important;
+    height: 80px !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 110px !important;
+    height: 70px !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
@@ -2547,13 +2547,13 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 110px !important;
+    height: 70px !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 95px !important;
+    height: 60px !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
@@ -2873,6 +2873,14 @@ img {
   .story-card {
     padding: 2.5rem 2rem;
   }
+
+  #home .hero-title {
+    margin-top: 0 !important;
+  }
+
+  .action-hub-section .container > div:last-child {
+    padding: 2.5rem 1.5rem !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -2889,13 +2897,13 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 95px !important;
+    height: 60px !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 80px !important;
+    height: 50px !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }

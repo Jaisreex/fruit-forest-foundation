@@ -79,8 +79,16 @@
 
     @media (max-width: 992px) { 
         .wealth-grid { grid-template-columns: 1fr; }
-        .content-section { padding: 6rem 0 0; }
+        .content-section { padding: 4rem 0 0; }
         .quote-box { padding: 3rem; }
+        .info-grid { grid-template-columns: 1fr; gap: 2rem; }
+        .cta-accent { padding: 4rem 2rem; margin-top: 4rem; }
+        .reference-box { padding: 2.5rem 1.5rem; }
+    }
+    @media (max-width: 576px) {
+        .quote-box { padding: 2rem 1.5rem; margin: 3rem 0; }
+        .cta-accent { padding: 3rem 1.5rem; border-radius: 20px; }
+        .cta-accent h2 { font-size: 2rem !important; }
     }
   </style>
 </head>

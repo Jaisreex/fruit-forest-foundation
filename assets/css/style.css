@@ -575,7 +575,7 @@ img {
   color: var(--green-dark) !important;
   padding: 0.8rem 2.2rem !important;
   border-radius: 50px;
-  font-family: var(--font-body) !important;
+  font-family: var(--font-head) !important;
   font-weight: 900 !important;
   font-size: 1.05rem !important;
   text-transform: uppercase;

@@ -2910,11 +2910,15 @@ img {
 
   .nav-container {
     height: 90px !important;
-    padding: 0 0.75rem !important;
+    padding: 0 0.5rem !important;
   }
 
   .navbar.scrolled .nav-container {
     height: 76px !important;
+  }
+
+  .nav-brand {
+    margin-left: -0.3rem !important;
   }
 
   .logo-img-main, .logo-img {
@@ -2932,7 +2936,8 @@ img {
   .nav-actions {
     position: static !important;
     transform: none !important;
-    gap: 0.35rem !important;
+    gap: 0.8rem !important;
+    margin-right: -0.2rem !important;
   }
 
   .btn-donate-nav {

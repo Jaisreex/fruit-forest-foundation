@@ -89,6 +89,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -2421,6 +2422,13 @@ img {
 }
 
 @media (max-width: 1150px) {
+  .navbar {
+    width: calc(100vw - 40px) !important;
+    left: 50vw !important;
+    transform: translateX(-50%) !important;
+    box-sizing: border-box !important;
+  }
+
   .hamburger {
     display: block;
   }

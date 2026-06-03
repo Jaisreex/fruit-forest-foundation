@@ -2440,11 +2440,11 @@ img {
     align-items: center;
     gap: 0;
     padding: 0 2rem;
-    height: 100px !important;
+    height: 106px !important;
   }
 
   .navbar.scrolled .nav-container {
-    height: 85px !important;
+    height: 90px !important;
   }
 
   .nav-brand {
@@ -2456,13 +2456,13 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 92px !important;
+    height: 100px !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 78px !important;
+    height: 84px !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
@@ -2547,11 +2547,11 @@ img {
 @media (max-width: 768px) {
   .nav-container {
     padding: 0 1.25rem;
-    height: 95px !important;
+    height: 100px !important;
   }
 
   .navbar.scrolled .nav-container {
-    height: 80px !important;
+    height: 84px !important;
   }
 
   .nav-actions {
@@ -2561,13 +2561,13 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 88px !important;
+    height: 94px !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 74px !important;
+    height: 78px !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
@@ -2909,22 +2909,22 @@ img {
   }
 
   .nav-container {
-    height: 82px !important;
+    height: 90px !important;
     padding: 0 0.75rem !important;
   }
 
   .navbar.scrolled .nav-container {
-    height: 72px !important;
+    height: 76px !important;
   }
 
   .logo-img-main, .logo-img {
-    height: 72px !important;
+    height: 82px !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 62px !important;
+    height: 68px !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }

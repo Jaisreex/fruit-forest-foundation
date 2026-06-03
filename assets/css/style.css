@@ -2456,13 +2456,13 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 165px !important;
+    height: 195px !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 140px !important;
+    height: 165px !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
@@ -2561,13 +2561,13 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 135px !important;
+    height: 155px !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 115px !important;
+    height: 130px !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
@@ -2918,13 +2918,13 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 112px !important;
+    height: 130px !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 96px !important;
+    height: 110px !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
@@ -2932,12 +2932,12 @@ img {
   .nav-actions {
     position: static !important;
     transform: none !important;
-    gap: 0.5rem !important;
+    gap: 0.35rem !important;
   }
 
   .btn-donate-nav {
-    padding: 0.3rem 0.5rem !important;
-    font-size: 0.7rem !important;
+    padding: 0.25rem 0.4rem !important;
+    font-size: 0.68rem !important;
     letter-spacing: 0.05em;
   }
 }

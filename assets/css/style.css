@@ -376,18 +376,18 @@ img {
 }
 
 .logo-img-main, .logo-img {
-  height: 330px; /* Increased size of the logo */
+  height: 365px; /* Increased size of the logo */
   max-height: none !important;
   width: auto;
   object-fit: contain;
   transition: all 0.35s ease;
   image-rendering: -webkit-optimize-contrast;
-  margin-top: 15px; /* Center visual content vertically */
+  margin-top: 17px; /* Center visual content vertically */
 }
 
 .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-  height: 265px; /* Scaled down slightly when scrolled */
-  margin-top: 12px; /* Center visual content vertically */
+  height: 295px; /* Scaled down slightly when scrolled */
+  margin-top: 14px; /* Center visual content vertically */
 }
 
 .nav-tagline {
@@ -2459,14 +2459,14 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 280px !important;
-    margin-top: 13px !important;
+    height: 310px !important;
+    margin-top: 14px !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 230px !important;
-    margin-top: 11px !important;
+    height: 255px !important;
+    margin-top: 12px !important;
     margin-bottom: 0 !important;
   }
 
@@ -2564,14 +2564,14 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 220px !important;
-    margin-top: 10px !important;
+    height: 245px !important;
+    margin-top: 11px !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 180px !important;
-    margin-top: 8px !important;
+    height: 200px !important;
+    margin-top: 9px !important;
     margin-bottom: 0 !important;
   }
 
@@ -2929,14 +2929,14 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 165px !important;
-    margin-top: 8px !important;
+    height: 185px !important;
+    margin-top: 9px !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 135px !important;
-    margin-top: 6px !important;
+    height: 150px !important;
+    margin-top: 7px !important;
     margin-bottom: 0 !important;
   }
 

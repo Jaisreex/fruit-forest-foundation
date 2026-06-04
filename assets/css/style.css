@@ -2560,7 +2560,7 @@ img {
   .nav-actions {
     position: static !important;
     transform: none !important;
-    gap: 1.5rem !important;
+    gap: 0.5rem !important;
   }
 
   .logo-img-main, .logo-img {
@@ -2943,7 +2943,7 @@ img {
   .nav-actions {
     position: static !important;
     transform: none !important;
-    gap: 1rem !important;
+    gap: 0.4rem !important;
     margin-right: -0.2rem !important;
   }
 
@@ -2951,7 +2951,7 @@ img {
     padding: 0.35rem 0.9rem !important;
     font-size: 0.72rem !important;
     letter-spacing: 0.05em;
-    margin-right: 0.8rem !important;
+    margin-right: 0 !important;
   }
 }
 

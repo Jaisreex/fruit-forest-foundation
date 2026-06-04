@@ -376,18 +376,18 @@ img {
 }
 
 .logo-img-main, .logo-img {
-  height: 260px; /* Increased size of the logo */
+  height: 290px; /* Increased size of the logo */
   max-height: none !important;
   width: auto;
   object-fit: contain;
   transition: all 0.35s ease;
   image-rendering: -webkit-optimize-contrast;
-  margin-top: 12px; /* Center visual content vertically */
+  margin-top: 13px; /* Center visual content vertically */
 }
 
 .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-  height: 210px; /* Scaled down slightly when scrolled */
-  margin-top: 10px; /* Center visual content vertically */
+  height: 235px; /* Scaled down slightly when scrolled */
+  margin-top: 11px; /* Center visual content vertically */
 }
 
 .nav-tagline {
@@ -2457,14 +2457,14 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 220px !important;
-    margin-top: 10px !important;
+    height: 245px !important;
+    margin-top: 11px !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 185px !important;
-    margin-top: 8px !important;
+    height: 205px !important;
+    margin-top: 9px !important;
     margin-bottom: 0 !important;
   }
 
@@ -2562,14 +2562,14 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 175px !important;
-    margin-top: 8px !important;
+    height: 195px !important;
+    margin-top: 9px !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 145px !important;
-    margin-top: 6px !important;
+    height: 160px !important;
+    margin-top: 7px !important;
     margin-bottom: 0 !important;
   }
 
@@ -2927,14 +2927,14 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 130px !important;
-    margin-top: 6px !important;
+    height: 145px !important;
+    margin-top: 7px !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 110px !important;
-    margin-top: 5px !important;
+    height: 120px !important;
+    margin-top: 6px !important;
     margin-bottom: 0 !important;
   }
 

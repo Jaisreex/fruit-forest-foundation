@@ -376,18 +376,18 @@ img {
 }
 
 .logo-img-main, .logo-img {
-  height: 400px; /* Increased size of the logo */
+  height: 440px; /* Increased size of the logo */
   max-height: none !important;
   width: auto;
   object-fit: contain;
   transition: all 0.35s ease;
   image-rendering: -webkit-optimize-contrast;
-  margin-top: 19px; /* Center visual content vertically */
+  margin-top: 21px; /* Center visual content vertically */
 }
 
 .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-  height: 325px; /* Scaled down slightly when scrolled */
-  margin-top: 15px; /* Center visual content vertically */
+  height: 360px; /* Scaled down slightly when scrolled */
+  margin-top: 17px; /* Center visual content vertically */
 }
 
 .nav-tagline {
@@ -2459,14 +2459,14 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 340px !important;
-    margin-top: 16px !important;
+    height: 375px !important;
+    margin-top: 17px !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 280px !important;
-    margin-top: 13px !important;
+    height: 310px !important;
+    margin-top: 14px !important;
     margin-bottom: 0 !important;
   }
 
@@ -2564,14 +2564,14 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 270px !important;
-    margin-top: 13px !important;
+    height: 300px !important;
+    margin-top: 14px !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 220px !important;
-    margin-top: 10px !important;
+    height: 245px !important;
+    margin-top: 11px !important;
     margin-bottom: 0 !important;
   }
 
@@ -2929,14 +2929,14 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 205px !important;
-    margin-top: 10px !important;
+    height: 225px !important;
+    margin-top: 11px !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 165px !important;
-    margin-top: 8px !important;
+    height: 185px !important;
+    margin-top: 9px !important;
     margin-bottom: 0 !important;
   }
 

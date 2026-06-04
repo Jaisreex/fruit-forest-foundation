@@ -2130,12 +2130,14 @@ img {
   z-index: 900;
   background: var(--green);
   color: var(--white);
-  padding: 0.8rem 1.4rem;
+  width: 210px;
+  height: 50px;
   border-radius: 50px;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.8rem;
   font-weight: 800;
   font-size: 0.9rem;

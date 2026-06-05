@@ -369,13 +369,14 @@ img {
   align-items: center;
   height: 100%;
   text-decoration: none;
-  margin-left: -1rem; /* Pull logo slightly to left, but closer to center than before */
+  margin-left: -2.5rem; /* Pull logo to the extreme left corner */
+  /* margin-right removed so flexbox can calculate naturally */
   /* Logo entrance animation */
   animation: nav-logo-fade 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
 }
 
 .logo-img-main, .logo-img {
-  height: 440px; /* Restored original size */
+  height: 440px; /* Increased size of the logo */
   max-height: none !important;
   width: auto;
   object-fit: contain;
@@ -406,8 +407,6 @@ img {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  position: relative;
-  z-index: 10; /* Ensure actions stay above the large transparent logo bounds */
 }
 
 @media (max-width: 1400px) {
@@ -588,7 +587,7 @@ img {
   align-items: center;
   justify-content: center;
   margin-left: 1rem;
-  margin-right: 5rem;
+  margin-right: 1.5rem;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
   width: fit-content !important;
   height: auto !important;
@@ -2460,19 +2459,15 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 450px !important;
-    margin-top: 35px !important;
+    height: 375px !important;
+    margin-top: 17px !important;
     margin-bottom: 0 !important;
-    transform: scale(1.25) !important;
-    transform-origin: center !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 380px !important;
-    margin-top: 31px !important;
+    height: 310px !important;
+    margin-top: 14px !important;
     margin-bottom: 0 !important;
-    transform: scale(1.15) !important;
-    transform-origin: center !important;
   }
 
   .nav-actions {
@@ -2489,7 +2484,6 @@ img {
     padding: 0.5rem 1.6rem !important;
     font-size: 0.85rem !important;
     margin-left: 0 !important;
-    margin-right: 1.5rem !important; /* Give some space from hamburger */
     opacity: 1 !important;
     animation: none !important;
   }
@@ -2570,25 +2564,20 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 410px !important;
-    margin-top: 33px !important;
+    height: 300px !important;
+    margin-top: 14px !important;
     margin-bottom: 0 !important;
-    transform: scale(1.3) !important;
-    transform-origin: center !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 340px !important;
-    margin-top: 30px !important;
+    height: 245px !important;
+    margin-top: 11px !important;
     margin-bottom: 0 !important;
-    transform: scale(1.2) !important;
-    transform-origin: center !important;
   }
 
   .btn-donate-nav {
     padding: 0.45rem 1.4rem !important;
     font-size: 0.8rem !important;
-    margin-right: 1.2rem !important; /* Space from hamburger */
     letter-spacing: 0.08em;
   }
 
@@ -2936,38 +2925,33 @@ img {
   }
 
   .nav-brand {
-    margin-left: -0.5rem !important;
-    display: flex;
-    align-items: center;
+    margin-left: -0.4rem !important;
   }
 
   .logo-img-main, .logo-img {
-    height: 300px !important;
-    margin-top: 5px !important;
+    height: 225px !important;
+    margin-top: 11px !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 250px !important;
-    margin-top: 5px !important;
+    height: 185px !important;
+    margin-top: 9px !important;
     margin-bottom: 0 !important;
   }
 
   .nav-actions {
     position: static !important;
     transform: none !important;
-    gap: 1.2rem !important;
+    gap: 0.7rem !important;
     margin-right: -0.2rem !important;
-    display: flex;
-    align-items: center;
   }
 
   .btn-donate-nav {
-    padding: 0.4rem 1rem !important;
-    font-size: 0.75rem !important;
+    padding: 0.35rem 0.9rem !important;
+    font-size: 0.72rem !important;
     letter-spacing: 0.05em;
-    margin-right: 0 !important;
-    margin-left: 1rem !important;
+    margin-right: 0.2rem !important;
   }
 }
 
@@ -3821,6 +3805,7 @@ img {
 .btn-donate-nav:hover,
 .btn-donate-hero:hover,
 .btn-expand-card:hover {
+  transform: scale(1.05) translateY(-2px) !important;
   box-shadow: 0 10px 25px rgba(45, 90, 39, 0.25) !important;
 }
 

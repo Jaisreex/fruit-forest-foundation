@@ -2938,47 +2938,38 @@ img {
   }
 
   .nav-brand {
-    margin-left: -1rem !important; /* Move container slightly right */
+    margin-left: -0.5rem !important;
     display: flex;
     align-items: center;
   }
 
   .logo-img-main, .logo-img {
-    width: 175px !important; /* Decrease size a little */
-    max-width: none !important; 
-    height: auto !important; 
-    margin-top: 5px !important; 
-    margin-left: -25px !important; /* Move logo a little right */
-    margin-right: -10px !important; 
-    transform: none !important; 
+    height: 300px !important;
+    margin-top: 5px !important;
+    margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    width: 150px !important; /* Decrease size a little */
-    max-width: none !important;
-    height: auto !important;
+    height: 250px !important;
     margin-top: 5px !important;
-    margin-left: -20px !important; /* Move a little right */
-    margin-right: -10px !important;
-    transform: none !important;
+    margin-bottom: 0 !important;
   }
 
   .nav-actions {
-    position: relative !important;
-    z-index: 10 !important;
+    position: static !important;
     transform: none !important;
-    gap: 0.8rem !important; /* Tighter gap to ensure hamburger fits on very small phones */
+    gap: 1.2rem !important;
     margin-right: -0.2rem !important;
     display: flex;
     align-items: center;
   }
 
   .btn-donate-nav {
-    padding: 0.4rem 0.6rem !important; 
-    font-size: 0.7rem !important; /* Slightly smaller text to prevent layout breaks on 320px screens */
-    letter-spacing: 0.03em;
+    padding: 0.4rem 1rem !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.05em;
     margin-right: 0 !important;
-    margin-left: 0 !important; 
+    margin-left: 1rem !important;
   }
 }
 

@@ -2941,28 +2941,28 @@ img {
   }
 
   .nav-brand {
-    margin-left: -0.5rem !important; /* Reset nav-brand margin */
+    margin-left: -1.5rem !important; /* Pull container further left */
     display: flex;
     align-items: center;
   }
 
   .logo-img-main, .logo-img {
-    width: 260px !important; /* Force a much larger width */
+    width: 230px !important; /* Decrease size slightly */
     max-width: none !important; /* Override max-width constraint */
     height: auto !important; /* Maintain aspect ratio naturally */
     margin-top: 5px !important; 
-    margin-left: -20px !important; /* Pull left visually */
-    margin-right: -60px !important; /* Artificially shrink layout size to prevent pushing button off screen */
+    margin-left: -25px !important; /* Pull left visually */
+    margin-right: -40px !important; /* Adjust artificial layout width */
     transform: none !important; /* Remove buggy transforms */
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    width: 220px !important; 
+    width: 190px !important; /* Decrease size slightly */
     max-width: none !important;
     height: auto !important;
     margin-top: 5px !important;
-    margin-left: -15px !important;
-    margin-right: -50px !important;
+    margin-left: -20px !important;
+    margin-right: -30px !important;
     transform: none !important;
   }
 

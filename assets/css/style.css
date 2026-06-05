@@ -2932,13 +2932,13 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 520px !important; /* larger logo for mobile */
+    height: 600px !important; /* Increased logo size for mobile */
     margin-top: 5px !important; /* keep vertical centering aligned with button */
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 450px !important; /* larger when scrolled */
+    height: 520px !important; /* larger when scrolled */
     margin-top: 5px !important;
     margin-bottom: 0 !important;
   }

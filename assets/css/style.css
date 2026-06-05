@@ -369,7 +369,7 @@ img {
   align-items: center;
   height: 100%;
   text-decoration: none;
-  margin-left: -2.5rem; /* Pull logo to the extreme left corner */
+  margin-left: -4.5rem; /* Pull logo to the extreme left corner */
   /* margin-right removed so flexbox can calculate naturally */
   /* Logo entrance animation */
   animation: nav-logo-fade 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
@@ -411,6 +411,7 @@ img {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  margin-right: -2rem; /* Pull button to the extreme right corner */
 }
 
 @media (max-width: 1400px) {

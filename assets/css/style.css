@@ -376,22 +376,18 @@ img {
 }
 
 .logo-img-main, .logo-img {
-  height: 440px; /* Base size */
+  height: 750px; /* Greatly increased size */
   max-height: none !important;
   width: auto;
   object-fit: contain;
   transition: all 0.35s ease;
   image-rendering: -webkit-optimize-contrast;
-  margin-top: 21px; /* Perfectly centered base margin */
-  transform: scale(2.2); /* Massively increase size from the center point */
-  transform-origin: left center; /* Scale from left so it doesn't push into "Home" text */
+  margin-top: -134px; /* Mathematically perfect vertical centering for 750px height */
 }
 
 .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-  height: 360px; /* Scaled down slightly when scrolled */
-  margin-top: 17px; /* Perfectly centered base margin */
-  transform: scale(1.8);
-  transform-origin: left center;
+  height: 600px; /* Scaled down slightly when scrolled */
+  margin-top: -103px; /* Mathematically perfect centering */
 }
 
 .nav-tagline {

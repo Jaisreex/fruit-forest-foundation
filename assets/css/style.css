@@ -384,11 +384,14 @@ img {
   margin-top: 40px; /* Center visual content vertically (moved down to match button) */
   position: relative;
   z-index: 1;
+  transform: scale(1.2); /* Gentle visual scale */
+  transform-origin: center;
 }
 
 .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
   height: 400px; /* Scaled down slightly when scrolled */
   margin-top: 32px; /* Center visual content vertically */
+  transform: scale(1.1);
 }
 
 .nav-tagline {
@@ -2465,12 +2468,16 @@ img {
     height: 450px !important;
     margin-top: 35px !important;
     margin-bottom: 0 !important;
+    transform: scale(1.25) !important;
+    transform-origin: center !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
     height: 380px !important;
     margin-top: 31px !important;
     margin-bottom: 0 !important;
+    transform: scale(1.15) !important;
+    transform-origin: center !important;
   }
 
   .nav-actions {
@@ -2571,12 +2578,16 @@ img {
     height: 410px !important;
     margin-top: 33px !important;
     margin-bottom: 0 !important;
+    transform: scale(1.3) !important;
+    transform-origin: center !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
     height: 340px !important;
     margin-top: 30px !important;
     margin-bottom: 0 !important;
+    transform: scale(1.2) !important;
+    transform-origin: center !important;
   }
 
   .btn-donate-nav {
@@ -2939,12 +2950,16 @@ img {
     height: 800px !important; /* Increased logo size for mobile */
     margin-top: 5px !important; /* keep vertical centering aligned with button */
     margin-bottom: 0 !important;
+    transform: scale(1.3) !important;
+    transform-origin: center !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
     height: 720px !important; /* larger when scrolled */
     margin-top: 5px !important;
     margin-bottom: 0 !important;
+    transform: scale(1.2) !important;
+    transform-origin: center !important;
   }
 
   .nav-actions {

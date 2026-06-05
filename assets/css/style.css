@@ -2941,7 +2941,7 @@ img {
   }
 
   .nav-brand {
-    margin-left: -0.4rem !important; /* move logo slightly right */
+    margin-left: -1.5rem !important; /* pull logo firmly left to reduce left-side gap */
     display: flex;
     align-items: center;
   }
@@ -2950,16 +2950,16 @@ img {
     height: 800px !important; /* Increased logo size for mobile */
     margin-top: 5px !important; /* keep vertical centering aligned with button */
     margin-bottom: 0 !important;
-    transform: scale(1.3) !important;
-    transform-origin: center !important;
+    transform: scale(2) !important; /* Double the visual size to counteract transparent padding */
+    transform-origin: left center !important; /* Scale outward from the left */
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
     height: 720px !important; /* larger when scrolled */
     margin-top: 5px !important;
     margin-bottom: 0 !important;
-    transform: scale(1.2) !important;
-    transform-origin: center !important;
+    transform: scale(1.8) !important;
+    transform-origin: left center !important;
   }
 
   .nav-actions {

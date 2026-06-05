@@ -384,14 +384,11 @@ img {
   margin-top: 40px; /* Center visual content vertically (moved down to match button) */
   position: relative;
   z-index: 1;
-  transform: scale(1.6); /* Significantly increase visual size without breaking layout */
-  transform-origin: center left; /* Scale from the left edge so it doesn't push into the button visually */
 }
 
 .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
   height: 400px; /* Scaled down slightly when scrolled */
   margin-top: 32px; /* Center visual content vertically */
-  transform: scale(1.4);
 }
 
 .nav-tagline {
@@ -2468,16 +2465,12 @@ img {
     height: 450px !important;
     margin-top: 35px !important;
     margin-bottom: 0 !important;
-    transform: scale(1.8) !important;
-    transform-origin: center left !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
     height: 380px !important;
     margin-top: 31px !important;
     margin-bottom: 0 !important;
-    transform: scale(1.6) !important;
-    transform-origin: center left !important;
   }
 
   .nav-actions {
@@ -2578,16 +2571,12 @@ img {
     height: 410px !important;
     margin-top: 33px !important;
     margin-bottom: 0 !important;
-    transform: scale(2) !important;
-    transform-origin: center left !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
     height: 340px !important;
     margin-top: 30px !important;
     margin-bottom: 0 !important;
-    transform: scale(1.8) !important;
-    transform-origin: center left !important;
   }
 
   .btn-donate-nav {
@@ -2950,16 +2939,12 @@ img {
     height: 800px !important; /* Increased logo size for mobile */
     margin-top: 5px !important; /* keep vertical centering aligned with button */
     margin-bottom: 0 !important;
-    transform: scale(2.4) !important; /* Forces a massive visual increase */
-    transform-origin: center left !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
     height: 720px !important; /* larger when scrolled */
     margin-top: 5px !important;
     margin-bottom: 0 !important;
-    transform: scale(2.1) !important;
-    transform-origin: center left !important;
   }
 
   .nav-actions {
@@ -3830,7 +3815,6 @@ img {
 .btn-donate-nav:hover,
 .btn-donate-hero:hover,
 .btn-expand-card:hover {
-  transform: scale(1.05) translateY(-2px) !important;
   box-shadow: 0 10px 25px rgba(45, 90, 39, 0.25) !important;
 }
 

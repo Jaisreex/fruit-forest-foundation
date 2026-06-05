@@ -376,18 +376,18 @@ img {
 }
 
 .logo-img-main, .logo-img {
-  height: 550px; /* Increased size of the logo */
+  height: 680px; /* Increased size of the logo */
   max-height: none !important;
   width: auto;
   object-fit: contain;
   transition: all 0.35s ease;
   image-rendering: -webkit-optimize-contrast;
-  margin-top: 26px; /* Perfect mathematical center alignment */
+  margin-top: 32px; /* Perfect mathematical center alignment */
 }
 
 .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-  height: 450px; /* Scaled down slightly when scrolled */
-  margin-top: 21px; /* Adjust centering */
+  height: 540px; /* Scaled down slightly when scrolled */
+  margin-top: 26px; /* Adjust centering */
 }
 
 .nav-tagline {

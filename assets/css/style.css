@@ -369,8 +369,7 @@ img {
   align-items: center;
   height: 100%;
   text-decoration: none;
-  margin-left: -2.5rem; /* Pull logo to the extreme left corner */
-  /* margin-right removed so flexbox can calculate naturally */
+  margin-left: -1rem; /* Pull logo slightly to left, but closer to center than before */
   /* Logo entrance animation */
   animation: nav-logo-fade 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
 }
@@ -382,12 +381,12 @@ img {
   object-fit: contain;
   transition: all 0.35s ease;
   image-rendering: -webkit-optimize-contrast;
-  margin-top: 21px; /* Center visual content vertically */
+  margin-top: 40px; /* Center visual content vertically (moved down to match button) */
 }
 
 .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
   height: 400px; /* Scaled down slightly when scrolled */
-  margin-top: 17px; /* Center visual content vertically */
+  margin-top: 32px; /* Center visual content vertically */
 }
 
 .nav-tagline {
@@ -587,7 +586,7 @@ img {
   align-items: center;
   justify-content: center;
   margin-left: 1rem;
-  margin-right: 3.5rem;
+  margin-right: 5rem;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
   width: fit-content !important;
   height: auto !important;
@@ -2459,14 +2458,14 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 410px !important;
-    margin-top: 17px !important;
+    height: 450px !important;
+    margin-top: 35px !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 340px !important;
-    margin-top: 14px !important;
+    height: 380px !important;
+    margin-top: 31px !important;
     margin-bottom: 0 !important;
   }
 
@@ -2565,14 +2564,14 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 330px !important;
-    margin-top: 14px !important;
+    height: 410px !important;
+    margin-top: 33px !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 270px !important;
-    margin-top: 11px !important;
+    height: 340px !important;
+    margin-top: 30px !important;
     margin-bottom: 0 !important;
   }
 
@@ -2927,20 +2926,20 @@ img {
   }
 
   .nav-brand {
-    margin-left: -1.2rem !important;
+    margin-left: -0.4rem !important; /* move logo slightly right */
     display: flex;
     align-items: center;
   }
 
   .logo-img-main, .logo-img {
-    height: 300px !important;
-    margin-top: 0 !important;
+    height: 430px !important; /* larger logo for mobile */
+    margin-top: 38px !important; /* keep vertical centering */
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 250px !important;
-    margin-top: 0 !important;
+    height: 350px !important; /* larger when scrolled */
+    margin-top: 35px !important;
     margin-bottom: 0 !important;
   }
 

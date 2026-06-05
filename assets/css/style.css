@@ -2947,41 +2947,41 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    width: 230px !important; /* Decrease size slightly */
-    max-width: none !important; /* Override max-width constraint */
-    height: auto !important; /* Maintain aspect ratio naturally */
+    width: 190px !important; /* Much safer width for very small screens */
+    max-width: none !important; 
+    height: auto !important; 
     margin-top: 5px !important; 
-    margin-left: -25px !important; /* Pull left visually */
-    margin-right: -40px !important; /* Adjust artificial layout width */
-    transform: none !important; /* Remove buggy transforms */
+    margin-left: -35px !important; /* Deeply pull left to hide transparent padding */
+    margin-right: -10px !important; /* Minimal artificial layout adjustment */
+    transform: none !important; 
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    width: 190px !important; /* Decrease size slightly */
+    width: 160px !important; /* Safe width */
     max-width: none !important;
     height: auto !important;
     margin-top: 5px !important;
-    margin-left: -20px !important;
-    margin-right: -30px !important;
+    margin-left: -30px !important;
+    margin-right: -10px !important;
     transform: none !important;
   }
 
   .nav-actions {
     position: relative !important;
-    z-index: 10 !important; /* Ensure button stays clickable above logo's transparent padding */
+    z-index: 10 !important;
     transform: none !important;
-    gap: 1rem !important; /* Slightly reduce gap to give logo more breathing room */
+    gap: 0.8rem !important; /* Tighter gap to ensure hamburger fits on very small phones */
     margin-right: -0.2rem !important;
     display: flex;
     align-items: center;
   }
 
   .btn-donate-nav {
-    padding: 0.4rem 0.6rem !important; /* Reduce horizontal padding to save space */
-    font-size: 0.72rem !important;
-    letter-spacing: 0.05em;
+    padding: 0.4rem 0.6rem !important; 
+    font-size: 0.7rem !important; /* Slightly smaller text to prevent layout breaks on 320px screens */
+    letter-spacing: 0.03em;
     margin-right: 0 !important;
-    margin-left: 0 !important; /* Free up space previously used for margin */
+    margin-left: 0 !important; 
   }
 }
 

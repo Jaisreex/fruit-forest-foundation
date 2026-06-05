@@ -376,7 +376,7 @@ img {
 }
 
 .logo-img-main, .logo-img {
-  height: 440px; /* Increased size of the logo */
+  height: 480px; /* Increased size of the logo */
   max-height: none !important;
   width: auto;
   object-fit: contain;
@@ -386,7 +386,7 @@ img {
 }
 
 .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-  height: 360px; /* Scaled down slightly when scrolled */
+  height: 400px; /* Scaled down slightly when scrolled */
   margin-top: 17px; /* Center visual content vertically */
 }
 
@@ -587,7 +587,7 @@ img {
   align-items: center;
   justify-content: center;
   margin-left: 1rem;
-  margin-right: 1.5rem;
+  margin-right: 3.5rem;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
   width: fit-content !important;
   height: auto !important;
@@ -2459,13 +2459,13 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 375px !important;
+    height: 410px !important;
     margin-top: 17px !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 310px !important;
+    height: 340px !important;
     margin-top: 14px !important;
     margin-bottom: 0 !important;
   }
@@ -2484,6 +2484,7 @@ img {
     padding: 0.5rem 1.6rem !important;
     font-size: 0.85rem !important;
     margin-left: 0 !important;
+    margin-right: 1.5rem !important; /* Give some space from hamburger */
     opacity: 1 !important;
     animation: none !important;
   }
@@ -2564,13 +2565,13 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 300px !important;
+    height: 330px !important;
     margin-top: 14px !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 245px !important;
+    height: 270px !important;
     margin-top: 11px !important;
     margin-bottom: 0 !important;
   }
@@ -2578,6 +2579,7 @@ img {
   .btn-donate-nav {
     padding: 0.45rem 1.4rem !important;
     font-size: 0.8rem !important;
+    margin-right: 1.2rem !important; /* Space from hamburger */
     letter-spacing: 0.08em;
   }
 
@@ -2925,33 +2927,38 @@ img {
   }
 
   .nav-brand {
-    margin-left: -0.4rem !important;
+    margin-left: -1.2rem !important;
+    display: flex;
+    align-items: center;
   }
 
   .logo-img-main, .logo-img {
-    height: 225px !important;
-    margin-top: 11px !important;
+    height: 300px !important;
+    margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 185px !important;
-    margin-top: 9px !important;
+    height: 250px !important;
+    margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
 
   .nav-actions {
     position: static !important;
     transform: none !important;
-    gap: 0.7rem !important;
+    gap: 1.2rem !important; /* Space between button and hamburger */
     margin-right: -0.2rem !important;
+    display: flex;
+    align-items: center;
   }
 
   .btn-donate-nav {
-    padding: 0.35rem 0.9rem !important;
-    font-size: 0.72rem !important;
+    padding: 0.4rem 1rem !important;
+    font-size: 0.75rem !important;
     letter-spacing: 0.05em;
-    margin-right: 0.2rem !important;
+    margin-right: 0 !important; /* Removed to let flex gap handle spacing */
+    margin-left: 1rem !important; /* Space between logo and button if needed */
   }
 }
 

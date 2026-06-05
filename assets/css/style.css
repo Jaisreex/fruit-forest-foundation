@@ -382,12 +382,12 @@ img {
   object-fit: contain;
   transition: all 0.35s ease;
   image-rendering: -webkit-optimize-contrast;
-  margin-top: 35px; /* Adjust centering for new larger size */
+  margin-top: 26px; /* Perfect mathematical center alignment */
 }
 
 .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
   height: 450px; /* Scaled down slightly when scrolled */
-  margin-top: 28px; /* Adjust centering */
+  margin-top: 21px; /* Adjust centering */
 }
 
 .nav-tagline {

@@ -370,24 +370,24 @@ img {
   height: 100%;
   text-decoration: none;
   margin-left: -2rem; /* Keep logo fully inside the white container */
-  margin-right: 120px; /* Push "Home" link away to fix overlap */
+  margin-right: 2rem; /* Standard spacing from Home link */
   /* Logo entrance animation */
   animation: nav-logo-fade 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
 }
 
 .logo-img-main, .logo-img {
-  height: 750px; /* Greatly increased size */
+  height: 500px; /* Sensible increased size */
   max-height: none !important;
   width: auto;
   object-fit: contain;
   transition: all 0.35s ease;
   image-rendering: -webkit-optimize-contrast;
-  margin-top: -134px; /* Mathematically perfect vertical centering for 750px height */
+  margin-top: 5px; /* Clean vertical centering */
 }
 
 .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-  height: 600px; /* Scaled down slightly when scrolled */
-  margin-top: -103px; /* Mathematically perfect centering */
+  height: 420px; /* Scaled down slightly when scrolled */
+  margin-top: 10px; /* Clean centering */
 }
 
 .nav-tagline {

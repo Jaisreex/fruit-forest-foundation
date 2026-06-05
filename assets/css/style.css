@@ -2932,14 +2932,14 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 430px !important; /* larger logo for mobile */
-    margin-top: 38px !important; /* keep vertical centering */
+    height: 520px !important; /* larger logo for mobile */
+    margin-top: 5px !important; /* keep vertical centering aligned with button */
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 350px !important; /* larger when scrolled */
-    margin-top: 35px !important;
+    height: 450px !important; /* larger when scrolled */
+    margin-top: 5px !important;
     margin-bottom: 0 !important;
   }
 

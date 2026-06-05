@@ -2941,27 +2941,27 @@ img {
   }
 
   .nav-brand {
-    margin-left: -1.5rem !important; /* Pull container further left */
+    margin-left: -1rem !important; /* Move container slightly right */
     display: flex;
     align-items: center;
   }
 
   .logo-img-main, .logo-img {
-    width: 190px !important; /* Much safer width for very small screens */
+    width: 175px !important; /* Decrease size a little */
     max-width: none !important; 
     height: auto !important; 
     margin-top: 5px !important; 
-    margin-left: -35px !important; /* Deeply pull left to hide transparent padding */
-    margin-right: -10px !important; /* Minimal artificial layout adjustment */
+    margin-left: -25px !important; /* Move logo a little right */
+    margin-right: -10px !important; 
     transform: none !important; 
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    width: 160px !important; /* Safe width */
+    width: 150px !important; /* Decrease size a little */
     max-width: none !important;
     height: auto !important;
     margin-top: 5px !important;
-    margin-left: -30px !important;
+    margin-left: -20px !important; /* Move a little right */
     margin-right: -10px !important;
     transform: none !important;
   }

@@ -384,14 +384,11 @@ img {
   margin-top: 40px; /* Center visual content vertically (moved down to match button) */
   position: relative;
   z-index: 1;
-  transform: scale(1.2); /* Gentle visual scale */
-  transform-origin: center;
 }
 
 .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
   height: 400px; /* Scaled down slightly when scrolled */
   margin-top: 32px; /* Center visual content vertically */
-  transform: scale(1.1);
 }
 
 .nav-tagline {

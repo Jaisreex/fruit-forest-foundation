@@ -3664,6 +3664,32 @@ img {
   letter-spacing: -0.02em;
 }
 
+.mission-tagline-box {
+  background: var(--green-pale);
+  border-left: 5px solid var(--green);
+  padding: 1.5rem 2rem;
+  border-radius: 0 16px 16px 0;
+  margin-top: 2.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.mission-tagline-box i {
+  color: var(--leaf-green);
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+  opacity: 0.6;
+  display: block;
+}
+
+.mission-tagline-box p {
+  font-size: 1.15rem !important;
+  color: var(--green-dark) !important;
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 0 !important;
+  line-height: 1.7;
+}
+
 @media (max-width: 1024px) {
   .mission-grid {
     gap: 3rem;

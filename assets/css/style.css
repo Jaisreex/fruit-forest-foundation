@@ -2460,13 +2460,13 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 480px !important;
+    height: 375px !important;
     margin-top: 17px !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 400px !important;
+    height: 310px !important;
     margin-top: 14px !important;
     margin-bottom: 0 !important;
   }
@@ -2565,13 +2565,13 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 390px !important;
+    height: 300px !important;
     margin-top: 14px !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 320px !important;
+    height: 245px !important;
     margin-top: 11px !important;
     margin-bottom: 0 !important;
   }
@@ -2930,13 +2930,13 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 300px !important;
+    height: 225px !important;
     margin-top: 11px !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 250px !important;
+    height: 185px !important;
     margin-top: 9px !important;
     margin-bottom: 0 !important;
   }

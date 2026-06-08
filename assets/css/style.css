@@ -376,7 +376,7 @@ img {
 }
 
 .logo-img-main, .logo-img {
-  height: 500px; /* Sensible increased size */
+  height: 650px; /* Sensible increased size */
   max-height: none !important;
   width: auto;
   object-fit: contain;
@@ -386,7 +386,7 @@ img {
 }
 
 .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-  height: 420px; /* Scaled down slightly when scrolled */
+  height: 550px; /* Scaled down slightly when scrolled */
   margin-top: 10px; /* Clean centering */
 }
 
@@ -731,7 +731,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../images/hero_home_v3.jpg') !important;
+  background-image: url('../images/hero_new_image.jpg') !important;
   background-size: cover;
   background-position: center;
   z-index: 1;
@@ -2460,13 +2460,13 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 375px !important;
+    height: 480px !important;
     margin-top: 17px !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 310px !important;
+    height: 400px !important;
     margin-top: 14px !important;
     margin-bottom: 0 !important;
   }
@@ -2565,13 +2565,13 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 300px !important;
+    height: 390px !important;
     margin-top: 14px !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 245px !important;
+    height: 320px !important;
     margin-top: 11px !important;
     margin-bottom: 0 !important;
   }
@@ -2930,13 +2930,13 @@ img {
   }
 
   .logo-img-main, .logo-img {
-    height: 225px !important;
+    height: 300px !important;
     margin-top: 11px !important;
     margin-bottom: 0 !important;
   }
 
   .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: 185px !important;
+    height: 250px !important;
     margin-top: 9px !important;
     margin-bottom: 0 !important;
   }

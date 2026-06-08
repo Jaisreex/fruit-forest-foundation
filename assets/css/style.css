@@ -376,18 +376,23 @@ img {
 }
 
 .logo-img-main, .logo-img {
-  height: 1050px; /* Sensible increased size */
+  height: 500px; 
   max-height: none !important;
+  max-width: none !important;
   width: auto;
   object-fit: contain;
   transition: all 0.35s ease;
   image-rendering: -webkit-optimize-contrast;
-  margin-top: 5px; /* Clean vertical centering */
+  margin-top: 5px; 
+  transform: scale(1.8);
+  transform-origin: left center;
 }
 
 .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-  height: 850px; /* Scaled down slightly when scrolled */
-  margin-top: 10px; /* Clean centering */
+  height: 420px; 
+  margin-top: 10px; 
+  transform: scale(1.8);
+  transform-origin: left center;
 }
 
 .nav-tagline {

@@ -5685,11 +5685,13 @@ html, body {
 @media (max-width: 992px) {
   /* Navigation */
   .nav-container {
-    height: 80px !important;
-    padding: 0 1.5rem !important;
+    height: auto !important;
+    min-height: 70px !important;
+    padding: 10px 1rem !important;
+    border-radius: 0 0 20px 20px !important;
   }
   .navbar {
-    top: 15px !important;
+    top: 0 !important;
   }
   .nav-brand {
     margin-left: 0 !important;
@@ -5736,9 +5738,9 @@ html, body {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    font-size: 0.75rem !important;
-    padding: 0.5rem 1rem !important;
-    margin-right: 1rem !important;
+    font-size: 0.7rem !important;
+    padding: 0.4rem 0.6rem !important;
+    margin-right: 0.5rem !important;
     white-space: nowrap !important;
   }
 
@@ -5762,7 +5764,7 @@ html, body {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     background: transparent !important;
-    margin-top: 80px !important;
+    margin-top: 90px !important;
   }
 
   .hero-image-wrapper {

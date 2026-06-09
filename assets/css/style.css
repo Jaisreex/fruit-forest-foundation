@@ -5962,8 +5962,8 @@ html, body {
 @media (max-width: 480px) {
   .hero-main-name { font-size: 2.2rem !important; }
   .hero-sub-name { font-size: 1rem !important; letter-spacing: 0.1em !important; }
-  .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img { height: 35px !important; max-height: 35px !important; }
-  .logo-img-main, .logo-img { height: 40px !important; max-height: 40px !important; }
+  .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img { height: auto !important; width: 140px !important; max-width: none !important; max-height: none !important; }
+  .logo-img-main, .logo-img { height: auto !important; width: 170px !important; max-width: none !important; max-height: none !important; }
   .btn-primary, .btn-secondary, .btn-gold-solid, .btn-action-primary, .btn-action-secondary {
     padding: 0.8rem 1.5rem !important;
     font-size: 0.9rem !important;

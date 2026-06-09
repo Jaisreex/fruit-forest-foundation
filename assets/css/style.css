@@ -722,30 +722,47 @@ img {
   position: relative;
   background-image: none !important;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-#home::before {
-  content: "";
+.hero-image-wrapper {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../images/new_hero_imag.png') !important;
-  background-size: cover;
-  background-position: center;
   z-index: 1;
 }
 
-#home::after {
-  content: "";
+.hero-img-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-overlay-dark {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.35) !important;
+  background: rgba(0, 0, 0, 0.35);
   z-index: 2;
+}
+
+.hero-content-wrapper {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #home .container,
@@ -5733,10 +5750,44 @@ html, body {
   }
 
   /* Hero Section */
+  .hero, .standard-hero {
+    height: auto !important;
+    min-height: 0 !important;
+    padding-top: 80px !important;
+    padding-bottom: 0 !important;
+    background: var(--bg-nature) !important;
+  }
+
+  .hero-image-wrapper {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  .hero-img-element {
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  .hero-overlay-dark {
+    display: none !important;
+  }
+
+  .hero-content-wrapper {
+    position: relative !important;
+    padding: 2rem 1.5rem !important;
+    background: var(--white) !important;
+  }
+
   .hero-main-name {
+    color: var(--green-dark) !important;
+    text-shadow: none !important;
     font-size: clamp(2.5rem, 10vw, 4rem) !important;
   }
   .hero-sub-name {
+    color: var(--green) !important;
+    text-shadow: none !important;
     font-size: clamp(1.2rem, 4vw, 1.6rem) !important;
     letter-spacing: 0.15em !important;
   }
@@ -5744,17 +5795,35 @@ html, body {
     font-size: 1rem !important;
     padding: 0 1rem !important;
   }
-  .hero, .standard-hero {
-    height: auto !important;
-    min-height: 100vh !important;
-    padding-top: 150px !important;
-    padding-bottom: 80px !important;
-  }
+
   .hero-footer-tag {
-    position: relative !important;
+    position: static !important;
     bottom: auto !important;
-    margin-top: 3rem !important;
-    padding: 0 1rem !important;
+    margin-top: 1.5rem !important;
+    padding: 0 !important;
+  }
+  
+  /* FAB Buttons Stack */
+  .fab-container {
+    position: static !important;
+    bottom: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    margin-top: 2rem !important;
+    padding: 0 !important;
+    z-index: 10 !important;
+  }
+
+  .fab-container .float-btn {
+    width: 100% !important;
+    position: static !important;
+    margin-bottom: 0 !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
+    background: var(--green) !important;
+    justify-content: center !important;
   }
 
   /* Typography */

@@ -5842,32 +5842,33 @@ html, body {
     padding: 0 !important;
   }
   
-  /* FAB Buttons Stack - Global Floating */
+  /* FAB Buttons Stack - Global Floating Right */
   .fab-container {
     position: fixed !important;
     bottom: 2rem !important;
     top: auto !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: 80% !important;
-    max-width: 320px !important;
+    left: auto !important;
+    right: 1rem !important;
+    transform: none !important;
+    width: auto !important;
+    max-width: none !important;
     flex-direction: column !important;
-    align-items: center !important;
-    gap: 0.8rem !important;
+    align-items: stretch !important;
+    gap: 0.6rem !important;
     margin-top: 0 !important;
     padding: 0 !important;
     z-index: 2000 !important;
   }
 
   .fab-container .float-btn {
-    width: 100% !important;
+    width: auto !important;
     position: relative !important;
     margin-bottom: 0 !important;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2) !important;
     background: var(--green) !important;
     justify-content: center !important;
-    padding: 0.8rem 1.5rem !important;
-    font-size: 0.95rem !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.8rem !important;
   }
 
   /* Typography */

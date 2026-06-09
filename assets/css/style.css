@@ -5737,7 +5737,7 @@ html, body {
   /* Logo Fix for Mobile */
   .logo-img-main, .logo-img, .navbar.disabled.scrolled .logo-img-main {
     height: auto !important;
-    width: 160px !important;
+    width: 140px !important;
     max-width: none !important;
     max-height: none !important;
     margin-top: 0 !important;
@@ -5750,7 +5750,7 @@ html, body {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     background: transparent !important;
-    margin-top: 90px !important;
+    margin-top: 0 !important;
   }
 
   .hero-image-wrapper {
@@ -5787,7 +5787,10 @@ html, body {
     left: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    padding: 0 !important;
+    padding-top: 80px !important;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     background: transparent !important;
     display: flex !important;
     flex-direction: column !important;

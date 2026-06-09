@@ -5733,7 +5733,13 @@ html, body {
     z-index: 1000 !important;
   }
   .btn-donate-nav {
-    display: none !important; 
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.75rem !important;
+    padding: 0.5rem 1rem !important;
+    margin-right: 1rem !important;
+    white-space: nowrap !important;
   }
 
   /* Logo Fix for Mobile */
@@ -5753,67 +5759,99 @@ html, body {
   .hero, .standard-hero {
     height: auto !important;
     min-height: 0 !important;
-    padding-top: 80px !important;
-    padding-bottom: 0 !important;
-    background: var(--bg-nature) !important;
+    padding-top: 0 !important;
+    padding-bottom: 220px !important;
+    background: transparent !important;
+    margin-top: 80px !important;
   }
 
   .hero-image-wrapper {
     position: relative !important;
     width: 100% !important;
-    height: auto !important;
+    height: 66.66vw !important;
     max-height: none !important;
   }
 
   .hero-img-element {
-    height: auto !important;
-    object-fit: contain !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
   }
 
   .hero-overlay-dark {
-    display: none !important;
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0, 0, 0, 0.35) !important;
+    z-index: 2 !important;
   }
 
   .hero-content-wrapper {
-    position: relative !important;
-    padding: 2rem 1.5rem !important;
-    background: var(--white) !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 66.66vw !important;
+    padding: 0 !important;
+    background: transparent !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 10 !important;
   }
 
   .hero-main-name {
-    color: var(--green-dark) !important;
-    text-shadow: none !important;
-    font-size: clamp(2.5rem, 10vw, 4rem) !important;
+    color: #FFFFFF !important;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5) !important;
+    font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
   }
+  
   .hero-sub-name {
-    color: var(--green) !important;
-    text-shadow: none !important;
-    font-size: clamp(1.2rem, 4vw, 1.6rem) !important;
-    letter-spacing: 0.15em !important;
+    color: #D4EDC3 !important;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5) !important;
+    font-size: clamp(0.9rem, 3.5vw, 1.2rem) !important;
+    letter-spacing: 0.1em !important;
+    margin-top: 0.2rem !important;
   }
-  .hero-mission-desc {
-    font-size: 1rem !important;
+  
+  .hero-trust-tag, .hero-mission-desc {
+    color: #F8F6F1 !important;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5) !important;
+    font-size: clamp(0.75rem, 3vw, 0.95rem) !important;
     padding: 0 1rem !important;
+    line-height: 1.4 !important;
+    max-width: 100% !important;
+  }
+
+  #home .hero-title {
+    margin-top: 0 !important;
   }
 
   .hero-footer-tag {
-    position: static !important;
+    position: relative !important;
     bottom: auto !important;
-    margin-top: 1.5rem !important;
+    margin-top: 1rem !important;
     padding: 0 !important;
   }
   
   /* FAB Buttons Stack */
   .fab-container {
-    position: static !important;
-    bottom: auto !important;
-    right: auto !important;
+    position: absolute !important;
+    top: calc(100% + 1.5rem) !important;
+    left: 0 !important;
     width: 100% !important;
     flex-direction: column !important;
     align-items: center !important;
     gap: 1rem !important;
-    margin-top: 2rem !important;
-    padding: 0 !important;
+    margin-top: 0 !important;
+    padding: 0 1rem !important;
     z-index: 10 !important;
   }
 

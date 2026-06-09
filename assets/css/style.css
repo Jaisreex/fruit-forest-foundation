@@ -331,22 +331,16 @@ img {
   width: calc(100% - 40px);
   max-width: 1400px;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(255, 255, 255, 1);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   border-radius: 20px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.7);
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   padding: 0 1rem;
   /* Entrance animation */
   animation: nav-slide-down 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-.navbar.scrolled {
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
-  top: 25px; /* Same as default */
 }
 
 .nav-container {
@@ -356,11 +350,6 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 130px;
-  transition: height 0.35s ease, padding 0.35s ease;
-}
-
-.navbar.scrolled .nav-container {
   height: 115px;
 }
 
@@ -376,18 +365,12 @@ img {
 }
 
 .logo-img-main, .logo-img {
-  height: 1050px; /* Sensible increased size */
+  height: 850px;
   max-height: none !important;
   width: auto;
   object-fit: contain;
-  transition: all 0.35s ease;
   image-rendering: -webkit-optimize-contrast;
-  margin-top: 5px; /* Clean vertical centering */
-}
-
-.navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-  height: 850px; /* Scaled down slightly when scrolled */
-  margin-top: 10px; /* Clean centering */
+  margin-top: 10px;
 }
 
 .nav-tagline {
@@ -2464,7 +2447,7 @@ img {
     height: 106px !important;
   }
 
-  .navbar.scrolled .nav-container {
+  .navbar.disabled.scrolled .nav-container {
     height: 90px !important;
   }
 
@@ -2482,7 +2465,7 @@ img {
     margin-bottom: 0 !important;
   }
 
-  .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
+  .navbar.disabled.scrolled .logo-img-main {
     height: 310px !important;
     margin-top: 14px !important;
     margin-bottom: 0 !important;
@@ -2571,7 +2554,7 @@ img {
     height: 100px !important;
   }
 
-  .navbar.scrolled .nav-container {
+  .navbar.disabled.scrolled .nav-container {
     height: 84px !important;
   }
 
@@ -2587,7 +2570,7 @@ img {
     margin-bottom: 0 !important;
   }
 
-  .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
+  .navbar.disabled.scrolled .logo-img-main {
     height: 245px !important;
     margin-top: 11px !important;
     margin-bottom: 0 !important;
@@ -2938,7 +2921,7 @@ img {
     padding: 0 0.4rem !important;
   }
 
-  .navbar.scrolled .nav-container {
+  .navbar.disabled.scrolled .nav-container {
     height: 76px !important;
   }
 
@@ -2952,7 +2935,7 @@ img {
     margin-bottom: 0 !important;
   }
 
-  .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
+  .navbar.disabled.scrolled .logo-img-main {
     height: 185px !important;
     margin-top: 9px !important;
     margin-bottom: 0 !important;
@@ -5752,16 +5735,9 @@ html, body {
   }
 
   /* Logo Fix for Mobile */
-  .logo-img-main, .logo-img {
+  .logo-img-main, .logo-img, .navbar.disabled.scrolled .logo-img-main {
     height: auto !important;
-    width: 170px !important;
-    max-width: none !important;
-    max-height: none !important;
-    margin-top: 0 !important;
-  }
-  .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img {
-    height: auto !important;
-    width: 140px !important;
+    width: 160px !important;
     max-width: none !important;
     max-height: none !important;
     margin-top: 0 !important;
@@ -5963,8 +5939,7 @@ html, body {
 @media (max-width: 480px) {
   .hero-main-name { font-size: 2.2rem !important; }
   .hero-sub-name { font-size: 1rem !important; letter-spacing: 0.1em !important; }
-  .navbar.scrolled .logo-img-main, .navbar.scrolled .logo-img { height: auto !important; width: 140px !important; max-width: none !important; max-height: none !important; }
-  .logo-img-main, .logo-img { height: auto !important; width: 160px !important; max-width: none !important; max-height: none !important; }
+  .logo-img-main, .logo-img, .navbar.disabled.scrolled .logo-img-main { height: auto !important; width: 160px !important; max-width: none !important; max-height: none !important; }
   .btn-primary, .btn-secondary, .btn-gold-solid, .btn-action-primary, .btn-action-secondary {
     padding: 0.8rem 1.5rem !important;
     font-size: 0.9rem !important;

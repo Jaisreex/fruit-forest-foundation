@@ -5691,7 +5691,7 @@ html, body {
     border-radius: 20px !important;
   }
   .navbar {
-    top: 35px !important;
+    top: 10px !important;
     width: calc(100% - 30px) !important;
     left: 15px !important;
     transform: none !important;

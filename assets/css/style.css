@@ -5757,8 +5757,8 @@ html, body {
 
   /* Hero Section */
   .hero, .standard-hero {
-    height: 130vw !important;
-    min-height: 450px !important;
+    height: 66.66vw !important;
+    min-height: 0 !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     background: transparent !important;
@@ -5779,7 +5779,7 @@ html, body {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    object-position: right center !important;
+    object-position: center !important;
   }
 
   .hero-overlay-dark {
@@ -5799,11 +5799,11 @@ html, body {
     left: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    padding: 2rem 0 !important;
+    padding: 0 !important;
     background: transparent !important;
     display: flex !important;
     flex-direction: column !important;
-    justify-content: flex-start !important;
+    justify-content: center !important;
     align-items: center !important;
     z-index: 10 !important;
   }
@@ -5811,22 +5811,22 @@ html, body {
   .hero-main-name {
     color: #FFFFFF !important;
     text-shadow: 0 2px 5px rgba(0,0,0,0.5) !important;
-    font-size: clamp(2rem, 9vw, 3rem) !important;
+    font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
   }
   
   .hero-sub-name {
     color: #D4EDC3 !important;
     text-shadow: 0 2px 5px rgba(0,0,0,0.5) !important;
-    font-size: clamp(1rem, 4vw, 1.4rem) !important;
-    letter-spacing: 0.15em !important;
+    font-size: clamp(0.9rem, 3.5vw, 1.2rem) !important;
+    letter-spacing: 0.1em !important;
     margin-top: 0.2rem !important;
   }
   
   .hero-trust-tag, .hero-mission-desc {
     color: #F8F6F1 !important;
     text-shadow: 0 2px 5px rgba(0,0,0,0.5) !important;
-    font-size: clamp(0.85rem, 3.5vw, 1rem) !important;
-    padding: 0 1.5rem !important;
+    font-size: clamp(0.75rem, 3vw, 0.95rem) !important;
+    padding: 0 1rem !important;
     line-height: 1.4 !important;
     max-width: 100% !important;
   }
@@ -5838,32 +5838,36 @@ html, body {
   .hero-footer-tag {
     position: relative !important;
     bottom: auto !important;
-    margin-top: 1.5rem !important;
+    margin-top: 1rem !important;
     padding: 0 !important;
   }
   
-  /* FAB Buttons Stack */
+  /* FAB Buttons Stack - Global Floating */
   .fab-container {
-    position: absolute !important;
+    position: fixed !important;
     bottom: 2rem !important;
     top: auto !important;
-    left: 0 !important;
-    width: 100% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 80% !important;
+    max-width: 320px !important;
     flex-direction: column !important;
     align-items: center !important;
-    gap: 1rem !important;
+    gap: 0.8rem !important;
     margin-top: 0 !important;
-    padding: 0 1.5rem !important;
-    z-index: 10 !important;
+    padding: 0 !important;
+    z-index: 2000 !important;
   }
 
   .fab-container .float-btn {
     width: 100% !important;
-    position: static !important;
+    position: relative !important;
     margin-bottom: 0 !important;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2) !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
     background: var(--green) !important;
     justify-content: center !important;
+    padding: 0.8rem 1.5rem !important;
+    font-size: 0.95rem !important;
   }
 
   /* Typography */

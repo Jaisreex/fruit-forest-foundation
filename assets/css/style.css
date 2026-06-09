@@ -5722,7 +5722,7 @@ html, body {
     height: auto !important;
     gap: 0 !important;
   }
-  .nav-links.active {
+  .nav-links.open {
     transform: translateY(0) !important;
     opacity: 1 !important;
     visibility: visible !important;

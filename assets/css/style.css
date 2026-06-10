@@ -4578,6 +4578,7 @@ img {
   padding: 0.8rem 2rem;
   background: var(--green-pale);
   border-radius: 50px;
+  white-space: nowrap;
 }
 
 .service-card:hover .learn-more {
@@ -5279,6 +5280,7 @@ img {
   z-index: 2;
   max-width: 800px;
   margin: 0 auto;
+  padding: 0 !important;
 }
 
 .action-card-heading {

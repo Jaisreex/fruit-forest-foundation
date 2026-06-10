@@ -4632,10 +4632,6 @@ img {
   .service-cards-grid {
     grid-template-columns: 1fr;
   }
-
-  .service-card {
-    padding: 3rem 2rem;
-  }
 }
 /* ---------- REDESIGNED FOUNDER & TEAM SECTIONS (PREMIUM) ---------- */
 

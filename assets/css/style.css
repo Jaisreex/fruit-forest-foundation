@@ -5740,11 +5740,19 @@ html, body {
   }
 
   /* Hero Section */
-  .hero, .standard-hero {
+  .hero {
     height: 66.66vw !important;
     min-height: 0 !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+    margin-top: 150px !important;
+  }
+
+  .standard-hero {
+    min-height: 50vw !important;
+    height: auto !important;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
     margin-top: 150px !important;
   }
 
@@ -5805,23 +5813,29 @@ html, body {
     margin-top: 0.2rem !important;
   }
   
+  .standard-hero h1,
   .standard-hero .hero-title {
-    font-size: clamp(1.5rem, 6vw, 2.2rem) !important;
+    font-size: clamp(1.3rem, 5.5vw, 1.9rem) !important;
     margin-top: 0 !important;
-    line-height: 1.2 !important;
-    padding: 0 1rem !important;
+    margin-bottom: 0.75rem !important;
+    line-height: 1.25 !important;
+    padding: 0 0.75rem !important;
+    max-width: 100% !important;
   }
 
+  .standard-hero p,
   .standard-hero .hero-subtitle {
-    font-size: clamp(0.85rem, 3.5vw, 1rem) !important;
+    font-size: clamp(0.82rem, 3.2vw, 1rem) !important;
     margin-top: 0.5rem !important;
     padding: 0 1rem !important;
-    line-height: 1.4 !important;
+    line-height: 1.45 !important;
   }
 
   .standard-hero .section-tag {
     margin-bottom: 0.5rem !important;
     margin-top: 0 !important;
+    font-size: 0.7rem !important;
+    padding: 0.35rem 1rem !important;
   }
 
   .hero-trust-tag {

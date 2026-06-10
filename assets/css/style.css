@@ -5663,11 +5663,13 @@ html, body {
 
 @media (max-width: 992px) {
   /* Navigation */
-  .nav-container {
+  .navbar .nav-container {
     height: auto !important;
     min-height: 70px !important;
-    padding: 10px 0.5rem !important;
+    padding: 10px 2.5rem 10px 0.5rem !important;
     border-radius: 20px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
   .navbar {
     top: 10px !important;
@@ -5680,11 +5682,13 @@ html, body {
   .nav-brand {
     margin-left: 0 !important;
     margin-right: auto !important;
-    flex-shrink: 0 !important;
+    flex-shrink: 1 !important;
+    min-width: 0 !important;
   }
   .nav-actions {
     margin-right: 0 !important;
     flex-shrink: 0 !important;
+    gap: 0.5rem !important;
   }
   .nav-links {
     position: fixed !important;
@@ -5726,7 +5730,7 @@ html, body {
     justify-content: center !important;
     font-size: 0.7rem !important;
     padding: 0.4rem 0.6rem !important;
-    margin-right: 0.5rem !important;
+    margin-right: 0 !important;
     white-space: nowrap !important;
   }
 
@@ -5734,7 +5738,7 @@ html, body {
   .logo-img-main, .logo-img, .navbar.disabled.scrolled .logo-img-main {
     height: auto !important;
     width: 140px !important;
-    max-width: none !important;
+    max-width: 100% !important;
     max-height: none !important;
     margin-top: 0 !important;
   }
@@ -6048,7 +6052,6 @@ html, body {
   
   .container {
     padding: 0 1.5rem !important;
-    overflow-x: hidden !important;
     max-width: 100% !important;
   }
   
@@ -6092,7 +6095,7 @@ html, body {
 @media (max-width: 480px) {
   .hero-main-name { font-size: 2.2rem !important; }
   .hero-sub-name { font-size: 1rem !important; letter-spacing: 0.1em !important; }
-  .logo-img-main, .logo-img, .navbar.disabled.scrolled .logo-img-main { height: auto !important; width: 160px !important; max-width: none !important; max-height: none !important; }
+  .logo-img-main, .logo-img, .navbar.disabled.scrolled .logo-img-main { height: auto !important; width: 120px !important; max-width: 100% !important; max-height: none !important; }
   .btn-primary, .btn-secondary, .btn-gold-solid, .btn-action-primary, .btn-action-secondary {
     padding: 0.8rem 1.5rem !important;
     font-size: 0.9rem !important;

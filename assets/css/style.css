@@ -5748,6 +5748,11 @@ html, body {
     margin-top: 150px !important;
   }
 
+  /* Disable the CSS ::before overlay on standard-hero — it has its own hero-overlay-dark div */
+  .standard-hero::before {
+    display: none !important;
+  }
+
   .standard-hero {
     position: relative !important;
     min-height: 55vw !important;
@@ -5755,19 +5760,59 @@ html, body {
     padding: 0 !important;
     margin-top: 150px !important;
     display: flex !important;
-    align-items: center !important;
+    align-items: stretch !important;
     justify-content: center !important;
     overflow: hidden !important;
+    background: #1a2e0a !important; /* fallback while image loads */
   }
 
+  /* Image wrapper: absolute, fills the whole section */
   .standard-hero .hero-image-wrapper {
     position: absolute !important;
-    inset: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
     width: 100% !important;
     height: 100% !important;
+    z-index: 0 !important;
+  }
+
+  /* The <img> fills the wrapper completely */
+  .standard-hero .hero-img-element {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+  }
+
+  /* Dark overlay sits above the image */
+  .standard-hero .hero-overlay-dark {
+    position: absolute !important;
+    inset: 0 !important;
+    background: rgba(0, 0, 0, 0.45) !important;
     z-index: 1 !important;
   }
 
+  /* Text content sits above the overlay */
+  .standard-hero .hero-content-wrapper {
+    position: relative !important;
+    z-index: 2 !important;
+    width: 100% !important;
+    padding: 3.5rem 1rem !important;
+    background: transparent !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    min-height: 55vw !important;
+  }
+
+  /* Keep general hero-image-wrapper for home page hero */
   .hero-image-wrapper {
     position: relative !important;
     width: 100% !important;
@@ -5794,19 +5839,6 @@ html, body {
     height: 100% !important;
     background: rgba(0, 0, 0, 0.4) !important;
     z-index: 2 !important;
-  }
-
-  .standard-hero .hero-content-wrapper {
-    position: relative !important;
-    z-index: 10 !important;
-    width: 100% !important;
-    padding: 3rem 1rem !important;
-    background: transparent !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-    text-align: center !important;
   }
 
   .hero-content-wrapper {

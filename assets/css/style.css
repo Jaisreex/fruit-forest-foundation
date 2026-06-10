@@ -5755,7 +5755,7 @@ html, body {
 
   .standard-hero {
     position: relative !important;
-    min-height: 55vw !important;
+    min-height: 75vw !important;
     height: auto !important;
     padding: 0 !important;
     margin-top: 150px !important;
@@ -5809,7 +5809,7 @@ html, body {
     justify-content: center !important;
     align-items: center !important;
     text-align: center !important;
-    min-height: 55vw !important;
+    min-height: 75vw !important;
   }
 
   /* Keep general hero-image-wrapper for home page hero */

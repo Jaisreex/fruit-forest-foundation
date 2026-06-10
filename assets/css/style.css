@@ -5973,6 +5973,25 @@ html, body {
     height: auto !important;
     object-fit: contain !important;
   }
+
+  /* Card images must fill their container - override the global img reset above */
+  .card-img-wrap img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    max-width: none !important;
+  }
+
+  /* Standard hero page images must also fill their container */
+  .standard-hero .hero-img-element,
+  .hero .hero-img-element {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    max-width: none !important;
+  }
   
   .container {
     padding: 0 1.5rem !important;
